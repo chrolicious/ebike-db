@@ -1,0 +1,204 @@
+---
+// Technical Specifications Component
+interface Props {
+  product: {
+    model: string;
+    brand: string;
+    basePrice: number;
+    weight: number;
+    range: string;
+    topSpeed: number;
+    batteryCapacity: string;
+    motor: string;
+    legalStatus: string;
+    homologation: string;
+  };
+}
+
+const { product } = Astro.props;
+---
+
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-4">
+    <h2 class="text-4xl font-bold text-center mb-12">🔧 Technische Specificaties</h2>
+    
+    <div class="grid lg:grid-cols-2 gap-12">
+      <!-- Motor & Performance -->
+      <div class="bg-gray-50 p-8 rounded-lg">
+        <h3 class="text-2xl font-bold mb-6 flex items-center">
+          ⚡ Motor & Prestaties
+        </h3>
+        <div class="space-y-4">
+          <div class="flex justify-between py-3 border-b border-gray-200">
+            <span class="font-medium">Nominaal Vermogen</span>
+            <span class="font-bold text-blue-600">6000W</span>
+          </div>
+          <div class="flex justify-between py-3 border-b border-gray-200">
+            <span class="font-medium">Piek Vermogen</span>
+            <span class="font-bold">12500W</span>
+          </div>
+          <div class="flex justify-between py-3 border-b border-gray-200">
+            <span class="font-medium">Topsnelheid (onbegrensd)</span>
+            <span class="font-bold text-red-600">{product.topSpeed} km/h</span>
+          </div>
+          <div class="flex justify-between py-3 border-b border-gray-200">
+            <span class="font-medium">Topsnelheid (straatlegaal)</span>
+            <span class="font-bold text-green-600">25 km/h</span>
+          </div>
+          <div class="flex justify-between py-3 border-b border-gray-200">
+            <span class="font-medium">Koppel</span>
+            <span class="font-bold">300 Nm</span>
+          </div>
+          <div class="flex justify-between py-3">
+            <span class="font-medium">Acceleratie 0-50 km/h</span>
+            <span class="font-bold">3.5 seconden</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Battery & Range -->
+      <div class="bg-gray-50 p-8 rounded-lg">
+        <h3 class="text-2xl font-bold mb-6 flex items-center">
+          🔋 Batterij & Bereik
+        </h3>
+        <div class="space-y-4">
+          <div class="flex justify-between py-3 border-b border-gray-200">
+            <span class="font-medium">Batterijcapaciteit</span>
+            <span class="font-bold text-green-600">{product.batteryCapacity}</span>
+          </div>
+          <div class="flex justify-between py-3 border-b border-gray-200">
+            <span class="font-medium">Energieopslag</span>
+            <span class="font-bold">1.92 kWh</span>
+          </div>
+          <div class="flex justify-between py-3 border-b border-gray-200">
+            <span class="font-medium">Actieradius (eco-modus)</span>
+            <span class="font-bold text-blue-600">60 km</span>
+          </div>
+          <div class="flex justify-between py-3 border-b border-gray-200">
+            <span class="font-medium">Actieradius (sport-modus)</span>
+            <span class="font-bold">40 km</span>
+          </div>
+          <div class="flex justify-between py-3 border-b border-gray-200">
+            <span class="font-medium">Oplaadtijd (volledig)</span>
+            <span class="font-bold">3-4 uur</span>
+          </div>
+          <div class="flex justify-between py-3">
+            <span class="font-medium">Batterij verwisselbaar</span>
+            <span class="font-bold text-green-600">Ja</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dimensions & Weight -->
+      <div class="bg-gray-50 p-8 rounded-lg">
+        <h3 class="text-2xl font-bold mb-6 flex items-center">
+          📏 Afmetingen & Gewicht
+        </h3>
+        <div class="space-y-4">
+          <div class="flex justify-between py-3 border-b border-gray-200">
+            <span class="font-medium">Gewicht (totaal)</span>
+            <span class="font-bold text-purple-600">{product.weight} kg</span>
+          </div>
+          <div class="flex justify-between py-3 border-b border-gray-200">
+            <span class="font-medium">Gewicht (zonder batterij)</span>
+            <span class="font-bold">35 kg</span>
+          </div>
+          <div class="flex justify-between py-3 border-b border-gray-200">
+            <span class="font-medium">Lengte</span>
+            <span class="font-bold">1680 mm</span>
+          </div>
+          <div class="flex justify-between py-3 border-b border-gray-200">
+            <span class="font-medium">Breedte</span>
+            <span class="font-bold">840 mm</span>
+          </div>
+          <div class="flex justify-between py-3 border-b border-gray-200">
+            <span class="font-medium">Hoogte</span>
+            <span class="font-bold">1110 mm</span>
+          </div>
+          <div class="flex justify-between py-3">
+            <span class="font-medium">Zithoogte</span>
+            <span class="font-bold">850 mm</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Suspension & Brakes -->
+      <div class="bg-gray-50 p-8 rounded-lg">
+        <h3 class="text-2xl font-bold mb-6 flex items-center">
+          🛠️ Onderstel & Remmen
+        </h3>
+        <div class="space-y-4">
+          <div class="flex justify-between py-3 border-b border-gray-200">
+            <span class="font-medium">Voorvering</span>
+            <span class="font-bold">DNM USD-8S (160mm)</span>
+          </div>
+          <div class="flex justify-between py-3 border-b border-gray-200">
+            <span class="font-medium">Achtervering</span>
+            <span class="font-bold">DNM AOY-36RC (180mm)</span>
+          </div>
+          <div class="flex justify-between py-3 border-b border-gray-200">
+            <span class="font-medium">Voorrem</span>
+            <span class="font-bold">Hydraulisch schijf 203mm</span>
+          </div>
+          <div class="flex justify-between py-3 border-b border-gray-200">
+            <span class="font-medium">Achterrem</span>
+            <span class="font-bold">Hydraulisch schijf 180mm</span>
+          </div>
+          <div class="flex justify-between py-3 border-b border-gray-200">
+            <span class="font-medium">Banden voor</span>
+            <span class="font-bold">70/100-19</span>
+          </div>
+          <div class="flex justify-between py-3">
+            <span class="font-medium">Banden achter</span>
+            <span class="font-bold">90/100-16</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Legal Compliance Info -->
+    <div class="mt-12 bg-blue-50 p-8 rounded-lg">
+      <h3 class="text-2xl font-bold mb-6 text-center">📋 Nederlandse Wetgeving</h3>
+      <div class="grid md:grid-cols-3 gap-6 text-center">
+        <div class="bg-white p-6 rounded-lg">
+          <div class="text-3xl mb-3">🏷️</div>
+          <h4 class="font-bold mb-2">EU Homologatie</h4>
+          <p class="text-gray-600">{product.homologation}</p>
+          <p class="text-sm text-green-600 mt-2">✅ COC papieren beschikbaar</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg">
+          <div class="text-3xl mb-3">⚡</div>
+          <h4 class="font-bold mb-2">Straatlegaal</h4>
+          <p class="text-gray-600">25km/h begrenzer vereist</p>
+          <p class="text-sm text-blue-600 mt-2">ℹ️ Installatie bij dealer mogelijk</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg">
+          <div class="text-3xl mb-3">🪪</div>
+          <h4 class="font-bold mb-2">Rijbewijs</h4>
+          <p class="text-gray-600">AM rijbewijs vanaf 16 jaar</p>
+          <p class="text-sm text-orange-600 mt-2">⚠️ CBR theorie + praktijk</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    
+    .flex {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .flex span:last-child {
+      margin-top: 0.5rem;
+      font-size: 1.1rem;
+    }
+  }
+</style>

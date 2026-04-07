@@ -1,0 +1,198 @@
+---
+export interface Props {
+	title: string;
+	description?: string;
+	canonical?: string;
+}
+
+const { title, description, canonical } = Astro.props;
+const pageDescription = description || "Complete e-bike and electric crosser database with legal requirements, specifications, and pricing for the Netherlands and Europe.";
+---
+
+<!DOCTYPE html>
+<html lang="nl">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={pageDescription} />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		{canonical && <link rel="canonical" href={canonical} />}
+		<title>{title}</title>
+
+		<!-- Dutch legal disclaimers -->
+		<meta name="geo.region" content="NL" />
+		<meta name="geo.placename" content="Netherlands" />
+
+		<!-- OpenGraph -->
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={pageDescription} />
+		<meta property="og:type" content="website" />
+		<meta property="og:locale" content="nl_NL" />
+
+		<!-- Structured data for products -->
+		<script type="application/ld+json" is:inline>
+		{
+			"@context": "https://schema.org",
+			"@type": "WebSite",
+			"name": "E-Bike Database Nederland",
+			"url": "https://ebike-database.com",
+			"description": "Complete database van elektrische fietsen en crossers voor Nederland"
+		}
+		</script>
+	</head>
+	<body class="bg-gray-50 min-h-screen">
+		<header class="bg-white shadow-sm border-b">
+			<nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="flex justify-between h-16 items-center">
+					<div class="flex items-center">
+						<a href="/" class="text-xl font-bold text-blue-600">E-Bike Database NL</a>
+					</div>
+					<div class="hidden md:flex space-x-8">
+						<!-- Nederlandse Crossers dropdown -->
+						<div class="relative group">
+							<button class="text-gray-600 hover:text-blue-600 flex items-center">
+								Nederlandse Crossers 
+								<svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+								</svg>
+							</button>
+							<div class="absolute left-0 mt-2 w-64 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+								<div class="py-2">
+									<div class="px-4 py-2 text-xs font-semibold text-gray-500 uppercase border-b">Budget (€999-€2,199)</div>
+									<a href="/lectric-xp-nederland" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">
+										<div class="font-medium">Lectric XP Nederland</div>
+										<div class="text-xs text-gray-500">€999 - Reguliere e-bike</div>
+									</a>
+									<a href="/radrunner-plus-nederland" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">
+										<div class="font-medium">RadRunner Plus Nederland</div>
+										<div class="text-xs text-gray-500">€1,699 - Familie cargo</div>
+									</a>
+									<a href="/super73-s2-nederland" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">
+										<div class="font-medium">Super73 S2 Nederland</div>
+										<div class="text-xs text-gray-500">€2,199 - Lifestyle e-bike</div>
+									</a>
+									
+									<div class="px-4 py-2 text-xs font-semibold text-gray-500 uppercase border-b border-t mt-2">Premium (€4,899+)</div>
+									<a href="/talaria-sting-nederland" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">
+										<div class="font-medium">Talaria Sting Nederland</div>
+										<div class="text-xs text-gray-500">€4,899 - Surron alternatief</div>
+									</a>
+									
+									<div class="px-4 py-2 text-xs font-semibold text-gray-500 uppercase border-b border-t mt-2">A1 Motoren (€11,999+)</div>
+									<a href="/ktm-freeride-e-xc-nederland" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">
+										<div class="font-medium">KTM Freeride E-XC Nederland</div>
+										<div class="text-xs text-gray-500">€11,999 - Off-road crosser</div>
+									</a>
+									<a href="/zero-fx-nederland" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">
+										<div class="font-medium">Zero FX Nederland</div>
+										<div class="text-xs text-gray-500">€12,995 - Premium motor</div>
+									</a>
+								</div>
+							</div>
+						</div>
+						
+						<a href="/vergelijk" class="text-gray-600 hover:text-blue-600">Vergelijken</a>
+						<a href="/wetgeving" class="text-gray-600 hover:text-blue-600">Wetgeving</a>
+						<a href="/dealers" class="text-gray-600 hover:text-blue-600">Dealers</a>
+					</div>
+					
+					<!-- Mobile menu button -->
+					<div class="md:hidden">
+						<button id="mobile-menu-button" class="text-gray-600 hover:text-blue-600">
+							<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+							</svg>
+						</button>
+					</div>
+				</div>
+				
+				<!-- Mobile menu -->
+				<div id="mobile-menu" class="md:hidden hidden border-t bg-white">
+					<div class="py-2">
+						<div class="px-4 py-2 text-sm font-semibold text-gray-700 border-b">Nederlandse Crossers</div>
+						<a href="/lectric-xp-nederland" class="block px-6 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50">Lectric XP Nederland (€999)</a>
+						<a href="/radrunner-plus-nederland" class="block px-6 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50">RadRunner Plus Nederland (€1,699)</a>
+						<a href="/super73-s2-nederland" class="block px-6 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50">Super73 S2 Nederland (€2,199)</a>
+						<a href="/talaria-sting-nederland" class="block px-6 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50">Talaria Sting Nederland (€4,899)</a>
+						<a href="/ktm-freeride-e-xc-nederland" class="block px-6 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50">KTM Freeride E-XC Nederland (€11,999)</a>
+						<a href="/zero-fx-nederland" class="block px-6 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50">Zero FX Nederland (€12,995)</a>
+						
+						<div class="border-t mt-2 pt-2">
+							<a href="/vergelijk" class="block px-4 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50">Vergelijken</a>
+							<a href="/wetgeving" class="block px-4 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50">Wetgeving</a>
+							<a href="/dealers" class="block px-4 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50">Dealers</a>
+						</div>
+					</div>
+				</div>
+			</nav>
+		</header>
+
+		<main>
+			<slot />
+		</main>
+
+		<footer class="bg-gray-800 text-white mt-20">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+				<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+					<div>
+						<h3 class="text-lg font-semibold mb-4">E-Bike Database NL</h3>
+						<p class="text-gray-300">Complete gids voor elektrische fietsen en crossers in Nederland.</p>
+					</div>
+					<div>
+						<h4 class="text-md font-semibold mb-4">Nederlandse Crossers</h4>
+						<ul class="space-y-2 text-gray-300 text-sm">
+							<li><a href="/lectric-xp-nederland" class="hover:text-white">Lectric XP Nederland (€999)</a></li>
+							<li><a href="/radrunner-plus-nederland" class="hover:text-white">RadRunner Plus Nederland (€1,699)</a></li>
+							<li><a href="/super73-s2-nederland" class="hover:text-white">Super73 S2 Nederland (€2,199)</a></li>
+							<li><a href="/talaria-sting-nederland" class="hover:text-white">Talaria Sting Nederland (€4,899)</a></li>
+							<li><a href="/zero-fx-nederland" class="hover:text-white">Zero FX Nederland (€12,995)</a></li>
+							<li><a href="/ktm-freeride-e-xc-nederland" class="hover:text-white">KTM Freeride E-XC Nederland (€11,999)</a></li>
+						</ul>
+					</div>
+					<div>
+						<h4 class="text-md font-semibold mb-4">Wetgeving</h4>
+						<ul class="space-y-2 text-gray-300">
+							<li><a href="/wetgeving/speed-pedelec" class="hover:text-white">Speed Pedelec</a></li>
+							<li><a href="/wetgeving/l1e-b-bromfiets" class="hover:text-white">L1e-B Bromfiets</a></li>
+							<li><a href="/wetgeving/verzekering" class="hover:text-white">Verzekering</a></li>
+						</ul>
+					</div>
+					<div>
+						<h4 class="text-md font-semibold mb-4">Contact</h4>
+						<p class="text-gray-300">info@ebike-database.com</p>
+						<div class="mt-4">
+							<h5 class="text-sm font-semibold mb-2">Legaal</h5>
+							<ul class="space-y-1 text-sm text-gray-300">
+								<li><a href="/privacy" class="hover:text-white">Privacybeleid</a></li>
+								<li><a href="/disclaimer" class="hover:text-white">Disclaimer</a></li>
+								<li><a href="/algemene-voorwaarden" class="hover:text-white">Algemene Voorwaarden</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+					<p>&copy; 2024 E-Bike Database NL. Alle rechten voorbehouden.</p>
+					<p class="mt-2 text-sm">
+						Deze website bevat affiliate links naar MediaMarkt en Amazon.
+						We ontvangen een commissie bij aankopen via deze links, zonder extra kosten voor u.
+					</p>
+				</div>
+			</div>
+		</footer>
+
+		<!-- Mobile menu toggle script -->
+		<script is:inline>
+		document.addEventListener('DOMContentLoaded', function() {
+			const menuButton = document.getElementById('mobile-menu-button');
+			const mobileMenu = document.getElementById('mobile-menu');
+			
+			if (menuButton && mobileMenu) {
+				menuButton.addEventListener('click', function() {
+					mobileMenu.classList.toggle('hidden');
+				});
+			}
+		});
+		</script>
+	</body>
+</html>

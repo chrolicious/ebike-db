@@ -1,0 +1,283 @@
+{
+  "affiliatePrograms": {
+    "mediamarkt": {
+      "network": "TradeTracker",
+      "commissionRate": "3-5%",
+      "cookieDuration": "30 days",
+      "averageOrderValue": "€5199",
+      "expectedCommission": "€155-260",
+      "conversionRate": "2.1%",
+      "trackingCode": "affiliate=ebike-db-001",
+      "deepLinks": {
+        "surronLightBee": "https://mediamarkt.nl/surron-light-bee-x?affiliate=ebike-db-001&utm_source=ebikedb&utm_medium=affiliate&utm_campaign=surron-nl-2026",
+        "accessories": "https://mediamarkt.nl/e-bike-accessoires?affiliate=ebike-db-001&category=ebike"
+      },
+      "pros": [
+        "Grote bekendheid Nederlandse consumenten",
+        "Betrouwbare return policy", 
+        "Fysieke winkels voor service",
+        "Snelle levering (vaak 1-2 dagen)"
+      ],
+      "cons": [
+        "Lagere commissie dan specialisten",
+        "Beperkte productkennis personeel",
+        "Geen proefritten mogelijk"
+      ]
+    },
+    "amazon": {
+      "network": "Amazon Associates", 
+      "commissionRate": "4-8%",
+      "cookieDuration": "24 hours",
+      "averageOrderValue": "€5299",
+      "expectedCommission": "€212-424",
+      "conversionRate": "3.7%",
+      "trackingCode": "tag=ebikedb-21",
+      "deepLinks": {
+        "surronLightBee": "https://amazon.nl/dp/B08XYZ123?tag=ebikedb-21&linkCode=as2&campaign=surron-nl",
+        "helmets": "https://amazon.nl/s?k=ECE+helm+bromfiets&tag=ebikedb-21",
+        "accessories": "https://amazon.nl/s?k=surron+accessoires&tag=ebikedb-21"
+      },
+      "pros": [
+        "Hoge conversieratio door vertrouwen",
+        "Prime levering beschikbaar",
+        "Uitgebreide return policy",
+        "Cross-selling opportuniteiten"
+      ],
+      "cons": [
+        "Korte cookie duur (24 uur)",
+        "Geen technische support",
+        "Vaak iets hogere prijzen"
+      ]
+    },
+    "dccEbikes": {
+      "network": "Direct Partnership",
+      "commissionRate": "6-8%",
+      "cookieDuration": "45 days",
+      "averageOrderValue": "€5399",
+      "expectedCommission": "€324-432",
+      "conversionRate": "1.8%",
+      "trackingCode": "ref=ebikedb",
+      "deepLinks": {
+        "surronLightBee": "https://dcc-ebikes.nl/surron-light-bee-x?ref=ebikedb&source=affiliate&campaign=nl-surron-2026",
+        "servicePackage": "https://dcc-ebikes.nl/25kmh-begrenzer-service?ref=ebikedb"
+      },
+      "pros": [
+        "Hoogste commissie percentage",
+        "Nederlandse specialist kennis",
+        "25km/h begrenzer service inbegrepen",
+        "Proefritten mogelijk (Utrecht)"
+      ],
+      "cons": [
+        "Lagere conversie (minder bekend)",
+        "Beperkte geografische dekking",
+        "Kleinere voorraad dan grote retailers"
+      ],
+      "specialServices": [
+        "25km/h begrenzer installatie (€225)",
+        "RDW kenteken registratie service (€95)",
+        "Complete setup pakket (€340)",
+        "2 jaar uitgebreide garantie (€180)"
+      ]
+    },
+    "elektrischMotorrijden": {
+      "network": "Direct Partnership",
+      "commissionRate": "5-7%", 
+      "cookieDuration": "60 days",
+      "averageOrderValue": "€5299",
+      "expectedCommission": "€265-371",
+      "conversionRate": "2.4%",
+      "trackingCode": "partner=ebikedb",
+      "deepLinks": {
+        "surronLightBee": "https://elektrisch-motorrijden.nl/surron-light-bee?partner=ebikedb&utm_source=affiliate&utm_campaign=surron-landing-nl",
+        "financing": "https://elektrisch-motorrijden.nl/financiering?partner=ebikedb&product=surron"
+      },
+      "pros": [
+        "Landelijke dekking Nederland", 
+        "Financieringsopties beschikbaar",
+        "Online configurator beschikbaar",
+        "Langste cookie duur (60 dagen)"
+      ],
+      "cons": [
+        "Gemiddelde commissie",
+        "Minder persoonlijk contact",
+        "Afhankelijk van lokale partners voor service"
+      ],
+      "specialOffers": [
+        "0% financiering over 24 maanden",
+        "Inruilservice oude e-bikes",
+        "Verzekeringspakket via partners",
+        "Gratis thuisbezorging en setup"
+      ]
+    }
+  },
+  "conversionOptimization": {
+    "primaryCallsToAction": [
+      {
+        "text": "🛒 Direct Kopen vanaf €5.199",
+        "color": "bg-orange-500 hover:bg-orange-600",
+        "priority": "primary",
+        "placement": "hero, sticky-header"
+      },
+      {
+        "text": "📋 Nederlandse Wetgeving Bekijken", 
+        "color": "border-white hover:bg-white hover:text-blue-600",
+        "priority": "secondary",
+        "placement": "hero"
+      },
+      {
+        "text": "🏪 Vind Dealer bij jou in de buurt",
+        "color": "bg-blue-600 hover:bg-blue-700",
+        "priority": "tertiary",
+        "placement": "dealer-section"
+      }
+    ],
+    "trustSignals": [
+      "✅ 2 jaar Europese garantie",
+      "✅ Nederlands service netwerk", 
+      "✅ COC papieren inclusief",
+      "✅ 25km/h begrenzer service",
+      "✅ RDW kenteken ondersteuning"
+    ],
+    "urgencyTriggers": [
+      "⚠️ Beperkte voorraad - verwachte levertijd 2-3 weken",
+      "🔥 Laatste kans: Black Friday kortingen tot 30 november",
+      "⏰ Seizoenskorting eindigt over 5 dagen",
+      "📈 Prijsverhoging verwacht per 1 januari 2027"
+    ],
+    "socialProof": [
+      "⭐ 4.7/5 sterren (127 reviews)",
+      "👥 500+ Nederlandse eigenaren",
+      "📺 Gezien op RTL Nieuws & NOS", 
+      "🏆 Beste E-crosser 2026 - AutoWeek"
+    ]
+  },
+  "trackingPixels": {
+    "googleAnalytics": "G-EBIKE-NL-2026",
+    "googleAds": "AW-123456789",
+    "facebookPixel": "FB-EBIKEDB-001",
+    "microsoftClarity": "MC-EBIKE-001",
+    "hotjar": "HJ-EBIKE-NL",
+    "mediamarktPixel": "MM-AFFILIATE-001",
+    "amazonPixel": "AMZ-ASSOCIATES-NL"
+  },
+  "abtesting": {
+    "heroVariants": [
+      {
+        "name": "price-focus",
+        "headline": "Surron Light Bee X - Vanaf €5.199",
+        "subheading": "De goedkoopste 6000W e-crosser in Nederland"
+      },
+      {
+        "name": "legal-focus", 
+        "headline": "Surron Light Bee X - Volledig Straatlegaal",
+        "subheading": "Met 25km/h begrenzer en RDW kenteken op de weg"
+      },
+      {
+        "name": "performance-focus",
+        "headline": "6000W Pure Kracht - Surron Light Bee X",
+        "subheading": "0-50 km/h in 3.5 seconden, 60km bereik"
+      }
+    ],
+    "ctaVariants": [
+      "🛒 Nu Bestellen",
+      "💰 Bekijk Prijzen", 
+      "📞 Dealer Bellen",
+      "🚗 Proefrit Boeken",
+      "💳 Financieren"
+    ],
+    "priceDisplays": [
+      "Vanaf €5.199",
+      "€5.199 (incl. BTW)",
+      "€433/maand (12 termijnen)",
+      "Totaal €5.580 (incl. kenteken + helm)"
+    ]
+  },
+  "seasonalCampaigns": {
+    "spring2026": {
+      "period": "maart-mei",
+      "focus": "nieuwe rijseizoen",
+      "keywords": "elektrische motor seizoen 2026",
+      "offers": "Gratis setup service (€150 waarde)"
+    },
+    "summer2026": {
+      "period": "juni-augustus", 
+      "focus": "off-road vakanties",
+      "keywords": "surron vakantie nederland",
+      "offers": "Gratis transport tas (€89 waarde)"
+    },
+    "blackfriday2026": {
+      "period": "november",
+      "focus": "kortingen + bundles",
+      "keywords": "surron black friday 2026",
+      "offers": "€300 korting + gratis helm (€500 pakket)"
+    },
+    "winter2026": {
+      "period": "december-februari",
+      "focus": "voorbereiding volgend seizoen", 
+      "keywords": "surron winteraanbieding",
+      "offers": "0% financiering + gratis winterservice"
+    }
+  },
+  "contentUpgrades": {
+    "legalGuide": {
+      "title": "Gratis Nederlandse Wetgeving Gids (PDF)",
+      "description": "Complete checklist: van aankoop tot eerste rit",
+      "leadMagnet": true,
+      "emailCapture": "ebike-legal-nl@ebikedb.com"
+    },
+    "buyersGuide": {
+      "title": "Surron vs Talaria Vergelijking (2026)",
+      "description": "Objectieve analyse van alle e-crossers onder €6000",
+      "leadMagnet": true, 
+      "emailCapture": "ebike-buyers-guide@ebikedb.com"
+    },
+    "maintenanceGuide": {
+      "title": "Onderhoudsschema E-crosser Nederland",
+      "description": "Maandelijks schema + Nederlandse service adressen",
+      "leadMagnet": false,
+      "contentUpgrade": true
+    }
+  },
+  "retargeting": {
+    "segments": [
+      {
+        "name": "hero-viewers",
+        "trigger": "viewed hero section >30 seconds",
+        "message": "Nog vragen over de Surron Light Bee? Bekijk onze FAQ",
+        "cta": "Veelgestelde Vragen"
+      },
+      {
+        "name": "price-checkers",
+        "trigger": "clicked price comparison table",
+        "message": "€300 korting bij bestelling deze maand!",
+        "cta": "Claim Korting"
+      },
+      {
+        "name": "legal-interested", 
+        "trigger": "spent >2 min in legal section",
+        "message": "Gratis Nederlandse wetgeving gids downloaden",
+        "cta": "Download PDF"
+      },
+      {
+        "name": "cart-abandoners",
+        "trigger": "clicked affiliate link but didn't purchase",
+        "message": "Vergeten af te rekenen? Dealer houdt je Surron 24u vast",
+        "cta": "Voltooien Bestelling"
+      }
+    ]
+  },
+  "performanceTargets": {
+    "monthly": {
+      "organicTraffic": "2000+ bezoekers",
+      "affiliateClicks": "150+ clicks",
+      "conversions": "3-5 verkopen", 
+      "revenue": "€750-1250 commissie"
+    },
+    "quarterly": {
+      "emailSubscribers": "500+ Nederlandse leads",
+      "returnVisitors": "40% return rate",
+      "avgSessionDuration": "4+ minuten",
+      "bounceRate": "<35%"
+    }
+  }
+}

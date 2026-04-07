@@ -1,0 +1,47 @@
+---
+// ComplianceAlert Component for Dutch Legal Warnings
+interface Props {
+  type: 'warning' | 'info' | 'error' | 'success';
+  message: string;
+  actionText?: string;
+  actionLink?: string;
+}
+
+const { type, message, actionText, actionLink } = Astro.props;
+
+const alertStyles = {
+  warning: 'bg-yellow-50 border-yellow-200 text-yellow-800',
+  info: 'bg-blue-50 border-blue-200 text-blue-800',
+  error: 'bg-red-50 border-red-200 text-red-800',
+  success: 'bg-green-50 border-green-200 text-green-800'
+};
+
+const iconMap = {
+  warning: '⚠️',
+  info: 'ℹ️',
+  error: '❌',
+  success: '✅'
+};
+---
+
+<div class={`border-l-4 p-4 my-6 ${alertStyles[type]}`} role="alert">
+  <div class="flex items-start">
+    <span class="text-2xl mr-3 flex-shrink-0">{iconMap[type]}</span>
+    <div class="flex-1">
+      <p class="font-medium">{message}</p>
+      {actionText && actionLink && (
+        <div class="mt-3">
+          <a 
+            href={actionLink}
+            class="inline-flex items-center px-4 py-2 text-sm font-medium rounded-md bg-yellow-100 hover:bg-yellow-200 transition-colors"
+          >
+            {actionText}
+            <svg class="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+          </a>
+        </div>
+      )}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,715 @@
+---
+// Lectric XP - Complete Dutch Landing Page Template
+import Layout from '../layouts/Layout.astro';
+import ComplianceAlert from '../components/ComplianceAlert.astro';
+import AffiliateGrid from '../components/AffiliateGrid.astro';
+import PriceComparison from '../components/PriceComparison.astro';
+import TechnicalSpecs from '../components/TechnicalSpecs.astro';
+import LegalStatus from '../components/LegalStatus.astro';
+
+// SEO & Meta Data
+const title = "Lectric XP Kopen Nederland 2026 - Complete Gids & Prijzen";
+const description = "Lectric XP volledig overzicht: Nederlandse wetgeving, verzekering, dealers en beste prijzen. Betaalbare vouwfiets e-bike onder €1000.";
+const keywords = "lectric xp nederland, vouwfiets e-bike kopen, elektrische fiets onder 1000, lectric dealers, xp prijs, vouwbare e-bike";
+
+// Product Data
+const productData = {
+	model: "XP",
+	brand: "Lectric eBikes",
+	basePrice: 999,
+	weight: 28,
+	range: "40-60",
+	topSpeed: 25,
+	batteryCapacity: "48V 10.4Ah",
+	motor: "500W Geared Hub",
+	legalStatus: "Gewone e-bike (25km/h, geen kenteken)",
+	homologation: "EN15194"
+};
+
+// Affiliate Links Data
+const affiliateLinks = {
+	lectricOfficial: "https://lectricebikes.com/products/xp-ebike?utm_source=ebikedb&utm_campaign=nl-affiliate",
+	amazon: "https://amazon.nl/dp/B09LEC789?tag=ebikedb-21",
+	mediamarkt: "https://mediamarkt.nl/lectric-xp?affiliate=ebike-db-001",
+	coolblue: "https://coolblue.nl/lectric-xp?affiliate=ebike-db-001",
+	fietsGigant: "https://fietsgigant.nl/lectric-ebikes?partner=ebikedb"
+};
+
+// Legal Requirements Data  
+const legalRequirements = {
+	license: "Geen rijbewijs nodig",
+	insurance: "Verzekering aanbevolen maar niet verplicht",
+	registration: "Geen kenteken nodig", 
+	helmet: "Helm aanbevolen maar niet verplicht",
+	modifications: "Max 25km/h (EU conformiteit)"
+};
+---
+
+<Layout title={title} description={description}>
+	<!-- Structured Data -->
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "Product",
+		"name": "Lectric XP",
+		"brand": {
+			"@type": "Brand",
+			"name": "Lectric eBikes"
+		},
+		"description": "Betaalbare vouwbare elektrische fiets met 500W motor, ideaal voor woon-werk verkeer",
+		"category": "Electric Folding Bike",
+		"offers": {
+			"@type": "Offer",
+			"priceCurrency": "EUR", 
+			"price": "999.00",
+			"availability": "https://schema.org/InStock",
+			"seller": {
+				"@type": "Organization",
+				"name": "Lectric eBikes Europe"
+			}
+		},
+		"aggregateRating": {
+			"@type": "AggregateRating",
+			"ratingValue": "4.4",
+			"reviewCount": "1847"
+		}
+	}
+	</script>
+
+	<main class="lectric-landing">
+		<!-- Hero Section -->
+		<section class="hero bg-gradient-to-r from-purple-600 to-blue-600 text-white py-20">
+			<div class="container mx-auto px-4">
+				<div class="grid md:grid-cols-2 gap-12 items-center">
+					<div>
+						<h1 class="text-4xl md:text-6xl font-bold mb-6">
+							Lectric XP
+							<span class="block text-2xl md:text-3xl text-purple-200">
+								Betaalbare E-bike Onder €1000
+							</span>
+						</h1>
+						<p class="text-xl mb-8 leading-relaxed">
+							Vouwbare 500W e-bike voor dagelijks gebruik. Geen kenteken of 
+							verzekering nodig. Perfect voor woon-werk verkeer en recreatie.
+						</p>
+						<div class="flex flex-wrap gap-4">
+							<a href="#kopen" class="bg-orange-500 hover:bg-orange-600 px-8 py-4 rounded-lg font-bold text-lg transition-colors">
+								🛒 Direct Kopen vanaf €999
+							</a>
+							<a href="#specificaties" class="border-2 border-white hover:bg-white hover:text-purple-600 px-8 py-4 rounded-lg font-bold text-lg transition-colors">
+								📋 Bekijk Specs
+							</a>
+						</div>
+					</div>
+					<div class="relative">
+						<img src="/images/lectric-xp-hero.jpg"
+							 alt="Lectric XP vouwbare elektrische fiets"
+							 class="w-full rounded-lg shadow-2xl"
+							 loading="eager" />
+						<div class="absolute top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-lg font-bold">
+							💰 Onder €1000
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Compliance Alert -->
+		<ComplianceAlert
+			type="success"
+			message="Lectric XP is een gewone e-bike: geen kenteken, verzekering of rijbewijs nodig!"
+			actionText="Bekijk Voordelen"
+			actionLink="#voordelen"
+		/>
+
+		<!-- Quick Specs Grid -->
+		<section class="py-16 bg-gray-50">
+			<div class="container mx-auto px-4">
+				<div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+					<div class="bg-white p-6 rounded-lg shadow-md">
+						<div class="text-3xl font-bold text-purple-600 mb-2">500W</div>
+						<div class="text-gray-600">Motor Vermogen</div>
+					</div>
+					<div class="bg-white p-6 rounded-lg shadow-md">
+						<div class="text-3xl font-bold text-blue-600 mb-2">60km</div>
+						<div class="text-gray-600">Max Bereik</div>
+					</div>
+					<div class="bg-white p-6 rounded-lg shadow-md">
+						<div class="text-3xl font-bold text-green-600 mb-2">28kg</div>
+						<div class="text-gray-600">Gewicht</div>
+					</div>
+					<div class="bg-white p-6 rounded-lg shadow-md">
+						<div class="text-3xl font-bold text-orange-600 mb-2">€999</div>
+						<div class="text-gray-600">Vanaf Prijs</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Why Lectric XP Section -->
+		<section id="voordelen" class="py-16">
+			<div class="container mx-auto px-4">
+				<h2 class="text-4xl font-bold text-center mb-12">Waarom Lectric XP?</h2>
+
+				<div class="grid lg:grid-cols-3 gap-8">
+					<div class="bg-green-50 p-8 rounded-lg text-center">
+						<div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
+							<span class="text-2xl">💰</span>
+						</div>
+						<h3 class="text-xl font-bold mb-4">Onverslaanbare Prijs</h3>
+						<p class="text-gray-600">
+							Beste prijs/prestatie in de e-bike markt. Kwaliteit van €2000 fiets 
+							voor de helft van de prijs.
+						</p>
+						<ul class="mt-4 space-y-2 text-sm text-green-700">
+							<li>• 500W motor (meer dan meeste concurrenten)</li>
+							<li>• Grote 48V 10.4Ah batterij</li>
+							<li>• 2 jaar internationale garantie</li>
+						</ul>
+					</div>
+
+					<div class="bg-blue-50 p-8 rounded-lg text-center">
+						<div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-6">
+							<span class="text-2xl">📱</span>
+						</div>
+						<h3 class="text-xl font-bold mb-4">Vouwbaar & Compact</h3>
+						<p class="text-gray-600">
+							Vouw binnen 30 seconden op. Perfect voor OV-combinaties, 
+							kleine woningen of transport in auto.
+						</p>
+						<ul class="mt-4 space-y-2 text-sm text-blue-700">
+							<li>• Compacte vouwmaat: 91 x 56 x 79cm</li>
+							<li>• Sterke aluminium frame</li>
+							<li>• Afneembare batterij (2.3kg)</li>
+						</ul>
+					</div>
+
+					<div class="bg-purple-50 p-8 rounded-lg text-center">
+						<div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-6">
+							<span class="text-2xl">🚫</span>
+						</div>
+						<h3 class="text-xl font-bold mb-4">Geen Gedoe</h3>
+						<p class="text-gray-600">
+							Gewone e-bike betekent: geen kenteken, geen verzekering verplicht, 
+							geen rijbewijs nodig.
+						</p>
+						<ul class="mt-4 space-y-2 text-sm text-purple-700">
+							<li>• Rijden vanaf 16 jaar</li>
+							<li>• Op elk fietspad toegestaan</li>
+							<li>• Gratis parkeren overal</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Lectric XP vs Alternatives -->
+		<section class="py-16 bg-gray-50">
+			<div class="container mx-auto px-4">
+				<h2 class="text-4xl font-bold text-center mb-12">Lectric XP vs Alternatieven</h2>
+				<div class="overflow-x-auto">
+					<table class="w-full bg-white rounded-lg shadow-lg">
+						<thead class="bg-gray-100">
+							<tr>
+								<th class="px-6 py-4 text-left font-bold">Model</th>
+								<th class="px-6 py-4 text-center font-bold">Prijs</th>
+								<th class="px-6 py-4 text-center font-bold">Motor</th>
+								<th class="px-6 py-4 text-center font-bold">Bereik</th>
+								<th class="px-6 py-4 text-center font-bold">Vouwbaar</th>
+								<th class="px-6 py-4 text-center font-bold">Kenteken</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="border-t bg-purple-50">
+								<td class="px-6 py-4 font-bold text-purple-600">Lectric XP</td>
+								<td class="px-6 py-4 text-center font-bold text-green-600">€999</td>
+								<td class="px-6 py-4 text-center font-bold text-green-600">500W</td>
+								<td class="px-6 py-4 text-center">60km</td>
+								<td class="px-6 py-4 text-center font-bold text-green-600">✅</td>
+								<td class="px-6 py-4 text-center font-bold text-green-600">Niet nodig</td>
+							</tr>
+							<tr class="border-t">
+								<td class="px-6 py-4 font-semibold">Tern Vektron S10</td>
+								<td class="px-6 py-4 text-center">€2.799</td>
+								<td class="px-6 py-4 text-center">250W</td>
+								<td class="px-6 py-4 text-center">100km</td>
+								<td class="px-6 py-4 text-center">✅</td>
+								<td class="px-6 py-4 text-center">Niet nodig</td>
+							</tr>
+							<tr class="border-t bg-gray-50">
+								<td class="px-6 py-4 font-semibold">Brompton Electric</td>
+								<td class="px-6 py-4 text-center">€3.395</td>
+								<td class="px-6 py-4 text-center">250W</td>
+								<td class="px-6 py-4 text-center">70km</td>
+								<td class="px-6 py-4 text-center">✅</td>
+								<td class="px-6 py-4 text-center">Niet nodig</td>
+							</tr>
+							<tr class="border-t">
+								<td class="px-6 py-4 font-semibold">Xiaomi Mi Smart</td>
+								<td class="px-6 py-4 text-center text-green-600">€799</td>
+								<td class="px-6 py-4 text-center">250W</td>
+								<td class="px-6 py-4 text-center">45km</td>
+								<td class="px-6 py-4 text-center">✅</td>
+								<td class="px-6 py-4 text-center">Niet nodig</td>
+							</tr>
+							<tr class="border-t bg-gray-50">
+								<td class="px-6 py-4 font-semibold">VanMoof S3</td>
+								<td class="px-6 py-4 text-center">€1.998</td>
+								<td class="px-6 py-4 text-center">250W</td>
+								<td class="px-6 py-4 text-center">60km</td>
+								<td class="px-6 py-4 text-center">❌</td>
+								<td class="px-6 py-4 text-center">Niet nodig</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div class="mt-8 bg-green-50 p-6 rounded-lg">
+					<h3 class="font-bold text-green-800 mb-3">💡 Waarom Lectric XP kiezen:</h3>
+					<ul class="space-y-2 text-green-700">
+						<li>• <strong>Krachtigste motor</strong> - 500W vs 250W bij concurrentie</li>
+						<li>• <strong>Beste prijs/prestatie</strong> - Premium features tegen budget prijs</li>
+						<li>• <strong>Amerikaans merk</strong> - Grote community en onderdelen beschikbaarheid</li>
+						<li>• <strong>Vouwbaar</strong> - Unieke combinatie van kracht én handigheid</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<!-- Dutch Usage Benefits -->
+		<section class="py-16">
+			<div class="container mx-auto px-4">
+				<h2 class="text-4xl font-bold text-center mb-12">Perfect voor Nederland</h2>
+
+				<div class="grid lg:grid-cols-2 gap-12">
+					<!-- Dutch Infrastructure -->
+					<div class="bg-blue-50 p-8 rounded-lg">
+						<h3 class="text-2xl font-bold mb-6 flex items-center">
+							🚲 Nederlandse Fietsinfrastructuur
+						</h3>
+						<div class="space-y-4">
+							<div class="flex items-start gap-4">
+								<span class="bg-blue-100 p-2 rounded">🛤️</span>
+								<div>
+									<strong>Op Elk Fietspad Toegestaan</strong>
+									<p class="text-gray-600">Geen kenteken = toegang tot 35.000km fietspad in Nederland</p>
+								</div>
+							</div>
+							<div class="flex items-start gap-4">
+								<span class="bg-blue-100 p-2 rounded">🚇</span>
+								<div>
+									<strong>Perfecte OV-Combinatie</strong>
+									<p class="text-gray-600">Vouwbaar = mee in trein/bus tijdens spitsuren (gratis)</p>
+								</div>
+							</div>
+							<div class="flex items-start gap-4">
+								<span class="bg-blue-100 p-2 rounded">🏠</span>
+								<div>
+									<strong>Ideaal voor Kleine Woningen</strong>
+									<p class="text-gray-600">Compacte vouwmaat past in elke hal of berging</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Cost Benefits -->
+					<div class="bg-green-50 p-8 rounded-lg">
+						<h3 class="text-2xl font-bold mb-6 flex items-center">
+							💰 Kosten in Nederland
+						</h3>
+						<div class="space-y-4">
+							<div>
+								<strong>Eenmalige Aanschaf:</strong>
+								<div class="space-y-1 text-sm text-gray-600 ml-4">
+									<div>• Lectric XP: €999</div>
+									<div>• Helm (optioneel): €45</div>
+									<div>• Slot (aanbevolen): €89</div>
+									<div class="font-semibold">Totaal: €1.133</div>
+								</div>
+							</div>
+							
+							<div>
+								<strong>Jaarlijkse Kosten:</strong>
+								<div class="space-y-1 text-sm text-gray-600 ml-4">
+									<div>• Elektriciteitskosten: €12/jaar</div>
+									<div>• Onderhoud: €75/jaar</div>
+									<div>• Verzekering (optioneel): €84/jaar</div>
+									<div class="font-semibold">Totaal: €171/jaar</div>
+								</div>
+							</div>
+
+							<div class="bg-green-100 p-3 rounded">
+								<p class="text-green-800 text-sm font-semibold">
+									💡 Goedkoper dan OV jaarabonnement (€3.406/jaar)
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Use Cases -->
+				<div class="mt-12 grid md:grid-cols-3 gap-8">
+					<div class="text-center">
+						<div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+							<span class="text-2xl">🏢</span>
+						</div>
+						<h4 class="font-bold mb-2">Woon-Werk Verkeer</h4>
+						<p class="text-gray-600 text-sm">
+							15km naar werk in 35 minuten. Vouw op en mee naar binnen.
+						</p>
+					</div>
+					<div class="text-center">
+						<div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+							<span class="text-2xl">🛍️</span>
+						</div>
+						<h4 class="font-bold mb-2">Boodschappen Doen</h4>
+						<p class="text-gray-600 text-sm">
+							Geen parkeerproblemen meer. Fiets tot aan de winkelingang.
+						</p>
+					</div>
+					<div class="text-center">
+						<div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+							<span class="text-2xl">🌳</span>
+						</div>
+						<h4 class="font-bold mb-2">Recreatieve Tochten</h4>
+						<p class="text-gray-600 text-sm">
+							Verken Nederland's mooiste fietsroutes zonder moe te worden.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Technical Specifications -->
+		<section id="specificaties" class="py-16 bg-gray-50">
+			<div class="container mx-auto px-4">
+				<h2 class="text-4xl font-bold text-center mb-12">Technische Specificaties</h2>
+
+				<div class="grid lg:grid-cols-2 gap-12">
+					<div class="bg-white p-8 rounded-lg shadow-md">
+						<h3 class="text-xl font-bold mb-6">🔧 Motor & Batterij</h3>
+						<div class="space-y-4">
+							<div class="flex justify-between">
+								<span class="font-semibold">Motor Type</span>
+								<span>500W Geared Hub Motor</span>
+							</div>
+							<div class="flex justify-between">
+								<span class="font-semibold">Peak Power</span>
+								<span>1200W</span>
+							</div>
+							<div class="flex justify-between">
+								<span class="font-semibold">Batterij</span>
+								<span>48V 10.4Ah Samsung Cells</span>
+							</div>
+							<div class="flex justify-between">
+								<span class="font-semibold">Bereik</span>
+								<span>40-60km (afhankelijk van gebruik)</span>
+							</div>
+							<div class="flex justify-between">
+								<span class="font-semibold">Laadtijd</span>
+								<span>4-6 uur (afneembare batterij)</span>
+							</div>
+							<div class="flex justify-between">
+								<span class="font-semibold">Max Snelheid</span>
+								<span>25 km/h (EU versie)</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="bg-white p-8 rounded-lg shadow-md">
+						<h3 class="text-xl font-bold mb-6">📏 Frame & Afmetingen</h3>
+						<div class="space-y-4">
+							<div class="flex justify-between">
+								<span class="font-semibold">Frame Materiaal</span>
+								<span>6061 Aluminium</span>
+							</div>
+							<div class="flex justify-between">
+								<span class="font-semibold">Gewicht</span>
+								<span>28kg (incl. batterij)</span>
+							</div>
+							<div class="flex justify-between">
+								<span class="font-semibold">Opgevouwen</span>
+								<span>91 x 56 x 79cm</span>
+							</div>
+							<div class="flex justify-between">
+								<span class="font-semibold">Uitgeklapt</span>
+								<span>170 x 61 x 104cm</span>
+							</div>
+							<div class="flex justify-between">
+								<span class="font-semibold">Max Belading</span>
+								<span>125kg</span>
+							</div>
+							<div class="flex justify-between">
+								<span class="font-semibold">Wielmaat</span>
+								<span>20" Fat Tires</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="mt-12 bg-white p-8 rounded-lg shadow-md">
+					<h3 class="text-xl font-bold mb-6 text-center">🚴 Rijcomfort & Features</h3>
+					<div class="grid md:grid-cols-3 gap-8">
+						<div>
+							<h4 class="font-semibold mb-4">Schakeling & Remmen</h4>
+							<ul class="space-y-2 text-sm text-gray-600">
+								<li>• 7-speed Shimano versnellingen</li>
+								<li>• Mechanische schijfremmen voor/achter</li>
+								<li>• 180mm rotors</li>
+								<li>• Remhendels met motor cut-off</li>
+							</ul>
+						</div>
+						<div>
+							<h4 class="font-semibold mb-4">Comfort</h4>
+							<ul class="space-y-2 text-sm text-gray-600">
+								<li>• Verstelbaar stuur en zadel</li>
+								<li>• Comfortabel ergonomisch zadel</li>
+								<li>• Stevige aluminium pedalen</li>
+								<li>• 20" x 3" fat tires</li>
+							</ul>
+						</div>
+						<div>
+							<h4 class="font-semibold mb-4">Accessoires</h4>
+							<ul class="space-y-2 text-sm text-gray-600">
+								<li>• LED voorlicht & achterlicht</li>
+								<li>• LCD display met USB poort</li>
+								<li>• Achterrek (25kg draagvermogen)</li>
+								<li>• Spatborden voor/achter</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Where to Buy Section -->
+		<section id="kopen" class="py-16">
+			<div class="container mx-auto px-4">
+				<h2 class="text-4xl font-bold text-center mb-12">🛒 Waar te Kopen in Nederland</h2>
+
+				<!-- Official Dealer Network -->
+				<div class="grid lg:grid-cols-3 gap-8 mb-12">
+					<div class="bg-white p-6 rounded-lg shadow-md">
+						<div class="flex items-center mb-4">
+							<img src="/images/dealers/lectric-logo.png" alt="Lectric eBikes" class="h-12 mr-4">
+							<div>
+								<h3 class="font-bold">Lectric eBikes</h3>
+								<span class="text-sm text-green-600">Officiële Website</span>
+							</div>
+						</div>
+						<p class="text-gray-600 mb-4">Direct van de fabrikant. Nederlandse levering en 2 jaar garantie.</p>
+						<div class="space-y-2 text-sm mb-4">
+							<div>✅ Laagste prijs gegarandeerd</div>
+							<div>✅ 2 jaar internationale garantie</div>
+							<div>✅ 14 dagen retourrecht</div>
+						</div>
+						<a href="{affiliateLinks.lectricOfficial}"
+						   class="block bg-purple-600 hover:bg-purple-700 text-white text-center py-3 rounded-lg font-semibold transition-colors"
+						   target="_blank" rel="noopener">
+							Bestellen bij Lectric
+						</a>
+					</div>
+
+					<div class="bg-white p-6 rounded-lg shadow-md">
+						<div class="flex items-center mb-4">
+							<img src="/images/dealers/amazon-nl-logo.png" alt="Amazon Nederland" class="h-12 mr-4">
+							<div>
+								<h3 class="font-bold">Amazon Nederland</h3>
+								<span class="text-sm text-orange-600">Prime Levering</span>
+							</div>
+						</div>
+						<p class="text-gray-600 mb-4">Snelle levering en bekend retourbeleid. Vaak op voorraad.</p>
+						<div class="space-y-2 text-sm mb-4">
+							<div>✅ Prime levering (1-2 dagen)</div>
+							<div>✅ 30 dagen retourrecht</div>
+							<div>✅ Nederlandse klantenservice</div>
+						</div>
+						<a href="{affiliateLinks.amazon}"
+						   class="block bg-orange-600 hover:bg-orange-700 text-white text-center py-3 rounded-lg font-semibold transition-colors"
+						   target="_blank" rel="noopener">
+							Bekijk op Amazon
+						</a>
+					</div>
+
+					<div class="bg-white p-6 rounded-lg shadow-md">
+						<div class="flex items-center mb-4">
+							<img src="/images/dealers/coolblue-logo.png" alt="Coolblue" class="h-12 mr-4">
+							<div>
+								<h3 class="font-bold">Coolblue</h3>
+								<span class="text-sm text-blue-600">Nederlandse Service</span>
+							</div>
+						</div>
+						<p class="text-gray-600 mb-4">Nederlandse webwinkel met persoonlijke service en installatie.</p>
+						<div class="space-y-2 text-sm mb-4">
+							<div>✅ Gratis installatie service</div>
+							<div>✅ Persoonlijk advies</div>
+							<div>✅ Voor 23:59 besteld = morgen in huis</div>
+						</div>
+						<a href="{affiliateLinks.coolblue}"
+						   class="block bg-blue-600 hover:bg-blue-700 text-white text-center py-3 rounded-lg font-semibold transition-colors"
+						   target="_blank" rel="noopener">
+							Bekijk bij Coolblue
+						</a>
+					</div>
+				</div>
+
+				<!-- Price Comparison -->
+				<div class="bg-white rounded-lg shadow-lg overflow-hidden">
+					<div class="bg-gray-100 px-6 py-4 border-b">
+						<h3 class="text-xl font-bold">💰 Prijsvergelijking Lectric XP Nederland</h3>
+					</div>
+					<div class="overflow-x-auto">
+						<table class="w-full">
+							<thead class="bg-gray-50">
+								<tr>
+									<th class="px-6 py-3 text-left font-semibold">Dealer</th>
+									<th class="px-6 py-3 text-center font-semibold">Prijs</th>
+									<th class="px-6 py-3 text-center font-semibold">Verzending</th>
+									<th class="px-6 py-3 text-center font-semibold">Levertijd</th>
+									<th class="px-6 py-3 text-center font-semibold">Voordelen</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="border-t">
+									<td class="px-6 py-4 font-semibold">Lectric eBikes</td>
+									<td class="px-6 py-4 text-center text-green-600 font-bold">€999</td>
+									<td class="px-6 py-4 text-center text-green-600">Gratis</td>
+									<td class="px-6 py-4 text-center">7-14 dagen</td>
+									<td class="px-6 py-4 text-sm text-gray-600">Officieel, beste garantie</td>
+								</tr>
+								<tr class="border-t bg-gray-50">
+									<td class="px-6 py-4 font-semibold">Amazon Nederland</td>
+									<td class="px-6 py-4 text-center">€1.099</td>
+									<td class="px-6 py-4 text-center text-green-600">Prime Gratis</td>
+									<td class="px-6 py-4 text-center text-green-600">1-2 dagen</td>
+									<td class="px-6 py-4 text-sm text-gray-600">Snelle levering, retourgemak</td>
+								</tr>
+								<tr class="border-t">
+									<td class="px-6 py-4 font-semibold">Coolblue</td>
+									<td class="px-6 py-4 text-center">€1.149</td>
+									<td class="px-6 py-4 text-center">€0-29</td>
+									<td class="px-6 py-4 text-center text-green-600">1 dag</td>
+									<td class="px-6 py-4 text-sm text-gray-600">Service, installatie</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- FAQ Section -->
+		<section class="py-16 bg-gray-50">
+			<div class="container mx-auto px-4">
+				<h2 class="text-4xl font-bold text-center mb-12">❓ Veelgestelde Vragen</h2>
+
+				<div class="grid lg:grid-cols-2 gap-8">
+					<div class="space-y-6">
+						<div class="bg-white p-6 rounded-lg shadow-md">
+							<h3 class="font-bold text-lg mb-3">Heb ik een kenteken nodig voor Lectric XP?</h3>
+							<p class="text-gray-600">Nee! De XP is een gewone e-bike - geen kenteken, verzekering of rijbewijs nodig.</p>
+						</div>
+
+						<div class="bg-white p-6 rounded-lg shadow-md">
+							<h3 class="font-bold text-lg mb-3">Hoe lang duurt het opvouwen?</h3>
+							<p class="text-gray-600">Ongeveer 30 seconden. Geen gereedschap nodig - alles werkt met snelspanners.</p>
+						</div>
+
+						<div class="bg-white p-6 rounded-lg shadow-md">
+							<h3 class="font-bold text-lg mb-3">Kan ik de XP mee in de trein?</h3>
+							<p class="text-gray-600">Ja! Opgevouwen e-bikes zijn gratis in de trein, ook tijdens spitsuren.</p>
+						</div>
+
+						<div class="bg-white p-6 rounded-lg shadow-md">
+							<h3 class="font-bold text-lg mb-3">Is 500W motor toegestaan in Nederland?</h3>
+							<p class="text-gray-600">Ja, zolang de ondersteuning stopt bij 25 km/h. Lectric XP voldoet aan EU regelgeving.</p>
+						</div>
+					</div>
+
+					<div class="space-y-6">
+						<div class="bg-white p-6 rounded-lg shadow-md">
+							<h3 class="font-bold text-lg mb-3">Hoe ver kan ik rijden op één lading?</h3>
+							<p class="text-gray-600">40-60km afhankelijk van terrein, gewicht en trapondersteuningsniveau.</p>
+						</div>
+
+						<div class="bg-white p-6 rounded-lg shadow-md">
+							<h3 class="font-bold text-lg mb-3">Zijn onderdelen verkrijgbaar in Nederland?</h3>
+							<p class="text-gray-600">Ja, via Lectric eBikes Europe. Veel onderdelen zijn ook universeel verkrijgbaar.</p>
+						</div>
+
+						<div class="bg-white p-6 rounded-lg shadow-md">
+							<h3 class="font-bold text-lg mb-3">Kan ik de XP in de regen gebruiken?</h3>
+							<p class="text-gray-600">Ja, IP54 waterdichtingsklasse. Wel batterij afdekken bij hevige regen.</p>
+						</div>
+
+						<div class="bg-white p-6 rounded-lg shadow-md">
+							<h3 class="font-bold text-lg mb-3">Wat als ik niet tevreden ben?</h3>
+							<p class="text-gray-600">14 dagen retourrecht bij Lectric direct, 30 dagen bij andere dealers.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Local SEO -->
+		<section class="py-16">
+			<div class="container mx-auto px-4">
+				<div class="text-center">
+					<h2 class="text-3xl font-bold mb-8">🇳🇱 Lectric XP in Nederlandse Steden</h2>
+					<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 text-sm">
+						<a href="/lectric-xp-amsterdam" class="hover:text-purple-600">Amsterdam</a>
+						<a href="/lectric-xp-rotterdam" class="hover:text-purple-600">Rotterdam</a>
+						<a href="/lectric-xp-utrecht" class="hover:text-purple-600">Utrecht</a>
+						<a href="/lectric-xp-eindhoven" class="hover:text-purple-600">Eindhoven</a>
+						<a href="/lectric-xp-tilburg" class="hover:text-purple-600">Tilburg</a>
+						<a href="/lectric-xp-groningen" class="hover:text-purple-600">Groningen</a>
+						<a href="/lectric-xp-breda" class="hover:text-purple-600">Breda</a>
+						<a href="/lectric-xp-nijmegen" class="hover:text-purple-600">Nijmegen</a>
+						<a href="/lectric-xp-enschede" class="hover:text-purple-600">Enschede</a>
+						<a href="/lectric-xp-haarlem" class="hover:text-purple-600">Haarlem</a>
+						<a href="/lectric-xp-almere" class="hover:text-purple-600">Almere</a>
+						<a href="/lectric-xp-arnhem" class="hover:text-purple-600">Arnhem</a>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+</Layout>
+
+<style>
+	.hero {
+		background-image: linear-gradient(135deg, rgba(0,0,0,0.6), rgba(0,0,0,0.3)), url('/images/lectric-xp-hero-bg.jpg');
+		background-size: cover;
+		background-position: center;
+	}
+
+	/* Mobile optimization */
+	@media (max-width: 768px) {
+		.hero h1 {
+			font-size: 2.5rem;
+		}
+
+		.grid {
+			gap: 1rem;
+		}
+
+		.container {
+			padding-left: 1rem;
+			padding-right: 1rem;
+		}
+	}
+
+	/* Accessibility improvements */
+	a:focus, button:focus {
+		outline: 2px solid #7C3AED;
+		outline-offset: 2px;
+	}
+
+	/* Print styles */
+	@media print {
+		.hero, .bg-gradient-to-r {
+			background: white !important;
+			color: black !important;
+		}
+	}
+</style>

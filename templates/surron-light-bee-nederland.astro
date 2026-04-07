@@ -1,0 +1,612 @@
+---
+// Surron Light Bee - Complete Dutch Landing Page Template
+import Layout from '../layouts/Layout.astro';
+import ComplianceAlert from '../components/ComplianceAlert.astro';
+import AffiliateGrid from '../components/AffiliateGrid.astro';
+import PriceComparison from '../components/PriceComparison.astro';
+import TechnicalSpecs from '../components/TechnicalSpecs.astro';
+import LegalStatus from '../components/LegalStatus.astro';
+
+// SEO & Meta Data
+const title = "Surron Light Bee X Kopen Nederland 2026 - Complete Gids & Prijzen";
+const description = "Surron Light Bee X volledig overzicht: Nederlandse wetgeving, verzekering, kenteken, dealers en beste prijzen. Officiële importeur info + straatlegale opties.";
+const keywords = "surron light bee nederland, e-crosser kopen, elektrische motor nederland, surron dealers, light bee prijs, e-bike verzekering";
+
+// Product Data
+const productData = {
+  model: "Light Bee X",
+  brand: "Surron",
+  basePrice: 5199,
+  weight: 47,
+  range: "40-60",
+  topSpeed: 75,
+  batteryCapacity: "60V 32Ah",
+  motor: "6000W Nominaal",
+  legalStatus: "Bromfiets (25km/h begrenzer vereist)",
+  homologation: "L1e-B"
+};
+
+// Affiliate Links Data
+const affiliateLinks = {
+  mediamarkt: "https://mediamarkt.nl/surron-light-bee?affiliate=ebike-db-001",
+  amazon: "https://amazon.nl/dp/B08XYZ123?tag=ebikedb-21",
+  dccEbikes: "https://dcc-ebikes.nl/surron-light-bee?ref=ebikedb",
+  elektrischMotorrijden: "https://elektrisch-motorrijden.nl/surron?partner=ebikedb",
+  surronEurope: "https://surron.com/dealers/netherlands?utm_source=ebikedb"
+};
+
+// Legal Requirements Data
+const legalRequirements = {
+  license: "AM rijbewijs (bromfiets)",
+  insurance: "WA verzekering verplicht",
+  registration: "RDW kenteken vereist",
+  helmet: "ECE-22.05 helm verplicht",
+  modifications: "25km/h begrenzer voor openbare weg"
+};
+---
+
+<Layout title={title} description={description}>
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Surron Light Bee X",
+    "brand": {
+      "@type": "Brand",
+      "name": "Surron"
+    },
+    "description": "Elektrische crossmotor geschikt voor off-road gebruik, straatlegaal te maken in Nederland",
+    "category": "Electric Motorcycle",
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "EUR",
+      "price": "5199.00",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "Nederlandse Surron Dealers"
+      }
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.7",
+      "reviewCount": "127"
+    }
+  }
+  </script>
+
+  <main class="surron-landing">
+    <!-- Hero Section -->
+    <section class="hero bg-gradient-to-r from-green-600 to-blue-600 text-white py-20">
+      <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">
+              Surron Light Bee X
+              <span class="block text-2xl md:text-3xl text-green-200">
+                De Ultieme E-Crosser voor Nederland
+              </span>
+            </h1>
+            <p class="text-xl mb-8 leading-relaxed">
+              6000W pure kracht, 60km bereik, en volledig straatlegaal te maken. 
+              De Light Bee X combineert off-road performance met Nederlandse compliance.
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <a href="#kopen" class="bg-orange-500 hover:bg-orange-600 px-8 py-4 rounded-lg font-bold text-lg transition-colors">
+                🛒 Direct Kopen vanaf €5.199
+              </a>
+              <a href="#wetgeving" class="border-2 border-white hover:bg-white hover:text-blue-600 px-8 py-4 rounded-lg font-bold text-lg transition-colors">
+                📋 Nederlandse Wetgeving
+              </a>
+            </div>
+          </div>
+          <div class="relative">
+            <img src="/images/surron-light-bee-x-hero.jpg" 
+                 alt="Surron Light Bee X elektrische crossmotor" 
+                 class="w-full rounded-lg shadow-2xl"
+                 loading="eager" />
+            <div class="absolute top-4 right-4 bg-red-500 text-white px-4 py-2 rounded-lg font-bold">
+              ⚡ 6000W Motor
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Compliance Alert -->
+    <ComplianceAlert 
+      type="warning"
+      message="Let op: Voor gebruik op openbare wegen in Nederland is een 25km/h begrenzer, AM rijbewijs en RDW kenteken verplicht."
+      actionText="Bekijk Wetgeving"
+      actionLink="#wetgeving" 
+    />
+
+    <!-- Quick Specs Grid -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="text-3xl font-bold text-blue-600 mb-2">6000W</div>
+            <div class="text-gray-600">Nominaal Vermogen</div>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="text-3xl font-bold text-green-600 mb-2">60km</div>
+            <div class="text-gray-600">Actieradius</div>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="text-3xl font-bold text-purple-600 mb-2">47kg</div>
+            <div class="text-gray-600">Gewicht</div>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="text-3xl font-bold text-orange-600 mb-2">€5.199</div>
+            <div class="text-gray-600">Vanaf Prijs</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dutch Legal Status Section -->
+    <section id="wetgeving" class="py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-12">Nederlandse Wetgeving & Kenteken</h2>
+        
+        <div class="grid lg:grid-cols-2 gap-12">
+          <!-- Legal Requirements -->
+          <div class="bg-blue-50 p-8 rounded-lg">
+            <h3 class="text-2xl font-bold mb-6 flex items-center">
+              ⚖️ Wettelijke Vereisten
+            </h3>
+            <div class="space-y-4">
+              <div class="flex items-start gap-4">
+                <span class="bg-blue-100 p-2 rounded">🪪</span>
+                <div>
+                  <strong>AM Rijbewijs Verplicht</strong>
+                  <p class="text-gray-600">Bromfiets rijbewijs vanaf 16 jaar. Theorie + praktijkexamen bij CBR.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <span class="bg-blue-100 p-2 rounded">🛡️</span>
+                <div>
+                  <strong>WA Verzekering</strong>
+                  <p class="text-gray-600">Minimaal €120/jaar. Vergelijk ANWB, Centraal Beheer, Allianz prijzen.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <span class="bg-blue-100 p-2 rounded">🏷️</span>
+                <div>
+                  <strong>RDW Kenteken</strong>
+                  <p class="text-gray-600">€67,20 afgifte + €8,60/maand. Inclusief COC-papieren bij importeur.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <span class="bg-blue-100 p-2 rounded">⛑️</span>
+                <div>
+                  <strong>ECE-22.05 Helm</strong>
+                  <p class="text-gray-600">Gecertificeerde bromfietshelm. Fietshelmn niet toegestaan.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Speed Limiter Info -->
+          <div class="bg-orange-50 p-8 rounded-lg">
+            <h3 class="text-2xl font-bold mb-6 flex items-center">
+              ⚙️ 25km/h Begrenzer Installatie
+            </h3>
+            <div class="space-y-4">
+              <div class="bg-orange-100 p-4 rounded-lg">
+                <p class="font-semibold text-orange-800 mb-2">Voor openbare wegen verplicht:</p>
+                <ul class="text-sm space-y-1 text-orange-700">
+                  <li>• Software begrenzing op 25km/h</li>
+                  <li>• Certificaat van installateur</li>
+                  <li>• Originele snelheid herstelbaar voor off-road</li>
+                </ul>
+              </div>
+              
+              <div class="space-y-3">
+                <div>
+                  <strong>Officiële Installateurs:</strong>
+                  <p class="text-gray-600">DCC E-bikes (Utrecht), RS-Motoren (Amsterdam), Elektrisch Motorrijden (landelijk)</p>
+                </div>
+                <div>
+                  <strong>Kosten:</strong>
+                  <p class="text-gray-600">€150-300 installatie + certificaat</p>
+                </div>
+                <div class="bg-green-100 p-3 rounded border-l-4 border-green-500">
+                  <p class="text-green-800 text-sm">
+                    💡 <strong>Tip:</strong> Veel dealers leveren de begrenzer standaard mee bij aankoop.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Total Cost Calculator -->
+        <div class="mt-12 bg-gray-100 p-8 rounded-lg">
+          <h3 class="text-2xl font-bold mb-6 text-center">🧮 Totale Kosten Overzicht</h3>
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+              <h4 class="font-bold mb-4">Eenmalige Kosten:</h4>
+              <div class="space-y-2 text-sm">
+                <div class="flex justify-between">
+                  <span>Surron Light Bee X</span>
+                  <span class="font-semibold">€5.199</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>RDW Kenteken (eerste keer)</span>
+                  <span class="font-semibold">€67</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>25km/h Begrenzer + Certificaat</span>
+                  <span class="font-semibold">€225</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>ECE-22.05 Helm (Schuberth/HJC)</span>
+                  <span class="font-semibold">€89</span>
+                </div>
+                <div class="border-t pt-2 flex justify-between font-bold text-lg">
+                  <span>Totaal Starterskosten:</span>
+                  <span class="text-blue-600">€5.580</span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h4 class="font-bold mb-4">Jaarlijkse Kosten:</h4>
+              <div class="space-y-2 text-sm">
+                <div class="flex justify-between">
+                  <span>WA Verzekering (ANWB basis)</span>
+                  <span class="font-semibold">€127/jaar</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>RDW Kenteken (maandelijks)</span>
+                  <span class="font-semibold">€103/jaar</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Elektriciteitskosten (2000km/jaar)</span>
+                  <span class="font-semibold">€24/jaar</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Onderhoud (banden, rem, ketting)</span>
+                  <span class="font-semibold">€150/jaar</span>
+                </div>
+                <div class="border-t pt-2 flex justify-between font-bold text-lg">
+                  <span>Totaal Per Jaar:</span>
+                  <span class="text-green-600">€404</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Where to Buy Section -->
+    <section id="kopen" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-12">🛒 Waar te Kopen in Nederland</h2>
+
+        <!-- Official Dealer Network -->
+        <div class="grid lg:grid-cols-3 gap-8 mb-12">
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="flex items-center mb-4">
+              <img src="/images/dealers/surron-europe-logo.png" alt="Surron Europe" class="h-12 mr-4">
+              <div>
+                <h3 class="font-bold">Surron Europe</h3>
+                <span class="text-sm text-green-600">Officiële Importeur</span>
+              </div>
+            </div>
+            <p class="text-gray-600 mb-4">Directe import vanuit hoofdkantoor. Garantie en ondersteuning via Nederlands netwerk.</p>
+            <div class="space-y-2 text-sm mb-4">
+              <div>✅ 2 jaar Europese garantie</div>
+              <div>✅ Nederlands service netwerk</div>
+              <div>✅ COC papieren inclusief</div>
+            </div>
+            <a href="{affiliateLinks.surronEurope}" 
+               class="block bg-blue-600 hover:bg-blue-700 text-white text-center py-3 rounded-lg font-semibold transition-colors"
+               target="_blank" rel="noopener">
+              Vind Dealer bij jou in de buurt
+            </a>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="flex items-center mb-4">
+              <img src="/images/dealers/dcc-ebikes-logo.png" alt="DCC E-bikes" class="h-12 mr-4">
+              <div>
+                <h3 class="font-bold">DCC E-bikes Utrecht</h3>
+                <span class="text-sm text-blue-600">Specialist Dealer</span>
+              </div>
+            </div>
+            <p class="text-gray-600 mb-4">Nederlandse Surron specialist. Proefrit mogelijk, volledige setup service.</p>
+            <div class="space-y-2 text-sm mb-4">
+              <div>✅ Proefrit mogelijk (afspraak)</div>
+              <div>✅ 25km/h begrenzer service</div>
+              <div>✅ RDW kenteken regeling</div>
+            </div>
+            <a href="{affiliateLinks.dccEbikes}" 
+               class="block bg-orange-600 hover:bg-orange-700 text-white text-center py-3 rounded-lg font-semibold transition-colors"
+               target="_blank" rel="noopener">
+               Bezoek DCC E-bikes Utrecht
+            </a>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="flex items-center mb-4">
+              <img src="/images/dealers/elektrisch-motorrijden-logo.png" alt="Elektrisch Motorrijden" class="h-12 mr-4">
+              <div>
+                <h3 class="font-bold">Elektrisch-Motorrijden.nl</h3>
+                <span class="text-sm text-purple-600">Online + Fysiek</span>
+              </div>
+            </div>
+            <p class="text-gray-600 mb-4">Landelijk netwerk met fysieke locaties. Online bestelling + lokale pickup.</p>
+            <div class="space-y-2 text-sm mb-4">
+              <div>✅ Landelijke dekking</div>
+              <div>✅ Online configurator</div>
+              <div>✅ Financiering mogelijk</div>
+            </div>
+            <a href="{affiliateLinks.elektrischMotorrijden}" 
+               class="block bg-purple-600 hover:bg-purple-700 text-white text-center py-3 rounded-lg font-semibold transition-colors"
+               target="_blank" rel="noopener">
+               Configureer & Bestellen
+            </a>
+          </div>
+        </div>
+
+        <!-- Online Retailers -->
+        <div class="bg-white p-8 rounded-lg shadow-md">
+          <h3 class="text-2xl font-bold mb-6 text-center">🌐 Online Aankoop Opties</h3>
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="border-l-4 border-red-500 pl-6">
+              <div class="flex items-center mb-3">
+                <img src="/images/retailers/mediamarkt-logo.png" alt="MediaMarkt" class="h-8 mr-3">
+                <h4 class="font-bold text-xl">MediaMarkt Nederland</h4>
+              </div>
+              <p class="text-gray-600 mb-3">Grote electronica retailer, nu ook e-mobility. Afhalen in winkel of thuisbezorgd.</p>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-2xl font-bold text-red-600">€5.199,-</span>
+                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">
+                  ✅ Op voorraad
+                </span>
+              </div>
+              <a href="{affiliateLinks.mediamarkt}" 
+                 class="block bg-red-600 hover:bg-red-700 text-white text-center py-3 rounded-lg font-semibold transition-colors"
+                 target="_blank" rel="noopener">
+                Bekijken op MediaMarkt.nl
+              </a>
+            </div>
+
+            <div class="border-l-4 border-orange-500 pl-6">
+              <div class="flex items-center mb-3">
+                <img src="/images/retailers/amazon-logo.png" alt="Amazon" class="h-8 mr-3">
+                <h4 class="font-bold text-xl">Amazon.nl</h4>
+              </div>
+              <p class="text-gray-600 mb-3">International marketplace. Snelle levering, uitgebreide klantenservice.</p>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-2xl font-bold text-orange-600">€5.299,-</span>
+                <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">
+                  ⏱️ 2-3 dagen levertijd
+                </span>
+              </div>
+              <a href="{affiliateLinks.amazon}" 
+                 class="block bg-orange-600 hover:bg-orange-700 text-white text-center py-3 rounded-lg font-semibold transition-colors"
+                 target="_blank" rel="noopener">
+                Bekijken op Amazon.nl
+              </a>
+            </div>
+          </div>
+
+          <!-- Purchase Tips -->
+          <div class="mt-8 bg-blue-50 p-6 rounded-lg">
+            <h4 class="font-bold mb-4 flex items-center">
+              💡 Aankooptips voor Nederland
+            </h4>
+            <div class="grid md:grid-cols-2 gap-6 text-sm">
+              <div>
+                <h5 class="font-semibold mb-2">Let op bij aankoop:</h5>
+                <ul class="space-y-1 text-gray-700">
+                  <li>• Vraag altijd naar COC papieren (voor RDW kenteken)</li>
+                  <li>• Controleer of 25km/h begrenzer-service beschikbaar is</li>
+                  <li>• Europese garantie geldig in Nederland?</li>
+                  <li>• Service locaties in jouw regio</li>
+                </ul>
+              </div>
+              <div>
+                <h5 class="font-semibold mb-2">Beste periode voor aankoop:</h5>
+                <ul class="space-y-1 text-gray-700">
+                  <li>• Februari-Maart: Nieuwe modellen, voorraadinkomst</li>
+                  <li>• Oktober-November: Seizoensaanbiedingen</li>
+                  <li>• Black Friday: Extra kortingen bij grote retailers</li>
+                  <li>• Vermijd: April-September (hoge vraag, geen korting)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Specifications -->
+    <TechnicalSpecs product={productData} />
+
+    <!-- Dutch Insurance Comparison -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-12">🛡️ Verzekeringen Vergelijken</h2>
+        
+        <div class="overflow-x-auto">
+          <table class="w-full bg-white rounded-lg shadow-md">
+            <thead class="bg-gray-50">
+              <tr>
+                <th class="px-6 py-4 text-left">Verzekeraar</th>
+                <th class="px-6 py-4 text-center">WA Basis</th>
+                <th class="px-6 py-4 text-center">WA + Beperkt Casco</th>
+                <th class="px-6 py-4 text-center">Allrisk</th>
+                <th class="px-6 py-4 text-center">Bijzonderheden</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+              <tr>
+                <td class="px-6 py-4 font-semibold">ANWB</td>
+                <td class="px-6 py-4 text-center text-green-600 font-bold">€127/jaar</td>
+                <td class="px-6 py-4 text-center">€189/jaar</td>
+                <td class="px-6 py-4 text-center">€267/jaar</td>
+                <td class="px-6 py-4 text-sm text-gray-600">Wegenwacht inbegrepen, geen leeftijdsgrens</td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="px-6 py-4 font-semibold">Centraal Beheer</td>
+                <td class="px-6 py-4 text-center">€134/jaar</td>
+                <td class="px-6 py-4 text-center text-green-600 font-bold">€178/jaar</td>
+                <td class="px-6 py-4 text-center">€245/jaar</td>
+                <td class="px-6 py-4 text-sm text-gray-600">Online korting 10%, snelle schadeclaim app</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 font-semibold">Allianz Direct</td>
+                <td class="px-6 py-4 text-center text-green-600 font-bold">€119/jaar</td>
+                <td class="px-6 py-4 text-center">€167/jaar</td>
+                <td class="px-6 py-4 text-center text-green-600 font-bold">€231/jaar</td>
+                <td class="px-6 py-4 text-sm text-gray-600">Online-only, goedkoopste optie, Duitse kwaliteit</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <div class="mt-8 grid md:grid-cols-2 gap-8">
+          <div class="bg-green-50 p-6 rounded-lg">
+            <h3 class="font-bold text-green-800 mb-3">💰 Geld besparen op verzekering:</h3>
+            <ul class="space-y-2 text-green-700 text-sm">
+              <li>• Hogere eigen risico kiezen (€250 → €500)</li>
+              <li>• No-claim opbouwen (5% korting per jaar)</li>
+              <li>• Combineren met autoverzekering (tot 15% korting)</li>
+              <li>• Volledig online afsluiten (meestal 10% korting)</li>
+            </ul>
+          </div>
+          
+          <div class="bg-blue-50 p-6 rounded-lg">
+            <h3 class="font-bold text-blue-800 mb-3">📋 Belangrijk voor claims:</h3>
+            <ul class="space-y-2 text-blue-700 text-sm">
+              <li>• Altijd politie bellen bij schade > €500</li>
+              <li>• Foto's maken van kenteken en schade</li>
+              <li>• Europese dekking standaard bij alle verzekeraars</li>
+              <li>• Off-road gebruik vaak uitgesloten (check voorwaarden)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section - Dutch Specific -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-12">❓ Veelgestelde Vragen</h2>
+        
+        <div class="grid lg:grid-cols-2 gap-8">
+          <div class="space-y-6">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h3 class="font-bold text-lg mb-3">Mag ik de Surron Light Bee op de openbare weg rijden?</h3>
+              <p class="text-gray-600">Ja, maar alleen met 25km/h begrenzer, AM rijbewijs, verzekering en RDW kenteken. Zonder begrenzer alleen off-road toegestaan.</p>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h3 class="font-bold text-lg mb-3">Heb ik een rijbewijs nodig?</h3>
+              <p class="text-gray-600">Voor openbare weg: ja, AM rijbewijs (bromfiets) vanaf 16 jaar. Voor privéterrein: geen rijbewijs nodig.</p>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h3 class="font-bold text-lg mb-3">Wat kost kenteken aanvragen bij RDW?</h3>
+              <p class="text-gray-600">€67,20 eenmalig + €8,60 per maand. Je hebt COC-papieren van de importeur nodig.</p>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h3 class="font-bold text-lg mb-3">Kan ik de begrenzer later verwijderen?</h3>
+              <p class="text-gray-600">Voor off-road gebruik: ja. Voor openbare weg: illegaal en boete tot €390 + gevaar voor verzekering.</p>
+            </div>
+          </div>
+          
+          <div class="space-y-6">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h3 class="font-bold text-lg mb-3">Welke helm moet ik dragen?</h3>
+              <p class="text-gray-600">ECE-22.05 gecertificeerde helm verplicht. Fietshelm is niet toegestaan. Boete €140 zonder goede helm.</p>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h3 class="font-bold text-lg mb-3">Mag ik op het fietspad rijden?</h3>
+              <p class="text-gray-600">Nee, ook met begrenzer moet je op de rijbaan. Bromfietspaden waar aanwezig zijn wel toegestaan.</p>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h3 class="font-bold text-lg mb-3">Hoe lang gaat de batterij mee?</h3>
+              <p class="text-gray-600">40-60km actieradius afhankelijk van gewicht, terrein en rijstijl. Volledig laden duurt 3-4 uur.</p>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h3 class="font-bold text-lg mb-3">Is er garantie en service in Nederland?</h3>
+              <p class="text-gray-600">2 jaar Europese garantie via Nederlandse dealers. Service netwerk groeit snel (Utrecht, Amsterdam, Rotterdam).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Local SEO / Schema -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="text-center">
+          <h2 class="text-3xl font-bold mb-8">🇳🇱 Surron Light Bee in Nederlandse Steden</h2>
+          <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 text-sm">
+            <a href="/surron-light-bee-amsterdam" class="hover:text-blue-600">Amsterdam</a>
+            <a href="/surron-light-bee-rotterdam" class="hover:text-blue-600">Rotterdam</a>
+            <a href="/surron-light-bee-utrecht" class="hover:text-blue-600">Utrecht</a>
+            <a href="/surron-light-bee-eindhoven" class="hover:text-blue-600">Eindhoven</a>
+            <a href="/surron-light-bee-tilburg" class="hover:text-blue-600">Tilburg</a>
+            <a href="/surron-light-bee-groningen" class="hover:text-blue-600">Groningen</a>
+            <a href="/surron-light-bee-breda" class="hover:text-blue-600">Breda</a>
+            <a href="/surron-light-bee-nijmegen" class="hover:text-blue-600">Nijmegen</a>
+            <a href="/surron-light-bee-enschede" class="hover:text-blue-600">Enschede</a>
+            <a href="/surron-light-bee-haarlem" class="hover:text-blue-600">Haarlem</a>
+            <a href="/surron-light-bee-almere" class="hover:text-blue-600">Almere</a>
+            <a href="/surron-light-bee-arnhem" class="hover:text-blue-600">Arnhem</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .hero {
+    background-image: linear-gradient(135deg, rgba(0,0,0,0.6), rgba(0,0,0,0.3)), url('/images/surron-hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  /* Mobile optimization */
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+    
+    .grid {
+      gap: 1rem;
+    }
+    
+    .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+  
+  /* Accessibility improvements */
+  a:focus, button:focus {
+    outline: 2px solid #3B82F6;
+    outline-offset: 2px;
+  }
+  
+  /* Print styles */
+  @media print {
+    .hero, .bg-gradient-to-r {
+      background: white !important;
+      color: black !important;
+    }
+  }
+</style>

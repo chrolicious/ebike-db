@@ -1,0 +1,11 @@
+---
+import EcrosserPage from '../layouts/EcrosserPage.astro';
+import { getECrosserById } from '../data/ecrossers';
+
+const ecrosser = getECrosserById('onyx-rcr');
+if (!ecrosser) {
+	throw new Error('E-crosser not found');
+}
+---
+
+<EcrosserPage ecrosser={ecrosser} />

@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "title": "Build manufacturer spec scrapers (top 15 brands)",
+    "status": "todo"
+  },
+  {
+    "id": 2,
+    "title": "Price tracking scraper",
+    "status": "todo"
+  },
+  {
+    "id": 3,
+    "title": "Seed: 100-200 vehicles with full specs",
+    "status": "todo"
+  },
+  {
+    "id": 4,
+    "title": "Build Astro templates: spec, comparison, best-of, deals",
+    "status": "todo"
+  },
+  {
+    "id": 5,
+    "title": "Add range + cost calculators",
+    "status": "todo"
+  },
+  {
+    "id": 6,
+    "title": "Deploy, apply for e-bike affiliate programs",
+    "status": "todo"
+  },
+  {
+    "id": 7,
+    "title": "Build OpenClaw price-monitor skill",
+    "status": "todo"
+  }
+]

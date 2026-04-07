@@ -1,0 +1,732 @@
+---
+// KTM Freeride E-XC - Complete Dutch Landing Page Template
+import Layout from '../layouts/Layout.astro';
+import ComplianceAlert from '../components/ComplianceAlert.astro';
+import AffiliateGrid from '../components/AffiliateGrid.astro';
+import PriceComparison from '../components/PriceComparison.astro';
+import TechnicalSpecs from '../components/TechnicalSpecs.astro';
+import LegalStatus from '../components/LegalStatus.astro';
+
+// SEO & Meta Data
+const title = "KTM Freeride E-XC Kopen Nederland 2026 - Complete Gids & Prijzen";
+const description = "KTM Freeride E-XC volledig overzicht: Nederlandse wetgeving, verzekering, kenteken, dealers en beste prijzen. Premium elektrische crosser voor A1.";
+const keywords = "ktm freeride e-xc nederland, elektrische crosser kopen, ktm dealers nederland, e-xc prijs, a1 crossmotor elektrisch, off-road elektrisch";
+
+// Product Data
+const productData = {
+	model: "Freeride E-XC",
+	brand: "KTM",
+	basePrice: 11999,
+	weight: 108,
+	range: "35-50",
+	topSpeed: 80,
+	batteryCapacity: "3.9kWh",
+	motor: "18kW (24hp) brushless",
+	legalStatus: "A1 Motor (125cc equivalent)",
+	homologation: "L3e-A1"
+};
+
+// Affiliate Links Data
+const affiliateLinks = {
+	ktmOfficial: "https://ktm.com/nl-nl/models/e-ride/freeride-e-xc.html?utm_source=ebikedb&utm_campaign=nl-affiliate",
+	ktmAmsterdam: "https://ktm-amsterdam.nl/freeride-e-xc?ref=ebikedb",
+	motorcycle_center: "https://motorcycle-center.nl/ktm-freeride?partner=ebikedb",
+	bikeExperience: "https://bike-experience.nl/ktm-elektrisch?partner=ebikedb",
+	ktmDealers: "https://ktm.com/nl-nl/dealer-locator?utm_source=ebikedb"
+};
+
+// Legal Requirements Data
+const legalRequirements = {
+	license: "A1 rijbewijs verplicht (125cc motor)",
+	insurance: "WA + Casco verzekering aanbevolen",
+	registration: "RDW kenteken vereist",
+	helmet: "ECE-22.05 motorhelm verplicht",
+	modifications: "Fabrieksinstelling EU compliant"
+};
+---
+
+<Layout title={title} description={description}>
+	<!-- Structured Data -->
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "Product",
+		"name": "KTM Freeride E-XC",
+		"brand": {
+			"@type": "Brand",
+			"name": "KTM"
+		},
+		"description": "Premium elektrische crossmotor van KTM met 18kW motor, speciaal ontworpen voor off-road prestaties",
+		"category": "Electric Off-Road Motorcycle",
+		"offers": {
+			"@type": "Offer",
+			"priceCurrency": "EUR",
+			"price": "11999.00",
+			"availability": "https://schema.org/InStock",
+			"seller": {
+				"@type": "Organization",
+				"name": "KTM Nederland"
+			}
+		},
+		"aggregateRating": {
+			"@type": "AggregateRating",
+			"ratingValue": "4.6",
+			"reviewCount": "34"
+		}
+	}
+	</script>
+
+	<main class="ktm-landing">
+		<!-- Hero Section -->
+		<section class="hero bg-gradient-to-r from-orange-600 to-black text-white py-20">
+			<div class="container mx-auto px-4">
+				<div class="grid md:grid-cols-2 gap-12 items-center">
+					<div>
+						<h1 class="text-4xl md:text-6xl font-bold mb-6">
+							KTM Freeride E-XC
+							<span class="block text-2xl md:text-3xl text-orange-200">
+								Ready to Race. Elektrisch.
+							</span>
+						</h1>
+						<p class="text-xl mb-8 leading-relaxed">
+							Oostenrijkse precisie, elektrische kracht. 18kW motor voor 
+							ultieme off-road prestaties en A1 rijbewijs compatibiliteit.
+						</p>
+						<div class="flex flex-wrap gap-4">
+							<a href="#kopen" class="bg-white text-orange-600 hover:bg-gray-100 px-8 py-4 rounded-lg font-bold text-lg transition-colors">
+								🏍️ Direct Kopen vanaf €11.999
+							</a>
+							<a href="#wetgeving" class="border-2 border-white hover:bg-white hover:text-orange-600 px-8 py-4 rounded-lg font-bold text-lg transition-colors">
+								📋 A1 Rijbewijs Info
+							</a>
+						</div>
+					</div>
+					<div class="relative">
+						<img src="/images/ktm-freeride-e-xc-hero.jpg"
+							 alt="KTM Freeride E-XC elektrische crossmotor"
+							 class="w-full rounded-lg shadow-2xl"
+							 loading="eager" />
+						<div class="absolute top-4 right-4 bg-red-500 text-white px-4 py-2 rounded-lg font-bold">
+							🏁 KTM Racing DNA
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Compliance Alert -->
+		<ComplianceAlert
+			type="info"
+			message="KTM Freeride E-XC is een A1 motor: rijbewijs, verzekering en kenteken verplicht. Wel toegang tot meer off-road locaties."
+			actionText="Bekijk Vereisten"
+			actionLink="#wetgeving"
+		/>
+
+		<!-- Quick Specs Grid -->
+		<section class="py-16 bg-gray-50">
+			<div class="container mx-auto px-4">
+				<div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+					<div class="bg-white p-6 rounded-lg shadow-md">
+						<div class="text-3xl font-bold text-orange-600 mb-2">18kW</div>
+						<div class="text-gray-600">Motor Vermogen</div>
+					</div>
+					<div class="bg-white p-6 rounded-lg shadow-md">
+						<div class="text-3xl font-bold text-green-600 mb-2">50km</div>
+						<div class="text-gray-600">Off-Road Bereik</div>
+					</div>
+					<div class="bg-white p-6 rounded-lg shadow-md">
+						<div class="text-3xl font-bold text-red-600 mb-2">108kg</div>
+						<div class="text-gray-600">Gewicht</div>
+					</div>
+					<div class="bg-white p-6 rounded-lg shadow-md">
+						<div class="text-3xl font-bold text-blue-600 mb-2">€11.999</div>
+						<div class="text-gray-600">Vanaf Prijs</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Why KTM Freeride Section -->
+		<section class="py-16">
+			<div class="container mx-auto px-4">
+				<h2 class="text-4xl font-bold text-center mb-12">Waarom KTM Freeride E-XC?</h2>
+
+				<div class="grid lg:grid-cols-3 gap-8">
+					<div class="bg-orange-50 p-8 rounded-lg text-center">
+						<div class="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-6">
+							<span class="text-2xl">🏁</span>
+						</div>
+						<h3 class="text-xl font-bold mb-4">Racing Heritage</h3>
+						<p class="text-gray-600">
+							50 jaar ervaring in motorsport. Bewezen technologie 
+							van MotoGP naar elektrische crossers.
+						</p>
+						<ul class="mt-4 space-y-2 text-sm text-orange-700">
+							<li>• WP XPLOR PDS vering (€2000+ waarde)</li>
+							<li>• Brembo remmen</li>
+							<li>• Racing geometrie chassis</li>
+						</ul>
+					</div>
+
+					<div class="bg-green-50 p-8 rounded-lg text-center">
+						<div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
+							<span class="text-2xl">🌲</span>
+						</div>
+						<h3 class="text-xl font-bold mb-4">Pure Off-Road Focus</h3>
+						<p class="text-gray-600">
+							Speciaal ontworpen voor off-road. Geen compromissen 
+							voor straatgebruik = maximale trail prestaties.
+						</p>
+						<ul class="mt-4 space-y-2 text-sm text-green-700">
+							<li>• Langere vering (300mm)</li>
+							<li>• Lichtgewicht (108kg)</li>
+							<li>• Stil voor natuurgebieden</li>
+						</ul>
+					</div>
+
+					<div class="bg-red-50 p-8 rounded-lg text-center">
+						<div class="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center mx-auto mb-6">
+							<span class="text-2xl">⚡</span>
+						</div>
+						<h3 class="text-xl font-bold mb-4">Instant Power</h3>
+						<p class="text-gray-600">
+							18kW elektrische kracht vanaf stilstand. 
+							Ongeëvenaard koppel voor technische secties.
+						</p>
+						<ul class="mt-4 space-y-2 text-sm text-red-700">
+							<li>• 42 Nm constant koppel</li>
+							<li>• Geen clutch of schakelen</li>
+							<li>• 3 rijmodi (Eco/Street/Cross)</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- KTM vs Alternatives -->
+		<section class="py-16 bg-gray-50">
+			<div class="container mx-auto px-4">
+				<h2 class="text-4xl font-bold text-center mb-12">KTM Freeride vs Alternatieven</h2>
+				<div class="overflow-x-auto">
+					<table class="w-full bg-white rounded-lg shadow-lg">
+						<thead class="bg-gray-100">
+							<tr>
+								<th class="px-6 py-4 text-left font-bold">Model</th>
+								<th class="px-6 py-4 text-center font-bold">Prijs</th>
+								<th class="px-6 py-4 text-center font-bold">Vermogen</th>
+								<th class="px-6 py-4 text-center font-bold">Gewicht</th>
+								<th class="px-6 py-4 text-center font-bold">Vering</th>
+								<th class="px-6 py-4 text-center font-bold">Focus</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="border-t bg-orange-50">
+								<td class="px-6 py-4 font-bold text-orange-600">KTM Freeride E-XC</td>
+								<td class="px-6 py-4 text-center">€11.999</td>
+								<td class="px-6 py-4 text-center">18kW</td>
+								<td class="px-6 py-4 text-center font-bold text-green-600">108kg</td>
+								<td class="px-6 py-4 text-center font-bold text-green-600">WP XPLOR</td>
+								<td class="px-6 py-4 text-center font-bold text-green-600">Pure Off-Road</td>
+							</tr>
+							<tr class="border-t">
+								<td class="px-6 py-4 font-semibold">Zero FX</td>
+								<td class="px-6 py-4 text-center">€12.995</td>
+								<td class="px-6 py-4 text-center">34kW</td>
+								<td class="px-6 py-4 text-center">134kg</td>
+								<td class="px-6 py-4 text-center">Showa</td>
+								<td class="px-6 py-4 text-center">Dual-Purpose</td>
+							</tr>
+							<tr class="border-t bg-gray-50">
+								<td class="px-6 py-4 font-semibold">Surron Light Bee X</td>
+								<td class="px-6 py-4 text-center text-green-600">€5.199</td>
+								<td class="px-6 py-4 text-center">6kW</td>
+								<td class="px-6 py-4 text-center">47kg</td>
+								<td class="px-6 py-4 text-center">Basis</td>
+								<td class="px-6 py-4 text-center">E-Bike Plus</td>
+							</tr>
+							<tr class="border-t">
+								<td class="px-6 py-4 font-semibold">Alta Redshift MX</td>
+								<td class="px-6 py-4 text-center">€15.500*</td>
+								<td class="px-6 py-4 text-center">40kW</td>
+								<td class="px-6 py-4 text-center">117kg</td>
+								<td class="px-6 py-4 text-center">WP Pro</td>
+								<td class="px-6 py-4 text-center">Racing</td>
+							</tr>
+						</tbody>
+					</table>
+					<p class="text-xs text-gray-500 mt-2">*Alta is uit productie - tweedehands prijzen</p>
+				</div>
+
+				<div class="mt-8 bg-orange-50 p-6 rounded-lg">
+					<h3 class="font-bold text-orange-800 mb-3">💡 Waarom KTM Freeride kiezen:</h3>
+					<ul class="space-y-2 text-orange-700">
+						<li>• <strong>Bewezen kwaliteit</strong> - KTM's 50 jaar racing ervaring</li>
+						<li>• <strong>Perfecte balans</strong> - Niet te zwaar, niet te licht voor serieuse trails</li>
+						<li>• <strong>Premium componenten</strong> - WP vering en Brembo remmen standaard</li>
+						<li>• <strong>Dealer netwerk</strong> - KTM heeft sterke Nederlandse service</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<!-- Off-Road Performance Section -->
+		<section class="py-16">
+			<div class="container mx-auto px-4">
+				<h2 class="text-4xl font-bold text-center mb-12">Off-Road Prestaties</h2>
+
+				<div class="grid lg:grid-cols-2 gap-12">
+					<!-- Technical Trail Features -->
+					<div class="bg-green-50 p-8 rounded-lg">
+						<h3 class="text-2xl font-bold mb-6 flex items-center">
+							🏔️ Technische Trails
+						</h3>
+						<div class="space-y-4">
+							<div class="flex items-start gap-4">
+								<span class="bg-green-100 p-2 rounded">⚡</span>
+								<div>
+									<strong>Instant Koppel Controle</strong>
+									<p class="text-gray-600">Perfect doseerbare kracht voor rotsblokken en steile klimmen.</p>
+								</div>
+							</div>
+							<div class="flex items-start gap-4">
+								<span class="bg-green-100 p-2 rounded">🔇</span>
+								<div>
+									<strong>Stille Benadering</strong>
+									<p class="text-gray-600">Geen motorgeluid = toegang tot gevoelige natuurgebieden.</p>
+								</div>
+							</div>
+							<div class="flex items-start gap-4">
+								<span class="bg-green-100 p-2 rounded">⚖️</span>
+								<div>
+									<strong>Optimale Balance</strong>
+									<p class="text-gray-600">108kg = zwaar genoeg voor stabiliteit, licht genoeg voor handling.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Dutch Off-Road Locations -->
+					<div class="bg-blue-50 p-8 rounded-lg">
+						<h3 class="text-2xl font-bold mb-6 flex items-center">
+							🇳🇱 Nederlandse Off-Road Locaties
+						</h3>
+						<div class="space-y-4">
+							<div>
+								<strong>Toegestane Gebieden:</strong>
+								<ul class="text-sm space-y-1 text-gray-600 ml-4 mt-2">
+									<li>• Crossbanen (Rhenen, Waalwijk, Valkenswaard)</li>
+									<li>• Privé terreinen en crossparken</li>
+									<li>• Natuurgebieden met elektrische motor toestemming</li>
+									<li>• Training centers (officiële KTM partners)</li>
+								</ul>
+							</div>
+							
+							<div>
+								<strong>Speciale Voordelen Elektrisch:</strong>
+								<ul class="text-sm space-y-1 text-gray-600 ml-4 mt-2">
+									<li>• Vroege ochtend training (geen geluidsoverlast)</li>
+									<li>• Toegang tot meer locaties door stil rijden</li>
+									<li>• Geen uitstoot = milieuvriendelijk imago</li>
+								</ul>
+							</div>
+
+							<div class="bg-blue-100 p-3 rounded">
+								<p class="text-blue-800 text-sm">
+									💡 KTM organiseert speciale E-Ride events voor Nederlandse eigenaren
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Dutch Legal Status Section -->
+		<section id="wetgeving" class="py-16 bg-gray-50">
+			<div class="container mx-auto px-4">
+				<h2 class="text-4xl font-bold text-center mb-12">Nederlandse Wetgeving & A1 Rijbewijs</h2>
+
+				<div class="grid lg:grid-cols-2 gap-12">
+					<!-- A1 License Requirements -->
+					<div class="bg-blue-50 p-8 rounded-lg">
+						<h3 class="text-2xl font-bold mb-6 flex items-center">
+							🏍️ A1 Rijbewijs Vereisten
+						</h3>
+						<div class="space-y-4">
+							<div class="flex items-start gap-4">
+								<span class="bg-blue-100 p-2 rounded">📅</span>
+								<div>
+									<strong>Minimumleeftijd 18 jaar</strong>
+									<p class="text-gray-600">Theorie + praktijkexamen bij CBR. KTM dealers helpen met rijschool contacten.</p>
+								</div>
+							</div>
+							<div class="flex items-start gap-4">
+								<span class="bg-blue-100 p-2 rounded">⚖️</span>
+								<div>
+									<strong>125cc Equivalent Status</strong>
+									<p class="text-gray-600">Freeride E-XC is gekwalificeerd voor A1 (max 11kW continue vermogen).</p>
+								</div>
+							</div>
+							<div class="flex items-start gap-4">
+								<span class="bg-blue-100 p-2 rounded">🎯</span>
+								<div>
+									<strong>Off-Road Focus Training</strong>
+									<p class="text-gray-600">Sommige rijscholen bieden speciale off-road A1 training aan.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Costs & Registration -->
+					<div class="bg-orange-50 p-8 rounded-lg">
+						<h3 class="text-2xl font-bold mb-6 flex items-center">
+							💰 Kosten & Registratie
+						</h3>
+						<div class="space-y-4">
+							<div>
+								<strong>Motorverzekering (A1 Klasse):</strong>
+								<div class="space-y-1 text-sm text-gray-600 ml-4 mt-2">
+									<li>• WA verzekering: €280-450/jaar</li>
+									<li>• WA+Beperkt Casco: €380-650/jaar</li>
+									<li>• Allrisk (aanbevolen): €550-900/jaar</li>
+								</div>
+							</div>
+							
+							<div>
+								<strong>RDW & Keuring:</strong>
+								<div class="space-y-1 text-sm text-gray-600 ml-4 mt-2">
+									<li>• Kenteken afgifte: €67.20</li>
+									<li>• Maandelijks: €8.60</li>
+									<li>• APK vanaf 4e jaar: €55 per 2 jaar</li>
+								</div>
+							</div>
+
+							<div class="bg-orange-100 p-3 rounded">
+								<p class="text-orange-800 text-sm">
+									💡 KTM dealers regelen vaak COC-papieren en kenteken service
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Total Cost Calculator -->
+				<div class="mt-12 bg-gray-100 p-8 rounded-lg">
+					<h3 class="text-2xl font-bold mb-6 text-center">🧮 Totale Kosten KTM Freeride E-XC</h3>
+					<div class="grid md:grid-cols-2 gap-8">
+						<div>
+							<h4 class="font-bold mb-4">Eenmalige Kosten:</h4>
+							<div class="space-y-2 text-sm">
+								<div class="flex justify-between">
+									<span>KTM Freeride E-XC</span>
+									<span class="font-semibold">€11.999</span>
+								</div>
+								<div class="flex justify-between">
+									<span>A1 Rijbewijs (gemiddeld)</span>
+									<span class="font-semibold">€1.000</span>
+								</div>
+								<div class="flex justify-between">
+									<span>Premium Crossuitrusting</span>
+									<span class="font-semibold">€850</span>
+								</div>
+								<div class="flex justify-between">
+									<span>RDW Kenteken + COC</span>
+									<span class="font-semibold">€67</span>
+								</div>
+								<div class="border-t pt-2 flex justify-between font-bold text-lg">
+									<span>Totaal Starterskosten:</span>
+									<span class="text-orange-600">€13.916</span>
+								</div>
+							</div>
+						</div>
+						<div>
+							<h4 class="font-bold mb-4">Jaarlijkse Kosten:</h4>
+							<div class="space-y-2 text-sm">
+								<div class="flex justify-between">
+									<span>Motorverzekering (Allrisk)</span>
+									<span class="font-semibold">€725/jaar</span>
+								</div>
+								<div class="flex justify-between">
+									<span>RDW Kenteken (maandelijks)</span>
+									<span class="font-semibold">€103/jaar</span>
+								</div>
+								<div class="flex justify-between">
+									<span>Elektriciteitskosten (2000km off-road)</span>
+									<span class="font-semibold">€45/jaar</span>
+								</div>
+								<div class="flex justify-between">
+									<span>Onderhoud (banden, remmen, vering)</span>
+									<span class="font-semibold">€320/jaar</span>
+								</div>
+								<div class="border-t pt-2 flex justify-between font-bold text-lg">
+									<span>Totaal Per Jaar:</span>
+									<span class="text-orange-600">€1.193</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Where to Buy Section -->
+		<section id="kopen" class="py-16">
+			<div class="container mx-auto px-4">
+				<h2 class="text-4xl font-bold text-center mb-12">🛒 Waar te Kopen in Nederland</h2>
+
+				<!-- Official KTM Dealers -->
+				<div class="grid lg:grid-cols-3 gap-8 mb-12">
+					<div class="bg-white p-6 rounded-lg shadow-md">
+						<div class="flex items-center mb-4">
+							<img src="/images/dealers/ktm-logo.png" alt="KTM" class="h-12 mr-4">
+							<div>
+								<h3 class="font-bold">KTM Nederland</h3>
+								<span class="text-sm text-orange-600">Officiële Dealers</span>
+							</div>
+						</div>
+						<p class="text-gray-600 mb-4">Landelijk netwerk van geautoriseerde KTM dealers met E-Ride expertise.</p>
+						<div class="space-y-2 text-sm mb-4">
+							<div>✅ 2 jaar internationale garantie</div>
+							<div>✅ KTM getrainde technici</div>
+							<div>✅ Originele onderdelen service</div>
+						</div>
+						<a href="{affiliateLinks.ktmDealers}"
+						   class="block bg-orange-600 hover:bg-orange-700 text-white text-center py-3 rounded-lg font-semibold transition-colors"
+						   target="_blank" rel="noopener">
+							Vind KTM Dealer
+						</a>
+					</div>
+
+					<div class="bg-white p-6 rounded-lg shadow-md">
+						<div class="flex items-center mb-4">
+							<img src="/images/dealers/ktm-amsterdam-logo.png" alt="KTM Amsterdam" class="h-12 mr-4">
+							<div>
+								<h3 class="font-bold">KTM Amsterdam</h3>
+								<span class="text-sm text-red-600">Premium Dealer</span>
+							</div>
+						</div>
+						<p class="text-gray-600 mb-4">Grootste KTM dealer van Nederland. E-Ride specialist met showroom.</p>
+						<div class="space-y-2 text-sm mb-4">
+							<div>✅ Proefritten mogelijk</div>
+							<div>✅ Financieringsopties</div>
+							<div>✅ E-Ride events & training</div>
+						</div>
+						<a href="{affiliateLinks.ktmAmsterdam}"
+						   class="block bg-red-600 hover:bg-red-700 text-white text-center py-3 rounded-lg font-semibold transition-colors"
+						   target="_blank" rel="noopener">
+							Bekijk KTM Amsterdam
+						</a>
+					</div>
+
+					<div class="bg-white p-6 rounded-lg shadow-md">
+						<div class="flex items-center mb-4">
+							<img src="/images/dealers/motorcycle-center-logo.png" alt="Motorcycle Center" class="h-12 mr-4">
+							<div>
+								<h3 class="font-bold">Motorcycle Center</h3>
+								<span class="text-sm text-blue-600">Multi-Brand Specialist</span>
+							</div>
+						</div>
+						<p class="text-gray-600 mb-4">Elektrische motor specialist met KTM autorisatie en service expertise.</p>
+						<div class="space-y-2 text-sm mb-4">
+							<div>✅ Vergelijking met andere merken</div>
+							<div>✅ Inruil service</div>
+							<div>✅ Complete uitrusting</div>
+						</div>
+						<a href="{affiliateLinks.motorcycle_center}"
+						   class="block bg-blue-600 hover:bg-blue-700 text-white text-center py-3 rounded-lg font-semibold transition-colors"
+						   target="_blank" rel="noopener">
+							Bekijk Motorcycle Center
+						</a>
+					</div>
+				</div>
+
+				<!-- Pricing & Options -->
+				<div class="bg-white rounded-lg shadow-lg overflow-hidden mb-8">
+					<div class="bg-gray-100 px-6 py-4 border-b">
+						<h3 class="text-xl font-bold">💰 KTM Freeride E-XC Prijzen & Opties</h3>
+					</div>
+					<div class="p-6">
+						<div class="grid md:grid-cols-2 gap-8">
+							<div>
+								<h4 class="font-bold mb-4">Standaard Uitrusting:</h4>
+								<div class="space-y-3">
+									<div class="flex justify-between items-center p-3 bg-orange-50 rounded">
+										<div>
+											<strong>Freeride E-XC Basis</strong>
+											<p class="text-sm text-gray-600">3.9kWh batterij, WP vering, Brembo remmen</p>
+										</div>
+										<span class="font-bold text-orange-600">€11.999</span>
+									</div>
+								</div>
+
+								<h4 class="font-bold mt-6 mb-4">Accessoires Pakket:</h4>
+								<div class="space-y-2 text-sm">
+									<div class="flex justify-between">
+										<span>Hand guards</span>
+										<span>€89</span>
+									</div>
+									<div class="flex justify-between">
+										<span>Skid plate (bodemplaatbescherming)</span>
+										<span>€149</span>
+									</div>
+									<div class="flex justify-between">
+										<span>Extra acculader (snellader)</span>
+										<span>€399</span>
+									</div>
+									<div class="flex justify-between font-semibold border-t pt-2">
+										<span>Totaal Accessoires:</span>
+										<span>€637</span>
+									</div>
+								</div>
+							</div>
+
+							<div>
+								<h4 class="font-bold mb-4">Financiering:</h4>
+								<div class="space-y-3">
+									<div class="p-3 bg-green-50 rounded">
+										<strong>KTM Financiering</strong>
+										<p class="text-sm text-gray-600">€359/maand (36 maanden, 3.9% rente)</p>
+									</div>
+									<div class="p-3 bg-blue-50 rounded">
+										<strong>Business Lease</strong>
+										<p class="text-sm text-gray-600">Vanaf €425/maand operational lease</p>
+									</div>
+								</div>
+
+								<h4 class="font-bold mt-6 mb-4">Service Pakketten:</h4>
+								<div class="space-y-2 text-sm">
+									<div class="flex justify-between">
+										<span>Uitgebreide garantie (+2 jaar)</span>
+										<span>€890</span>
+									</div>
+									<div class="flex justify-between">
+										<span>Service pakket (3 jaar)</span>
+										<span>€450</span>
+									</div>
+									<div class="flex justify-between">
+										<span>KTM Training dag</span>
+										<span>€295</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- FAQ Section -->
+		<section class="py-16 bg-gray-50">
+			<div class="container mx-auto px-4">
+				<h2 class="text-4xl font-bold text-center mb-12">❓ Veelgestelde Vragen</h2>
+
+				<div class="grid lg:grid-cols-2 gap-8">
+					<div class="space-y-6">
+						<div class="bg-white p-6 rounded-lg shadow-md">
+							<h3 class="font-bold text-lg mb-3">Is KTM Freeride E-XC geschikt voor beginners?</h3>
+							<p class="text-gray-600">Niet ideaal voor absolute beginners. Motor is krachtig en off-road gericht. Wel perfect voor A1 rijders met off-road ervaring.</p>
+						</div>
+
+						<div class="bg-white p-6 rounded-lg shadow-md">
+							<h3 class="font-bold text-lg mb-3">Kan ik ermee op de openbare weg?</h3>
+							<p class="text-gray-600">Ja, met kenteken en verzekering. Wel meer geschikt voor off-road door sportieve zithouding en vering setup.</p>
+						</div>
+
+						<div class="bg-white p-6 rounded-lg shadow-md">
+							<h3 class="font-bold text-lg mb-3">Hoe lang gaat de batterij mee?</h3>
+							<p class="text-gray-600">35-50km afhankelijk van terrein en rijstijl. Off-road verbruikt meer stroom dan straatrijden.</p>
+						</div>
+
+						<div class="bg-white p-6 rounded-lg shadow-md">
+							<h3 class="font-bold text-lg mb-3">Is onderhoud duur bij KTM?</h3>
+							<p class="text-gray-600">Premium onderdelen kosten meer, maar elektrische motor heeft minder onderhoud. Budget €300-400/jaar.</p>
+						</div>
+					</div>
+
+					<div class="space-y-6">
+						<div class="bg-white p-6 rounded-lg shadow-md">
+							<h3 class="font-bold text-lg mb-3">Waar kan ik off-road rijden in Nederland?</h3>
+							<p class="text-gray-600">Crossbanen, privéterreinen en speciale natuurgebieden. KTM dealers hebben lijst met toegestane locaties.</p>
+						</div>
+
+						<div class="bg-white p-6 rounded-lg shadow-md">
+							<h3 class="font-bold text-lg mb-3">Nederlandse KTM E-Ride community?</h3>
+							<p class="text-gray-600">Actieve groep van 100+ leden. KTM organiseert regelmatige E-Ride events en trainingen.</p>
+						</div>
+
+						<div class="bg-white p-6 rounded-lg shadow-md">
+							<h3 class="font-bold text-lg mb-3">Batterij vervangingskosten?</h3>
+							<p class="text-gray-600">€3.000-4.500 na garantie. Verwachte levensduur 5-8 jaar bij normaal gebruik.</p>
+						</div>
+
+						<div class="bg-white p-6 rounded-lg shadow-md">
+							<h3 class="font-bold text-lg mb-3">Kan ik zelf onderhoud doen?</h3>
+							<p class="text-gray-600">Basis onderhoud wel (banden, remmen), maar elektrische systeem vereist KTM getrainde technicus.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Local SEO -->
+		<section class="py-16">
+			<div class="container mx-auto px-4">
+				<div class="text-center">
+					<h2 class="text-3xl font-bold mb-8">🇳🇱 KTM Freeride E-XC in Nederlandse Steden</h2>
+					<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 text-sm">
+						<a href="/ktm-freeride-e-xc-amsterdam" class="hover:text-orange-600">Amsterdam</a>
+						<a href="/ktm-freeride-e-xc-rotterdam" class="hover:text-orange-600">Rotterdam</a>
+						<a href="/ktm-freeride-e-xc-utrecht" class="hover:text-orange-600">Utrecht</a>
+						<a href="/ktm-freeride-e-xc-eindhoven" class="hover:text-orange-600">Eindhoven</a>
+						<a href="/ktm-freeride-e-xc-tilburg" class="hover:text-orange-600">Tilburg</a>
+						<a href="/ktm-freeride-e-xc-groningen" class="hover:text-orange-600">Groningen</a>
+						<a href="/ktm-freeride-e-xc-breda" class="hover:text-orange-600">Breda</a>
+						<a href="/ktm-freeride-e-xc-nijmegen" class="hover:text-orange-600">Nijmegen</a>
+						<a href="/ktm-freeride-e-xc-enschede" class="hover:text-orange-600">Enschede</a>
+						<a href="/ktm-freeride-e-xc-haarlem" class="hover:text-orange-600">Haarlem</a>
+						<a href="/ktm-freeride-e-xc-almere" class="hover:text-orange-600">Almere</a>
+						<a href="/ktm-freeride-e-xc-arnhem" class="hover:text-orange-600">Arnhem</a>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+</Layout>
+
+<style>
+	.hero {
+		background-image: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.4)), url('/images/ktm-freeride-hero-bg.jpg');
+		background-size: cover;
+		background-position: center;
+	}
+
+	/* Mobile optimization */
+	@media (max-width: 768px) {
+		.hero h1 {
+			font-size: 2.5rem;
+		}
+
+		.grid {
+			gap: 1rem;
+		}
+
+		.container {
+			padding-left: 1rem;
+			padding-right: 1rem;
+		}
+	}
+
+	/* Accessibility improvements */
+	a:focus, button:focus {
+		outline: 2px solid #EA580C;
+		outline-offset: 2px;
+	}
+
+	/* Print styles */
+	@media print {
+		.hero, .bg-gradient-to-r {
+			background: white !important;
+			color: black !important;
+		}
+	}
+</style>

@@ -1,0 +1,206 @@
+{
+  "legalFramework": {
+    "vehicleClassification": {
+      "category": "L1e-B Bromfiets",
+      "maxPower": "4000W (onbegrensd) / 1000W (straatlegaal)",
+      "maxSpeed": "25 km/h (openbare weg)",
+      "weight": "Geen limiet voor L1e-B",
+      "ageRequirement": "16 jaar met AM rijbewijs"
+    },
+    "licensing": {
+      "required": true,
+      "type": "AM rijbewijs (bromfiets)",
+      "minimumAge": 16,
+      "theoreticalExam": {
+        "required": true,
+        "cost": "€37.00",
+        "validityPeriod": "Levenslang",
+        "provider": "CBR"
+      },
+      "practicalExam": {
+        "required": true,
+        "cost": "€92.55",
+        "duration": "35 minuten",
+        "provider": "CBR"
+      },
+      "exemptions": [
+        "Houders van B rijbewijs (auto) vanaf 2013",
+        "Houders van A rijbewijs (motor)"
+      ]
+    }
+  },
+  "registration": {
+    "rdwRegistration": {
+      "required": true,
+      "initialCost": "€67.20",
+      "monthlyFee": "€8.60",
+      "requiredDocuments": [
+        "COC papieren (Certificate of Conformity)",
+        "Factuur of eigendomsbewijs",
+        "Identiteitsbewijs",
+        "Bewijs van adres (uittreksel GBA)"
+      ],
+      "process": [
+        "Online aanvragen via rdw.nl",
+        "Documentatie uploaden", 
+        "Betaling via iDEAL",
+        "Kenteken per post binnen 5 werkdagen"
+      ]
+    },
+    "numberPlate": {
+      "type": "Geel kenteken",
+      "format": "XX-XXX-X",
+      "mandatory": true,
+      "position": "Achterzijde voertuig",
+      "illumination": "Verplicht 's nachts"
+    }
+  },
+  "insurance": {
+    "waPlusRequired": true,
+    "minimumCoverage": "€1.22 miljoen personenschade, €1.22 miljoen zaakschade",
+    "averageCosts": {
+      "basic": "€119-€134 per jaar",
+      "comprehensive": "€189-€267 per jaar",
+      "allRisk": "€231-€289 per jaar"
+    },
+    "majorProviders": [
+      {
+        "name": "ANWB",
+        "basicCost": "€127/jaar",
+        "benefits": ["Wegenwacht inbegrepen", "Geen leeftijdsgrens"],
+        "contact": "anwb.nl/verzekeringen"
+      },
+      {
+        "name": "Centraal Beheer",
+        "basicCost": "€134/jaar",
+        "benefits": ["10% online korting", "Snelle claim app"],
+        "contact": "centraalbeheer.nl"
+      },
+      {
+        "name": "Allianz Direct",
+        "basicCost": "€119/jaar",
+        "benefits": ["Goedkoopste optie", "Online-only"],
+        "contact": "allianzdirect.nl"
+      }
+    ]
+  },
+  "safetyRequirements": {
+    "helmet": {
+      "mandatory": true,
+      "standard": "ECE-22.05 of ECE-22.06",
+      "bikeHelmetsAllowed": false,
+      "fine": "€140 voor niet-goedgekeurde helm"
+    },
+    "lighting": {
+      "frontLight": "Wit of geel licht verplicht",
+      "rearLight": "Rood licht verplicht", 
+      "daytimeRunningLight": "Aanbevolen",
+      "reflectors": "Voor en achter verplicht"
+    },
+    "other": {
+      "mirrors": "Minimaal 1 spiegel verplicht (links)",
+      "horn": "Geluidssignaal verplicht",
+      "speedometer": "Niet verplicht voor bromfiets"
+    }
+  },
+  "roadUsage": {
+    "allowedRoads": [
+      "Rijbaan",
+      "Bromfietspad (waar aanwezig)",
+      "Fietsstraat (30 km/h zones)"
+    ],
+    "prohibitedRoads": [
+      "Fietspad (tenzij bromfietspad)",
+      "Snelweg",
+      "Autoweg",
+      "Voetpad"
+    ],
+    "speedLimits": {
+      "urban": "25 km/h (begrensd)",
+      "rural": "25 km/h (begrensd)",
+      "offRoad": "Geen limiet (privéterrein)"
+    }
+  },
+  "speedLimiter": {
+    "required": true,
+    "maxSpeed": "25 km/h",
+    "installation": {
+      "cost": "€150-€300",
+      "providers": [
+        {
+          "name": "DCC E-bikes",
+          "location": "Utrecht",
+          "cost": "€225",
+          "contact": "dcc-ebikes.nl"
+        },
+        {
+          "name": "RS-Motoren", 
+          "location": "Amsterdam",
+          "cost": "€195",
+          "contact": "rs-motoren.nl"
+        },
+        {
+          "name": "Elektrisch Motorrijden",
+          "location": "Landelijk",
+          "cost": "€275",
+          "contact": "elektrisch-motorrijden.nl"
+        }
+      ]
+    },
+    "certification": "Installatiebewijs verplicht voor RDW",
+    "removal": {
+      "legal": "Alleen voor privéterrein",
+      "fine": "Tot €390 bij controle op openbare weg",
+      "insuranceRisk": "Verzekering kan uitkering weigeren"
+    }
+  },
+  "penalties": {
+    "noLicense": "€390 boete + voertuig in beslag",
+    "noInsurance": "€390 boete + dagvaarding mogelijk",
+    "noHelmet": "€140 boete",
+    "noNumberPlate": "€240 boete",
+    "speedingOffence": "€380 boete (>25 km/h op openbare weg)",
+    "wrongRoadUsage": "€95-€240 boete (afhankelijk van overtreding)"
+  },
+  "modifications": {
+    "allowed": [
+      "Accessoires (tassen, telefoonhouder)",
+      "Verlichting (extra LED strips)",
+      "Comfort (zadel, handvatten)",
+      "Bescherming (valbeugels, afdekking)"
+    ],
+    "restricted": [
+      "Motorvermogen verhogen",
+      "Snelheidsbegrenzer aanpassen",
+      "Uitlaat modificaties (geluidsnorm)",
+      "Structurele frame aanpassingen"
+    ],
+    "documentation": "Wijzigingen melden bij RDW indien van toepassing"
+  },
+  "importRequirements": {
+    "euVehicles": {
+      "cocPapers": "Certificate of Conformity vereist",
+      "customsDuty": "0% binnen EU",
+      "vat": "21% BTW bij nieuwe voertuigen"
+    },
+    "nonEuVehicles": {
+      "typeApproval": "Individuele goedkeuring vereist",
+      "customsDuty": "6-8% afhankelijk van herkomst",
+      "vat": "21% BTW",
+      "additionalCosts": "€500-€1500 voor keuring en documentatie"
+    }
+  },
+  "dealerRequirements": {
+    "businessLicense": "KvK inschrijving vereist",
+    "vatNumber": "BTW nummer voor zakelijke verkoop",
+    "warranties": "Minimaal 2 jaar garantie op nieuwe voertuigen",
+    "cocProvision": "COC papieren leveren bij verkoop",
+    "documentation": "Verkoopdocumentatie bewaren 7 jaar"
+  },
+  "environmentalCompliance": {
+    "emissions": "Nul lokale uitstoot",
+    "batteryDisposal": "Volgens WEEE richtlijnen",
+    "recycling": "95% materiaal herbruikbaar",
+    "energyLabel": "Niet verplicht voor elektrische motoren"
+  }
+}
