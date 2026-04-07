@@ -25,6 +25,7 @@ export interface ECrosser {
 	mediamarktUrl?: string;
 	amazonUrl?: string;
 	officialUrl: string;
+	specialistDealers?: {name: string, url: string}[];
 	dealerNetwork: string[];
 	availability: 'In voorraad' | 'Op bestelling' | 'Beperkt beschikbaar';
 	warranty: string;
@@ -58,10 +59,13 @@ export const eCrossers: ECrosser[] = [
 		pros: ['Krachtige motor', 'Lange levensduur batterij', 'Professionele bouw', 'Grote dealer netwerk'],
 		cons: ['Hoge aanschafprijs', 'Zwaar gewicht', 'Geen fietspad toegang', 'Beperkte snellaad opties'],
 		targetAudience: 'Ervaren rijders die kracht en bereik zoeken',
-		mediamarktUrl: 'https://www.mediamarkt.nl/nl/product/_surron-light-bee-x-1234567.html',
-		amazonUrl: 'https://www.amazon.nl/dp/B08XYZ123',
 		officialUrl: 'https://sur-ron.com/collections/ebikes/products/light-bee-x',
-		dealerNetwork: ['DCC E-bikes', 'Elektrisch Motorrijden', 'Sur-Ron Nederland'],
+		specialistDealers: [
+			{name: 'Resa Racing', url: 'https://www.resa-racing.nl/sur-ron-light-bee-x-series-street-zwart'},
+			{name: 'Elektrisch Motorrijden', url: 'https://elektrisch-motorrijden.nl/product/sur-ron-light-bee-x-road-legal-version/'},
+			{name: 'Fat Daddy', url: 'https://www.fatdaddy.nl/product/surron-light-bee-x-blue-edition/'}
+		],
+		dealerNetwork: ['Resa Racing', 'Elektrisch Motorrijden', 'Fat Daddy'],
 		availability: 'Op bestelling',
 		warranty: '2 jaar',
 		serviceNetwork: 'Uitgebreid',
@@ -92,10 +96,12 @@ export const eCrossers: ECrosser[] = [
 		pros: ['Goede prijs-kwaliteit', 'Afneembare batterij', 'Lichtere opbouw', 'Snelle levering'],
 		cons: ['Minder krachtig dan Surron', 'Kleiner dealer netwerk', 'Beperkte onderdelen', 'Minder bekend merk'],
 		targetAudience: 'Budget-bewuste rijders met L1e-B eisen',
-		mediamarktUrl: 'https://www.mediamarkt.nl/nl/product/_talaria-sting-mx5-pro-2345678.html',
-		amazonUrl: 'https://www.amazon.nl/dp/B09ABC234',
-		officialUrl: 'https://talaria-bikes.com/sting-mx5-pro',
-		dealerNetwork: ['Talaria Nederland', 'E-Crosser Store'],
+		officialUrl: 'https://talaria-benelux.com/',
+		specialistDealers: [
+			{name: 'Bike Centre Holland', url: 'https://bikecentreholland.nl/product/talaria-sting-mx5-pro/'},
+			{name: 'JED World', url: 'https://jedworld.nl/product/talaria-sting-r-mx5-pro-l1e-tl5500/'}
+		],
+		dealerNetwork: ['Bike Centre Holland', 'JED World', 'Jetski Store'],
 		availability: 'In voorraad',
 		warranty: '2 jaar',
 		serviceNetwork: 'Beperkt',
@@ -126,9 +132,12 @@ export const eCrossers: ECrosser[] = [
 		pros: ['Bekende merknaam', 'Goede app integratie', 'Betrouwbare kwaliteit', 'Uitgebreide garantie'],
 		cons: ['Duurder dan concurrenten', 'Minder krachtig', 'Zwaardere constructie', 'Beperkte customization'],
 		targetAudience: 'Tech-savvy rijders die merkbetrouwbaarheid waarderen',
-		mediamarktUrl: 'https://www.mediamarkt.nl/nl/product/_segway-dirt-ebike-x260-3456789.html',
-		officialUrl: 'https://www.segway.com/dirt-ebike-x260',
-		dealerNetwork: ['MediaMarkt', 'Segway Store Nederland'],
+		officialUrl: 'https://store.segway.com/segway-dirt-ebike-x260',
+		specialistDealers: [
+			{name: 'Segway Store', url: 'https://store.segway.com/segway-dirt-ebike-x260'},
+			{name: 'E-Scooter NL', url: 'https://www.e-scooter.nl/segway-dirt-ebike-x260/'}
+		],
+		dealerNetwork: ['Segway Store', 'E-Scooter NL'],
 		availability: 'In voorraad',
 		warranty: '2 jaar',
 		serviceNetwork: 'Uitgebreid',
@@ -159,9 +168,12 @@ export const eCrossers: ECrosser[] = [
 		pros: ['Premium kwaliteit', 'Uitstekende ophanging', 'Sterke motor', 'KTM dealer netwerk'],
 		cons: ['Zeer hoge prijs', 'Beperkt bereik', 'Hoge onderhoudskosten', 'Overwegend off-road focus'],
 		targetAudience: 'Premium rijders met budget voor hoogste kwaliteit',
-		amazonUrl: 'https://www.amazon.nl/dp/B0ADEF345',
-		officialUrl: 'https://www.ktm.com/nl-nl/e-ride/freeride-e-xc.html',
-		dealerNetwork: ['KTM Nederland', 'Motorcentrum'],
+		officialUrl: 'https://www.ktm.com/nl/e-ride/freeride-e-xc/',
+		specialistDealers: [
+			{name: 'JTX Motoren', url: 'https://jtxmotoren.nl/ktm-freeride-e-xc/'},
+			{name: 'KTM Officieel', url: 'https://www.ktm.com/nl/e-ride/freeride-e-xc/'}
+		],
+		dealerNetwork: ['JTX Motoren Cuijk', 'KTM Nederland'],
 		availability: 'Op bestelling',
 		warranty: '2 jaar',
 		serviceNetwork: 'Uitgebreid',
@@ -192,8 +204,11 @@ export const eCrossers: ECrosser[] = [
 		pros: ['Uniek design', 'Lichtgewicht carbon', 'Krachtige motor', 'Australische kwaliteit'],
 		cons: ['Zeer duur', 'Beperkte dealer netwerk', 'Import complexiteit', 'Onderdelen beschikbaarheid'],
 		targetAudience: 'Exclusieve rijders die uniek design zoeken',
-		officialUrl: 'https://stealthelectricbikes.com/h-52',
-		dealerNetwork: ['Stealth Nederland'],
+		officialUrl: 'https://www.beastbird.com/en/stealth-h-52.html',
+		specialistDealers: [
+			{name: 'BeastBird', url: 'https://www.beastbird.com/en/stealth-h-52.html'}
+		],
+		dealerNetwork: ['BeastBird (Benelux dealer)'],
 		availability: 'Beperkt beschikbaar',
 		warranty: '2 jaar',
 		serviceNetwork: 'Beperkt',
@@ -222,12 +237,15 @@ export const eCrossers: ECrosser[] = [
 		},
 		features: ['Zweeds design', 'Modulaire opbouw', 'Premium materialen', 'App connectiviteit'],
 		pros: ['Minimalistisch design', 'Duurzame materialen', 'Innovative opbouw', 'Zweeds engineering'],
-		cons: ['Hoge prijs', 'Beperkte dealer netwerk', 'Lange levertijd', 'Niche appeal'],
+		cons: ['Hoge prijs', 'Beperkte dealer netwerk', 'Lange levertijd', 'Niche appeal', 'CAKE failliet 2024 — onderdelen beschikbaarheid onzeker'],
 		targetAudience: 'Design-bewuste rijders met voorkeur voor Scandinavisch design',
 		// Let op: CAKE ging failliet in 2023 — onderdelen en service zijn beperkt beschikbaar
-		officialUrl: 'https://ridecake.com/kalk-or',
+		officialUrl: 'https://www.e-scooter.nl/cake-kalk-or/',
+		specialistDealers: [
+			{name: 'E-Scooter NL (info)', url: 'https://www.e-scooter.nl/cake-kalk-or/'}
+		],
 		dealerNetwork: ['CAKE Nederland'],
-		availability: 'Op bestelling',
+		availability: 'Beperkt beschikbaar',
 		warranty: '2 jaar',
 		serviceNetwork: 'Beperkt',
 		homologation: true,
@@ -258,7 +276,11 @@ export const eCrossers: ECrosser[] = [
 		cons: ['Extreem duur', 'Overkill voor dagelijks gebruik', 'Zware constructie', 'Motorfiets onderhoud'],
 		targetAudience: 'Premium rijders met motorfiets ervaring',
 		officialUrl: 'https://www.zeromotorcycles.com/model/zero-fx',
-		dealerNetwork: ['Zero Nederland', 'Motorcentrum'],
+		specialistDealers: [
+			{name: 'Roeleveld Zero', url: 'https://roeleveldzero.nl/'},
+			{name: 'Zero Dealer Locator', url: 'https://shop.zeromotorcycles.com/en/pages/dealer-locator'}
+		],
+		dealerNetwork: ['Roeleveld Zero (Utrecht)', 'Zero Motorcycles NL'],
 		availability: 'Op bestelling',
 		warranty: '2 jaar',
 		serviceNetwork: 'Uitgebreid',
@@ -289,8 +311,11 @@ export const eCrossers: ECrosser[] = [
 		pros: ['2WD aandrijving', 'Praktisch design', 'Groot bereik', 'Modulaire opbouw'],
 		cons: ['Utilitair uiterlijk', 'Beperkte snelheid', 'Niche merk', 'Beperkte dealer netwerk'],
 		targetAudience: 'Professionele/utility rijders die 2WD waarderen',
-		officialUrl: 'https://ubco.co.nz/2x2-work-bike',
-		dealerNetwork: ['UBCO Nederland'],
+		officialUrl: 'https://ubco.eu/',
+		specialistDealers: [
+			{name: 'UBCO Europe', url: 'https://ubco.eu/'}
+		],
+		dealerNetwork: ['UBCO Europe'],
 		availability: 'Op bestelling',
 		warranty: '2 jaar',
 		serviceNetwork: 'Beperkt',
@@ -321,9 +346,11 @@ export const eCrossers: ECrosser[] = [
 		pros: ['Attractieve prijs', 'Retro design', 'Goede bereik', 'Geen rijbewijs vereist'],
 		cons: ['Beperkte power', 'Import merk', 'Onderdelen beschikbaarheid', 'Beperkte garantie'],
 		targetAudience: 'Style-bewuste budget rijders zonder rijbewijs',
-		amazonUrl: 'https://www.amazon.nl/dp/B0BFGH456',
 		officialUrl: 'https://onyxmotorbikes.com/rcr',
-		dealerNetwork: ['E-Bike Import Nederland'],
+		specialistDealers: [
+			{name: 'E-Scooter NL (info)', url: 'https://www.e-scooter.nl/onyx-rcr/'}
+		],
+		dealerNetwork: ['E-Scooter NL'],
 		availability: 'In voorraad',
 		warranty: '1 jaar',
 		serviceNetwork: 'Beperkt',
@@ -354,9 +381,12 @@ export const eCrossers: ECrosser[] = [
 		pros: ['Iconisch design', 'Sociale media appeal', 'Goede app', 'Populair merk'],
 		cons: ['Beperkte power', 'Amerikaans merk service', 'Fat tire slijtage', 'Beperkte bereik'],
 		targetAudience: 'Lifestyle rijders die stijl boven prestaties stellen',
-		mediamarktUrl: 'https://www.mediamarkt.nl/nl/product/_super73-s2-4567890.html',
-		officialUrl: 'https://super73.com/products/s2',
-		dealerNetwork: ['Super73 Nederland', 'MediaMarkt'],
+		officialUrl: 'https://eu.super73.com/products/super73-s2-bone-white',
+		specialistDealers: [
+			{name: 'Super73 EU Store', url: 'https://eu.super73.com/products/super73-s2-bone-white'},
+			{name: 'Electric Lifestyle', url: 'https://electriclifestyle.eu/nl/super73'}
+		],
+		dealerNetwork: ['Super73 EU Store', 'Electric Lifestyle'],
 		availability: 'In voorraad',
 		warranty: '1 jaar',
 		serviceNetwork: 'Beperkt',
@@ -387,9 +417,11 @@ export const eCrossers: ECrosser[] = [
 		pros: ['Zeer betaalbaar', 'Cargo capaciteit', 'Betrouwbaar merk', 'Veel accessories'],
 		cons: ['Langzame top snelheid', 'Basic componenten', 'Zware constructie', 'Amerikaanse service'],
 		targetAudience: 'Budget rijders die cargo functionaliteit zoeken',
-		amazonUrl: 'https://www.amazon.nl/dp/B0CIJK567',
-		officialUrl: 'https://www.radpowerbikes.eu/products/radrunner-2',
-		dealerNetwork: ['Rad Power Nederland'],
+		officialUrl: 'https://radpowerbikes.eu/products/radrunner-2',
+		specialistDealers: [
+			{name: 'Rad Power Bikes EU', url: 'https://radpowerbikes.eu/products/radrunner-2'}
+		],
+		dealerNetwork: ['Rad Power Bikes EU'],
 		availability: 'In voorraad',
 		warranty: '1 jaar',
 		serviceNetwork: 'Online alleen',
@@ -420,9 +452,12 @@ export const eCrossers: ECrosser[] = [
 		pros: ['Lange bereik', 'Volledige ophanging', 'Krachtige motor', 'Goede prijs'],
 		cons: ['Zwaar gewicht', 'Chinese kwaliteit', 'Beperkte service', 'Import complexiteit'],
 		targetAudience: 'Recreatieve rijders die comfort en bereik zoeken',
-		amazonUrl: 'https://www.amazon.nl/dp/B0DKLM678',
 		officialUrl: 'https://himiwaybike.com/products/cobra',
-		dealerNetwork: ['Himiway Nederland'],
+		specialistDealers: [
+			{name: 'Himiway NL', url: 'https://www.himiway.nl/'},
+			{name: 'Dealer finder', url: 'https://nl.himiwaybike.com/pages/find-himiway-dealers'}
+		],
+		dealerNetwork: ['Himiway NL', 'Fat Bike Mania Amersfoort'],
 		availability: 'In voorraad',
 		warranty: '2 jaar',
 		serviceNetwork: 'Online alleen',
@@ -451,11 +486,10 @@ export const eCrossers: ECrosser[] = [
 		},
 		features: ['Nederlandse assemblage', 'Fat tires', 'Shimano versnellingen', 'LED verlichting'],
 		pros: ['Nederlands merk', 'Betaalbaar', 'Goede service', 'Lokale assemblage'],
-		cons: ['Basic componenten', 'Beperkte technologie', 'Standaard design', 'Zwaar frame'],
+		cons: ['Basic componenten', 'Beperkte technologie', 'Standaard design', 'Zwaar frame', 'Model naam niet geverifieerd — controleer actuele modellen op eskimo-bikes.nl'],
 		targetAudience: 'Nederlandse rijders die lokale service waarderen',
-		mediamarktUrl: 'https://www.mediamarkt.nl/nl/product/_eskimo-fat-26-5678901.html',
-		officialUrl: 'https://eskimo-bikes.nl/fat-26',
-		dealerNetwork: ['MediaMarkt', 'Eskimo Dealers Nederland'],
+		officialUrl: 'https://eskimo-bikes.nl',
+		dealerNetwork: ['Eskimo Dealers Nederland'],
 		availability: 'In voorraad',
 		warranty: '2 jaar',
 		serviceNetwork: 'Uitgebreid',
