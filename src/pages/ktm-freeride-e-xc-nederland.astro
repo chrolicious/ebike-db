@@ -2,10 +2,7 @@
 // KTM Freeride E-XC - Complete Dutch Landing Page Template
 import Layout from '../layouts/Layout.astro';
 import ComplianceAlert from '../components/ComplianceAlert.astro';
-import AffiliateGrid from '../components/AffiliateGrid.astro';
-import PriceComparison from '../components/PriceComparison.astro';
 import TechnicalSpecs from '../components/TechnicalSpecs.astro';
-import LegalStatus from '../components/LegalStatus.astro';
 
 // SEO & Meta Data
 const title = "KTM Freeride E-XC Kopen Nederland 2026 - Complete Gids & Prijzen";
@@ -102,10 +99,7 @@ const legalRequirements = {
 						</div>
 					</div>
 					<div class="relative">
-						<img src="/images/ktm-freeride-e-xc-hero.jpg"
-							 alt="KTM Freeride E-XC elektrische crossmotor"
-							 class="w-full rounded-lg shadow-2xl"
-							 loading="eager" />
+						<div class="w-full h-64 bg-gray-200 rounded-lg flex items-center justify-center"><span class="text-gray-500 text-xl">Foto binnenkort beschikbaar</span></div>
 						<div class="absolute top-4 right-4 bg-red-500 text-white px-4 py-2 rounded-lg font-bold">
 							🏁 KTM Racing DNA
 						</div>
@@ -478,7 +472,7 @@ const legalRequirements = {
 				<div class="grid lg:grid-cols-3 gap-8 mb-12">
 					<div class="bg-white p-6 rounded-lg shadow-md">
 						<div class="flex items-center mb-4">
-							<img src="/images/dealers/ktm-logo.png" alt="KTM" class="h-12 mr-4">
+							<span class="font-bold text-gray-700 mr-4">[KTM]</span>
 							<div>
 								<h3 class="font-bold">KTM Nederland</h3>
 								<span class="text-sm text-orange-600">Officiële Dealers</span>
@@ -490,7 +484,7 @@ const legalRequirements = {
 							<div>✅ KTM getrainde technici</div>
 							<div>✅ Originele onderdelen service</div>
 						</div>
-						<a href="{affiliateLinks.ktmDealers}"
+						<a href={affiliateLinks.ktmDealers}
 						   class="block bg-orange-600 hover:bg-orange-700 text-white text-center py-3 rounded-lg font-semibold transition-colors"
 						   target="_blank" rel="noopener">
 							Vind KTM Dealer
@@ -499,7 +493,7 @@ const legalRequirements = {
 
 					<div class="bg-white p-6 rounded-lg shadow-md">
 						<div class="flex items-center mb-4">
-							<img src="/images/dealers/ktm-amsterdam-logo.png" alt="KTM Amsterdam" class="h-12 mr-4">
+							<span class="font-bold text-gray-700 mr-4">[KTM Amsterdam]</span>
 							<div>
 								<h3 class="font-bold">KTM Amsterdam</h3>
 								<span class="text-sm text-red-600">Premium Dealer</span>
@@ -511,7 +505,7 @@ const legalRequirements = {
 							<div>✅ Financieringsopties</div>
 							<div>✅ E-Ride events & training</div>
 						</div>
-						<a href="{affiliateLinks.ktmAmsterdam}"
+						<a href={affiliateLinks.ktmAmsterdam}
 						   class="block bg-red-600 hover:bg-red-700 text-white text-center py-3 rounded-lg font-semibold transition-colors"
 						   target="_blank" rel="noopener">
 							Bekijk KTM Amsterdam
@@ -520,7 +514,7 @@ const legalRequirements = {
 
 					<div class="bg-white p-6 rounded-lg shadow-md">
 						<div class="flex items-center mb-4">
-							<img src="/images/dealers/motorcycle-center-logo.png" alt="Motorcycle Center" class="h-12 mr-4">
+							<span class="font-bold text-gray-700 mr-4">[Motorcycle Center]</span>
 							<div>
 								<h3 class="font-bold">Motorcycle Center</h3>
 								<span class="text-sm text-blue-600">Multi-Brand Specialist</span>
@@ -532,7 +526,7 @@ const legalRequirements = {
 							<div>✅ Inruil service</div>
 							<div>✅ Complete uitrusting</div>
 						</div>
-						<a href="{affiliateLinks.motorcycle_center}"
+						<a href={affiliateLinks.motorcycle_center}
 						   class="block bg-blue-600 hover:bg-blue-700 text-white text-center py-3 rounded-lg font-semibold transition-colors"
 						   target="_blank" rel="noopener">
 							Bekijk Motorcycle Center
@@ -668,28 +662,7 @@ const legalRequirements = {
 			</div>
 		</section>
 
-		<!-- Local SEO -->
-		<section class="py-16">
-			<div class="container mx-auto px-4">
-				<div class="text-center">
-					<h2 class="text-3xl font-bold mb-8">🇳🇱 KTM Freeride E-XC in Nederlandse Steden</h2>
-					<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 text-sm">
-						<a href="/ktm-freeride-e-xc-amsterdam" class="hover:text-orange-600">Amsterdam</a>
-						<a href="/ktm-freeride-e-xc-rotterdam" class="hover:text-orange-600">Rotterdam</a>
-						<a href="/ktm-freeride-e-xc-utrecht" class="hover:text-orange-600">Utrecht</a>
-						<a href="/ktm-freeride-e-xc-eindhoven" class="hover:text-orange-600">Eindhoven</a>
-						<a href="/ktm-freeride-e-xc-tilburg" class="hover:text-orange-600">Tilburg</a>
-						<a href="/ktm-freeride-e-xc-groningen" class="hover:text-orange-600">Groningen</a>
-						<a href="/ktm-freeride-e-xc-breda" class="hover:text-orange-600">Breda</a>
-						<a href="/ktm-freeride-e-xc-nijmegen" class="hover:text-orange-600">Nijmegen</a>
-						<a href="/ktm-freeride-e-xc-enschede" class="hover:text-orange-600">Enschede</a>
-						<a href="/ktm-freeride-e-xc-haarlem" class="hover:text-orange-600">Haarlem</a>
-						<a href="/ktm-freeride-e-xc-almere" class="hover:text-orange-600">Almere</a>
-						<a href="/ktm-freeride-e-xc-arnhem" class="hover:text-orange-600">Arnhem</a>
-					</div>
-				</div>
-			</div>
-		</section>
+		
 	</main>
 </Layout>
 
