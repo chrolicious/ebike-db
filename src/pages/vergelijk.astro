@@ -1,0 +1,80 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const models = [
+  { name: 'Surron Light Bee X', slug: 'surron-light-bee-x', price: '€5.199', cat: 'L1e-B (Bromfiets)', speed: 45, license: 'AM', range: '60-100 km', highlight: true },
+  { name: 'Talaria Sting MX5 Pro', slug: 'talaria-sting-mx5-pro', price: '€4.599', cat: 'L1e-B (Bromfiets)', speed: 45, license: 'AM', range: '50-80 km', highlight: false },
+  { name: 'Segway X260', slug: 'segway-dirt-ebike-x260', price: '€3.999', cat: 'L1e-B (Bromfiets)', speed: 45, license: 'AM', range: '65-90 km', highlight: false },
+  { name: 'Onyx RCR', slug: 'onyx-rcr', price: '€3.299', cat: 'L1e-B (Bromfiets)', speed: 45, license: 'AM', range: '60-90 km', highlight: false },
+  { name: 'Super73 S2', slug: 'super73-s2', price: '€2.499', cat: 'L1e-B (Bromfiets)', speed: 45, license: 'AM', range: '50-75 km', highlight: false },
+  { name: 'Stealth H-52', slug: 'stealth-h52', price: '€7.299', cat: 'L1e-B (Bromfiets)', speed: 45, license: 'AM', range: '60-85 km', highlight: false },
+  { name: 'CAKE Kalk OR', slug: 'cake-kalk-or', price: '€6.499', cat: 'L1e-B (Bromfiets)', speed: 45, license: 'AM', range: '53-80 km', highlight: false },
+  { name: 'UBCO 2x2 Work Bike', slug: 'ubco-2x2-work-bike', price: '€4.799', cat: 'L1e-B (Bromfiets)', speed: 45, license: 'AM', range: '75-100 km', highlight: false },
+  { name: 'KTM Freeride E-XC', slug: 'ktm-freeride-e-xc', price: '€10.999', cat: 'L3e (Motorfiets)', speed: 65, license: 'A2', range: '50-70 km', highlight: false },
+  { name: 'Zero FX', slug: 'zero-fx', price: '€12.995', cat: 'L3e (Motorfiets)', speed: 137, license: 'A', range: '70-170 km', highlight: false },
+  { name: 'Himiway Cobra', slug: 'himiway-cobra', price: '€2.199', cat: 'E-Fatbike', speed: 25, license: 'Geen', range: '80-120 km', highlight: false },
+  { name: 'RadRunner 2', slug: 'rad-power-radrunner-2', price: '€1.899', cat: 'E-Fatbike', speed: 25, license: 'Geen', range: '65-90 km', highlight: false },
+  { name: 'Eskimo Fat 26', slug: 'eskimo-fat-26', price: '€1.699', cat: 'E-Fatbike', speed: 25, license: 'Geen', range: '60-85 km', highlight: false },
+];
+---
+<Layout title="E-Crosser Vergelijken — Alle Modellen | E-Bike Database NL" description="Vergelijk alle elektrische crossers en e-bikes op prijs, snelheid, rijbewijs en bereik. Vind het beste model voor jouw situatie.">
+
+  <section class="bg-gradient-to-r from-blue-600 to-blue-700 text-white py-12">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h1 class="text-4xl font-bold mb-4">Modellen Vergelijken</h1>
+      <p class="text-xl opacity-90">Alle elektrische crossers en e-bikes op een rij</p>
+    </div>
+  </section>
+
+  <div class="max-w-6xl mx-auto px-4 py-12">
+    <p class="text-gray-600 mb-8">Gebruik deze tabel om modellen te vergelijken op prijs, rijbewijs en prestaties. Klik op een model voor de volledige specificaties en Nederlandse wetgeving.</p>
+
+    <div class="overflow-x-auto shadow-md rounded-lg">
+      <table class="w-full bg-white">
+        <thead class="bg-blue-600 text-white">
+          <tr>
+            <th class="px-4 py-3 text-left">Model</th>
+            <th class="px-4 py-3 text-left">Prijs</th>
+            <th class="px-4 py-3 text-left">Categorie</th>
+            <th class="px-4 py-3 text-center">Max km/h</th>
+            <th class="px-4 py-3 text-center">Rijbewijs</th>
+            <th class="px-4 py-3 text-left">Bereik</th>
+            <th class="px-4 py-3 text-center">Pagina</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-200">
+          {models.map((m) => (
+            <tr class={m.highlight ? 'bg-blue-50 hover:bg-blue-100' : 'hover:bg-gray-50'}>
+              <td class="px-4 py-3 font-semibold">{m.name}</td>
+              <td class="px-4 py-3 text-blue-700 font-medium">{m.price}</td>
+              <td class="px-4 py-3 text-sm">{m.cat}</td>
+              <td class="px-4 py-3 text-center font-bold">{m.speed}</td>
+              <td class={`px-4 py-3 text-center font-medium ${m.license === 'Geen' ? 'text-green-600' : 'text-orange-600'}`}>{m.license}</td>
+              <td class="px-4 py-3 text-sm">{m.range}</td>
+              <td class="px-4 py-3 text-center">
+                <a href={`/${m.slug}`} class="bg-blue-600 text-white px-3 py-1 rounded text-sm hover:bg-blue-700">
+                  Bekijk →
+                </a>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mt-8 grid md:grid-cols-3 gap-6">
+      <div class="bg-green-50 p-4 rounded-lg border border-green-200">
+        <h3 class="font-bold text-green-800 mb-2">Geen rijbewijs nodig</h3>
+        <p class="text-sm text-gray-700">E-fatbikes (25 km/h) en speed pedelecs rijden zonder rijbewijs. Ideaal als je geen AM of motorrijbewijs hebt.</p>
+      </div>
+      <div class="bg-orange-50 p-4 rounded-lg border border-orange-200">
+        <h3 class="font-bold text-orange-800 mb-2">AM rijbewijs (bromfiets)</h3>
+        <p class="text-sm text-gray-700">De meeste e-crossers (45 km/h) zijn bromfietsen en vereisen een AM rijbewijs. Dit haal je via theorie + praktijkexamen bij het CBR.</p>
+      </div>
+      <div class="bg-red-50 p-4 rounded-lg border border-red-200">
+        <h3 class="font-bold text-red-800 mb-2">Motorrijbewijs</h3>
+        <p class="text-sm text-gray-700">KTM en Zero zijn echte motorfietsen — A1, A2 of A rijbewijs vereist. Hogere kosten maar ook meer mogelijkheden.</p>
+      </div>
+    </div>
+  </div>
+</Layout>
