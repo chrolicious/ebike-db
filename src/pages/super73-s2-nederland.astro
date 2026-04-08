@@ -2,10 +2,7 @@
 // Super73 S2 - Complete Dutch Landing Page Template  
 import Layout from '../layouts/Layout.astro';
 import ComplianceAlert from '../components/ComplianceAlert.astro';
-import AffiliateGrid from '../components/AffiliateGrid.astro';
-import PriceComparison from '../components/PriceComparison.astro';
 import TechnicalSpecs from '../components/TechnicalSpecs.astro';
-import LegalStatus from '../components/LegalStatus.astro';
 
 // SEO & Meta Data
 const title = "Super73 S2 Kopen Nederland 2026 - Complete Gids & Prijzen";
@@ -102,10 +99,7 @@ const legalRequirements = {
 						</div>
 					</div>
 					<div class="relative">
-						<img src="/images/super73-s2-hero.jpg"
-							 alt="Super73 S2 lifestyle elektrische fiets"
-							 class="w-full rounded-lg shadow-2xl"
-							 loading="eager" />
+						<div class="w-full h-64 bg-gray-200 rounded-lg flex items-center justify-center"><span class="text-gray-500 text-xl">Foto binnenkort beschikbaar</span></div>
 						<div class="absolute top-4 right-4 bg-purple-500 text-white px-4 py-2 rounded-lg font-bold">
 							🎨 Lifestyle Icon
 						</div>
@@ -413,7 +407,7 @@ const legalRequirements = {
 				<div class="grid lg:grid-cols-3 gap-8 mb-12">
 					<div class="bg-white p-6 rounded-lg shadow-md">
 						<div class="flex items-center mb-4">
-							<img src="/images/dealers/super73-logo.png" alt="Super73" class="h-12 mr-4">
+							<span class="font-bold text-gray-700 mr-4">[Super73]</span>
 							<div>
 								<h3 class="font-bold">Super73 Europe</h3>
 								<span class="text-sm text-orange-600">Officiële Website</span>
@@ -425,7 +419,7 @@ const legalRequirements = {
 							<div>✅ Gratis levering in Nederland</div>
 							<div>✅ Officiële accessoires</div>
 						</div>
-						<a href="{affiliateLinks.super73Official}"
+						<a href={affiliateLinks.super73Official}
 						   class="block bg-orange-600 hover:bg-orange-700 text-white text-center py-3 rounded-lg font-semibold transition-colors"
 						   target="_blank" rel="noopener">
 							Bestellen bij Super73
@@ -434,7 +428,7 @@ const legalRequirements = {
 
 					<div class="bg-white p-6 rounded-lg shadow-md">
 						<div class="flex items-center mb-4">
-							<img src="/images/dealers/bikester-logo.png" alt="Bikester" class="h-12 mr-4">
+							<span class="font-bold text-gray-700 mr-4">[Bikester]</span>
 							<div>
 								<h3 class="font-bold">Bikester Nederland</h3>
 								<span class="text-sm text-green-600">Geautoriseerde Dealer</span>
@@ -446,7 +440,7 @@ const legalRequirements = {
 							<div>✅ 30 dagen retourrecht</div>
 							<div>✅ Begrenzer service beschikbaar</div>
 						</div>
-						<a href="{affiliateLinks.bikester}"
+						<a href={affiliateLinks.bikester}
 						   class="block bg-green-600 hover:bg-green-700 text-white text-center py-3 rounded-lg font-semibold transition-colors"
 						   target="_blank" rel="noopener">
 							Bekijk bij Bikester
@@ -455,7 +449,7 @@ const legalRequirements = {
 
 					<div class="bg-white p-6 rounded-lg shadow-md">
 						<div class="flex items-center mb-4">
-							<img src="/images/dealers/coolblue-logo.png" alt="Coolblue" class="h-12 mr-4">
+							<span class="font-bold text-gray-700 mr-4">[Coolblue]</span>
 							<div>
 								<h3 class="font-bold">Coolblue</h3>
 								<span class="text-sm text-blue-600">Nederlandse Service</span>
@@ -467,7 +461,7 @@ const legalRequirements = {
 							<div>✅ Nederlandse klantenservice</div>
 							<div>✅ Voor 23:59 besteld = morgen in huis</div>
 						</div>
-						<a href="{affiliateLinks.coolblue}"
+						<a href={affiliateLinks.coolblue}
 						   class="block bg-blue-600 hover:bg-blue-700 text-white text-center py-3 rounded-lg font-semibold transition-colors"
 						   target="_blank" rel="noopener">
 							Bekijk bij Coolblue
@@ -583,28 +577,7 @@ const legalRequirements = {
 			</div>
 		</section>
 
-		<!-- Local SEO -->
-		<section class="py-16 bg-gray-50">
-			<div class="container mx-auto px-4">
-				<div class="text-center">
-					<h2 class="text-3xl font-bold mb-8">🇳🇱 Super73 S2 in Nederlandse Steden</h2>
-					<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 text-sm">
-						<a href="/super73-s2-amsterdam" class="hover:text-orange-600">Amsterdam</a>
-						<a href="/super73-s2-rotterdam" class="hover:text-orange-600">Rotterdam</a>
-						<a href="/super73-s2-utrecht" class="hover:text-orange-600">Utrecht</a>
-						<a href="/super73-s2-eindhoven" class="hover:text-orange-600">Eindhoven</a>
-						<a href="/super73-s2-tilburg" class="hover:text-orange-600">Tilburg</a>
-						<a href="/super73-s2-groningen" class="hover:text-orange-600">Groningen</a>
-						<a href="/super73-s2-breda" class="hover:text-orange-600">Breda</a>
-						<a href="/super73-s2-nijmegen" class="hover:text-orange-600">Nijmegen</a>
-						<a href="/super73-s2-enschede" class="hover:text-orange-600">Enschede</a>
-						<a href="/super73-s2-haarlem" class="hover:text-orange-600">Haarlem</a>
-						<a href="/super73-s2-almere" class="hover:text-orange-600">Almere</a>
-						<a href="/super73-s2-arnhem" class="hover:text-orange-600">Arnhem</a>
-					</div>
-				</div>
-			</div>
-		</section>
+		
 	</main>
 </Layout>
 
