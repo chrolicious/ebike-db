@@ -2,10 +2,7 @@
 // Talaria Sting - Complete Dutch Landing Page Template
 import Layout from '../layouts/Layout.astro';
 import ComplianceAlert from '../components/ComplianceAlert.astro';
-import AffiliateGrid from '../components/AffiliateGrid.astro';
-import PriceComparison from '../components/PriceComparison.astro';
 import TechnicalSpecs from '../components/TechnicalSpecs.astro';
-import LegalStatus from '../components/LegalStatus.astro';
 
 // SEO & Meta Data
 const title = "Talaria Sting Kopen Nederland 2026 - Complete Gids & Prijzen";
@@ -102,10 +99,7 @@ const legalRequirements = {
 						</div>
 					</div>
 					<div class="relative">
-						<img src="/images/talaria-sting-hero.jpg"
-							 alt="Talaria Sting elektrische crossmotor"
-							 class="w-full rounded-lg shadow-2xl"
-							 loading="eager" />
+						<div class="w-full h-64 bg-gray-200 rounded-lg flex items-center justify-center"><span class="text-gray-500 text-xl">Foto binnenkort beschikbaar</span></div>
 						<div class="absolute top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-lg font-bold">
 							💰 €1300 Goedkoper
 						</div>
@@ -363,7 +357,7 @@ const legalRequirements = {
 				<div class="grid lg:grid-cols-3 gap-8 mb-12">
 					<div class="bg-white p-6 rounded-lg shadow-md">
 						<div class="flex items-center mb-4">
-							<img src="/images/dealers/talaria-europe-logo.png" alt="Talaria Europe" class="h-12 mr-4">
+							<span class="font-bold text-gray-700 mr-4">[Talaria Europe]</span>
 							<div>
 								<h3 class="font-bold">Talaria Europe</h3>
 								<span class="text-sm text-green-600">Officiële Importeur</span>
@@ -375,7 +369,7 @@ const legalRequirements = {
 							<div>✅ Groeiend service netwerk</div>
 							<div>✅ COC papieren inclusief</div>
 						</div>
-						<a href="{affiliateLinks.talariaEurope}"
+						<a href={affiliateLinks.talariaEurope}
 						   class="block bg-red-600 hover:bg-red-700 text-white text-center py-3 rounded-lg font-semibold transition-colors"
 						   target="_blank" rel="noopener">
 							Vind Talaria Dealer
@@ -384,7 +378,7 @@ const legalRequirements = {
 
 					<div class="bg-white p-6 rounded-lg shadow-md">
 						<div class="flex items-center mb-4">
-							<img src="/images/dealers/dcc-ebikes-logo.png" alt="DCC E-bikes" class="h-12 mr-4">
+							<span class="font-bold text-gray-700 mr-4">[DCC E-bikes]</span>
 							<div>
 								<h3 class="font-bold">DCC E-bikes Utrecht</h3>
 								<span class="text-sm text-blue-600">Nederlandse Specialist</span>
@@ -396,7 +390,7 @@ const legalRequirements = {
 							<div>✅ Proefrit mogelijk</div>
 							<div>✅ 25km/h begrenzer service</div>
 						</div>
-						<a href="{affiliateLinks.dccEbikes}"
+						<a href={affiliateLinks.dccEbikes}
 						   class="block bg-blue-600 hover:bg-blue-700 text-white text-center py-3 rounded-lg font-semibold transition-colors"
 						   target="_blank" rel="noopener">
 							Bekijk bij DCC E-bikes
@@ -405,7 +399,7 @@ const legalRequirements = {
 
 					<div class="bg-white p-6 rounded-lg shadow-md">
 						<div class="flex items-center mb-4">
-							<img src="/images/dealers/amazon-nl-logo.png" alt="Amazon Nederland" class="h-12 mr-4">
+							<span class="font-bold text-gray-700 mr-4">[Amazon Nederland]</span>
 							<div>
 								<h3 class="font-bold">Amazon Nederland</h3>
 								<span class="text-sm text-orange-600">Online Platform</span>
@@ -417,7 +411,7 @@ const legalRequirements = {
 							<div>✅ 30 dagen retourrecht</div>
 							<div>⚠️ Zelf begrenzer regelen</div>
 						</div>
-						<a href="{affiliateLinks.amazon}"
+						<a href={affiliateLinks.amazon}
 						   class="block bg-orange-600 hover:bg-orange-700 text-white text-center py-3 rounded-lg font-semibold transition-colors"
 						   target="_blank" rel="noopener">
 							Bekijk op Amazon
@@ -534,27 +528,7 @@ const legalRequirements = {
 		</section>
 
 		<!-- Local SEO / Schema -->
-		<section class="py-16">
-			<div class="container mx-auto px-4">
-				<div class="text-center">
-					<h2 class="text-3xl font-bold mb-8">🇳🇱 Talaria Sting in Nederlandse Steden</h2>
-					<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 text-sm">
-						<a href="/talaria-sting-amsterdam" class="hover:text-red-600">Amsterdam</a>
-						<a href="/talaria-sting-rotterdam" class="hover:text-red-600">Rotterdam</a>
-						<a href="/talaria-sting-utrecht" class="hover:text-red-600">Utrecht</a>
-						<a href="/talaria-sting-eindhoven" class="hover:text-red-600">Eindhoven</a>
-						<a href="/talaria-sting-tilburg" class="hover:text-red-600">Tilburg</a>
-						<a href="/talaria-sting-groningen" class="hover:text-red-600">Groningen</a>
-						<a href="/talaria-sting-breda" class="hover:text-red-600">Breda</a>
-						<a href="/talaria-sting-nijmegen" class="hover:text-red-600">Nijmegen</a>
-						<a href="/talaria-sting-enschede" class="hover:text-red-600">Enschede</a>
-						<a href="/talaria-sting-haarlem" class="hover:text-red-600">Haarlem</a>
-						<a href="/talaria-sting-almere" class="hover:text-red-600">Almere</a>
-						<a href="/talaria-sting-arnhem" class="hover:text-red-600">Arnhem</a>
-					</div>
-				</div>
-			</div>
-		</section>
+		
 	</main>
 </Layout>
 
