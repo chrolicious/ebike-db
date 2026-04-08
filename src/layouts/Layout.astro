@@ -49,49 +49,48 @@ const pageDescription = description || "Complete e-bike and electric crosser dat
 						<a href="/" class="text-xl font-bold text-blue-600">E-Bike Database NL</a>
 					</div>
 					<div class="hidden md:flex space-x-8">
-						<!-- Nederlandse Crossers dropdown -->
+						<!-- Alle Modellen dropdown -->
 						<div class="relative group">
 							<button class="text-gray-600 hover:text-blue-600 flex items-center">
-								Nederlandse Crossers 
+								Alle Modellen
 								<svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
 								</svg>
 							</button>
-							<div class="absolute left-0 mt-2 w-64 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-								<div class="py-2">
-									<div class="px-4 py-2 text-xs font-semibold text-gray-500 uppercase border-b">Budget (€999-€2,199)</div>
-									<a href="/lectric-xp-nederland" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">
-										<div class="font-medium">Lectric XP Nederland</div>
-										<div class="text-xs text-gray-500">€999 - Reguliere e-bike</div>
-									</a>
-									<a href="/radrunner-plus-nederland" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">
-										<div class="font-medium">RadRunner Plus Nederland</div>
-										<div class="text-xs text-gray-500">€1,699 - Familie cargo</div>
-									</a>
-									<a href="/super73-s2-nederland" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">
-										<div class="font-medium">Super73 S2 Nederland</div>
-										<div class="text-xs text-gray-500">€2,199 - Lifestyle e-bike</div>
-									</a>
-									
-									<div class="px-4 py-2 text-xs font-semibold text-gray-500 uppercase border-b border-t mt-2">Premium (€4,899+)</div>
-									<a href="/talaria-sting-nederland" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">
-										<div class="font-medium">Talaria Sting Nederland</div>
-										<div class="text-xs text-gray-500">€4,899 - Surron alternatief</div>
-									</a>
-									
-									<div class="px-4 py-2 text-xs font-semibold text-gray-500 uppercase border-b border-t mt-2">A1 Motoren (€11,999+)</div>
-									<a href="/ktm-freeride-e-xc-nederland" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">
-										<div class="font-medium">KTM Freeride E-XC Nederland</div>
-										<div class="text-xs text-gray-500">€11,999 - Off-road crosser</div>
-									</a>
-									<a href="/zero-fx-nederland" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">
-										<div class="font-medium">Zero FX Nederland</div>
-										<div class="text-xs text-gray-500">€12,995 - Premium motor</div>
-									</a>
+							<div class="absolute left-0 mt-2 w-80 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+								<div class="py-2 max-h-[80vh] overflow-y-auto">
+									<div class="px-4 py-2 text-xs font-semibold text-gray-500 uppercase bg-gray-50 border-b">L1e-B Bromfiets (AM rijbewijs)</div>
+									<a href="/onyx-rcr" class="flex justify-between px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"><span>Onyx RCR</span><span class="text-gray-400">€3.299</span></a>
+									<a href="/super73-s2" class="flex justify-between px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"><span>Super73 S2</span><span class="text-gray-400">€2.499</span></a>
+									<a href="/segway-dirt-ebike-x260" class="flex justify-between px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"><span>Segway Dirt X260</span><span class="text-gray-400">€3.999</span></a>
+									<a href="/talaria-sting-mx5-pro" class="flex justify-between px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"><span>Talaria Sting MX5 Pro</span><span class="text-gray-400">€4.599</span></a>
+									<a href="/ubco-2x2-work-bike" class="flex justify-between px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"><span>UBCO 2x2 Work Bike</span><span class="text-gray-400">€4.799</span></a>
+									<a href="/surron-light-bee-x" class="flex justify-between px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"><span>Sur-Ron Light Bee X</span><span class="text-gray-400">€5.199</span></a>
+									<a href="/cake-kalk-or" class="flex justify-between px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"><span>CAKE Kalk OR</span><span class="text-gray-400">€6.499</span></a>
+									<a href="/stealth-h52" class="flex justify-between px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"><span>Stealth H-52</span><span class="text-gray-400">€7.299</span></a>
+
+									<div class="px-4 py-2 text-xs font-semibold text-gray-500 uppercase bg-gray-50 border-b border-t">L3e Motorfiets (A/A2 rijbewijs)</div>
+									<a href="/ktm-freeride-e-xc" class="flex justify-between px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"><span>KTM Freeride E-XC</span><span class="text-gray-400">€10.999</span></a>
+									<a href="/zero-fx" class="flex justify-between px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"><span>Zero Motorcycles FX</span><span class="text-gray-400">€12.995</span></a>
+
+									<div class="px-4 py-2 text-xs font-semibold text-gray-500 uppercase bg-gray-50 border-b border-t">E-Fatbike (geen rijbewijs)</div>
+									<a href="/eskimo-fat-26" class="flex justify-between px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"><span>Eskimo FAT 26</span><span class="text-gray-400">€1.699</span></a>
+									<a href="/rad-power-radrunner-2" class="flex justify-between px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"><span>Rad Power RadRunner 2</span><span class="text-gray-400">€1.899</span></a>
+									<a href="/himiway-cobra" class="flex justify-between px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"><span>Himiway Cobra</span><span class="text-gray-400">€2.199</span></a>
+									<a href="/bafang-ultra-m620" class="flex justify-between px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"><span>Bafang Ultra M620</span><span class="text-gray-400">€3.499</span></a>
+
+									<div class="px-4 py-2 text-xs font-semibold text-gray-500 uppercase bg-gray-50 border-b border-t">NL Koopgidsen</div>
+									<a href="/surron-light-bee-x" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">Sur-Ron Light Bee X</a>
+									<a href="/talaria-sting-nederland" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">Talaria Sting Nederland</a>
+									<a href="/super73-s2-nederland" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">Super73 S2 Nederland</a>
+									<a href="/ktm-freeride-e-xc-nederland" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">KTM Freeride Nederland</a>
+									<a href="/zero-fx-nederland" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">Zero FX Nederland</a>
+									<a href="/lectric-xp-nederland" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">Lectric XP Nederland</a>
+									<a href="/radrunner-plus-nederland" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">RadRunner Plus Nederland</a>
 								</div>
 							</div>
 						</div>
-						
+
 						<a href="/vergelijk" class="text-gray-600 hover:text-blue-600">Vergelijken</a>
 						<a href="/wetgeving" class="text-gray-600 hover:text-blue-600">Wetgeving</a>
 						<a href="/dealers" class="text-gray-600 hover:text-blue-600">Dealers</a>
@@ -140,22 +139,23 @@ const pageDescription = description || "Complete e-bike and electric crosser dat
 						<p class="text-gray-300">Complete gids voor elektrische fietsen en crossers in Nederland.</p>
 					</div>
 					<div>
-						<h4 class="text-md font-semibold mb-4">Nederlandse Crossers</h4>
+						<h4 class="text-md font-semibold mb-4">Populaire Modellen</h4>
 						<ul class="space-y-2 text-gray-300 text-sm">
-							<li><a href="/lectric-xp-nederland" class="hover:text-white">Lectric XP Nederland (€999)</a></li>
-							<li><a href="/radrunner-plus-nederland" class="hover:text-white">RadRunner Plus Nederland (€1,699)</a></li>
-							<li><a href="/super73-s2-nederland" class="hover:text-white">Super73 S2 Nederland (€2,199)</a></li>
-							<li><a href="/talaria-sting-nederland" class="hover:text-white">Talaria Sting Nederland (€4,899)</a></li>
-							<li><a href="/zero-fx-nederland" class="hover:text-white">Zero FX Nederland (€12,995)</a></li>
-							<li><a href="/ktm-freeride-e-xc-nederland" class="hover:text-white">KTM Freeride E-XC Nederland (€11,999)</a></li>
+							<li><a href="/surron-light-bee-x" class="hover:text-white">Sur-Ron Light Bee X</a></li>
+							<li><a href="/talaria-sting-mx5-pro" class="hover:text-white">Talaria Sting MX5 Pro</a></li>
+							<li><a href="/super73-s2" class="hover:text-white">Super73 S2</a></li>
+							<li><a href="/segway-dirt-ebike-x260" class="hover:text-white">Segway X260</a></li>
+							<li><a href="/ktm-freeride-e-xc" class="hover:text-white">KTM Freeride E-XC</a></li>
+							<li><a href="/zero-fx" class="hover:text-white">Zero Motorcycles FX</a></li>
+							<li><a href="/vergelijk" class="hover:text-white">Alle modellen vergelijken</a></li>
 						</ul>
 					</div>
 					<div>
 						<h4 class="text-md font-semibold mb-4">Wetgeving</h4>
 						<ul class="space-y-2 text-gray-300">
-							<li><a href="/wetgeving/speed-pedelec" class="hover:text-white">Speed Pedelec</a></li>
-							<li><a href="/wetgeving/l1e-b-bromfiets" class="hover:text-white">L1e-B Bromfiets</a></li>
-							<li><a href="/wetgeving/verzekering" class="hover:text-white">Verzekering</a></li>
+							<li><a href="/wetgeving#speed-pedelec" class="hover:text-white">Speed Pedelec</a></li>
+							<li><a href="/wetgeving#l1e-b" class="hover:text-white">L1e-B Bromfiets</a></li>
+							<li><a href="/wetgeving#verzekering" class="hover:text-white">Verzekering</a></li>
 						</ul>
 					</div>
 					<div>
