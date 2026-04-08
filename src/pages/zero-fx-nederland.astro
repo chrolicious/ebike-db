@@ -2,10 +2,7 @@
 // Zero FX - Complete Dutch Landing Page Template
 import Layout from '../layouts/Layout.astro';
 import ComplianceAlert from '../components/ComplianceAlert.astro';
-import AffiliateGrid from '../components/AffiliateGrid.astro';
-import PriceComparison from '../components/PriceComparison.astro';
 import TechnicalSpecs from '../components/TechnicalSpecs.astro';
-import LegalStatus from '../components/LegalStatus.astro';
 
 // SEO & Meta Data
 const title = "Zero FX Kopen Nederland 2026 - Complete Gids & Prijzen";
@@ -102,10 +99,7 @@ const legalRequirements = {
 						</div>
 					</div>
 					<div class="relative">
-						<img src="/images/zero-fx-hero.jpg"
-							 alt="Zero FX elektrische motorfiets"
-							 class="w-full rounded-lg shadow-2xl"
-							 loading="eager" />
+						<div class="w-full h-64 bg-gray-200 rounded-lg flex items-center justify-center"><span class="text-gray-500 text-xl">Foto binnenkort beschikbaar</span></div>
 						<div class="absolute top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-lg font-bold">
 							⚡ 100% Elektrisch
 						</div>
@@ -439,7 +433,7 @@ const legalRequirements = {
 				<div class="grid lg:grid-cols-3 gap-8 mb-12">
 					<div class="bg-white p-6 rounded-lg shadow-md">
 						<div class="flex items-center mb-4">
-							<img src="/images/dealers/zero-motorcycles-logo.png" alt="Zero Motorcycles" class="h-12 mr-4">
+							<span class="font-bold text-gray-700 mr-4">[Zero Motorcycles]</span>
 							<div>
 								<h3 class="font-bold">Zero Motorcycles</h3>
 								<span class="text-sm text-blue-600">Officiële Website</span>
@@ -451,7 +445,7 @@ const legalRequirements = {
 							<div>✅ Geautoriseerde Nederlandse dealers</div>
 							<div>✅ Over-the-air updates</div>
 						</div>
-						<a href="{affiliateLinks.zeroDealers}"
+						<a href={affiliateLinks.zeroDealers}
 						   class="block bg-blue-600 hover:bg-blue-700 text-white text-center py-3 rounded-lg font-semibold transition-colors"
 						   target="_blank" rel="noopener">
 							Vind Zero Dealer
@@ -460,7 +454,7 @@ const legalRequirements = {
 
 					<div class="bg-white p-6 rounded-lg shadow-md">
 						<div class="flex items-center mb-4">
-							<img src="/images/dealers/euromotor-logo.png" alt="Euro Motor" class="h-12 mr-4">
+							<span class="font-bold text-gray-700 mr-4">[Euro Motor]</span>
 							<div>
 								<h3 class="font-bold">Euro Motor Utrecht</h3>
 								<span class="text-sm text-green-600">Zero Specialist</span>
@@ -472,7 +466,7 @@ const legalRequirements = {
 							<div>✅ Complete service werkplaats</div>
 							<div>✅ Financieringsmogelijkheden</div>
 						</div>
-						<a href="{affiliateLinks.euroMotor}"
+						<a href={affiliateLinks.euroMotor}
 						   class="block bg-green-600 hover:bg-green-700 text-white text-center py-3 rounded-lg font-semibold transition-colors"
 						   target="_blank" rel="noopener">
 							Bekijk Euro Motor
@@ -481,7 +475,7 @@ const legalRequirements = {
 
 					<div class="bg-white p-6 rounded-lg shadow-md">
 						<div class="flex items-center mb-4">
-							<img src="/images/dealers/bike-experience-logo.png" alt="Bike Experience" class="h-12 mr-4">
+							<span class="font-bold text-gray-700 mr-4">[Bike Experience]</span>
 							<div>
 								<h3 class="font-bold">Bike Experience</h3>
 								<span class="text-sm text-yellow-600">Premium Dealer</span>
@@ -493,7 +487,7 @@ const legalRequirements = {
 							<div>✅ Premium klantenservice</div>
 							<div>✅ Accessoires en uitrusting</div>
 						</div>
-						<a href="{affiliateLinks.bikeExperience}"
+						<a href={affiliateLinks.bikeExperience}
 						   class="block bg-yellow-600 hover:bg-yellow-700 text-white text-center py-3 rounded-lg font-semibold transition-colors"
 						   target="_blank" rel="noopener">
 							Bekijk Bike Experience
@@ -621,28 +615,7 @@ const legalRequirements = {
 			</div>
 		</section>
 
-		<!-- Local SEO -->
-		<section class="py-16 bg-gray-50">
-			<div class="container mx-auto px-4">
-				<div class="text-center">
-					<h2 class="text-3xl font-bold mb-8">🇳🇱 Zero FX in Nederlandse Steden</h2>
-					<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 text-sm">
-						<a href="/zero-fx-amsterdam" class="hover:text-blue-600">Amsterdam</a>
-						<a href="/zero-fx-rotterdam" class="hover:text-blue-600">Rotterdam</a>
-						<a href="/zero-fx-utrecht" class="hover:text-blue-600">Utrecht</a>
-						<a href="/zero-fx-eindhoven" class="hover:text-blue-600">Eindhoven</a>
-						<a href="/zero-fx-tilburg" class="hover:text-blue-600">Tilburg</a>
-						<a href="/zero-fx-groningen" class="hover:text-blue-600">Groningen</a>
-						<a href="/zero-fx-breda" class="hover:text-blue-600">Breda</a>
-						<a href="/zero-fx-nijmegen" class="hover:text-blue-600">Nijmegen</a>
-						<a href="/zero-fx-enschede" class="hover:text-blue-600">Enschede</a>
-						<a href="/zero-fx-haarlem" class="hover:text-blue-600">Haarlem</a>
-						<a href="/zero-fx-almere" class="hover:text-blue-600">Almere</a>
-						<a href="/zero-fx-arnhem" class="hover:text-blue-600">Arnhem</a>
-					</div>
-				</div>
-			</div>
-		</section>
+		
 	</main>
 </Layout>
 
