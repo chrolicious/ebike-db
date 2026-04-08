@@ -177,10 +177,10 @@ export const eCrossers: ECrosser[] = [
 		targetAudience: 'Premium rijders met budget voor hoogste kwaliteit',
 		imageUrl: '/images/ktm-freeride-e-xc.jpg',
 		videoId: 'LxOaph4sFXI',
-		officialUrl: 'https://www.ktm.com/en-nl/models/e-ride/freeride-e-xc.html',
+		officialUrl: 'https://www.ktm.com/en-nl/models/freeride-e-xc.html',
 		specialistDealers: [
 			{name: 'JTX Motoren', url: 'https://jtxmotoren.nl/ktm-freeride-e-xc/'},
-			{name: 'KTM International', url: 'https://www.ktm.com/en-nl/models/e-ride/freeride-e-xc.html'}
+			{name: 'KTM International', url: 'https://www.ktm.com/en-nl/models/freeride-e-xc.html'}
 		],
 		dealerNetwork: ['JTX Motoren Cuijk', 'KTM Nederland'],
 		availability: 'Op bestelling',
