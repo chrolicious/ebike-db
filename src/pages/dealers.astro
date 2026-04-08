@@ -1,0 +1,53 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const dealers = [
+  { name: 'Resa Racing', specialty: 'Surron specialist — Light Bee X & Storm Bee', url: 'https://www.resa-racing.nl', location: 'Nederland' },
+  { name: 'Elektrisch Motorrijden', specialty: 'Surron L1e-B road legal versies', url: 'https://elektrisch-motorrijden.nl', location: 'Nederland' },
+  { name: 'Fat Daddy', specialty: 'Surron, e-crossers & accessoires', url: 'https://www.fatdaddy.nl', location: 'Nederland' },
+  { name: 'Bike Centre Holland', specialty: 'Officieel Talaria dealer — Apeldoorn', url: 'https://bikecentreholland.nl', location: 'Apeldoorn' },
+  { name: 'JED World', specialty: 'Talaria Sting MX5 Pro', url: 'https://jedworld.nl', location: 'Nederland' },
+  { name: 'BeastBird', specialty: 'Officieel Stealth Electric Bikes dealer Benelux', url: 'https://www.beastbird.com', location: 'Benelux' },
+  { name: 'Electric Lifestyle', specialty: 'Super73 officieel dealer', url: 'https://electriclifestyle.eu/nl/super73', location: 'Nederland' },
+  { name: 'Roeleveld Zero', specialty: 'Zero Motorcycles dealer — Utrecht regio', url: 'https://roeleveldzero.nl', location: 'Utrecht' },
+  { name: 'JTX Motoren', specialty: 'KTM dealer — Freeride E-XC', url: 'https://jtxmotoren.nl', location: 'Cuijk' },
+  { name: 'Rad Power Bikes EU', specialty: 'RadRunner 2 & Rad Power assortiment', url: 'https://radpowerbikes.eu', location: 'Europa' },
+  { name: 'Himiway NL', specialty: 'Himiway e-fatbikes', url: 'https://www.himiway.nl', location: 'Nederland' },
+  { name: 'E-Scooter NL', specialty: 'Info & import voor diverse merken', url: 'https://www.e-scooter.nl', location: 'Nederland' },
+  { name: 'UBCO Europe', specialty: 'UBCO 2x2 Work Bike', url: 'https://ubco.eu', location: 'Europa' },
+];
+---
+<Layout title="E-Crosser & E-Bike Dealers Nederland | E-Bike Database NL" description="Overzicht van gespecialiseerde e-bike en e-crosser dealers in Nederland. Vind een dealer bij jou in de buurt.">
+
+  <section class="bg-gradient-to-r from-blue-600 to-blue-700 text-white py-12">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h1 class="text-4xl font-bold mb-4">Dealers Nederland</h1>
+      <p class="text-xl opacity-90">Gespecialiseerde e-bike en e-crosser dealers</p>
+    </div>
+  </section>
+
+  <div class="max-w-5xl mx-auto px-4 py-12">
+    <p class="text-gray-600 mb-8">De meeste high-end elektrische crossers worden niet verkocht via grote ketens maar via gespecialiseerde dealers. Hieronder vind je een overzicht van betrouwbare Nederlandse en Benelux dealers.</p>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {dealers.map((dealer) => (
+        <div class="bg-white rounded-lg shadow-md p-6 flex flex-col">
+          <h2 class="text-lg font-bold mb-1">{dealer.name}</h2>
+          <p class="text-sm text-gray-500 mb-2">📍 {dealer.location}</p>
+          <p class="text-gray-600 text-sm flex-grow mb-4">{dealer.specialty}</p>
+          <a href={dealer.url}
+             target="_blank"
+             rel="noopener nofollow"
+             class="block w-full bg-blue-600 text-white py-2 px-4 rounded-lg text-sm font-semibold text-center hover:bg-blue-700 transition-colors">
+            Bezoek dealer →
+          </a>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-12 bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-r-lg">
+      <h2 class="text-lg font-bold text-yellow-800 mb-2">Dealer toegevoegen?</h2>
+      <p class="text-gray-700">Ken je een dealer die hier niet tussen staat? Stuur een bericht via de officiële kanalen van de betreffende fabrikant.</p>
+    </div>
+  </div>
+</Layout>
