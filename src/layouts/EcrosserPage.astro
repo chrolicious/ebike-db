@@ -15,23 +15,53 @@ const pageDescription = `Complete gids voor de ${ecrosser.brand} ${ecrosser.name
 	<!-- Hero Section -->
 	<section class="bg-gradient-to-r from-blue-600 to-blue-700 text-white py-16">
 		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-			<div class="text-center">
-				<h1 class="text-4xl md:text-5xl font-bold mb-4">
-					{ecrosser.brand} {ecrosser.name}
-				</h1>
-				<p class="text-xl mb-8 opacity-90">{ecrosser.targetAudience}</p>
-				<div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-					<div class="bg-white bg-opacity-20 px-6 py-3 rounded-lg">
-						<span class="text-2xl font-bold">{ecrosser.priceRange}</span>
+			{ecrosser.imageUrl ? (
+				<div class="grid md:grid-cols-2 gap-10 items-center">
+					<div>
+						<h1 class="text-4xl md:text-5xl font-bold mb-4">
+							{ecrosser.brand} {ecrosser.name}
+						</h1>
+						<p class="text-xl mb-8 opacity-90">{ecrosser.targetAudience}</p>
+						<div class="flex flex-wrap gap-4">
+							<div class="bg-white bg-opacity-20 px-6 py-3 rounded-lg">
+								<span class="text-2xl font-bold">{ecrosser.priceRange}</span>
+							</div>
+							<div class="bg-white bg-opacity-20 px-6 py-3 rounded-lg">
+								<span class="text-lg">Max {ecrosser.maxSpeed} km/h</span>
+							</div>
+							<div class="bg-white bg-opacity-20 px-6 py-3 rounded-lg">
+								<span class="text-lg">Bereik {ecrosser.range}</span>
+							</div>
+						</div>
 					</div>
-					<div class="bg-white bg-opacity-20 px-6 py-3 rounded-lg">
-						<span class="text-lg">Max {ecrosser.maxSpeed} km/h</span>
-					</div>
-					<div class="bg-white bg-opacity-20 px-6 py-3 rounded-lg">
-						<span class="text-lg">Bereik {ecrosser.range}</span>
+					<div class="flex justify-center">
+						<img
+							src={ecrosser.imageUrl}
+							alt={`${ecrosser.brand} ${ecrosser.name}`}
+							class="max-h-72 w-auto object-contain drop-shadow-2xl rounded-lg bg-white bg-opacity-10 p-4"
+							loading="eager"
+						/>
 					</div>
 				</div>
-			</div>
+			) : (
+				<div class="text-center">
+					<h1 class="text-4xl md:text-5xl font-bold mb-4">
+						{ecrosser.brand} {ecrosser.name}
+					</h1>
+					<p class="text-xl mb-8 opacity-90">{ecrosser.targetAudience}</p>
+					<div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+						<div class="bg-white bg-opacity-20 px-6 py-3 rounded-lg">
+							<span class="text-2xl font-bold">{ecrosser.priceRange}</span>
+						</div>
+						<div class="bg-white bg-opacity-20 px-6 py-3 rounded-lg">
+							<span class="text-lg">Max {ecrosser.maxSpeed} km/h</span>
+						</div>
+						<div class="bg-white bg-opacity-20 px-6 py-3 rounded-lg">
+							<span class="text-lg">Bereik {ecrosser.range}</span>
+						</div>
+					</div>
+				</div>
+			)}
 		</div>
 	</section>
 
@@ -95,6 +125,25 @@ const pageDescription = `Complete gids voor de ${ecrosser.brand} ${ecrosser.name
 		</div>
 	</section>
 
+
+	{ecrosser.videoId && (
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
+			<section class="bg-white rounded-lg shadow-md p-6 mb-0">
+				<h2 class="text-2xl font-bold mb-4">Video Review</h2>
+				<div class="relative w-full" style="padding-bottom: 56.25%;">
+					<iframe
+						src={`https://www.youtube-nocookie.com/embed/${ecrosser.videoId}?rel=0&modestbranding=1`}
+						title={`${ecrosser.brand} ${ecrosser.name} video review`}
+						class="absolute inset-0 w-full h-full rounded-lg"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen
+						loading="lazy"
+					></iframe>
+				</div>
+				<p class="text-xs text-gray-500 mt-2">Video via YouTube. Klik om te spelen. Credits aan de originele maker.</p>
+			</section>
+		</div>
+	)}
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 		<!-- Dutch Legal Requirements - Critical Section -->
 		<section class="bg-red-50 border-l-4 border-red-400 p-6 mb-12">
