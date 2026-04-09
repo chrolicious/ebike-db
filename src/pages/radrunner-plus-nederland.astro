@@ -1,623 +1,77 @@
 ---
-// RadRunner Plus - Complete Dutch Landing Page Template
 import Layout from '../layouts/Layout.astro';
-import ComplianceAlert from '../components/ComplianceAlert.astro';
-import TechnicalSpecs from '../components/TechnicalSpecs.astro';
 
-// SEO & Meta Data
-const title = "RadRunner Plus Kopen Nederland 2026 - Complete Gids & Prijzen";
-const description = "RadRunner Plus volledig overzicht: Nederlandse wetgeving, verzekering, dealers en beste prijzen. Cargo e-bike voor gezinnen en transport.";
-const keywords = "radrunner plus nederland, cargo e-bike kopen, elektrische fiets nederland, rad power bikes, radrunner prijs, e-bike gezin";
-
-// Product Data
-const productData = {
-	model: "RadRunner Plus",
-	brand: "Rad Power Bikes",
-	basePrice: 1699,
-	weight: 29,
-	range: "45-72",
-	topSpeed: 25,
-	batteryCapacity: "48V 14Ah",
-	motor: "750W Geared Hub",
-	legalStatus: "Snorfiets (25km/h, helm verplicht)",
-	homologation: "L1e-B"
-};
-
-// Affiliate Links Data
-const affiliateLinks = {
-	radPowerBikes: "https://radpowerbikes.eu/products/radrunner-plus?utm_source=ebikedb&utm_campaign=nl-affiliate",
-	mediamarkt: "https://mediamarkt.nl/rad-power-bikes-radrunner?affiliate=ebike-db-001",
-	amazon: "https://amazon.nl/dp/B09RAD456?tag=ebikedb-21",
-	coolblue: "https://coolblue.nl/rad-runner-plus?affiliate=ebike-db-001",
-	fietsGigant: "https://fietsgigant.nl/rad-power-bikes?partner=ebikedb"
-};
-
-// Legal Requirements Data
-const legalRequirements = {
-	license: "Snorfiets: geen rijbewijs nodig vanaf 16 jaar",
-	insurance: "WA verzekering verplicht",
-	registration: "RDW kenteken vereist",
-	helmet: "ECE-22.05 helm verplicht",
-	modifications: "Max 25km/h (fabrieksinstelling)"
-};
+const title = "Rad Power Bikes Nederland - Rad Power heeft EU gestopt (2023)";
+const description = "Rad Power Bikes heeft in 2023 alle EU-activiteiten beëindigd. De RadRunner Plus is niet meer verkrijgbaar in Nederland. Bekijk alternatieven met actieve NL-support.";
 ---
 
 <Layout title={title} description={description}>
-	<!-- Structured Data -->
-	<script type="application/ld+json">
-	{
-		"@context": "https://schema.org",
-		"@type": "Product",
-		"name": "RadRunner Plus",
-		"brand": {
-			"@type": "Brand",
-			"name": "Rad Power Bikes"
-		},
-		"description": "Veelzijdige elektrische cargo bike voor dagelijks transport, geschikt voor gezinnen",
-		"category": "Electric Cargo Bike",
-		"offers": {
-			"@type": "Offer",
-			"priceCurrency": "EUR",
-			"price": "1699.00",
-			"availability": "https://schema.org/InStock",
-			"seller": {
-				"@type": "Organization",
-				"name": "Rad Power Bikes Europe"
-			}
-		},
-		"aggregateRating": {
-			"@type": "AggregateRating",
-			"ratingValue": "4.5",
-			"reviewCount": "312"
-		}
-	}
-	</script>
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
-	<main class="radrunner-landing">
-		<!-- Hero Section -->
-		<section class="hero bg-gradient-to-r from-green-600 to-teal-600 text-white py-20">
-			<div class="container mx-auto px-4">
-				<div class="grid md:grid-cols-2 gap-12 items-center">
-					<div>
-						<h1 class="text-4xl md:text-6xl font-bold mb-6">
-							RadRunner Plus
-							<span class="block text-2xl md:text-3xl text-green-200">
-								Dé Cargo E-bike voor Nederland
-							</span>
-						</h1>
-						<p class="text-xl mb-8 leading-relaxed">
-							Veelzijdige 750W e-bike voor dagelijks transport. Geen rijbewijs nodig,
-							wel kenteken verplicht. Perfect voor boodschappen en gezinsuitjes.
-						</p>
-						<div class="flex flex-wrap gap-4">
-							<a href="#kopen" class="bg-orange-500 hover:bg-orange-600 px-8 py-4 rounded-lg font-bold text-lg transition-colors">
-								🛒 Direct Kopen vanaf €1.699
-							</a>
-							<a href="#wetgeving" class="border-2 border-white hover:bg-white hover:text-green-600 px-8 py-4 rounded-lg font-bold text-lg transition-colors">
-								📋 Snorfiets Regelgeving
-							</a>
-						</div>
-					</div>
-					<div class="relative">
-						<img src="/images/radrunner-2.png" alt="Product afbeelding" class="w-full max-h-72 object-contain rounded-lg drop-shadow-xl bg-white bg-opacity-10 p-2" loading="eager" />
-						<div class="absolute top-4 right-4 bg-blue-500 text-white px-4 py-2 rounded-lg font-bold">
-							👨‍👩‍👧‍👦 Gezinsvriendelijk
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+    <nav class="text-sm text-gray-500 mb-6">
+      <a href="/" class="hover:underline">Home</a> &rsaquo;
+      RadRunner Plus Nederland
+    </nav>
 
-		<!-- Compliance Alert -->
-		<ComplianceAlert
-			type="info"
-			message="RadRunner Plus is een snorfiets: geen rijbewijs nodig vanaf 16 jaar, wel helm en kenteken verplicht."
-			actionText="Bekijk Regelgeving"
-			actionLink="#wetgeving"
-		/>
+    <h1 class="text-3xl font-bold text-gray-900 mb-4">Rad Power Bikes &mdash; niet meer actief in Nederland</h1>
+    <p class="text-gray-500 text-sm mb-8">Bijgewerkt april 2026</p>
 
-		<!-- Quick Specs Grid -->
-		<section class="py-16 bg-gray-50">
-			<div class="container mx-auto px-4">
-				<div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-					<div class="bg-white p-6 rounded-lg shadow-md">
-						<div class="text-3xl font-bold text-green-600 mb-2">750W</div>
-						<div class="text-gray-600">Motor Vermogen</div>
-					</div>
-					<div class="bg-white p-6 rounded-lg shadow-md">
-						<div class="text-3xl font-bold text-blue-600 mb-2">72km</div>
-						<div class="text-gray-600">Max Bereik</div>
-					</div>
-					<div class="bg-white p-6 rounded-lg shadow-md">
-						<div class="text-3xl font-bold text-purple-600 mb-2">29kg</div>
-						<div class="text-gray-600">Gewicht</div>
-					</div>
-					<div class="bg-white p-6 rounded-lg shadow-md">
-						<div class="text-3xl font-bold text-orange-600 mb-2">€1.699</div>
-						<div class="text-gray-600">Vanaf Prijs</div>
-					</div>
-				</div>
-			</div>
-		</section>
+    <div class="bg-red-50 border border-red-200 rounded p-4 mb-8">
+      <p class="text-sm text-red-800"><strong>Rad Power Bikes heeft in 2023 alle Europese activiteiten gestopt.</strong> De Nederlandse webshop, dealer- en servicenetwerk zijn gesloten. Nieuwe RadRunner Plus-fietsen zijn niet meer officieel verkrijgbaar in Nederland. Tweedehands exemplaren worden aangeboden, maar service en garantie zijn niet gegarandeerd.</p>
+    </div>
 
-		<!-- Why RadRunner Section -->
-		<section class="py-16">
-			<div class="container mx-auto px-4">
-				<h2 class="text-4xl font-bold text-center mb-12">Waarom RadRunner Plus?</h2>
+    <h2 class="text-xl font-bold text-gray-900 mb-4">Wat betekent dit voor bestaande eigenaren?</h2>
+    <p class="text-gray-700 mb-4">
+      Als je al een Rad Power-fiets hebt die in de EU is gekocht, is de officiële garantieservice via Rad Power Bikes niet meer beschikbaar. Onderdelen zijn beperkt verkrijgbaar via derden. De fietsen zelf functioneren uiteraard gewoon door &mdash; maar voor service ben je aangewezen op onafhankelijke e-bike reparateurs.
+    </p>
+    <p class="text-gray-700 mb-8">
+      Rad Power Bikes is wel nog actief in Noord-Amerika. Europese klanten die voor 2023 kochten, kunnen contact opnemen via de internationale website, maar service wordt niet meer in Nederland geleverd.
+    </p>
 
-				<div class="grid lg:grid-cols-3 gap-8">
-					<div class="bg-green-50 p-8 rounded-lg text-center">
-						<div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
-							<span class="text-2xl">👨‍👩‍👧‍👦</span>
-						</div>
-						<h3 class="text-xl font-bold mb-4">Gezinsvriendelijk</h3>
-						<p class="text-gray-600">
-							Ruimte voor 2 passagiers achterop. Perfecte auto-vervanging voor 
-							korte ritten met kinderen of vrienden.
-						</p>
-						<ul class="mt-4 space-y-2 text-sm text-green-700">
-							<li>• Stevig passagierspakket beschikbaar</li>
-							<li>• Veilige voetsteunen en handgrepen</li>
-							<li>• Max belading 120kg (excl. bestuurder)</li>
-						</ul>
-					</div>
+    <h2 class="text-xl font-bold text-gray-900 mb-4">Alternatieven met actieve Nederlandse support</h2>
 
-					<div class="bg-blue-50 p-8 rounded-lg text-center">
-						<div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-6">
-							<span class="text-2xl">🛒</span>
-						</div>
-						<h3 class="text-xl font-bold mb-4">Cargo Capaciteit</h3>
-						<p class="text-gray-600">
-							Grote voorbak + achterrek voor al je boodschappen. 
-							Vervang de auto voor dagelijkse ritjes.
-						</p>
-						<ul class="mt-4 space-y-2 text-sm text-blue-700">
-							<li>• Voorrek: 15kg draagvermogen</li>
-							<li>• Achterrek: 27kg draagvermogen</li>
-							<li>• Optionele cargo accessoires</li>
-						</ul>
-					</div>
+    <div class="space-y-4 mb-8">
+      <div class="border border-gray-200 rounded p-4">
+        <h3 class="font-semibold text-gray-900 mb-1">Urban Arrow Family &mdash; &euro;4.999</h3>
+        <p class="text-sm text-gray-700">Nederlands merk, Bosch Cargo Line motor, laadruimte voor kinderen of lading. Breed dealernetwerk in Nederland, actieve after-sales.</p>
+      </div>
+      <div class="border border-gray-200 rounded p-4">
+        <h3 class="font-semibold text-gray-900 mb-1">Babboe Curve-E &mdash; &euro;3.799</h3>
+        <p class="text-sm text-gray-700">Nederlands merk (Hengelo), bakfiets met Bosch motor, 400Wh batterij. Uitgebreid dealer- en servicenetwerk door heel Nederland.</p>
+      </div>
+      <div class="border border-gray-200 rounded p-4">
+        <h3 class="font-semibold text-gray-900 mb-1">Gazelle Grenoble C7+ HMB &mdash; &euro;3.199</h3>
+        <p class="text-sm text-gray-700">Nederlands merk (Dieren), Bosch Active Plus, 7-versnellingen, comfort-rijderspositie. Via alle grote Nederlandse fietswinkels verkrijgbaar.</p>
+      </div>
+    </div>
 
-					<div class="bg-orange-50 p-8 rounded-lg text-center">
-						<div class="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-6">
-							<span class="text-2xl">💰</span>
-						</div>
-						<h3 class="text-xl font-bold mb-4">Betaalbare Kwaliteit</h3>
-						<p class="text-gray-600">
-							Beste prijs/kwaliteit in de cargo e-bike markt. 
-							Amerikaans merk met Europese service.
-						</p>
-						<ul class="mt-4 space-y-2 text-sm text-orange-700">
-							<li>• 2 jaar internationale garantie</li>
-							<li>• Nederlandse klantenservice</li>
-							<li>• Grote voorraad onderdelen</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</section>
+    <p class="text-sm text-gray-600 mb-8">
+      Meer opties: <a href="/vergelijk" class="text-blue-600 hover:underline">vergelijk alle e-bikes en crossers in Nederland &rarr;</a>
+    </p>
 
-		<!-- RadRunner vs Alternatives -->
-		<section class="py-16 bg-gray-50">
-			<div class="container mx-auto px-4">
-				<h2 class="text-4xl font-bold text-center mb-12">RadRunner vs Alternatieven</h2>
-				<div class="overflow-x-auto">
-					<table class="w-full bg-white rounded-lg shadow-lg">
-						<thead class="bg-gray-100">
-							<tr>
-								<th class="px-6 py-4 text-left font-bold">Model</th>
-								<th class="px-6 py-4 text-center font-bold">Prijs</th>
-								<th class="px-6 py-4 text-center font-bold">Motor</th>
-								<th class="px-6 py-4 text-center font-bold">Bereik</th>
-								<th class="px-6 py-4 text-center font-bold">Cargo Capaciteit</th>
-								<th class="px-6 py-4 text-center font-bold">Rijbewijs</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr class="border-t bg-green-50">
-								<td class="px-6 py-4 font-bold text-green-600">RadRunner Plus</td>
-								<td class="px-6 py-4 text-center font-bold text-green-600">€1.699</td>
-								<td class="px-6 py-4 text-center">750W</td>
-								<td class="px-6 py-4 text-center">72km</td>
-								<td class="px-6 py-4 text-center font-bold text-green-600">42kg</td>
-								<td class="px-6 py-4 text-center font-bold text-green-600">Niet nodig</td>
-							</tr>
-							<tr class="border-t">
-								<td class="px-6 py-4 font-semibold">Urban Arrow Shorty</td>
-								<td class="px-6 py-4 text-center">€3.899</td>
-								<td class="px-6 py-4 text-center">250W</td>
-								<td class="px-6 py-4 text-center">60km</td>
-								<td class="px-6 py-4 text-center">125kg</td>
-								<td class="px-6 py-4 text-center">Niet nodig</td>
-							</tr>
-							<tr class="border-t bg-gray-50">
-								<td class="px-6 py-4 font-semibold">Riese & Müller Load 60</td>
-								<td class="px-6 py-4 text-center">€4.299</td>
-								<td class="px-6 py-4 text-center">250W</td>
-								<td class="px-6 py-4 text-center">85km</td>
-								<td class="px-6 py-4 text-center">160kg</td>
-								<td class="px-6 py-4 text-center">Niet nodig</td>
-							</tr>
-							<tr class="border-t">
-								<td class="px-6 py-4 font-semibold">Babboe Big-E</td>
-								<td class="px-6 py-4 text-center">€2.599</td>
-								<td class="px-6 py-4 text-center">250W</td>
-								<td class="px-6 py-4 text-center">50km</td>
-								<td class="px-6 py-4 text-center">100kg</td>
-								<td class="px-6 py-4 text-center">Niet nodig</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
+    <h2 class="text-xl font-bold text-gray-900 mb-4">Veelgestelde vragen</h2>
 
-				<div class="mt-8 bg-green-50 p-6 rounded-lg">
-					<h3 class="font-bold text-green-800 mb-3">💡 Waarom RadRunner Plus kiezen:</h3>
-					<ul class="space-y-2 text-green-700">
-						<li>• <strong>Beste prijs/prestatie</strong> - Premium kwaliteit tegen scherpe prijs</li>
-						<li>• <strong>Krachtige 750W motor</strong> - Veel meer vermogen dan standaard 250W cargo bikes</li>
-						<li>• <strong>Veelzijdigheid</strong> - Van dagelijks woon-werk tot weekenduitjes</li>
-						<li>• <strong>Geen rijbewijs</strong> - Vanaf 16 jaar te gebruiken</li>
-					</ul>
-				</div>
-			</div>
-		</section>
+    <details class="border border-gray-200 rounded mb-3">
+      <summary class="p-4 font-medium cursor-pointer select-none hover:bg-gray-50">Waarom heeft Rad Power Bikes Europa verlaten?</summary>
+      <div class="p-4 pt-0 text-gray-700 text-sm">
+        Rad Power Bikes heeft in 2023 publiekelijk gecommuniceerd dat ze zich focussen op de Noord-Amerikaanse markt om winstgevend te worden na een periode van snelle maar verliesgevende groei. De Europese operaties werden als te kostbaar gezien gezien de logistiek en lokale servicevereisten.
+      </div>
+    </details>
 
-		<!-- Dutch Legal Status Section -->
-		<section id="wetgeving" class="py-16">
-			<div class="container mx-auto px-4">
-				<h2 class="text-4xl font-bold text-center mb-12">Nederlandse Wetgeving & Kenteken</h2>
+    <details class="border border-gray-200 rounded mb-3">
+      <summary class="p-4 font-medium cursor-pointer select-none hover:bg-gray-50">Kan ik een RadRunner Plus tweedehands kopen in Nederland?</summary>
+      <div class="p-4 pt-0 text-gray-700 text-sm">
+        Ja, tweedehands exemplaren staan op Marktplaats en vergelijkbare platforms. Let bij aankoop op de staat van de batterij (vraag om laadcycli-informatie), de aanwezigheid van het originele oplaadapparaat en of de software up-to-date is. Rad Power verleent geen garantie op tweedehands verkochte fietsen.
+      </div>
+    </details>
 
-				<div class="grid lg:grid-cols-2 gap-12">
-					<!-- Snorfiets Requirements -->
-					<div class="bg-blue-50 p-8 rounded-lg">
-						<h3 class="text-2xl font-bold mb-6 flex items-center">
-							⚖️ Snorfiets Vereisten
-						</h3>
-						<div class="space-y-4">
-							<div class="flex items-start gap-4">
-								<span class="bg-blue-100 p-2 rounded">🎂</span>
-								<div>
-									<strong>Minimumleeftijd 16 jaar</strong>
-									<p class="text-gray-600">Geen rijbewijs nodig! Wel geldig identiteitsbewijs meevoeren.</p>
-								</div>
-							</div>
-							<div class="flex items-start gap-4">
-								<span class="bg-blue-100 p-2 rounded">🛡️</span>
-								<div>
-									<strong>WA Verzekering Verplicht</strong>
-									<p class="text-gray-600">Circa €95-180/jaar. ANWB, Centraal Beheer, Univé hebben goede tarieven.</p>
-								</div>
-							</div>
-							<div class="flex items-start gap-4">
-								<span class="bg-blue-100 p-2 rounded">🏷️</span>
-								<div>
-									<strong>RDW Kenteken</strong>
-									<p class="text-gray-600">€67,20 eerste keer + €8,60/maand. RadRunner wordt geleverd met COC-papieren.</p>
-								</div>
-							</div>
-							<div class="flex items-start gap-4">
-								<span class="bg-blue-100 p-2 rounded">⛑️</span>
-								<div>
-									<strong>ECE-22.05 Helm Verplicht</strong>
-									<p class="text-gray-600">Bromfietshelm voor bestuurder én passagiers. Fietshelm is niet toegestaan.</p>
-								</div>
-							</div>
-						</div>
-					</div>
+    <div class="mt-8 pt-6 border-t border-gray-200">
+      <h3 class="font-semibold text-gray-800 mb-3">Gerelateerd</h3>
+      <ul class="space-y-2 text-sm text-blue-600">
+        <li><a href="/vergelijk" class="hover:underline">Vergelijk alle beschikbare modellen in Nederland</a></li>
+        <li><a href="/elektrische-crosser-kopen" class="hover:underline">Koopgids: e-bike of crosser kopen in Nederland</a></li>
+      </ul>
+    </div>
 
-					<!-- Traffic Rules -->
-					<div class="bg-green-50 p-8 rounded-lg">
-						<h3 class="text-2xl font-bold mb-6 flex items-center">
-							🚦 Verkeersregels RadRunner
-						</h3>
-						<div class="space-y-4">
-							<div class="bg-green-100 p-4 rounded-lg">
-								<p class="font-semibold text-green-800 mb-2">Waar mag je rijden:</p>
-								<ul class="text-sm space-y-1 text-green-700">
-									<li>• Rijbaan (niet op fietspad!)</li>
-									<li>• Bromfietspad waar aanwezig</li>
-									<li>• 30km-zones en fietstraten</li>
-									<li>• Fietspad alleen als bromfietser toegestaan</li>
-								</ul>
-							</div>
-
-							<div class="space-y-3">
-								<div>
-									<strong>Maximum Snelheid:</strong>
-									<p class="text-gray-600">25 km/h (fabrieksinstelling RadRunner)</p>
-								</div>
-								<div>
-									<strong>Passagiers:</strong>
-									<p class="text-gray-600">Max 2 personen achterop, beide met helm</p>
-								</div>
-								<div>
-									<strong>Parkeren:</strong>
-									<p class="text-gray-600">Gratis parkeren, ook in betaalde zones</p>
-								</div>
-								<div class="bg-yellow-100 p-3 rounded border-l-4 border-yellow-500">
-									<p class="text-yellow-800 text-sm">
-										⚠️ <strong>Let op:</strong> Alcoholgrens is 0,5‰ (zelfde als auto), niet 0,2‰ zoals fiets.
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Total Cost Calculator -->
-				<div class="mt-12 bg-gray-100 p-8 rounded-lg">
-					<h3 class="text-2xl font-bold mb-6 text-center">🧮 Totale Kosten Overzicht</h3>
-					<div class="grid md:grid-cols-2 gap-8">
-						<div>
-							<h4 class="font-bold mb-4">Eenmalige Kosten:</h4>
-							<div class="space-y-2 text-sm">
-								<div class="flex justify-between">
-									<span>RadRunner Plus</span>
-									<span class="font-semibold">€1.699</span>
-								</div>
-								<div class="flex justify-between">
-									<span>RDW Kenteken (eerste keer)</span>
-									<span class="font-semibold">€67</span>
-								</div>
-								<div class="flex justify-between">
-									<span>2x ECE-22.05 Helmen</span>
-									<span class="font-semibold">€178</span>
-								</div>
-								<div class="flex justify-between">
-									<span>Passagierspakket (optioneel)</span>
-									<span class="font-semibold">€129</span>
-								</div>
-								<div class="border-t pt-2 flex justify-between font-bold text-lg">
-									<span>Totaal Starterskosten:</span>
-									<span class="text-green-600">€2.073</span>
-								</div>
-							</div>
-						</div>
-						<div>
-							<h4 class="font-bold mb-4">Jaarlijkse Kosten:</h4>
-							<div class="space-y-2 text-sm">
-								<div class="flex justify-between">
-									<span>WA Verzekering (ANWB basis)</span>
-									<span class="font-semibold">€127/jaar</span>
-								</div>
-								<div class="flex justify-between">
-									<span>RDW Kenteken (maandelijks)</span>
-									<span class="font-semibold">€103/jaar</span>
-								</div>
-								<div class="flex justify-between">
-									<span>Elektriciteitskosten (3000km/jaar)</span>
-									<span class="font-semibold">€18/jaar</span>
-								</div>
-								<div class="flex justify-between">
-									<span>Onderhoud (ketting, banden, remmen)</span>
-									<span class="font-semibold">€95/jaar</span>
-								</div>
-								<div class="border-t pt-2 flex justify-between font-bold text-lg">
-									<span>Totaal Per Jaar:</span>
-									<span class="text-green-600">€343</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- Where to Buy Section -->
-		<section id="kopen" class="py-16 bg-gray-50">
-			<div class="container mx-auto px-4">
-				<h2 class="text-4xl font-bold text-center mb-12">🛒 Waar te Kopen in Nederland</h2>
-
-				<!-- Official Dealer Network -->
-				<div class="grid lg:grid-cols-3 gap-8 mb-12">
-					<div class="bg-white p-6 rounded-lg shadow-md">
-						<div class="flex items-center mb-4">
-							<span class="font-bold text-gray-700 mr-4">[Rad Power Bikes]</span>
-							<div>
-								<h3 class="font-bold">Rad Power Bikes</h3>
-								<span class="text-sm text-green-600">Officiële Website</span>
-							</div>
-						</div>
-						<p class="text-gray-600 mb-4">Direct van de fabrikant. Nederlandse klantenservice en 2 jaar garantie.</p>
-						<div class="space-y-2 text-sm mb-4">
-							<div>✅ 2 jaar internationale garantie</div>
-							<div>✅ Gratis levering in Nederland</div>
-							<div>✅ 14 dagen retourrecht</div>
-						</div>
-						<a href={affiliateLinks.radPowerBikes}
-						   class="block bg-green-600 hover:bg-green-700 text-white text-center py-3 rounded-lg font-semibold transition-colors"
-						   target="_blank" rel="noopener">
-							Bestellen bij Rad Power
-						</a>
-					</div>
-
-					<div class="bg-white p-6 rounded-lg shadow-md">
-						<div class="flex items-center mb-4">
-							<span class="font-bold text-gray-700 mr-4">[Coolblue]</span>
-							<div>
-								<h3 class="font-bold">Coolblue</h3>
-								<span class="text-sm text-blue-600">Nederlandse Webwinkel</span>
-							</div>
-						</div>
-						<p class="text-gray-600 mb-4">Bekende Nederlandse service. Snelle levering en installatie mogelijk.</p>
-						<div class="space-y-2 text-sm mb-4">
-							<div>✅ 30 dagen retourrecht</div>
-							<div>✅ Gratis installatie optie</div>
-							<div>✅ Nederlandse klantenservice</div>
-						</div>
-						<a href={affiliateLinks.coolblue}
-						   class="block bg-blue-600 hover:bg-blue-700 text-white text-center py-3 rounded-lg font-semibold transition-colors"
-						   target="_blank" rel="noopener">
-							Bekijk bij Coolblue
-						</a>
-					</div>
-
-					<div class="bg-white p-6 rounded-lg shadow-md">
-						<div class="flex items-center mb-4">
-							<span class="font-bold text-gray-700 mr-4">[FietsGigant]</span>
-							<div>
-								<h3 class="font-bold">FietsGigant</h3>
-								<span class="text-sm text-orange-600">Fysieke Winkels</span>
-							</div>
-						</div>
-						<p class="text-gray-600 mb-4">Test de RadRunner in 50+ winkels door Nederland. Persoonlijk advies.</p>
-						<div class="space-y-2 text-sm mb-4">
-							<div>✅ Proefrit mogelijk</div>
-							<div>✅ 50+ winkels in Nederland</div>
-							<div>✅ Service na aankoop</div>
-						</div>
-						<a href={affiliateLinks.fietsGigant}
-						   class="block bg-orange-600 hover:bg-orange-700 text-white text-center py-3 rounded-lg font-semibold transition-colors"
-						   target="_blank" rel="noopener">
-							Vind FietsGigant winkel
-						</a>
-					</div>
-				</div>
-
-				<!-- Price Comparison Table -->
-				<div class="bg-white rounded-lg shadow-lg overflow-hidden mb-8">
-					<div class="bg-gray-100 px-6 py-4 border-b">
-						<h3 class="text-xl font-bold">💰 Prijsvergelijking RadRunner Plus Nederland</h3>
-					</div>
-					<div class="overflow-x-auto">
-						<table class="w-full">
-							<thead class="bg-gray-50">
-								<tr>
-									<th class="px-6 py-3 text-left font-semibold">Dealer</th>
-									<th class="px-6 py-3 text-center font-semibold">Basisprijs</th>
-									<th class="px-6 py-3 text-center font-semibold">Incl. Levering</th>
-									<th class="px-6 py-3 text-center font-semibold">Levertijd</th>
-									<th class="px-6 py-3 text-center font-semibold">Voordelen</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr class="border-t">
-									<td class="px-6 py-4 font-semibold">Rad Power Bikes</td>
-									<td class="px-6 py-4 text-center text-green-600 font-bold">€1.699</td>
-									<td class="px-6 py-4 text-center font-bold">€1.699</td>
-									<td class="px-6 py-4 text-center text-green-600">1 week</td>
-									<td class="px-6 py-4 text-sm text-gray-600">Direct van fabrikant, gratis levering</td>
-								</tr>
-								<tr class="border-t bg-gray-50">
-									<td class="px-6 py-4 font-semibold">Coolblue</td>
-									<td class="px-6 py-4 text-center">€1.749</td>
-									<td class="px-6 py-4 text-center">€1.799</td>
-									<td class="px-6 py-4 text-center">2-3 dagen</td>
-									<td class="px-6 py-4 text-sm text-gray-600">Snelle levering, installatie service</td>
-								</tr>
-								<tr class="border-t">
-									<td class="px-6 py-4 font-semibold">FietsGigant</td>
-									<td class="px-6 py-4 text-center">€1.799</td>
-									<td class="px-6 py-4 text-center">€1.799</td>
-									<td class="px-6 py-4 text-center">Afhalen</td>
-									<td class="px-6 py-4 text-sm text-gray-600">Proefrit, persoonlijk advies</td>
-								</div>
-								<tr class="border-t bg-gray-50">
-									<td class="px-6 py-4 font-semibold">Amazon Nederland</td>
-									<td class="px-6 py-4 text-center">€1.789</td>
-									<td class="px-6 py-4 text-center">€1.789</td>
-									<td class="px-6 py-4 text-center text-green-600">1-2 dagen</td>
-									<td class="px-6 py-4 text-sm text-gray-600">Prime levering, retourgemak</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- FAQ Section - Dutch Specific -->
-		<section class="py-16">
-			<div class="container mx-auto px-4">
-				<h2 class="text-4xl font-bold text-center mb-12">❓ Veelgestelde Vragen</h2>
-
-				<div class="grid lg:grid-cols-2 gap-8">
-					<div class="space-y-6">
-						<div class="bg-white p-6 rounded-lg shadow-md">
-							<h3 class="font-bold text-lg mb-3">Heb ik een rijbewijs nodig voor RadRunner?</h3>
-							<p class="text-gray-600">Nee! De RadRunner is een snorfiets - vanaf 16 jaar te rijden zonder rijbewijs. Wel kenteken en verzekering verplicht.</p>
-						</div>
-
-						<div class="bg-white p-6 rounded-lg shadow-md">
-							<h3 class="font-bold text-lg mb-3">Waar mag ik met de RadRunner rijden?</h3>
-							<p class="text-gray-600">Op de rijbaan, bromfietspad en in 30km-zones. Niet op het fietspad tenzij bromfietsen zijn toegestaan.</p>
-						</div>
-
-						<div class="bg-white p-6 rounded-lg shadow-md">
-							<h3 class="font-bold text-lg mb-3">Hoeveel passagiers kan de RadRunner meenemen?</h3>
-							<p class="text-gray-600">Maximaal 2 personen achterop (totaal 120kg belading). Beide passagiers moeten een bromfietshelm dragen.</p>
-						</div>
-
-						<div class="bg-white p-6 rounded-lg shadow-md">
-							<h3 class="font-bold text-lg mb-3">Wat kost verzekering voor RadRunner?</h3>
-							<p class="text-gray-600">WA verzekering vanaf €95/jaar. Allrisk vanaf €180/jaar. ANWB en Centraal Beheer hebben goede tarieven.</p>
-						</div>
-					</div>
-
-					<div class="space-y-6">
-						<div class="bg-white p-6 rounded-lg shadow-md">
-							<h3 class="font-bold text-lg mb-3">Kan ik kinderen vervoeren op de RadRunner?</h3>
-							<p class="text-gray-600">Ja, maar kinderen moeten zelfstandig kunnen zitten en een bromfietshelm dragen. Minimaal 8 jaar wordt aanbevolen.</p>
-						</div>
-
-						<div class="bg-white p-6 rounded-lg shadow-md">
-							<h3 class="font-bold text-lg mb-3">Hoe groot is het laadvermogen?</h3>
-							<p class="text-gray-600">Totaal 120kg cargo capacity: 15kg voorrek + 27kg achterrek + 2 passagiers van samen 78kg maximum.</p>
-						</div>
-
-						<div class="bg-white p-6 rounded-lg shadow-md">
-							<h3 class="font-bold text-lg mb-3">Is service beschikbaar in Nederland?</h3>
-							<p class="text-gray-600">Ja - Rad Power heeft Nederlandse klantenservice. FietsGigant en veel lokale e-bike shops doen ook service.</p>
-						</div>
-
-						<div class="bg-white p-6 rounded-lg shadow-md">
-							<h3 class="font-bold text-lg mb-3">Hoe lang gaat de batterij mee?</h3>
-							<p class="text-gray-600">45-72km afhankelijk van gewicht, terrein en trapondersteuning. Batterij is afneembaar voor laden binnenshuis.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- Local SEO / Schema -->
-		
-	</main>
+  </div>
 </Layout>
-
-<style>
-	.hero {
-		background-image: linear-gradient(135deg, rgba(0,0,0,0.6), rgba(0,0,0,0.3)), url('/images/radrunner-hero-bg.jpg');
-		background-size: cover;
-		background-position: center;
-	}
-
-	/* Mobile optimization */
-	@media (max-width: 768px) {
-		.hero h1 {
-			font-size: 2.5rem;
-		}
-
-		.grid {
-			gap: 1rem;
-		}
-
-		.container {
-			padding-left: 1rem;
-			padding-right: 1rem;
-		}
-	}
-
-	/* Accessibility improvements */
-	a:focus, button:focus {
-		outline: 2px solid #059669;
-		outline-offset: 2px;
-	}
-
-	/* Print styles */
-	@media print {
-		.hero, .bg-gradient-to-r {
-			background: white !important;
-			color: black !important;
-		}
-	}
-</style>
