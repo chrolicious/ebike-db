@@ -6,7 +6,7 @@ export interface Props {
 }
 
 const { title, description, canonical } = Astro.props;
-const pageDescription = description || "Complete e-bike and electric crosser database with legal requirements, specifications, and pricing for the Netherlands and Europe.";
+const pageDescription = description || "Complete e-bike en crosser database met wetgeving, specs en prijzen voor Nederland.";
 ---
 
 <!DOCTYPE html>
@@ -20,117 +20,132 @@ const pageDescription = description || "Complete e-bike and electric crosser dat
 		{canonical && <link rel="canonical" href={canonical} />}
 		<title>{title}</title>
 
-		<!-- Dutch legal disclaimers -->
 		<meta name="geo.region" content="NL" />
 		<meta name="geo.placename" content="Netherlands" />
 
-		<!-- OpenGraph -->
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={pageDescription} />
 		<meta property="og:type" content="website" />
 		<meta property="og:locale" content="nl_NL" />
 
-		<!-- Structured data for products -->
 		<script type="application/ld+json" is:inline>
 		{
 			"@context": "https://schema.org",
 			"@type": "WebSite",
-			"name": "E-Bike Database Nederland",
-			"url": "https://ebike-database.com",
+			"name": "E-BikeDB Nederland",
+			"url": "https://ebike-db.pages.dev",
 			"description": "Complete database van elektrische fietsen en crossers voor Nederland"
 		}
 		</script>
 	</head>
 	<body class="bg-gray-50 min-h-screen">
-		<header class="bg-white shadow-sm border-b">
+
+		<!-- Top accent stripe -->
+		<div class="h-1 bg-gradient-to-r from-blue-600 via-indigo-500 to-blue-400"></div>
+
+		<header class="bg-white shadow-sm border-b border-gray-200">
 			<nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div class="flex justify-between h-16 items-center">
-					<div class="flex items-center">
-						<a href="/" class="text-xl font-bold text-blue-600">E-Bike Database NL</a>
-					</div>
-					<div class="hidden md:flex space-x-8">
+
+					<!-- Wordmark -->
+					<a href="/" class="flex items-center gap-2 group">
+						<svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+							<path d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/>
+						</svg>
+						<span class="text-xl font-bold text-gray-900 group-hover:text-blue-700 transition-colors">E-Bike<span class="text-blue-600">DB</span> NL</span>
+					</a>
+
+					<div class="hidden md:flex items-center space-x-8">
 						<!-- Alle Modellen dropdown -->
 						<div class="relative group">
-							<button class="text-gray-600 hover:text-blue-600 flex items-center">
+							<button class="text-gray-600 hover:text-blue-600 flex items-center gap-1 text-sm font-medium py-5">
 								Alle Modellen
-								<svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
 								</svg>
 							</button>
-							<div class="absolute left-0 mt-2 w-80 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+							<div class="absolute left-0 top-full w-80 bg-white rounded-lg shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-50">
 								<div class="py-2 max-h-[80vh] overflow-y-auto">
-									<div class="px-4 py-2 text-xs font-semibold text-gray-500 uppercase bg-gray-50 border-b">L1e-B Bromfiets (AM rijbewijs)</div>
-									<a href="/onyx-rcr" class="flex justify-between px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"><span>Onyx RCR</span><span class="text-gray-400">€3.299</span></a>
-									<a href="/super73-s2" class="flex justify-between px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"><span>Super73 S2</span><span class="text-gray-400">€2.499</span></a>
-									<a href="/segway-dirt-ebike-x260" class="flex justify-between px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"><span>Segway Dirt X260</span><span class="text-gray-400">€3.999</span></a>
-									<a href="/talaria-sting-mx5-pro" class="flex justify-between px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"><span>Talaria Sting MX5 Pro</span><span class="text-gray-400">€4.599</span></a>
-									<a href="/ubco-2x2-work-bike" class="flex justify-between px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"><span>UBCO 2x2 Work Bike</span><span class="text-gray-400">€4.799</span></a>
-									<a href="/surron-light-bee-x" class="flex justify-between px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"><span>Sur-Ron Light Bee X</span><span class="text-gray-400">€5.199</span></a>
-									<a href="/cake-kalk-or" class="flex justify-between px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"><span>CAKE Kalk OR</span><span class="text-gray-400">€6.499</span></a>
-									<a href="/stealth-h52" class="flex justify-between px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"><span>Stealth H-52</span><span class="text-gray-400">€7.299</span></a>
 
-									<div class="px-4 py-2 text-xs font-semibold text-gray-500 uppercase bg-gray-50 border-b border-t">L3e Motorfiets (A/A2 rijbewijs)</div>
-									<a href="/ktm-freeride-e-xc" class="flex justify-between px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"><span>KTM Freeride E-XC</span><span class="text-gray-400">€10.999</span></a>
-									<a href="/zero-fx" class="flex justify-between px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"><span>Zero Motorcycles FX</span><span class="text-gray-400">€12.995</span></a>
+									<div class="px-4 py-2 text-xs font-semibold text-green-700 uppercase bg-green-50 border-b border-green-100 flex items-center gap-2">
+										<span class="w-2 h-2 rounded-full bg-green-500 inline-block"></span>
+										Pedelec (geen rijbewijs)
+									</div>
+									<a href="/super73-s2" class="flex justify-between px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"><span>Super73 S2</span><span class="text-gray-400">&euro;3.299</span></a>
+									<a href="/eskimo-fat-26" class="flex justify-between px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"><span>Eskimo FAT 26</span><span class="text-gray-400">&euro;1.699</span></a>
+									<a href="/rad-power-radrunner-2" class="flex justify-between px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"><span>Rad Power RadRunner 2</span><span class="text-gray-400">&euro;1.899</span></a>
+									<a href="/himiway-cobra" class="flex justify-between px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"><span>Himiway Cobra</span><span class="text-gray-400">&euro;2.199</span></a>
+									<a href="/bafang-ultra-m620" class="flex justify-between px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"><span>Bafang Ultra M620</span><span class="text-gray-400">&euro;3.499</span></a>
 
-									<div class="px-4 py-2 text-xs font-semibold text-gray-500 uppercase bg-gray-50 border-b border-t">E-Fatbike (geen rijbewijs)</div>
-									<a href="/eskimo-fat-26" class="flex justify-between px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"><span>Eskimo FAT 26</span><span class="text-gray-400">€1.699</span></a>
-									<a href="/rad-power-radrunner-2" class="flex justify-between px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"><span>Rad Power RadRunner 2</span><span class="text-gray-400">€1.899</span></a>
-									<a href="/himiway-cobra" class="flex justify-between px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"><span>Himiway Cobra</span><span class="text-gray-400">€2.199</span></a>
-									<a href="/bafang-ultra-m620" class="flex justify-between px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"><span>Bafang Ultra M620</span><span class="text-gray-400">€3.499</span></a>
+									<div class="px-4 py-2 text-xs font-semibold text-orange-700 uppercase bg-orange-50 border-b border-orange-100 border-t flex items-center gap-2">
+										<span class="w-2 h-2 rounded-full bg-orange-400 inline-block"></span>
+										L1e-B Bromfiets (AM rijbewijs)
+									</div>
+									<a href="/onyx-rcr" class="flex justify-between px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"><span>Onyx RCR</span><span class="text-gray-400">&euro;3.299</span></a>
+									<a href="/segway-dirt-ebike-x260" class="flex justify-between px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"><span>Segway Dirt X260</span><span class="text-gray-400">&euro;3.499</span></a>
+									<a href="/talaria-sting-mx5-pro" class="flex justify-between px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"><span>Talaria Sting MX5 Pro</span><span class="text-gray-400">&euro;4.599</span></a>
+									<a href="/ubco-2x2-work-bike" class="flex justify-between px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"><span>UBCO 2x2 Work Bike</span><span class="text-gray-400">&euro;4.799</span></a>
+									<a href="/surron-light-bee-x" class="flex justify-between px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"><span>Sur-Ron Light Bee X</span><span class="text-gray-400">&euro;5.199</span></a>
+									<a href="/cake-kalk-or" class="flex justify-between px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"><span>CAKE Kalk OR</span><span class="text-gray-400">&euro;6.499</span></a>
+									<a href="/stealth-h52" class="flex justify-between px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"><span>Stealth H-52</span><span class="text-gray-400">&euro;7.299</span></a>
 
-									<div class="px-4 py-2 text-xs font-semibold text-gray-500 uppercase bg-gray-50 border-b border-t">NL Koopgidsen</div>
-									<a href="/surron-light-bee-x" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">Sur-Ron Light Bee X</a>
-									<a href="/talaria-sting-nederland" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">Talaria Sting Nederland</a>
+									<div class="px-4 py-2 text-xs font-semibold text-red-700 uppercase bg-red-50 border-b border-red-100 border-t flex items-center gap-2">
+										<span class="w-2 h-2 rounded-full bg-red-500 inline-block"></span>
+										L3e Motorfiets (A/A2 rijbewijs)
+									</div>
+									<a href="/ktm-freeride-e-xc" class="flex justify-between px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"><span>KTM Freeride E-XC</span><span class="text-gray-400">&euro;11.999</span></a>
+									<a href="/zero-fx" class="flex justify-between px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600"><span>Zero Motorcycles FX</span><span class="text-gray-400">&euro;12.995</span></a>
+
+									<div class="px-4 py-2 text-xs font-semibold text-blue-700 uppercase bg-blue-50 border-b border-blue-100 border-t">
+										NL Koopgidsen
+									</div>
+									<a href="/segway-dirt-ebike-x260-nederland" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">Segway X260 Nederland</a>
 									<a href="/super73-s2-nederland" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">Super73 S2 Nederland</a>
+									<a href="/talaria-sting-nederland" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">Talaria Sting Nederland</a>
 									<a href="/ktm-freeride-e-xc-nederland" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">KTM Freeride Nederland</a>
 									<a href="/zero-fx-nederland" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">Zero FX Nederland</a>
-									<a href="/super73-s2-nederland" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">Super73 S2 Nederland</a>
-									<a href="/talaria-sting-nederland" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600">Talaria Sting Nederland</a>
 								</div>
 							</div>
 						</div>
 
-						<a href="/vergelijk" class="text-gray-600 hover:text-blue-600">Vergelijken</a>
-						<a href="/wetgeving" class="text-gray-600 hover:text-blue-600">Wetgeving</a>
-						<a href="/dealers" class="text-gray-600 hover:text-blue-600">Dealers</a>
+						<a href="/vergelijk" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Vergelijken</a>
+						<a href="/wetgeving" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Wetgeving</a>
+						<a href="/dealers" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">Dealers</a>
 					</div>
-					
+
 					<!-- Mobile menu button -->
 					<div class="md:hidden">
-						<button id="mobile-menu-button" class="text-gray-600 hover:text-blue-600">
+						<button id="mobile-menu-button" class="text-gray-600 hover:text-blue-600 p-2" aria-label="Menu openen">
 							<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
 							</svg>
 						</button>
 					</div>
 				</div>
-				
+
 				<!-- Mobile menu -->
-				<div id="mobile-menu" class="md:hidden hidden border-t bg-white">
+				<div id="mobile-menu" class="md:hidden hidden border-t border-gray-100 bg-white">
 					<div class="py-2">
-					<div class="px-4 py-2 text-xs font-semibold text-gray-500 uppercase bg-gray-50 border-b">L1e-B Bromfiets</div>
-					<a href="/onyx-rcr" class="block px-6 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50">Onyx RCR (€3.299)</a>
-					<a href="/super73-s2" class="block px-6 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50">Super73 S2 (€2.499)</a>
-					<a href="/segway-dirt-ebike-x260" class="block px-6 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50">Segway X260 (€3.999)</a>
-					<a href="/talaria-sting-mx5-pro" class="block px-6 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50">Talaria Sting MX5 Pro (€4.599)</a>
-					<a href="/ubco-2x2-work-bike" class="block px-6 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50">UBCO 2x2 Work Bike (€4.799)</a>
-					<a href="/surron-light-bee-x" class="block px-6 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50">Sur-Ron Light Bee X (€5.199)</a>
-					<a href="/cake-kalk-or" class="block px-6 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50">CAKE Kalk OR (€6.499)</a>
-					<a href="/stealth-h52" class="block px-6 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50">Stealth H-52 (€7.299)</a>
-					<div class="px-4 py-2 text-xs font-semibold text-gray-500 uppercase bg-gray-50 border-b border-t">L3e Motorfiets</div>
-					<a href="/ktm-freeride-e-xc" class="block px-6 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50">KTM Freeride E-XC (€10.999)</a>
-					<a href="/zero-fx" class="block px-6 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50">Zero Motorcycles FX (€12.995)</a>
-					<div class="px-4 py-2 text-xs font-semibold text-gray-500 uppercase bg-gray-50 border-b border-t">E-Fatbike</div>
-					<a href="/eskimo-fat-26" class="block px-6 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50">Eskimo FAT 26 (€1.699)</a>
-					<a href="/rad-power-radrunner-2" class="block px-6 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50">RadRunner 2 (€1.899)</a>
-					<a href="/himiway-cobra" class="block px-6 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50">Himiway Cobra (€2.199)</a>
-					<a href="/bafang-ultra-m620" class="block px-6 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50">Bafang Ultra M620 (€3.499)</a>
-						
-						<div class="border-t mt-2 pt-2">
-							<a href="/vergelijk" class="block px-4 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50">Vergelijken</a>
-							<a href="/wetgeving" class="block px-4 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50">Wetgeving</a>
-							<a href="/dealers" class="block px-4 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50">Dealers</a>
+						<div class="px-4 py-2 text-xs font-semibold text-green-700 uppercase bg-green-50 border-b border-green-100">Pedelec (geen rijbewijs)</div>
+						<a href="/super73-s2" class="block px-6 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50">Super73 S2 (&euro;3.299)</a>
+						<a href="/himiway-cobra" class="block px-6 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50">Himiway Cobra (&euro;2.199)</a>
+						<a href="/eskimo-fat-26" class="block px-6 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50">Eskimo FAT 26 (&euro;1.699)</a>
+
+						<div class="px-4 py-2 text-xs font-semibold text-orange-700 uppercase bg-orange-50 border-b border-orange-100 border-t">L1e-B Bromfiets (AM rijbewijs)</div>
+						<a href="/onyx-rcr" class="block px-6 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50">Onyx RCR (&euro;3.299)</a>
+						<a href="/segway-dirt-ebike-x260" class="block px-6 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50">Segway X260 (&euro;3.499)</a>
+						<a href="/talaria-sting-mx5-pro" class="block px-6 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50">Talaria Sting MX5 Pro (&euro;4.599)</a>
+						<a href="/surron-light-bee-x" class="block px-6 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50">Sur-Ron Light Bee X (&euro;5.199)</a>
+						<a href="/cake-kalk-or" class="block px-6 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50">CAKE Kalk OR (&euro;6.499)</a>
+
+						<div class="px-4 py-2 text-xs font-semibold text-red-700 uppercase bg-red-50 border-b border-red-100 border-t">L3e Motorfiets (A/A2 rijbewijs)</div>
+						<a href="/ktm-freeride-e-xc" class="block px-6 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50">KTM Freeride E-XC (&euro;11.999)</a>
+						<a href="/zero-fx" class="block px-6 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50">Zero Motorcycles FX (&euro;12.995)</a>
+
+						<div class="border-t border-gray-100 mt-1 pt-1">
+							<a href="/vergelijk" class="block px-4 py-2 text-sm font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50">Vergelijken</a>
+							<a href="/wetgeving" class="block px-4 py-2 text-sm font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50">Wetgeving</a>
+							<a href="/dealers" class="block px-4 py-2 text-sm font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50">Dealers</a>
 						</div>
 					</div>
 				</div>
@@ -141,62 +156,62 @@ const pageDescription = description || "Complete e-bike and electric crosser dat
 			<slot />
 		</main>
 
-		<footer class="bg-gray-800 text-white mt-20">
+		<footer class="bg-gray-900 text-white mt-20">
 			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 				<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
 					<div>
-						<h3 class="text-lg font-semibold mb-4">E-Bike Database NL</h3>
-						<p class="text-gray-300">Complete gids voor elektrische fietsen en crossers in Nederland.</p>
-					</div>
-					<div>
-						<h4 class="text-md font-semibold mb-4">Populaire Modellen</h4>
-						<ul class="space-y-2 text-gray-300 text-sm">
-							<li><a href="/surron-light-bee-x" class="hover:text-white">Sur-Ron Light Bee X</a></li>
-							<li><a href="/talaria-sting-mx5-pro" class="hover:text-white">Talaria Sting MX5 Pro</a></li>
-							<li><a href="/super73-s2" class="hover:text-white">Super73 S2</a></li>
-							<li><a href="/segway-dirt-ebike-x260" class="hover:text-white">Segway X260</a></li>
-							<li><a href="/ktm-freeride-e-xc" class="hover:text-white">KTM Freeride E-XC</a></li>
-							<li><a href="/zero-fx" class="hover:text-white">Zero Motorcycles FX</a></li>
-							<li><a href="/vergelijk" class="hover:text-white">Alle modellen vergelijken</a></li>
-						</ul>
-					</div>
-					<div>
-						<h4 class="text-md font-semibold mb-4">Wetgeving</h4>
-						<ul class="space-y-2 text-gray-300">
-							<li><a href="/wetgeving#speed-pedelec" class="hover:text-white">Speed Pedelec</a></li>
-							<li><a href="/wetgeving#l1e-b" class="hover:text-white">L1e-B Bromfiets</a></li>
-							<li><a href="/wetgeving#verzekering" class="hover:text-white">Verzekering</a></li>
-						</ul>
-					</div>
-					<div>
-						<h4 class="text-md font-semibold mb-4">Contact</h4>
-						<p class="text-gray-300">info@ebike-database.com</p>
-						<div class="mt-4">
-							<h5 class="text-sm font-semibold mb-2">Legaal</h5>
-							<ul class="space-y-1 text-sm text-gray-300">
-								<li><a href="/privacy" class="hover:text-white">Privacybeleid</a></li>
-								<li><a href="/disclaimer" class="hover:text-white">Disclaimer</a></li>
-								<li><a href="/algemene-voorwaarden" class="hover:text-white">Algemene Voorwaarden</a></li>
-							</ul>
+						<div class="flex items-center gap-2 mb-3">
+							<svg class="w-5 h-5 text-blue-400" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+								<path d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/>
+							</svg>
+							<span class="font-bold text-white">E-BikeDB NL</span>
 						</div>
+						<p class="text-gray-400 text-sm">Complete gids voor elektrische fietsen en crossers in Nederland. Wetgeving, specs en dealers.</p>
+					</div>
+					<div>
+						<h4 class="text-xs font-semibold mb-4 text-gray-300 uppercase tracking-wide">Populaire modellen</h4>
+						<ul class="space-y-2 text-gray-400 text-sm">
+							<li><a href="/surron-light-bee-x" class="hover:text-white transition-colors">Sur-Ron Light Bee X</a></li>
+							<li><a href="/talaria-sting-mx5-pro" class="hover:text-white transition-colors">Talaria Sting MX5 Pro</a></li>
+							<li><a href="/segway-dirt-ebike-x260" class="hover:text-white transition-colors">Segway X260</a></li>
+							<li><a href="/ktm-freeride-e-xc" class="hover:text-white transition-colors">KTM Freeride E-XC</a></li>
+							<li><a href="/zero-fx" class="hover:text-white transition-colors">Zero Motorcycles FX</a></li>
+							<li><a href="/vergelijk" class="hover:text-white transition-colors">Alle modellen &rarr;</a></li>
+						</ul>
+					</div>
+					<div>
+						<h4 class="text-xs font-semibold mb-4 text-gray-300 uppercase tracking-wide">Wetgeving</h4>
+						<ul class="space-y-2 text-gray-400 text-sm">
+							<li><a href="/elektrische-crosser-rijbewijs" class="hover:text-white transition-colors">Welk rijbewijs nodig?</a></li>
+							<li><a href="/wetgeving#l1e-b" class="hover:text-white transition-colors">L1e-B Bromfiets</a></li>
+							<li><a href="/wetgeving#speed-pedelec" class="hover:text-white transition-colors">Speed Pedelec</a></li>
+							<li><a href="/wetgeving#verzekering" class="hover:text-white transition-colors">Verzekering</a></li>
+						</ul>
+					</div>
+					<div>
+						<h4 class="text-xs font-semibold mb-4 text-gray-300 uppercase tracking-wide">Contact &amp; info</h4>
+						<p class="text-gray-400 text-sm mb-4">info@ebike-database.com</p>
+						<ul class="space-y-1 text-sm text-gray-400">
+							<li><a href="/privacy" class="hover:text-white transition-colors">Privacybeleid</a></li>
+							<li><a href="/disclaimer" class="hover:text-white transition-colors">Disclaimer</a></li>
+							<li><a href="/algemene-voorwaarden" class="hover:text-white transition-colors">Algemene Voorwaarden</a></li>
+						</ul>
 					</div>
 				</div>
-				<div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-					<p>&copy; 2024 E-Bike Database NL. Alle rechten voorbehouden.</p>
-					<p class="mt-2 text-sm">
-						Deze website bevat affiliate links naar MediaMarkt en Amazon.
-						We ontvangen een commissie bij aankopen via deze links, zonder extra kosten voor u.
+				<div class="border-t border-gray-800 mt-10 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+					<p>&copy; 2026 E-BikeDB Nederland. Alle rechten voorbehouden.</p>
+					<p class="text-center sm:text-right max-w-md">
+						Deze website bevat affiliate links. We ontvangen een commissie bij aankopen via deze links, zonder extra kosten voor u.
 					</p>
 				</div>
 			</div>
 		</footer>
 
-		<!-- Mobile menu toggle script -->
+		<!-- Mobile menu toggle -->
 		<script is:inline>
 		document.addEventListener('DOMContentLoaded', function() {
 			const menuButton = document.getElementById('mobile-menu-button');
 			const mobileMenu = document.getElementById('mobile-menu');
-			
 			if (menuButton && mobileMenu) {
 				menuButton.addEventListener('click', function() {
 					mobileMenu.classList.toggle('hidden');
