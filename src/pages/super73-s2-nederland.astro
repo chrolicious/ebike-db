@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 
 const title = "Super73 S2 Kopen Nederland 2026 - Specs, Dealers & Wetgeving";
-const description = "Super73 S2 in Nederland: L1e-B bromfiets, 750W motor, 48V 14Ah (672Wh). AM rijbewijs en geel kenteken vereist. Officiële dealers en actuele prijs.";
+const description = "Super73 S2 in Nederland: EU-versie pedelec max 25 km/h, geen rijbewijs of kenteken nodig. 750W motor, 48V 14Ah. Officiële dealers en actuele prijs.";
 ---
 
 <Layout title={title} description={description}>
@@ -12,8 +12,8 @@ const description = "Super73 S2 in Nederland: L1e-B bromfiets, 750W motor, 48V 1
     "@type": "Product",
     "name": "Super73 S2",
     "brand": {"@type": "Brand", "name": "Super73"},
-    "description": "Elektrische bromfiets L1e-B, 750W motor, 48V 14Ah (672Wh), retro motorfiets-looks.",
-    "category": "Elektrische bromfiets",
+    "description": "Elektrische pedelec, EU-versie max 25 km/h, 750W motor, 48V 14Ah (672Wh), retro motorfiets-looks.",
+    "category": "Elektrische fiets (pedelec)",
     "offers": {
       "@type": "Offer",
       "priceCurrency": "EUR",
@@ -34,13 +34,24 @@ const description = "Super73 S2 in Nederland: L1e-B bromfiets, 750W motor, 48V 1
     <h1 class="text-3xl font-bold text-gray-900 mb-2">Super73 S2 &mdash; Nederland</h1>
     <p class="text-gray-500 text-sm mb-8">Bijgewerkt april 2026</p>
 
+    <img
+      src="https://super73.com/cdn/shop/files/2025_S2Laguna_Agave_Front-Hero_ccc2df21-424e-4487-b479-842bd997f889.jpg"
+      alt="Super73 S2 Laguna Agave Green vooraanzicht"
+      class="w-full max-h-80 object-contain rounded-lg bg-gray-50 mb-8"
+      loading="eager"
+    />
+
     <!-- Legal category banner -->
-    <div class="bg-orange-50 border border-orange-200 rounded p-4 mb-8">
-      <p class="text-sm text-orange-800"><strong>Wettelijke categorie: L1e-B bromfiets.</strong> AM rijbewijs verplicht (vanaf 16 jaar). Geel kenteken en WA-verzekering verplicht. Helm verplicht. Niet op het fietspad.</p>
+    <div class="bg-green-50 border border-green-200 rounded p-4 mb-8">
+      <p class="text-sm text-green-800"><strong>Wettelijke categorie (EU/NL-versie): reguliere e-bike (pedelec).</strong> Max 25 km/h trapondersteuning. Geen rijbewijs, kenteken of verzekering verplicht. Helm niet verplicht.</p>
+    </div>
+
+    <div class="bg-yellow-50 border border-yellow-200 rounded p-4 mb-8">
+      <p class="text-sm text-yellow-800"><strong>Let op:</strong> De Super73 S2 bestaat in meerdere varianten. De in Nederland verkochte EU-versie is begrensd als pedelec (max ~24&ndash;25 km/h, alleen trapondersteuning). De Amerikaanse versie heeft een gashendel en hogere topsnelheid &mdash; die vereist wel een rijbewijs en kenteken als L1e-B. Controleer altijd de papieren van de versie die je koopt.</p>
     </div>
 
     <!-- Specs -->
-    <h2 class="text-xl font-bold text-gray-900 mb-4">Technische specificaties</h2>
+    <h2 class="text-xl font-bold text-gray-900 mb-4">Technische specificaties (EU-versie)</h2>
     <div class="overflow-x-auto mb-8">
       <table class="w-full text-sm border-collapse">
         <tbody>
@@ -49,16 +60,16 @@ const description = "Super73 S2 in Nederland: L1e-B bromfiets, 750W motor, 48V 1
             <td class="py-2 font-medium">750W mid-drive, borstelloze permanentmagneet</td>
           </tr>
           <tr class="border-b border-gray-100 hover:bg-gray-50">
+            <td class="py-2 pr-4 text-gray-500">Topsnelheid</td>
+            <td class="py-2 font-medium">max ~24&ndash;25 km/h (EU-versie, trapondersteuning)</td>
+          </tr>
+          <tr class="border-b border-gray-100 hover:bg-gray-50">
             <td class="py-2 pr-4 text-gray-500">Batterij</td>
             <td class="py-2 font-medium">48V 14Ah (672Wh) lithium-ion</td>
           </tr>
           <tr class="border-b border-gray-100 hover:bg-gray-50">
             <td class="py-2 pr-4 text-gray-500">Bereik</td>
             <td class="py-2 font-medium">tot 64 km (ECO-modus, vlak terrein)</td>
-          </tr>
-          <tr class="border-b border-gray-100 hover:bg-gray-50">
-            <td class="py-2 pr-4 text-gray-500">Topsnelheid</td>
-            <td class="py-2 font-medium">45 km/h (EU-begrensd)</td>
           </tr>
           <tr class="border-b border-gray-100 hover:bg-gray-50">
             <td class="py-2 pr-4 text-gray-500">Gewicht</td>
@@ -73,12 +84,12 @@ const description = "Super73 S2 in Nederland: L1e-B bromfiets, 750W motor, 48V 1
             <td class="py-2 font-medium">ca. 6 uur (standaard lader)</td>
           </tr>
           <tr class="border-b border-gray-100 hover:bg-gray-50">
-            <td class="py-2 pr-4 text-gray-500">Homologatie</td>
-            <td class="py-2 font-medium">L1e-B &mdash; bromfiets (AM rijbewijs)</td>
+            <td class="py-2 pr-4 text-gray-500">Homologatie (EU)</td>
+            <td class="py-2 font-medium">Pedelec (EN15194) &mdash; reguliere e-bike</td>
           </tr>
           <tr class="border-b border-gray-100 hover:bg-gray-50">
             <td class="py-2 pr-4 text-gray-500">Prijs (2026)</td>
-            <td class="py-2 font-medium">&euro;3.299 (adviesprijs Super73 EU)</td>
+            <td class="py-2 font-medium">&euro;3.299 (Super73 EU adviesprijs)</td>
           </tr>
         </tbody>
       </table>
@@ -87,16 +98,17 @@ const description = "Super73 S2 in Nederland: L1e-B bromfiets, 750W motor, 48V 1
     <!-- What you need -->
     <h2 class="text-xl font-bold text-gray-900 mb-4">Wat heb je nodig in Nederland?</h2>
     <ul class="text-sm text-gray-700 space-y-2 mb-8">
-      <li><strong>Rijbewijs:</strong> AM rijbewijs (bromfietsrijbewijs). Minimale leeftijd 16 jaar. Kosten inclusief lessen: gemiddeld &euro;300&ndash;500.</li>
-      <li><strong>Kenteken:</strong> Geel RDW-kenteken verplicht. Aanvragen met CoC van Super73 en aankoopbewijs. Kosten: &euro;21,50.</li>
-      <li><strong>Verzekering:</strong> WA-verzekering verplicht. Gangbaar bij o.a. Interpolis, Nationale-Nederlanden en diverse bromfietsverzekeraars. Kosten: ca. &euro;80&ndash;180/jaar.</li>
-      <li><strong>Helm:</strong> Goedgekeurde bromfietshelm verplicht (ECE 22.06).</li>
+      <li><strong>Rijbewijs:</strong> Niet nodig voor de EU-pedelec-versie.</li>
+      <li><strong>Kenteken:</strong> Niet nodig.</li>
+      <li><strong>Verzekering:</strong> Niet verplicht (hoewel een aansprakelijkheidsverzekering via je woonverzekering verstandig is).</li>
+      <li><strong>Helm:</strong> Niet verplicht, maar aanbevolen gezien het gewicht van de fiets (41 kg).</li>
+      <li><strong>Leeftijd:</strong> Geen wettelijke leeftijdsgrens voor de pedelec-versie.</li>
     </ul>
 
     <!-- Where to buy -->
     <h2 class="text-xl font-bold text-gray-900 mb-4">Kopen &amp; dealers</h2>
     <p class="text-sm text-gray-700 mb-4">
-      Super73 verkoopt rechtstreeks via hun Europese webshop en heeft een uitgebreid dealernetwerk in Nederland (39+ dealers, van Groningen tot Zeeland). Officieel: <a href="https://super73.eu" class="text-blue-600 hover:underline" rel="noopener">super73.eu &rarr;</a>
+      Super73 heeft een groot dealernetwerk in Nederland (39+ dealers). Zorg dat je de EU-versie (EN15194 pedelec) koopt als je zonder rijbewijs wilt rijden. Officieel: <a href="https://super73.eu" class="text-blue-600 hover:underline" rel="noopener">super73.eu &rarr;</a>
     </p>
     <p class="text-sm text-gray-700 mb-8">
       Overzicht van Nederlandse Super73-dealers: <a href="/dealers#super73" class="text-blue-600 hover:underline">Super73 dealers Nederland &rarr;</a>
@@ -106,39 +118,38 @@ const description = "Super73 S2 in Nederland: L1e-B bromfiets, 750W motor, 48V 1
     <h2 class="text-xl font-bold text-gray-900 mb-4">Veelgestelde vragen</h2>
 
     <details class="border border-gray-200 rounded mb-3">
-      <summary class="p-4 font-medium cursor-pointer select-none hover:bg-gray-50">Waarom is de Super73 S2 een bromfiets en geen gewone e-bike?</summary>
+      <summary class="p-4 font-medium cursor-pointer select-none hover:bg-gray-50">Hoe weet ik of ik de EU-versie of de Amerikaanse versie koop?</summary>
       <div class="p-4 pt-0 text-gray-700 text-sm">
-        De S2 heeft een 750W motor die zonder trapondersteuning rijdt (throttle-only), en een topsnelheid van 45 km/h. Dat valt buiten de definitie van een reguliere e-bike (max 250W nominaal, alleen trapondersteuning). Daardoor is de S2 gehomologeerd als L1e-B bromfiets, met alle bijbehorende verplichtingen.
+        De EU-versie heeft een CE-markering en een conformiteitsverklaring (EN15194). De topsnelheid is begrensd op ~25 km/h en er is geen gashendel. Als je via een Nederlandse dealer of super73.eu koopt, krijg je automatisch de EU-versie. Controleer bij tweedehands aankoop altijd de papieren en test of er een gashendel aanwezig is.
       </div>
     </details>
 
     <details class="border border-gray-200 rounded mb-3">
-      <summary class="p-4 font-medium cursor-pointer select-none hover:bg-gray-50">Kan ik de Super73 S2 op het fietspad rijden?</summary>
+      <summary class="p-4 font-medium cursor-pointer select-none hover:bg-gray-50">Mag ik de Super73 S2 (EU-versie) op het fietspad rijden?</summary>
       <div class="p-4 pt-0 text-gray-700 text-sm">
-        Nee. Als L1e-B bromfiets is de Super73 S2 verboden op het fietspad. Je rijdt op de rijbaan, als ware het een bromfiets. Op wegen met een maximumsnelheid van 50 km/h of lager mag je ook op de rijbaan.
+        Ja. Als pedelec (max 25 km/h trapondersteuning, geen gashendel) mag je op het fietspad rijden, net als een gewone e-bike. Je hoeft niet op de rijbaan.
       </div>
     </details>
 
     <details class="border border-gray-200 rounded mb-3">
-      <summary class="p-4 font-medium cursor-pointer select-none hover:bg-gray-50">Hoe lang gaat de batterij mee?</summary>
+      <summary class="p-4 font-medium cursor-pointer select-none hover:bg-gray-50">Wat is het verschil met de Super73 S2 die ik op YouTube zie?</summary>
       <div class="p-4 pt-0 text-gray-700 text-sm">
-        Super73 garandeert de batterij voor 2 jaar. In de praktijk gaan lithium-ion accu's van dit type 500&ndash;800 laadcycli mee voor ze onder 80% capaciteit zakken, wat bij dagelijks gebruik neerkomt op 3&ndash;5 jaar.
+        De meeste YouTube-reviews zijn van de Amerikaanse versie: gashendel, hogere topsnelheid, en in de VS als moped geclassificeerd. Die versie is in Nederland alleen legaal op de weg als L1e-B bromfiets met AM rijbewijs en geel kenteken. De in NL verkochte EU-versie mist de gashendel en is als pedelec gecertificeerd.
       </div>
     </details>
 
     <details class="border border-gray-200 rounded mb-3">
-      <summary class="p-4 font-medium cursor-pointer select-none hover:bg-gray-50">Wat zijn alternatieven voor de Super73 S2 in hetzelfde prijssegment?</summary>
+      <summary class="p-4 font-medium cursor-pointer select-none hover:bg-gray-50">Hoelang gaat de batterij mee?</summary>
       <div class="p-4 pt-0 text-gray-700 text-sm">
-        In het L1e-B segment rond &euro;3.000&ndash;5.000 zijn de voornaamste alternatieven de Sur-Ron Light Bee X (&euro;5.199, meer off-road gericht) en de Talaria Sting MX5 Pro (&euro;4.599, cross-stijl). Voor een meer traditioneel bromfiets-look is er de Segway Dirt eBike X260 (&euro;3.499). De Super73 onderscheidt zich met het retro chopper-design en de brede fat bike banden.
+        Super73 garandeert de batterij voor 2 jaar. In de praktijk gaan lithium-ion accu's van dit type 500&ndash;800 laadcycli mee voor ze onder 80% capaciteit zakken, wat bij regelmatig gebruik neerkomt op 3&ndash;5 jaar.
       </div>
     </details>
 
     <div class="mt-8 pt-6 border-t border-gray-200">
       <h3 class="font-semibold text-gray-800 mb-3">Gerelateerd</h3>
       <ul class="space-y-2 text-sm text-blue-600">
-        <li><a href="/sur-ron-vs-talaria" class="hover:underline">Sur-Ron Light Bee X vs Talaria Sting &mdash; off-road alternatieven</a></li>
-        <li><a href="/elektrische-crosser-rijbewijs" class="hover:underline">Welk rijbewijs heb je nodig?</a></li>
-        <li><a href="/speed-pedelec-vs-bromfiets" class="hover:underline">Categorievergelijking: speed pedelec vs bromfiets</a></li>
+        <li><a href="/speed-pedelec-vs-bromfiets" class="hover:underline">Verschil pedelec, speed pedelec en bromfiets</a></li>
+        <li><a href="/sur-ron-vs-talaria" class="hover:underline">Sur-Ron vs Talaria &mdash; als je wil rijden zonder rijbewijs</a></li>
         <li><a href="/vergelijk" class="hover:underline">Alle modellen vergelijken op prijs en specs</a></li>
       </ul>
     </div>
