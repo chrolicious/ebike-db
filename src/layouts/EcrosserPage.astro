@@ -147,9 +147,7 @@ const pageDescription = `Complete gids voor de ${ecrosser.brand} ${ecrosser.name
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 		<!-- Dutch Legal Requirements - Critical Section -->
 		<section class="bg-red-50 border-l-4 border-red-400 p-6 mb-12">
-			<h2 class="text-2xl font-bold text-red-800 mb-6">
-				🇳🇱 Nederlandse Wetgeving - {ecrosser.category}
-			</h2>
+			<h2 class="text-2xl font-bold text-red-800 mb-6">Nederlandse Wetgeving &mdash; {ecrosser.category}</h2>
 			<div class="grid md:grid-cols-2 gap-6">
 				<div>
 					<h3 class="text-lg font-semibold mb-4 text-red-700">Verplicht voor weggebruik:</h3>
@@ -187,14 +185,14 @@ const pageDescription = `Complete gids voor de ${ecrosser.brand} ${ecrosser.name
 					{ecrosser.homologation && (
 						<div class="mt-4 p-4 bg-green-100 rounded-lg">
 							<p class="text-sm text-green-800">
-								<strong>✅ Gehomologeerd:</strong> Deze e-crosser heeft officiële goedkeuring voor Nederlands weggebruik.
+								<strong class="text-green-700">Gehomologeerd:</strong> Deze e-crosser heeft officiële goedkeuring voor Nederlands weggebruik.
 							</p>
 						</div>
 					)}
 					{!ecrosser.homologation && (
 						<div class="mt-4 p-4 bg-yellow-100 rounded-lg">
 							<p class="text-sm text-yellow-800">
-								<strong>⚠️ Homologatie status onduidelijk:</strong> Controleer voor aankoop of dit model toegelaten is op Nederlandse wegen.
+								<strong class="text-yellow-700">Homologatie onzeker:</strong> Controleer voor aankoop of dit model toegelaten is op Nederlandse wegen.
 							</p>
 						</div>
 					)}
@@ -256,7 +254,7 @@ const pageDescription = `Complete gids voor de ${ecrosser.brand} ${ecrosser.name
 							<ul class="space-y-2">
 								{ecrosser.pros.map((pro) => (
 									<li class="flex items-start">
-										<span class="text-green-500 mr-2">✓</span>
+										<span class="text-green-600 font-bold mr-2 select-none">+</span>
 										<span>{pro}</span>
 									</li>
 								))}
@@ -272,7 +270,7 @@ const pageDescription = `Complete gids voor de ${ecrosser.brand} ${ecrosser.name
 							<ul class="space-y-2">
 								{ecrosser.cons.map((con) => (
 									<li class="flex items-start">
-										<span class="text-red-500 mr-2">✗</span>
+										<span class="text-red-400 font-bold mr-2 select-none">&minus;</span>
 										<span>{con}</span>
 									</li>
 								))}
