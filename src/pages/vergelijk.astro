@@ -1,80 +1,383 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { eCrossers } from '../data/ecrossers';
+import type { ECrosser } from '../data/ecrossers';
 
-const models = [
-  { name: 'Surron Light Bee X', slug: 'surron-light-bee-x', price: '€5.199', cat: 'L1e-B (Bromfiets)', speed: 45, license: 'AM', range: '60-100 km', highlight: true },
-  { name: 'Talaria Sting MX5 Pro', slug: 'talaria-sting-mx5-pro', price: '€4.599', cat: 'L1e-B (Bromfiets)', speed: 45, license: 'AM', range: '50-80 km', highlight: false },
-  { name: 'Segway X260', slug: 'segway-dirt-ebike-x260', price: '€3.999', cat: 'L1e-B (Bromfiets)', speed: 45, license: 'AM', range: '65-90 km', highlight: false },
-  { name: 'Onyx RCR', slug: 'onyx-rcr', price: '€3.299', cat: 'L1e-B (Bromfiets)', speed: 45, license: 'AM', range: '60-90 km', highlight: false },
-  { name: 'Super73 S2', slug: 'super73-s2', price: '€2.499', cat: 'L1e-B (Bromfiets)', speed: 45, license: 'AM', range: '50-75 km', highlight: false },
-  { name: 'Stealth H-52', slug: 'stealth-h52', price: '€7.299', cat: 'L1e-B (Bromfiets)', speed: 45, license: 'AM', range: '60-85 km', highlight: false },
-  { name: 'CAKE Kalk OR', slug: 'cake-kalk-or', price: '€6.499', cat: 'L1e-B (Bromfiets)', speed: 45, license: 'AM', range: '53-80 km', highlight: false },
-  { name: 'UBCO 2x2 Work Bike', slug: 'ubco-2x2-work-bike', price: '€4.799', cat: 'L1e-B (Bromfiets)', speed: 45, license: 'AM', range: '75-100 km', highlight: false },
-  { name: 'KTM Freeride E-XC', slug: 'ktm-freeride-e-xc', price: '€10.999', cat: 'L3e (Motorfiets)', speed: 65, license: 'A2', range: '50-70 km', highlight: false },
-  { name: 'Zero FX', slug: 'zero-fx', price: '€12.995', cat: 'L3e (Motorfiets)', speed: 137, license: 'A', range: '70-170 km', highlight: false },
-  { name: 'Himiway Cobra', slug: 'himiway-cobra', price: '€2.199', cat: 'E-Fatbike', speed: 25, license: 'Geen', range: '80-120 km', highlight: false },
-  { name: 'RadRunner 2', slug: 'rad-power-radrunner-2', price: '€1.899', cat: 'E-Fatbike', speed: 25, license: 'Geen', range: '65-90 km', highlight: false },
-  { name: 'Eskimo Fat 26', slug: 'eskimo-fat-26', price: '€1.699', cat: 'E-Fatbike', speed: 25, license: 'Geen', range: '60-85 km', highlight: false },
-];
+const serialized = JSON.stringify(eCrossers);
 ---
-<Layout title="E-Crosser Vergelijken — Alle Modellen | E-Bike Database NL" description="Vergelijk alle elektrische crossers en e-bikes op prijs, snelheid, rijbewijs en bereik. Vind het beste model voor jouw situatie.">
 
-  <section class="bg-gradient-to-r from-blue-600 to-blue-700 text-white py-12">
-    <div class="max-w-4xl mx-auto px-4 text-center">
-      <h1 class="text-4xl font-bold mb-4">Modellen Vergelijken</h1>
-      <p class="text-xl opacity-90">Alle elektrische crossers en e-bikes op een rij</p>
+<Layout
+  title="Elektrische Crosser Vergelijken | Prijs, Rijbewijs & Specs | E-Bike DB NL"
+  description="Vergelijk alle elektrische crossers en e-bikes op prijs, rijbewijs en specs. Filter op rijbewijs: geen, AM of motorrijbewijs. Actuele prijzen en Nederlandse wetgeving."
+>
+  <!-- Blue gradient header -->
+  <div class="bg-gradient-to-br from-blue-700 via-blue-600 to-blue-500 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+      <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight mb-4">
+        Elektrische Crossers Vergelijken
+      </h1>
+      <p class="text-lg sm:text-xl text-blue-100 max-w-3xl">
+        Vergelijk alle modellen op prijs, rijbewijs en specs. Filter op jouw rijbewijssituatie en klik een kolom om te sorteren.
+      </p>
     </div>
-  </section>
+  </div>
 
-  <div class="max-w-6xl mx-auto px-4 py-12">
-    <p class="text-gray-600 mb-8">Gebruik deze tabel om modellen te vergelijken op prijs, rijbewijs en prestaties. Klik op een model voor de volledige specificaties en Nederlandse wetgeving.</p>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
-    <div class="overflow-x-auto shadow-md rounded-lg">
-      <table class="w-full bg-white">
-        <thead class="bg-blue-600 text-white">
+    <!-- Filter buttons -->
+    <div class="flex flex-wrap gap-3 mb-8" id="filter-bar">
+      <button
+        data-filter="alle"
+        class="filter-btn active px-5 py-2 rounded-full text-sm font-semibold border transition-colors
+               bg-blue-600 text-white border-blue-600"
+      >
+        Alle
+      </button>
+      <button
+        data-filter="geen"
+        class="filter-btn px-5 py-2 rounded-full text-sm font-semibold border transition-colors
+               bg-white text-gray-700 border-gray-300 hover:border-green-500 hover:text-green-700"
+      >
+        Geen rijbewijs
+      </button>
+      <button
+        data-filter="am"
+        class="filter-btn px-5 py-2 rounded-full text-sm font-semibold border transition-colors
+               bg-white text-gray-700 border-gray-300 hover:border-orange-500 hover:text-orange-700"
+      >
+        AM (Bromfiets)
+      </button>
+      <button
+        data-filter="a2a"
+        class="filter-btn px-5 py-2 rounded-full text-sm font-semibold border transition-colors
+               bg-white text-gray-700 border-gray-300 hover:border-red-500 hover:text-red-700"
+      >
+        A2/A (Motor)
+      </button>
+    </div>
+
+    <!-- Comparison table -->
+    <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm mb-12">
+      <table class="min-w-full text-sm text-left" id="vergelijk-table">
+        <thead class="bg-gray-800 text-white">
           <tr>
-            <th class="px-4 py-3 text-left">Model</th>
-            <th class="px-4 py-3 text-left">Prijs</th>
-            <th class="px-4 py-3 text-left">Categorie</th>
-            <th class="px-4 py-3 text-center">Max km/h</th>
-            <th class="px-4 py-3 text-center">Rijbewijs</th>
-            <th class="px-4 py-3 text-left">Bereik</th>
-            <th class="px-4 py-3 text-center">Pagina</th>
+            <th class="sortable px-4 py-3 font-semibold cursor-pointer select-none whitespace-nowrap" data-col="name">
+              Merk &amp; Model <span class="sort-icon text-gray-400 ml-1">↕</span>
+            </th>
+            <th class="sortable px-4 py-3 font-semibold cursor-pointer select-none whitespace-nowrap" data-col="price">
+              Prijs <span class="sort-icon text-gray-400 ml-1">↕</span>
+            </th>
+            <th class="sortable px-4 py-3 font-semibold cursor-pointer select-none whitespace-nowrap" data-col="category">
+              Categorie <span class="sort-icon text-gray-400 ml-1">↕</span>
+            </th>
+            <th class="sortable px-4 py-3 font-semibold cursor-pointer select-none whitespace-nowrap" data-col="maxSpeed">
+              Max km/h <span class="sort-icon text-gray-400 ml-1">↕</span>
+            </th>
+            <th class="sortable px-4 py-3 font-semibold cursor-pointer select-none whitespace-nowrap" data-col="rijbewijs">
+              Rijbewijs <span class="sort-icon text-gray-400 ml-1">↕</span>
+            </th>
+            <th class="sortable px-4 py-3 font-semibold cursor-pointer select-none whitespace-nowrap" data-col="range">
+              Bereik <span class="sort-icon text-gray-400 ml-1">↕</span>
+            </th>
+            <th class="sortable px-4 py-3 font-semibold cursor-pointer select-none whitespace-nowrap" data-col="weight">
+              Gewicht <span class="sort-icon text-gray-400 ml-1">↕</span>
+            </th>
+            <th class="px-4 py-3 font-semibold">Actie</th>
           </tr>
         </thead>
-        <tbody class="divide-y divide-gray-200">
-          {models.map((m) => (
-            <tr class={m.highlight ? 'bg-blue-50 hover:bg-blue-100' : 'hover:bg-gray-50'}>
-              <td class="px-4 py-3 font-semibold">{m.name}</td>
-              <td class="px-4 py-3 text-blue-700 font-medium">{m.price}</td>
-              <td class="px-4 py-3 text-sm">{m.cat}</td>
-              <td class="px-4 py-3 text-center font-bold">{m.speed}</td>
-              <td class={`px-4 py-3 text-center font-medium ${m.license === 'Geen' ? 'text-green-600' : 'text-orange-600'}`}>{m.license}</td>
-              <td class="px-4 py-3 text-sm">{m.range}</td>
-              <td class="px-4 py-3 text-center">
-                <a href={`/${m.slug}`} class="bg-blue-600 text-white px-3 py-1 rounded text-sm hover:bg-blue-700">
-                  Bekijk →
-                </a>
-              </td>
-            </tr>
-          ))}
+        <tbody id="table-body" class="divide-y divide-gray-200 bg-white">
+          <!-- Populated by JS -->
         </tbody>
       </table>
     </div>
 
-    <div class="mt-8 grid md:grid-cols-3 gap-6">
-      <div class="bg-green-50 p-4 rounded-lg border border-green-200">
-        <h3 class="font-bold text-green-800 mb-2">Geen rijbewijs nodig</h3>
-        <p class="text-sm text-gray-700">E-fatbikes (25 km/h) en speed pedelecs rijden zonder rijbewijs. Ideaal als je geen AM of motorrijbewijs hebt.</p>
+    <!-- No results message -->
+    <p id="no-results" class="hidden text-center text-gray-500 py-8 text-sm">
+      Geen modellen gevonden voor dit filter.
+    </p>
+
+    <!-- Rijbewijs decision guide -->
+    <section class="mb-14">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Welk rijbewijs heb ik nodig?</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+
+        <div class="bg-green-50 border border-green-200 rounded-xl p-6">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="inline-block w-3 h-3 rounded-full bg-green-500"></span>
+            <h3 class="font-bold text-green-800 text-base">Geen rijbewijs</h3>
+          </div>
+          <p class="text-sm text-gray-700 mb-3">
+            E-Fatbikes en Speed Pedelecs tot 25 km/h vallen buiten de kenteken- en rijbewijsplicht. Je mag er gewoon mee rijden vanaf je 16e, zonder enige opleiding.
+          </p>
+          <ul class="text-xs text-green-800 space-y-1">
+            <li class="flex items-center gap-1.5"><span class="font-bold">&#10003;</span> E-Fatbike (max 25 km/h)</li>
+            <li class="flex items-center gap-1.5"><span class="font-bold">&#10003;</span> Speed Pedelec (met trap, max 25 km/h vrij)</li>
+          </ul>
+        </div>
+
+        <div class="bg-orange-50 border border-orange-200 rounded-xl p-6">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="inline-block w-3 h-3 rounded-full bg-orange-500"></span>
+            <h3 class="font-bold text-orange-800 text-base">AM-rijbewijs (Bromfiets)</h3>
+          </div>
+          <p class="text-sm text-gray-700 mb-3">
+            L1e-B bromfietsen zoals de Surron en Talaria vereisen een AM-rijbewijs. Dit haal je bij het CBR met een theorie- en rijexamen, beschikbaar vanaf 16 jaar.
+          </p>
+          <ul class="text-xs text-orange-800 space-y-1">
+            <li class="flex items-center gap-1.5"><span class="font-bold">&#10003;</span> L1e-B (max 45 km/h)</li>
+            <li class="flex items-center gap-1.5"><span class="font-bold">&#10003;</span> Kenteken + verzekering verplicht</li>
+          </ul>
+        </div>
+
+        <div class="bg-red-50 border border-red-200 rounded-xl p-6">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="inline-block w-3 h-3 rounded-full bg-red-500"></span>
+            <h3 class="font-bold text-red-800 text-base">Motorrijbewijs A2/A</h3>
+          </div>
+          <p class="text-sm text-gray-700 mb-3">
+            Elektrische motoren (L3e) zoals de KTM Freeride E-XC en Zero FX vallen onder de motorrijtuigenwet. A2-rijbewijs vanaf 18 jaar (tot 35 kW), A vanaf 24 jaar.
+          </p>
+          <ul class="text-xs text-red-800 space-y-1">
+            <li class="flex items-center gap-1.5"><span class="font-bold">&#10003;</span> L3e (boven 45 km/h)</li>
+            <li class="flex items-center gap-1.5"><span class="font-bold">&#10003;</span> KTM, Zero en andere e-motoren</li>
+          </ul>
+        </div>
+
       </div>
-      <div class="bg-orange-50 p-4 rounded-lg border border-orange-200">
-        <h3 class="font-bold text-orange-800 mb-2">AM rijbewijs (bromfiets)</h3>
-        <p class="text-sm text-gray-700">De meeste e-crossers (45 km/h) zijn bromfietsen en vereisen een AM rijbewijs. Dit haal je via theorie + praktijkexamen bij het CBR.</p>
+    </section>
+
+    <!-- FAQ -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Veelgestelde vragen</h2>
+      <div class="space-y-4">
+
+        <details class="group bg-white border border-gray-200 rounded-xl shadow-sm">
+          <summary class="flex justify-between items-center px-6 py-4 cursor-pointer font-semibold text-gray-900 list-none">
+            Mag ik een elektrische crosser op het fietspad?
+            <span class="text-gray-400 group-open:rotate-180 transition-transform text-lg">&#8964;</span>
+          </summary>
+          <div class="px-6 pb-5 text-sm text-gray-700">
+            Nee, alleen pedelecs en e-bikes tot 25 km/h (zonder gashandel) zijn toegestaan op het fietspad. L1e-B bromfietsen rijden op de rijbaan of, waar aangegeven, op het bromfietspad.
+          </div>
+        </details>
+
+        <details class="group bg-white border border-gray-200 rounded-xl shadow-sm">
+          <summary class="flex justify-between items-center px-6 py-4 cursor-pointer font-semibold text-gray-900 list-none">
+            Wat kost een AM-rijbewijs in Nederland?
+            <span class="text-gray-400 group-open:rotate-180 transition-transform text-lg">&#8964;</span>
+          </summary>
+          <div class="px-6 pb-5 text-sm text-gray-700">
+            Reken op circa €300–€600 inclusief lessen, theorie-examen en rijexamen bij het CBR. Kosten variëren per rijschool en het aantal benodigde lessen.
+          </div>
+        </details>
+
+        <details class="group bg-white border border-gray-200 rounded-xl shadow-sm">
+          <summary class="flex justify-between items-center px-6 py-4 cursor-pointer font-semibold text-gray-900 list-none">
+            Wat is het verschil tussen L1e-B en Speed Pedelec?
+            <span class="text-gray-400 group-open:rotate-180 transition-transform text-lg">&#8964;</span>
+          </summary>
+          <div class="px-6 pb-5 text-sm text-gray-700">
+            Een L1e-B is een bromfiets met een gashandel die tot 45 km/h rijdt en een AM-rijbewijs vereist. Een Speed Pedelec is een snelle e-fiets met trapondersteuning tot 45 km/h, maar heeft een eigen wettelijke categorie (L1e-B of vrijgesteld afhankelijk van uitvoering) en vereist in Nederland ook een AM-rijbewijs plus helm op de rijbaan.
+          </div>
+        </details>
+
+        <details class="group bg-white border border-gray-200 rounded-xl shadow-sm">
+          <summary class="flex justify-between items-center px-6 py-4 cursor-pointer font-semibold text-gray-900 list-none">
+            Welke e-crosser is het goedkoopst met rijbewijs?
+            <span class="text-gray-400 group-open:rotate-180 transition-transform text-lg">&#8964;</span>
+          </summary>
+          <div class="px-6 pb-5 text-sm text-gray-700">
+            Onder de L1e-B modellen (AM-rijbewijs vereist) zijn de Segway X160 en vergelijkbare instapmodellen vaak verkrijgbaar onder de €2.500. Vergelijk de actuele prijzen in de tabel hierboven voor het meest recente overzicht.
+          </div>
+        </details>
+
       </div>
-      <div class="bg-red-50 p-4 rounded-lg border border-red-200">
-        <h3 class="font-bold text-red-800 mb-2">Motorrijbewijs</h3>
-        <p class="text-sm text-gray-700">KTM en Zero zijn echte motorfietsen — A1, A2 of A rijbewijs vereist. Hogere kosten maar ook meer mogelijkheden.</p>
+    </section>
+
+    <!-- CTA -->
+    <div class="text-center">
+      <p class="text-gray-600 mb-4">Meer weten over wet- en regelgeving in Nederland?</p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="/wetgeving" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+          Lees de wetgeving
+        </a>
+        <a href="/dealers" class="inline-block bg-white border border-gray-300 text-gray-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors">
+          Vind een dealer
+        </a>
       </div>
     </div>
+
   </div>
 </Layout>
+
+<script define:vars={{ serialized }}>
+  const allModels = JSON.parse(serialized);
+
+  // --- Rijbewijs badge helper ---
+  function rijbewijsBadge(rijbewijs) {
+    const r = (rijbewijs || '').toLowerCase();
+    if (!r || r === 'geen' || r === 'niet vereist') {
+      return `<span class="inline-block text-xs font-semibold px-2 py-0.5 rounded-full bg-green-100 text-green-800">Geen</span>`;
+    }
+    if (r.startsWith('am')) {
+      return `<span class="inline-block text-xs font-semibold px-2 py-0.5 rounded-full bg-orange-100 text-orange-800">AM</span>`;
+    }
+    return `<span class="inline-block text-xs font-semibold px-2 py-0.5 rounded-full bg-red-100 text-red-800">A2 of A</span>`;
+  }
+
+  // --- Category badge ---
+  const catColors = {
+    'L1e-B':         'bg-orange-100 text-orange-800',
+    'L3e':           'bg-red-100 text-red-800',
+    'Speed Pedelec': 'bg-purple-100 text-purple-800',
+    'E-Fatbike':     'bg-green-100 text-green-800',
+  };
+  function categoryBadge(cat) {
+    const cls = catColors[cat] || 'bg-gray-100 text-gray-700';
+    return `<span class="inline-block text-xs font-semibold px-2 py-0.5 rounded-full ${cls}">${cat}</span>`;
+  }
+
+  // --- Filter key from rijbewijs ---
+  function filterKey(model) {
+    const r = (model.legalStatus?.rijbewijs || '').toLowerCase();
+    if (!r || r === 'geen' || r === 'niet vereist') return 'geen';
+    if (r.startsWith('am')) return 'am';
+    return 'a2a';
+  }
+
+  // --- Price as number for sorting ---
+  function priceNum(model) {
+    return typeof model.price === 'number' ? model.price : 0;
+  }
+
+  // --- Render rows ---
+  let currentFilter = 'alle';
+  let sortCol = null;
+  let sortDir = 1; // 1 = asc, -1 = desc
+
+  function getValue(model, col) {
+    switch (col) {
+      case 'name':     return `${model.brand} ${model.name}`.toLowerCase();
+      case 'price':    return priceNum(model);
+      case 'category': return model.category || '';
+      case 'maxSpeed': return model.maxSpeed || 0;
+      case 'rijbewijs':return filterKey(model);
+      case 'range':    return model.range || '';
+      case 'weight':   return model.weight || 0;
+      default:         return '';
+    }
+  }
+
+  function renderRows() {
+    let models = allModels.filter(m => {
+      if (currentFilter === 'alle') return true;
+      return filterKey(m) === currentFilter;
+    });
+
+    if (sortCol) {
+      models = [...models].sort((a, b) => {
+        const va = getValue(a, sortCol);
+        const vb = getValue(b, sortCol);
+        if (va < vb) return -1 * sortDir;
+        if (va > vb) return 1 * sortDir;
+        return 0;
+      });
+    }
+
+    const tbody = document.getElementById('table-body');
+    const noResults = document.getElementById('no-results');
+
+    if (models.length === 0) {
+      tbody.innerHTML = '';
+      noResults.classList.remove('hidden');
+      return;
+    }
+    noResults.classList.add('hidden');
+
+    tbody.innerHTML = models.map(m => {
+      const rijbewijs = m.legalStatus?.rijbewijs || 'Geen';
+      const priceDisplay = typeof m.price === 'number'
+        ? `€${m.price.toLocaleString('nl-NL')}`
+        : (m.priceRange || '—');
+      const rangeDisplay = m.range || '—';
+      const weightDisplay = m.weight ? `${m.weight} kg` : '—';
+      const maxSpeedDisplay = m.maxSpeed ? `${m.maxSpeed} km/h` : '—';
+
+      return `<tr class="hover:bg-gray-50 transition-colors" data-filter="${filterKey(m)}">
+        <td class="px-4 py-3 font-medium text-gray-900">
+          <a href="/${m.id}" class="hover:text-blue-600 hover:underline">${m.brand} ${m.name}</a>
+        </td>
+        <td class="px-4 py-3 text-gray-700 font-semibold whitespace-nowrap">${priceDisplay}</td>
+        <td class="px-4 py-3">${categoryBadge(m.category)}</td>
+        <td class="px-4 py-3 text-gray-700 whitespace-nowrap">${maxSpeedDisplay}</td>
+        <td class="px-4 py-3">${rijbewijsBadge(rijbewijs)}</td>
+        <td class="px-4 py-3 text-gray-700 whitespace-nowrap">${rangeDisplay}</td>
+        <td class="px-4 py-3 text-gray-700 whitespace-nowrap">${weightDisplay}</td>
+        <td class="px-4 py-3">
+          <a href="/${m.id}" class="inline-block bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors whitespace-nowrap">
+            Bekijk
+          </a>
+        </td>
+      </tr>`;
+    }).join('');
+  }
+
+  // --- Filter buttons ---
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      currentFilter = btn.dataset.filter;
+
+      document.querySelectorAll('.filter-btn').forEach(b => {
+        b.classList.remove('active', 'bg-blue-600', 'text-white', 'border-blue-600',
+          'bg-green-600', 'border-green-600',
+          'bg-orange-500', 'border-orange-500',
+          'bg-red-600', 'border-red-600');
+        b.classList.add('bg-white', 'text-gray-700', 'border-gray-300');
+      });
+
+      btn.classList.remove('bg-white', 'text-gray-700', 'border-gray-300');
+      btn.classList.add('active');
+
+      if (currentFilter === 'alle') {
+        btn.classList.add('bg-blue-600', 'text-white', 'border-blue-600');
+      } else if (currentFilter === 'geen') {
+        btn.classList.add('bg-green-600', 'text-white', 'border-green-600');
+      } else if (currentFilter === 'am') {
+        btn.classList.add('bg-orange-500', 'text-white', 'border-orange-500');
+      } else {
+        btn.classList.add('bg-red-600', 'text-white', 'border-red-600');
+      }
+
+      renderRows();
+    });
+  });
+
+  // --- Sortable columns ---
+  document.querySelectorAll('.sortable').forEach(th => {
+    th.addEventListener('click', () => {
+      const col = th.dataset.col;
+      if (sortCol === col) {
+        sortDir = sortDir * -1;
+      } else {
+        sortCol = col;
+        sortDir = 1;
+      }
+
+      document.querySelectorAll('.sortable .sort-icon').forEach(icon => {
+        icon.textContent = '↕';
+        icon.classList.remove('text-white');
+        icon.classList.add('text-gray-400');
+      });
+
+      const icon = th.querySelector('.sort-icon');
+      icon.textContent = sortDir === 1 ? '↑' : '↓';
+      icon.classList.remove('text-gray-400');
+      icon.classList.add('text-white');
+
+      renderRows();
+    });
+  });
+
+  // --- Initial render ---
+  renderRows();
+</script>
