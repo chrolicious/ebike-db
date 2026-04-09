@@ -1,571 +1,193 @@
 ---
-// Talaria Sting - Complete Dutch Landing Page Template
 import Layout from '../layouts/Layout.astro';
-import ComplianceAlert from '../components/ComplianceAlert.astro';
-import TechnicalSpecs from '../components/TechnicalSpecs.astro';
 
-// SEO & Meta Data
-const title = "Talaria Sting Kopen Nederland 2026 - Complete Gids & Prijzen";
-const description = "Talaria Sting volledig overzicht: Nederlandse wetgeving, verzekering, kenteken, dealers en beste prijzen. Officiële importeur info + straatlegale opties.";
-const keywords = "talaria sting nederland, e-crosser kopen, elektrische motor nederland, talaria dealers, sting prijs, e-bike verzekering";
-
-// Product Data
-const productData = {
-	model: "Sting",
-	brand: "Talaria",
-	basePrice: 4899,
-	weight: 56,
-	range: "45-70",
-	topSpeed: 85,
-	batteryCapacity: "72V 32Ah",
-	motor: "6000W Nominaal",
-	legalStatus: "Bromfiets (25km/h begrenzer vereist)",
-	homologation: "L1e-B"
-};
-
-// Affiliate Links Data
-const affiliateLinks = {
-	mediamarkt: "https://mediamarkt.nl/talaria-sting?affiliate=ebike-db-001",
-	amazon: "https://amazon.nl/dp/B09TAL123?tag=ebikedb-21",
-	dccEbikes: "https://dcc-ebikes.nl/talaria-sting?ref=ebikedb",
-	elektrischMotorrijden: "https://elektrisch-motorrijden.nl/talaria?partner=ebikedb",
-	talariaEurope: "https://talaria.eu/dealers/netherlands?utm_source=ebikedb"
-};
-
-// Legal Requirements Data
-const legalRequirements = {
-	license: "AM rijbewijs (bromfiets)",
-	insurance: "WA verzekering verplicht",
-	registration: "RDW kenteken vereist",
-	helmet: "ECE-22.05 helm verplicht",
-	modifications: "25km/h begrenzer voor openbare weg"
-};
+const title = "Talaria Sting MX5 Pro Kopen Nederland 2026 - Specs, Dealers & Wetgeving";
+const description = "Talaria Sting MX5 Pro in Nederland: L1e-B bromfiets, 5.4kW motor, 60V 28.8Ah Samsung-cellen. AM rijbewijs en geel kenteken vereist. Officiële Benelux dealers.";
 ---
 
 <Layout title={title} description={description}>
-	<!-- Structured Data -->
-	<script type="application/ld+json">
-	{
-		"@context": "https://schema.org",
-		"@type": "Product",
-		"name": "Talaria Sting",
-		"brand": {
-			"@type": "Brand",
-			"name": "Talaria"
-		},
-		"description": "Krachtige elektrische crossmotor met 6000W motor, geschikt voor off-road gebruik en straatlegaal te maken in Nederland",
-		"category": "Electric Motorcycle",
-		"offers": {
-			"@type": "Offer",
-			"priceCurrency": "EUR",
-			"price": "4899.00",
-			"availability": "https://schema.org/InStock",
-			"seller": {
-				"@type": "Organization",
-				"name": "Nederlandse Talaria Dealers"
-			}
-		},
-		"aggregateRating": {
-			"@type": "AggregateRating",
-			"ratingValue": "4.6",
-			"reviewCount": "89"
-		}
-	}
-	</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Talaria Sting MX5 Pro",
+    "brand": {"@type": "Brand", "name": "Talaria"},
+    "description": "Elektrische crosser L1e-B, 5.4kW, 60V 28.8Ah Samsung-cellen, 44 kg.",
+    "category": "Elektrische bromfiets / crosser",
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "EUR",
+      "price": "4599",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
 
-	<main class="talaria-landing">
-		<!-- Hero Section -->
-		<section class="hero bg-gradient-to-r from-red-600 to-orange-600 text-white py-20">
-			<div class="container mx-auto px-4">
-				<div class="grid md:grid-cols-2 gap-12 items-center">
-					<div>
-						<h1 class="text-4xl md:text-6xl font-bold mb-6">
-							Talaria Sting
-							<span class="block text-2xl md:text-3xl text-orange-200">
-								Betaalbare Kracht voor Nederland
-							</span>
-						</h1>
-						<p class="text-xl mb-8 leading-relaxed">
-							6000W motor, 70km bereik, en €1300 goedkoper dan de Surron.
-							De Sting biedt premium performance tegen een scherpe prijs.
-						</p>
-						<div class="flex flex-wrap gap-4">
-							<a href="#kopen" class="bg-orange-500 hover:bg-orange-600 px-8 py-4 rounded-lg font-bold text-lg transition-colors">
-								🛒 Direct Kopen vanaf €4.899
-							</a>
-							<a href="#wetgeving" class="border-2 border-white hover:bg-white hover:text-red-600 px-8 py-4 rounded-lg font-bold text-lg transition-colors">
-								📋 Nederlandse Wetgeving
-							</a>
-						</div>
-					</div>
-					<div class="relative">
-						<img src="/images/talaria-sting-mx5-pro.png" alt="Product afbeelding" class="w-full max-h-72 object-contain rounded-lg drop-shadow-xl bg-white bg-opacity-10 p-2" loading="eager" />
-						<div class="absolute top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-lg font-bold">
-							💰 €1300 Goedkoper
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
-		<!-- Compliance Alert -->
-		<ComplianceAlert
-			type="warning"
-			message="Let op: Voor gebruik op openbare wegen in Nederland is een 25km/h begrenzer, AM rijbewijs en RDW kenteken verplicht."
-			actionText="Bekijk Wetgeving"
-			actionLink="#wetgeving"
-		/>
+    <nav class="text-sm text-gray-500 mb-6">
+      <a href="/" class="hover:underline">Home</a> &rsaquo;
+      <a href="/vergelijk" class="hover:underline">Vergelijk</a> &rsaquo;
+      Talaria Sting Nederland
+    </nav>
 
-		<!-- Quick Specs Grid -->
-		<section class="py-16 bg-gray-50">
-			<div class="container mx-auto px-4">
-				<div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-					<div class="bg-white p-6 rounded-lg shadow-md">
-						<div class="text-3xl font-bold text-red-600 mb-2">6000W</div>
-						<div class="text-gray-600">Nominaal Vermogen</div>
-					</div>
-					<div class="bg-white p-6 rounded-lg shadow-md">
-						<div class="text-3xl font-bold text-green-600 mb-2">70km</div>
-						<div class="text-gray-600">Actieradius</div>
-					</div>
-					<div class="bg-white p-6 rounded-lg shadow-md">
-						<div class="text-3xl font-bold text-purple-600 mb-2">56kg</div>
-						<div class="text-gray-600">Gewicht</div>
-					</div>
-					<div class="bg-white p-6 rounded-lg shadow-md">
-						<div class="text-3xl font-bold text-orange-600 mb-2">€4.899</div>
-						<div class="text-gray-600">Vanaf Prijs</div>
-					</div>
-				</div>
-			</div>
-		</section>
+    <h1 class="text-3xl font-bold text-gray-900 mb-2">Talaria Sting MX5 Pro &mdash; Nederland</h1>
+    <p class="text-gray-500 text-sm mb-8">Bijgewerkt april 2026</p>
 
-		<!-- Talaria vs Surron Comparison -->
-		<section class="py-16">
-			<div class="container mx-auto px-4">
-				<h2 class="text-4xl font-bold text-center mb-12">Talaria Sting vs Surron Light Bee</h2>
-				<div class="overflow-x-auto">
-					<table class="w-full bg-white rounded-lg shadow-lg">
-						<thead class="bg-gray-100">
-							<tr>
-								<th class="px-6 py-4 text-left font-bold">Specificatie</th>
-								<th class="px-6 py-4 text-center font-bold text-red-600">Talaria Sting</th>
-								<th class="px-6 py-4 text-center font-bold text-blue-600">Surron Light Bee X</th>
-								<th class="px-6 py-4 text-center font-bold">Winnaar</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr class="border-t">
-								<td class="px-6 py-4 font-semibold">Prijs Nederland</td>
-								<td class="px-6 py-4 text-center text-green-600 font-bold">€4.899</td>
-								<td class="px-6 py-4 text-center">€5.199</td>
-								<td class="px-6 py-4 text-center text-red-600">🏆 Talaria</td>
-							</tr>
-							<tr class="border-t bg-gray-50">
-								<td class="px-6 py-4 font-semibold">Batterij Capaciteit</td>
-								<td class="px-6 py-4 text-center text-green-600 font-bold">72V 32Ah</td>
-								<td class="px-6 py-4 text-center">60V 32Ah</td>
-								<td class="px-6 py-4 text-center text-red-600">🏆 Talaria</td>
-							</tr>
-							<tr class="border-t">
-								<td class="px-6 py-4 font-semibold">Actieradius (gemengd)</td>
-								<td class="px-6 py-4 text-center text-green-600 font-bold">70km</td>
-								<td class="px-6 py-4 text-center">60km</td>
-								<td class="px-6 py-4 text-center text-red-600">🏆 Talaria</td>
-							</tr>
-							<tr class="border-t bg-gray-50">
-								<td class="px-6 py-4 font-semibold">Gewicht</td>
-								<td class="px-6 py-4 text-center">56kg</td>
-								<td class="px-6 py-4 text-center text-green-600 font-bold">47kg</td>
-								<td class="px-6 py-4 text-center text-blue-600">🏆 Surron</td>
-							</tr>
-							<tr class="border-t">
-								<td class="px-6 py-4 font-semibold">Service Netwerk NL</td>
-								<td class="px-6 py-4 text-center">Groeiend</td>
-								<td class="px-6 py-4 text-center text-green-600 font-bold">Gevestigd</td>
-								<td class="px-6 py-4 text-center text-blue-600">🏆 Surron</td>
-							</tr>
-							<tr class="border-t bg-gray-50">
-								<td class="px-6 py-4 font-semibold">Prijs/Prestatie Verhouding</td>
-								<td class="px-6 py-4 text-center text-green-600 font-bold">Uitstekend</td>
-								<td class="px-6 py-4 text-center">Goed</td>
-								<td class="px-6 py-4 text-center text-red-600">🏆 Talaria</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
+    <!-- Legal category banner -->
+    <div class="bg-orange-50 border border-orange-200 rounded p-4 mb-8">
+      <p class="text-sm text-orange-800"><strong>Wettelijke categorie: L1e-B bromfiets.</strong> AM rijbewijs verplicht (vanaf 16 jaar). Geel kenteken en WA-verzekering verplicht. Helm verplicht. Niet op het fietspad.</p>
+    </div>
 
-				<div class="mt-8 bg-green-50 p-6 rounded-lg">
-					<h3 class="font-bold text-green-800 mb-3">💡 Waarom kiezen voor Talaria Sting:</h3>
-					<ul class="space-y-2 text-green-700">
-						<li>• <strong>€300 besparing</strong> - Zelfde prestaties als Surron, lagere prijs</li>
-						<li>• <strong>Sterkere batterij</strong> - 72V systeem voor meer power en bereik</li>
-						<li>• <strong>Snellere ontwikkeling</strong> - Nieuwere technologie en verbeteringen</li>
-						<li>• <strong>Groeiende community</strong> - Actieve Nederlandse Talaria groepen</li>
-					</ul>
-				</div>
-			</div>
-		</section>
+    <!-- Specs -->
+    <h2 class="text-xl font-bold text-gray-900 mb-4">Technische specificaties</h2>
+    <div class="overflow-x-auto mb-8">
+      <table class="w-full text-sm border-collapse">
+        <tbody>
+          <tr class="border-b border-gray-100 hover:bg-gray-50">
+            <td class="py-2 pr-4 text-gray-500 w-40">Motor</td>
+            <td class="py-2 font-medium">5.400W (5,4 kW) mid-drive borstelloze motor</td>
+          </tr>
+          <tr class="border-b border-gray-100 hover:bg-gray-50">
+            <td class="py-2 pr-4 text-gray-500">Batterij</td>
+            <td class="py-2 font-medium">60V 28.8Ah (1.728Wh) &mdash; Samsung 21700-cellen</td>
+          </tr>
+          <tr class="border-b border-gray-100 hover:bg-gray-50">
+            <td class="py-2 pr-4 text-gray-500">Bereik</td>
+            <td class="py-2 font-medium">60&ndash;90 km (gemengd gebruik)</td>
+          </tr>
+          <tr class="border-b border-gray-100 hover:bg-gray-50">
+            <td class="py-2 pr-4 text-gray-500">Topsnelheid</td>
+            <td class="py-2 font-medium">45 km/h (EU-begrensd als bromfiets)</td>
+          </tr>
+          <tr class="border-b border-gray-100 hover:bg-gray-50">
+            <td class="py-2 pr-4 text-gray-500">Gewicht</td>
+            <td class="py-2 font-medium">44 kg</td>
+          </tr>
+          <tr class="border-b border-gray-100 hover:bg-gray-50">
+            <td class="py-2 pr-4 text-gray-500">Frame</td>
+            <td class="py-2 font-medium">Aluminiumlegering, motocross-geometrie</td>
+          </tr>
+          <tr class="border-b border-gray-100 hover:bg-gray-50">
+            <td class="py-2 pr-4 text-gray-500">Vering voor</td>
+            <td class="py-2 font-medium">USD-vork 38mm, 180 mm veerweg</td>
+          </tr>
+          <tr class="border-b border-gray-100 hover:bg-gray-50">
+            <td class="py-2 pr-4 text-gray-500">Vering achter</td>
+            <td class="py-2 font-medium">DNM mono-demper, volledig instelbaar</td>
+          </tr>
+          <tr class="border-b border-gray-100 hover:bg-gray-50">
+            <td class="py-2 pr-4 text-gray-500">Remmen</td>
+            <td class="py-2 font-medium">Hydraulisch schijf voor &amp; achter (203mm)</td>
+          </tr>
+          <tr class="border-b border-gray-100 hover:bg-gray-50">
+            <td class="py-2 pr-4 text-gray-500">Laadtijd</td>
+            <td class="py-2 font-medium">ca. 3,5 uur (met snellader)</td>
+          </tr>
+          <tr class="border-b border-gray-100 hover:bg-gray-50">
+            <td class="py-2 pr-4 text-gray-500">Homologatie</td>
+            <td class="py-2 font-medium">L1e-B &mdash; bromfiets (AM rijbewijs)</td>
+          </tr>
+          <tr class="border-b border-gray-100 hover:bg-gray-50">
+            <td class="py-2 pr-4 text-gray-500">Prijs (2026)</td>
+            <td class="py-2 font-medium">&euro;4.599 (Talaria Benelux adviesprijs)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-		<!-- Dutch Legal Status Section -->
-		<section id="wetgeving" class="py-16 bg-gray-50">
-			<div class="container mx-auto px-4">
-				<h2 class="text-4xl font-bold text-center mb-12">Nederlandse Wetgeving & Kenteken</h2>
+    <!-- What you need -->
+    <h2 class="text-xl font-bold text-gray-900 mb-4">Wat heb je nodig in Nederland?</h2>
+    <ul class="text-sm text-gray-700 space-y-2 mb-8">
+      <li><strong>Rijbewijs:</strong> AM rijbewijs (bromfietsrijbewijs). Minimale leeftijd 16 jaar.</li>
+      <li><strong>Kenteken:</strong> Geel RDW-kenteken. Talaria Benelux levert de CoC mee bij aankoop. Kosten RDW: &euro;21,50.</li>
+      <li><strong>Verzekering:</strong> WA-verzekering verplicht. Reken op ca. &euro;80&ndash;150/jaar voor een bromfietsverzekering.</li>
+      <li><strong>Helm:</strong> Goedgekeurde bromfietshelm verplicht.</li>
+    </ul>
 
-				<div class="grid lg:grid-cols-2 gap-12">
-					<!-- Legal Requirements -->
-					<div class="bg-blue-50 p-8 rounded-lg">
-						<h3 class="text-2xl font-bold mb-6 flex items-center">
-							⚖️ Wettelijke Vereisten
-						</h3>
-						<div class="space-y-4">
-							<div class="flex items-start gap-4">
-								<span class="bg-blue-100 p-2 rounded">🪪</span>
-								<div>
-									<strong>AM Rijbewijs Verplicht</strong>
-									<p class="text-gray-600">Bromfiets rijbewijs vanaf 16 jaar. Theorie + praktijkexamen bij CBR.</p>
-								</div>
-							</div>
-							<div class="flex items-start gap-4">
-								<span class="bg-blue-100 p-2 rounded">🛡️</span>
-								<div>
-									<strong>WA Verzekering</strong>
-									<p class="text-gray-600">Minimaal €120/jaar. Vergelijk ANWB, Centraal Beheer, Allianz prijzen.</p>
-								</div>
-							</div>
-							<div class="flex items-start gap-4">
-								<span class="bg-blue-100 p-2 rounded">🏷️</span>
-								<div>
-									<strong>RDW Kenteken</strong>
-									<p class="text-gray-600">€67,20 afgifte + €8,60/maand. Inclusief COC-papieren bij importeur.</p>
-								</div>
-							</div>
-							<div class="flex items-start gap-4">
-								<span class="bg-blue-100 p-2 rounded">⛑️</span>
-								<div>
-									<strong>ECE-22.05 Helm</strong>
-									<p class="text-gray-600">Gecertificeerde bromfietshelm. Fietshelm niet toegestaan.</p>
-								</div>
-							</div>
-						</div>
-					</div>
+    <!-- Talaria vs Sur-Ron -->
+    <h2 class="text-xl font-bold text-gray-900 mb-3">Talaria Sting MX5 Pro vs Sur-Ron Light Bee X</h2>
+    <p class="text-sm text-gray-600 mb-4">Beide zijn L1e-B bromfietsen in het &euro;4.500&ndash;5.200 segment. Gedetailleerde vergelijking: <a href="/sur-ron-vs-talaria" class="text-blue-600 hover:underline">Sur-Ron vs Talaria &rarr;</a></p>
+    <div class="overflow-x-auto mb-8">
+      <table class="w-full text-sm border-collapse">
+        <thead>
+          <tr class="bg-gray-100">
+            <th class="text-left p-3 border border-gray-200"></th>
+            <th class="text-left p-3 border border-gray-200">Talaria Sting MX5 Pro</th>
+            <th class="text-left p-3 border border-gray-200">Sur-Ron Light Bee X</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="hover:bg-gray-50">
+            <td class="p-3 border border-gray-200 text-gray-500">Prijs</td>
+            <td class="p-3 border border-gray-200 font-medium">&euro;4.599</td>
+            <td class="p-3 border border-gray-200">&euro;5.199</td>
+          </tr>
+          <tr class="hover:bg-gray-50">
+            <td class="p-3 border border-gray-200 text-gray-500">Motor</td>
+            <td class="p-3 border border-gray-200">5,4 kW</td>
+            <td class="p-3 border border-gray-200">6 kW</td>
+          </tr>
+          <tr class="hover:bg-gray-50">
+            <td class="p-3 border border-gray-200 text-gray-500">Batterij</td>
+            <td class="p-3 border border-gray-200 font-medium">60V 28.8Ah Samsung</td>
+            <td class="p-3 border border-gray-200">60V 32Ah</td>
+          </tr>
+          <tr class="hover:bg-gray-50">
+            <td class="p-3 border border-gray-200 text-gray-500">Gewicht</td>
+            <td class="p-3 border border-gray-200 font-medium">44 kg</td>
+            <td class="p-3 border border-gray-200">47 kg</td>
+          </tr>
+          <tr class="hover:bg-gray-50">
+            <td class="p-3 border border-gray-200 text-gray-500">Dealers NL</td>
+            <td class="p-3 border border-gray-200">15 (Talaria Benelux)</td>
+            <td class="p-3 border border-gray-200">4</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-					<!-- Speed Limiter Info -->
-					<div class="bg-orange-50 p-8 rounded-lg">
-						<h3 class="text-2xl font-bold mb-6 flex items-center">
-							⚙️ 25km/h Begrenzer Installatie
-						</h3>
-						<div class="space-y-4">
-							<div class="bg-orange-100 p-4 rounded-lg">
-								<p class="font-semibold text-orange-800 mb-2">Voor openbare wegen verplicht:</p>
-								<ul class="text-sm space-y-1 text-orange-700">
-									<li>• Software begrenzing op 25km/h</li>
-									<li>• Certificaat van installateur</li>
-									<li>• Originele snelheid herstelbaar voor off-road</li>
-								</ul>
-							</div>
+    <!-- Where to buy -->
+    <h2 class="text-xl font-bold text-gray-900 mb-4">Kopen &amp; dealers</h2>
+    <p class="text-sm text-gray-700 mb-4">
+      Talaria wordt in de Benelux gedistribueerd door Talaria Benelux. Ze hebben 15 erkende dealers in Nederland verspreid over het land. Officieel: <a href="https://talaria-benelux.com/dealers/" class="text-blue-600 hover:underline" rel="noopener">talaria-benelux.com/dealers &rarr;</a>
+    </p>
+    <p class="text-sm text-gray-700 mb-8">
+      Overzicht met adressen en contact: <a href="/dealers#talaria" class="text-blue-600 hover:underline">Talaria dealers Nederland &rarr;</a>
+    </p>
 
-							<div class="space-y-3">
-								<div>
-									<strong>Installateurs Talaria:</strong>
-									<p class="text-gray-600">DCC E-bikes (Utrecht), E-Motion Store (Rotterdam), TwoWheels Electric (Amsterdam)</p>
-								</div>
-								<div>
-									<strong>Kosten:</strong>
-									<p class="text-gray-600">€175-325 installatie + certificaat (iets duurder dan Surron)</p>
-								</div>
-								<div class="bg-yellow-100 p-3 rounded border-l-4 border-yellow-500">
-									<p class="text-yellow-800 text-sm">
-										⚠️ <strong>Let op:</strong> Minder installateurs hebben ervaring met Talaria - bel vooraf.
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+    <!-- FAQ -->
+    <h2 class="text-xl font-bold text-gray-900 mb-4">Veelgestelde vragen</h2>
 
-				<!-- Total Cost Calculator -->
-				<div class="mt-12 bg-gray-100 p-8 rounded-lg">
-					<h3 class="text-2xl font-bold mb-6 text-center">🧮 Totale Kosten Overzicht</h3>
-					<div class="grid md:grid-cols-2 gap-8">
-						<div>
-							<h4 class="font-bold mb-4">Eenmalige Kosten:</h4>
-							<div class="space-y-2 text-sm">
-								<div class="flex justify-between">
-									<span>Talaria Sting</span>
-									<span class="font-semibold">€4.899</span>
-								</div>
-								<div class="flex justify-between">
-									<span>RDW Kenteken (eerste keer)</span>
-									<span class="font-semibold">€67</span>
-								</div>
-								<div class="flex justify-between">
-									<span>25km/h Begrenzer + Certificaat</span>
-									<span class="font-semibold">€250</span>
-								</div>
-								<div class="flex justify-between">
-									<span>ECE-22.05 Helm (Schuberth/HJC)</span>
-									<span class="font-semibold">€89</span>
-								</div>
-								<div class="border-t pt-2 flex justify-between font-bold text-lg">
-									<span>Totaal Starterskosten:</span>
-									<span class="text-green-600">€5.305</span>
-								</div>
-							</div>
-							<div class="mt-4 p-3 bg-green-100 rounded">
-								<p class="text-green-800 text-sm font-semibold">
-									💰 €275 goedkoper dan Surron totaalplaatje!
-								</p>
-							</div>
-						</div>
-						<div>
-							<h4 class="font-bold mb-4">Jaarlijkse Kosten:</h4>
-							<div class="space-y-2 text-sm">
-								<div class="flex justify-between">
-									<span>WA Verzekering (ANWB basis)</span>
-									<span class="font-semibold">€127/jaar</span>
-								</div>
-								<div class="flex justify-between">
-									<span>RDW Kenteken (maandelijks)</span>
-									<span class="font-semibold">€103/jaar</span>
-								</div>
-								<div class="flex justify-between">
-									<span>Elektriciteitskosten (2000km/jaar)</span>
-									<span class="font-semibold">€28/jaar</span>
-								</div>
-								<div class="flex justify-between">
-									<span>Onderhoud (banden, rem, ketting)</span>
-									<span class="font-semibold">€175/jaar</span>
-								</div>
-								<div class="border-t pt-2 flex justify-between font-bold text-lg">
-									<span>Totaal Per Jaar:</span>
-									<span class="text-green-600">€433</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+    <details class="border border-gray-200 rounded mb-3">
+      <summary class="p-4 font-medium cursor-pointer select-none hover:bg-gray-50">Wat maakt de Samsung-cellen in de Talaria beter?</summary>
+      <div class="p-4 pt-0 text-gray-700 text-sm">
+        Samsung 21700-cellen (ook gebruikt in Tesla Model 3) hebben een hogere energiedichtheid en betere thermische stabiliteit dan goedkopere Chinese no-name cellen. In de praktijk betekent dit: betere prestaties bij koude, langer leven bij snelladen, en consistenter bereik over meerdere jaren.
+      </div>
+    </details>
 
-		<!-- Where to Buy Section -->
-		<section id="kopen" class="py-16">
-			<div class="container mx-auto px-4">
-				<h2 class="text-4xl font-bold text-center mb-12">🛒 Waar te Kopen in Nederland</h2>
+    <details class="border border-gray-200 rounded mb-3">
+      <summary class="p-4 font-medium cursor-pointer select-none hover:bg-gray-50">Is de Talaria Sting geschikt voor dagelijks woon-werkverkeer?</summary>
+      <div class="p-4 pt-0 text-gray-700 text-sm">
+        De Talaria is primair een off-road crosser, maar met L1e-B typegoedkeuring mag hij op de weg. Met 45 km/h topsnelheid en 60&ndash;90 km bereik is hij bruikbaar voor kortere pendeldistances. Let op: geen fietspad, wel rijbaan. En qua zitpositie en ergonomie is het een crosser, geen comfortabel stadsvoertuig.
+      </div>
+    </details>
 
-				<!-- Official Dealer Network -->
-				<div class="grid lg:grid-cols-3 gap-8 mb-12">
-					<div class="bg-white p-6 rounded-lg shadow-md">
-						<div class="flex items-center mb-4">
-							<span class="font-bold text-gray-700 mr-4">[Talaria Europe]</span>
-							<div>
-								<h3 class="font-bold">Talaria Europe</h3>
-								<span class="text-sm text-green-600">Officiële Importeur</span>
-							</div>
-						</div>
-						<p class="text-gray-600 mb-4">Snelgroeiend netwerk in Nederland. Garantie via Europese service partners.</p>
-						<div class="space-y-2 text-sm mb-4">
-							<div>✅ 2 jaar Europese garantie</div>
-							<div>✅ Groeiend service netwerk</div>
-							<div>✅ COC papieren inclusief</div>
-						</div>
-						<a href={affiliateLinks.talariaEurope}
-						   class="block bg-red-600 hover:bg-red-700 text-white text-center py-3 rounded-lg font-semibold transition-colors"
-						   target="_blank" rel="noopener">
-							Vind Talaria Dealer
-						</a>
-					</div>
+    <details class="border border-gray-200 rounded mb-3">
+      <summary class="p-4 font-medium cursor-pointer select-none hover:bg-gray-50">Wat is het verschil tussen de Talaria Sting R en MX5 Pro?</summary>
+      <div class="p-4 pt-0 text-gray-700 text-sm">
+        De MX5 Pro is de gefacelifte versie met Samsung 21700-cellen, verbeterde USD-vork en bijgewerkte motor. De Sting R is een oudere generatie met vergelijkbare geometrie maar minder geavanceerde batterijcellen. In Nederland verkoopt Talaria Benelux voornamelijk de MX5 Pro.
+      </div>
+    </details>
 
-					<div class="bg-white p-6 rounded-lg shadow-md">
-						<div class="flex items-center mb-4">
-							<span class="font-bold text-gray-700 mr-4">[DCC E-bikes]</span>
-							<div>
-								<h3 class="font-bold">DCC E-bikes Utrecht</h3>
-								<span class="text-sm text-blue-600">Nederlandse Specialist</span>
-							</div>
-						</div>
-						<p class="text-gray-600 mb-4">Nederlandse e-bike specialist met Talaria ervaring. Complete service vanaf aankoop tot kenteken.</p>
-						<div class="space-y-2 text-sm mb-4">
-							<div>✅ Persoonlijk advies</div>
-							<div>✅ Proefrit mogelijk</div>
-							<div>✅ 25km/h begrenzer service</div>
-						</div>
-						<a href={affiliateLinks.dccEbikes}
-						   class="block bg-blue-600 hover:bg-blue-700 text-white text-center py-3 rounded-lg font-semibold transition-colors"
-						   target="_blank" rel="noopener">
-							Bekijk bij DCC E-bikes
-						</a>
-					</div>
+    <div class="mt-8 pt-6 border-t border-gray-200">
+      <h3 class="font-semibold text-gray-800 mb-3">Gerelateerd</h3>
+      <ul class="space-y-2 text-sm text-blue-600">
+        <li><a href="/sur-ron-vs-talaria" class="hover:underline">Sur-Ron Light Bee X vs Talaria Sting &mdash; uitgebreide vergelijking</a></li>
+        <li><a href="/elektrische-crosser-rijbewijs" class="hover:underline">Welk rijbewijs heb je nodig?</a></li>
+        <li><a href="/vergelijk" class="hover:underline">Alle modellen vergelijken</a></li>
+      </ul>
+    </div>
 
-					<div class="bg-white p-6 rounded-lg shadow-md">
-						<div class="flex items-center mb-4">
-							<span class="font-bold text-gray-700 mr-4">[Amazon Nederland]</span>
-							<div>
-								<h3 class="font-bold">Amazon Nederland</h3>
-								<span class="text-sm text-orange-600">Online Platform</span>
-							</div>
-						</div>
-						<p class="text-gray-600 mb-4">Snelle levering en bekende return policy. Let op: zelf 25km/h begrenzer regelen.</p>
-						<div class="space-y-2 text-sm mb-4">
-							<div>✅ Prime levering beschikbaar</div>
-							<div>✅ 30 dagen retourrecht</div>
-							<div>⚠️ Zelf begrenzer regelen</div>
-						</div>
-						<a href={affiliateLinks.amazon}
-						   class="block bg-orange-600 hover:bg-orange-700 text-white text-center py-3 rounded-lg font-semibold transition-colors"
-						   target="_blank" rel="noopener">
-							Bekijk op Amazon
-						</a>
-					</div>
-				</div>
-
-				<!-- Price Comparison Table -->
-				<div class="bg-white rounded-lg shadow-lg overflow-hidden mb-8">
-					<div class="bg-gray-100 px-6 py-4 border-b">
-						<h3 class="text-xl font-bold">💰 Prijsvergelijking Talaria Sting Nederland</h3>
-					</div>
-					<div class="overflow-x-auto">
-						<table class="w-full">
-							<thead class="bg-gray-50">
-								<tr>
-									<th class="px-6 py-3 text-left font-semibold">Dealer</th>
-									<th class="px-6 py-3 text-center font-semibold">Basisprijs</th>
-									<th class="px-6 py-3 text-center font-semibold">Incl. Setup</th>
-									<th class="px-6 py-3 text-center font-semibold">Levertijd</th>
-									<th class="px-6 py-3 text-center font-semibold">Voordelen</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr class="border-t">
-									<td class="px-6 py-4 font-semibold">Talaria Europe</td>
-									<td class="px-6 py-4 text-center font-bold">€4.899</td>
-									<td class="px-6 py-4 text-center text-green-600 font-bold">€5.224</td>
-									<td class="px-6 py-4 text-center text-green-600">1-2 weken</td>
-									<td class="px-6 py-4 text-sm text-gray-600">Officieel, garantie, COC papieren</td>
-								</tr>
-								<tr class="border-t bg-gray-50">
-									<td class="px-6 py-4 font-semibold">DCC E-bikes</td>
-									<td class="px-6 py-4 text-center">€4.999</td>
-									<td class="px-6 py-4 text-center">€5.449</td>
-									<td class="px-6 py-4 text-center">2-3 weken</td>
-									<td class="px-6 py-4 text-sm text-gray-600">Persoonlijk, proefrit, complete service</td>
-								</tr>
-								<tr class="border-t">
-									<td class="px-6 py-4 font-semibold">Amazon Nederland</td>
-									<td class="px-6 py-4 text-center text-green-600 font-bold">€4.799</td>
-									<td class="px-6 py-4 text-center">€5.049*</td>
-									<td class="px-6 py-4 text-center text-green-600">1-3 dagen</td>
-									<td class="px-6 py-4 text-sm text-gray-600">*Zelf begrenzer regelen, Prime levering</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
-
-				<div class="bg-yellow-50 p-6 rounded-lg">
-					<h3 class="font-bold text-yellow-800 mb-3">⚠️ Let op bij aankoop Talaria Sting:</h3>
-					<ul class="space-y-2 text-yellow-700">
-						<li>• <strong>Controleer COC papieren</strong> - Niet alle verkopers leveren deze mee</li>
-						<li>• <strong>25km/h begrenzer expertise</strong> - Minder installateurs dan bij Surron</li>
-						<li>• <strong>Service netwerk</strong> - Nog groeiend, check lokale ondersteuning</li>
-						<li>• <strong>Onderdelen beschikbaarheid</strong> - Voorraad kan langer duren dan Surron</li>
-					</ul>
-				</div>
-			</div>
-		</section>
-
-		<!-- FAQ Section - Dutch Specific -->
-		<section class="py-16 bg-gray-50">
-			<div class="container mx-auto px-4">
-				<h2 class="text-4xl font-bold text-center mb-12">❓ Veelgestelde Vragen</h2>
-
-				<div class="grid lg:grid-cols-2 gap-8">
-					<div class="space-y-6">
-						<div class="bg-white p-6 rounded-lg shadow-md">
-							<h3 class="font-bold text-lg mb-3">Is de Talaria Sting beter dan de Surron?</h3>
-							<p class="text-gray-600">Voor prijs/prestatie: ja. Krachtigere 72V batterij, 10km meer bereik en €300 goedkoper. Service netwerk nog kleiner.</p>
-						</div>
-
-						<div class="bg-white p-6 rounded-lg shadow-md">
-							<h3 class="font-bold text-lg mb-3">Kan ik onderdelen van Surron gebruiken?</h3>
-							<p class="text-gray-600">Gedeeltelijk - veel universele onderdelen passen. Specifieke delen zoals batterij en controller zijn niet uitwisselbaar.</p>
-						</div>
-
-						<div class="bg-white p-6 rounded-lg shadow-md">
-							<h3 class="font-bold text-lg mb-3">Waar kan ik de Sting laten repareren?</h3>
-							<p class="text-gray-600">DCC E-bikes (Utrecht), elektrische fiets specialisten of algemene e-motor dealers. Netwerk groeit snel.</p>
-						</div>
-
-						<div class="bg-white p-6 rounded-lg shadow-md">
-							<h3 class="font-bold text-lg mb-3">Hoe betrouwbaar is Talaria als merk?</h3>
-							<p class="text-gray-600">Nieuwer merk dan Surron (2021) maar goede reviews. 2 jaar garantie via Europese importeur geeft zekerheid.</p>
-						</div>
-					</div>
-
-					<div class="space-y-6">
-						<div class="bg-white p-6 rounded-lg shadow-md">
-							<h3 class="font-bold text-lg mb-3">Is de 72V batterij veel beter dan 60V?</h3>
-							<p class="text-gray-600">Ja - meer vermogen, beter bereik en efficiënter. Wel iets zwaarder en duurder om te vervangen.</p>
-						</div>
-
-						<div class="bg-white p-6 rounded-lg shadow-md">
-							<h3 class="font-bold text-lg mb-3">Zelfde wetgeving als andere e-crossers?</h3>
-							<p class="text-gray-600">Ja - AM rijbewijs, verzekering, kenteken en 25km/h begrenzer. Gewicht (56kg) valt binnen L1e-B categorie.</p>
-						</div>
-
-						<div class="bg-white p-6 rounded-lg shadow-md">
-							<h3 class="font-bold text-lg mb-3">Nederlandse community/gebruikers?</h3>
-							<p class="text-gray-600">Groeiende community - Facebook groep "Talaria Nederland" heeft 200+ leden. Gedeelde kennis met Surron community.</p>
-						</div>
-
-						<div class="bg-white p-6 rounded-lg shadow-md">
-							<h3 class="font-bold text-lg mb-3">Wat als ik later spijt heb van mijn keuze?</h3>
-							<p class="text-gray-600">Tweedehands waarde is goed - verlies circa €1000 eerste jaar. Makkelijk te verkopen aan off-road community.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- Local SEO / Schema -->
-		
-	</main>
+  </div>
 </Layout>
-
-<style>
-	.hero {
-		background-image: linear-gradient(135deg, rgba(0,0,0,0.6), rgba(0,0,0,0.3)), url('/images/talaria-hero-bg.jpg');
-		background-size: cover;
-		background-position: center;
-	}
-
-	/* Mobile optimization */
-	@media (max-width: 768px) {
-		.hero h1 {
-			font-size: 2.5rem;
-		}
-
-		.grid {
-			gap: 1rem;
-		}
-
-		.container {
-			padding-left: 1rem;
-			padding-right: 1rem;
-		}
-	}
-
-	/* Accessibility improvements */
-	a:focus, button:focus {
-		outline: 2px solid #DC2626;
-		outline-offset: 2px;
-	}
-
-	/* Print styles */
-	@media print {
-		.hero, .bg-gradient-to-r {
-			background: white !important;
-			color: black !important;
-		}
-	}
-</style>
