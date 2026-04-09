@@ -3,203 +3,218 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout
-  title="E-Bike Database Nederland - Complete gids voor elektrische fietsen en crossers"
-  description="Ontdek de beste elektrische fietsen en e-crossers voor Nederland. Vergelijk specificaties, prijzen en wetgeving voor alle merken: Surron, Talaria, RadPower, Super73 en meer."
+  title="E-BikeDB Nederland &mdash; Elektrische crossers vergelijken 2026"
+  description="Vergelijk elektrische crossers en e-bikes voor Nederland. Specs, wetgeving, rijbewijs en dealers voor Sur-Ron, Talaria, Segway, KTM en meer."
 >
-  <div class="bg-blue-600 text-white py-16">
+  <!-- Hero -->
+  <div class="bg-gradient-to-br from-gray-900 via-blue-950 to-blue-900 text-white py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center">
-        <h1 class="text-4xl md:text-6xl font-bold mb-6">
-          E-Bike Database Nederland
+      <div class="max-w-3xl">
+        <p class="text-blue-300 text-sm font-semibold uppercase tracking-widest mb-3">Nederland &mdash; bijgewerkt april 2026</p>
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-5 leading-tight">
+          Elektrische crossers<br>
+          <span class="text-blue-400">vergeleken voor NL</span>
         </h1>
-        <p class="text-xl md:text-2xl mb-8 text-blue-100">
-          Complete gids voor elektrische fietsen en e-crossers in Nederland
+        <p class="text-lg text-blue-100 mb-8 max-w-xl">
+          Specs, prijzen en wetgeving per model &mdash; inclusief rijbewijs- en kentekenvereisten.
         </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="#nederlandse-crossers" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
-            Nederlandse E-Crossers
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="#modellen" class="inline-flex items-center justify-center bg-blue-500 hover:bg-blue-400 text-white px-7 py-3 rounded-lg font-semibold transition-colors">
+            Bekijk modellen
           </a>
-          <a href="/vergelijk" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
-            Vergelijk Modellen
+          <a href="/vergelijk" class="inline-flex items-center justify-center bg-white/10 hover:bg-white/20 text-white border border-white/20 px-7 py-3 rounded-lg font-semibold transition-colors">
+            Vergelijk alles
           </a>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+
     <!-- Quick Stats -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-      <div class="text-center">
-        <div class="text-4xl font-bold text-blue-600 mb-2">15</div>
-        <div class="text-gray-600">E-bike merken</div>
+    <div class="grid grid-cols-3 gap-4 mb-14 max-w-lg mx-auto text-center">
+      <div>
+        <div class="text-3xl font-extrabold text-blue-600">15</div>
+        <div class="text-xs text-gray-500 mt-1">Merken</div>
       </div>
-      <div class="text-center">
-        <div class="text-4xl font-bold text-blue-600 mb-2">19</div>
-        <div class="text-gray-600">Modellen gedocumenteerd</div>
+      <div>
+        <div class="text-3xl font-extrabold text-blue-600">19</div>
+        <div class="text-xs text-gray-500 mt-1">Modellen</div>
       </div>
-      <div class="text-center">
-        <div class="text-4xl font-bold text-blue-600 mb-2">100%</div>
-        <div class="text-gray-600">Nederlandse wetgeving</div>
+      <div>
+        <div class="text-3xl font-extrabold text-blue-600">NL</div>
+        <div class="text-xs text-gray-500 mt-1">Wetgeving</div>
       </div>
     </div>
 
-    <!-- Nederlandse E-Crossers Section -->
-    <section id="nederlandse-crossers" class="mb-16">
-      <h2 class="text-3xl font-bold text-center mb-8">Nederlandse E-Crossers</h2>
-      <p class="text-lg text-gray-600 text-center mb-12 max-w-3xl mx-auto">
-        Onze selectie van e-crossers met informatie over Nederlandse wetgeving, dealers en prijzen.
-        Van budget tot premium &mdash; inclusief rijbewijs- en kentekenvereisten per model.
-      </p>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Segway X260 Nederland -->
-        <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-          <div class="p-6">
-            <div class="flex justify-between items-start mb-4">
-              <h3 class="text-xl font-semibold">Segway Dirt eBike X260</h3>
-              <span class="text-2xl font-bold text-green-600">&euro;3.499</span>
-            </div>
-            <p class="text-gray-600 mb-4">Elektrische crosser bij MediaMarkt &amp; 57 dealers</p>
-            <div class="space-y-2 text-sm text-gray-700 mb-6">
-              <div>5kW motor &mdash; bromfiets (L1e-B)</div>
-              <div>74V 31.2Ah (2.309Wh), GPS ingebouwd</div>
-              <div>AM rijbewijs en geel kenteken vereist</div>
-            </div>
-            <a href="/segway-dirt-ebike-x260-nederland" class="block w-full bg-blue-600 text-white text-center py-2 rounded-lg hover:bg-blue-700 transition-colors">
-              Meer info &rarr;
-            </a>
+    <!-- Category explainer -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-14">
+      <!-- Green: no license -->
+      <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+        <div class="h-1.5 bg-green-500"></div>
+        <div class="p-5">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="w-7 h-7 rounded-full bg-green-100 flex items-center justify-center text-green-700 text-sm font-bold flex-shrink-0">&#10003;</span>
+            <h3 class="font-bold text-gray-900">Pedelec / e-bike</h3>
           </div>
-        </div>
-
-        <!-- Super73 S2 Nederland -->
-        <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-          <div class="p-6">
-            <div class="flex justify-between items-start mb-4">
-              <h3 class="text-xl font-semibold">Super73 S2 Nederland</h3>
-              <span class="text-2xl font-bold text-green-600">&euro;3.299</span>
-            </div>
-            <p class="text-gray-600 mb-4">Lifestyle e-bike met retro motorfiets-looks</p>
-            <div class="space-y-2 text-sm text-gray-700 mb-6">
-              <div>750W mid-drive &mdash; snorfiets (L1e-B)</div>
-              <div>48V 14Ah (672Wh) batterij</div>
-              <div>AM rijbewijs en geel kenteken vereist</div>
-            </div>
-            <a href="/super73-s2-nederland" class="block w-full bg-blue-600 text-white text-center py-2 rounded-lg hover:bg-blue-700 transition-colors">
-              Meer info &rarr;
-            </a>
-          </div>
-        </div>
-
-        <!-- Talaria Sting Nederland -->
-        <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-          <div class="p-6">
-            <div class="flex justify-between items-start mb-4">
-              <h3 class="text-xl font-semibold">Talaria Sting Nederland</h3>
-              <span class="text-2xl font-bold text-green-600">&euro;4.899</span>
-            </div>
-            <p class="text-gray-600 mb-4">Elektrische crosser met Samsung-batterij</p>
-            <div class="space-y-2 text-sm text-gray-700 mb-6">
-              <div>6.000W motor &mdash; bromfiets (L1e-B)</div>
-              <div>60V 28.8Ah Samsung-cellen</div>
-              <div>AM rijbewijs en geel kenteken vereist</div>
-            </div>
-            <a href="/talaria-sting-nederland" class="block w-full bg-blue-600 text-white text-center py-2 rounded-lg hover:bg-blue-700 transition-colors">
-              Meer info &rarr;
-            </a>
-          </div>
-        </div>
-
-        <!-- Zero FX Nederland -->
-        <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-          <div class="p-6">
-            <div class="flex justify-between items-start mb-4">
-              <h3 class="text-xl font-semibold">Zero FX Nederland</h3>
-              <span class="text-2xl font-bold text-green-600">&euro;12.995</span>
-            </div>
-            <p class="text-gray-600 mb-4">Premium elektrische motor, A1-rijbewijs categorie</p>
-            <div class="space-y-2 text-sm text-gray-700 mb-6">
-              <div>34kW motor &mdash; motorfiets (L3e-A1)</div>
-              <div>7,2 kWh batterij, tot 146 km bereik</div>
-              <div>A1 rijbewijs en kenteken verplicht</div>
-            </div>
-            <a href="/zero-fx-nederland" class="block w-full bg-blue-600 text-white text-center py-2 rounded-lg hover:bg-blue-700 transition-colors">
-              Meer info &rarr;
-            </a>
-          </div>
-        </div>
-
-        <!-- KTM Freeride E-XC Nederland -->
-        <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-          <div class="p-6">
-            <div class="flex justify-between items-start mb-4">
-              <h3 class="text-xl font-semibold">KTM Freeride E-XC Nederland</h3>
-              <span class="text-2xl font-bold text-green-600">&euro;11.999</span>
-            </div>
-            <p class="text-gray-600 mb-4">Elektrische enduro met WP-vering en 3,9 kWh batterij</p>
-            <div class="space-y-2 text-sm text-gray-700 mb-6">
-              <div>18kW motor &mdash; motorfiets (L3e)</div>
-              <div>3x KTM PowerPack (3,9 kWh totaal)</div>
-              <div>A rijbewijs en kenteken verplicht</div>
-            </div>
-            <a href="/ktm-freeride-e-xc-nederland" class="block w-full bg-blue-600 text-white text-center py-2 rounded-lg hover:bg-blue-700 transition-colors">
-              Meer info &rarr;
-            </a>
-          </div>
+          <p class="text-sm text-gray-600 mb-1"><strong>Geen rijbewijs nodig.</strong> Max. 25 km/h, 250W, trapondersteuning. Fietspad toegestaan.</p>
+          <a href="/vergelijk" class="text-green-700 text-xs font-semibold hover:underline">Bekijk modellen &rarr;</a>
         </div>
       </div>
-    </section>
 
-    <!-- Categories -->
-    <section class="mb-16">
-      <h2 class="text-3xl font-bold text-center mb-8">Categorie&euml;n</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="text-center bg-white p-8 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold mb-4">Reguliere e-bikes</h3>
-          <p class="text-gray-600 mb-4">Max. 250W nominaal, 25 km/h trapondersteuning. Geen kenteken of rijbewijs nodig.</p>
-          <a href="/vergelijk" class="text-blue-600 hover:underline">Bekijk overzicht &rarr;</a>
+      <!-- Orange: AM license -->
+      <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+        <div class="h-1.5 bg-orange-400"></div>
+        <div class="p-5">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="w-7 h-7 rounded-full bg-orange-100 flex items-center justify-center text-orange-700 text-sm font-bold flex-shrink-0">AM</span>
+            <h3 class="font-bold text-gray-900">Bromfiets (L1e-B)</h3>
+          </div>
+          <p class="text-sm text-gray-600 mb-1"><strong>AM rijbewijs</strong> (vanaf 16 jaar). Geel kenteken &euro;21,50. Max. 45 km/h. Helm verplicht.</p>
+          <a href="/vergelijk" class="text-orange-700 text-xs font-semibold hover:underline">Bekijk modellen &rarr;</a>
         </div>
-        <div class="text-center bg-white p-8 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold mb-4">Bromfietsen (L1e-B)</h3>
-          <p class="text-gray-600 mb-4">Max. 45 km/h, geel kenteken. AM rijbewijs verplicht vanaf 16 jaar. Helm verplicht.</p>
-          <a href="/vergelijk" class="text-blue-600 hover:underline">Bekijk overzicht &rarr;</a>
+      </div>
+
+      <!-- Red: A/A2 license -->
+      <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+        <div class="h-1.5 bg-red-500"></div>
+        <div class="p-5">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="w-7 h-7 rounded-full bg-red-100 flex items-center justify-center text-red-700 text-sm font-bold flex-shrink-0">A</span>
+            <h3 class="font-bold text-gray-900">Motorfiets (L3e)</h3>
+          </div>
+          <p class="text-sm text-gray-600 mb-1"><strong>A of A2 rijbewijs</strong> verplicht. Kenteken, WA-verzekering en motorhelm verplicht.</p>
+          <a href="/vergelijk" class="text-red-700 text-xs font-semibold hover:underline">Bekijk modellen &rarr;</a>
         </div>
-        <div class="text-center bg-white p-8 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold mb-4">Motorfietsen (L3e)</h3>
-          <p class="text-gray-600 mb-4">A1 of A rijbewijs verplicht. Kenteken, WA-verzekering en motorhelm verplicht.</p>
-          <a href="/vergelijk" class="text-blue-600 hover:underline">Bekijk overzicht &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Nederlandse Modellen Section -->
+    <section id="modellen" class="mb-16">
+      <div class="flex items-center justify-between mb-8">
+        <h2 class="text-2xl font-bold text-gray-900">Nederlandse koopgidsen</h2>
+        <a href="/vergelijk" class="text-sm text-blue-600 font-semibold hover:underline hidden sm:inline">Alle modellen vergelijken &rarr;</a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Segway X260 &mdash; L1e-B -->
+        <div class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-shadow border border-gray-100 border-t-4 border-t-orange-400">
+          <div class="p-6">
+            <div class="flex items-start justify-between mb-3">
+              <h3 class="text-lg font-bold text-gray-900 leading-snug">Segway Dirt eBike X260</h3>
+              <span class="text-xl font-extrabold text-gray-900 ml-3 whitespace-nowrap">&euro;3.499</span>
+            </div>
+            <span class="inline-block text-xs font-semibold px-2.5 py-0.5 rounded-full bg-orange-100 text-orange-700 mb-3">AM rijbewijs</span>
+            <p class="text-sm text-gray-500 mb-4">5kW motor &mdash; 74V 31.2Ah &mdash; GPS antidiefstal &mdash; 57 dealers NL</p>
+            <a href="/segway-dirt-ebike-x260-nederland" class="block w-full bg-blue-600 text-white text-center py-2.5 rounded-lg text-sm font-semibold hover:bg-blue-700 transition-colors">
+              Bekijk gids &rarr;
+            </a>
+          </div>
         </div>
+
+        <!-- Super73 S2 &mdash; Pedelec -->
+        <div class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-shadow border border-gray-100 border-t-4 border-t-green-500">
+          <div class="p-6">
+            <div class="flex items-start justify-between mb-3">
+              <h3 class="text-lg font-bold text-gray-900 leading-snug">Super73 S2</h3>
+              <span class="text-xl font-extrabold text-gray-900 ml-3 whitespace-nowrap">&euro;3.299</span>
+            </div>
+            <span class="inline-block text-xs font-semibold px-2.5 py-0.5 rounded-full bg-green-100 text-green-700 mb-3">Geen rijbewijs</span>
+            <p class="text-sm text-gray-500 mb-4">750W mid-drive &mdash; EU pedelec max 25 km/h &mdash; retro motorfiets-looks</p>
+            <a href="/super73-s2-nederland" class="block w-full bg-blue-600 text-white text-center py-2.5 rounded-lg text-sm font-semibold hover:bg-blue-700 transition-colors">
+              Bekijk gids &rarr;
+            </a>
+          </div>
+        </div>
+
+        <!-- Talaria Sting &mdash; L1e-B -->
+        <div class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-shadow border border-gray-100 border-t-4 border-t-orange-400">
+          <div class="p-6">
+            <div class="flex items-start justify-between mb-3">
+              <h3 class="text-lg font-bold text-gray-900 leading-snug">Talaria Sting MX5 Pro</h3>
+              <span class="text-xl font-extrabold text-gray-900 ml-3 whitespace-nowrap">&euro;4.599</span>
+            </div>
+            <span class="inline-block text-xs font-semibold px-2.5 py-0.5 rounded-full bg-orange-100 text-orange-700 mb-3">AM rijbewijs</span>
+            <p class="text-sm text-gray-500 mb-4">5.4kW motor &mdash; 60V 28.8Ah Samsung-cellen &mdash; 15 dealers NL</p>
+            <a href="/talaria-sting-nederland" class="block w-full bg-blue-600 text-white text-center py-2.5 rounded-lg text-sm font-semibold hover:bg-blue-700 transition-colors">
+              Bekijk gids &rarr;
+            </a>
+          </div>
+        </div>
+
+        <!-- KTM Freeride E-XC &mdash; L3e -->
+        <div class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-shadow border border-gray-100 border-t-4 border-t-red-500">
+          <div class="p-6">
+            <div class="flex items-start justify-between mb-3">
+              <h3 class="text-lg font-bold text-gray-900 leading-snug">KTM Freeride E-XC</h3>
+              <span class="text-xl font-extrabold text-gray-900 ml-3 whitespace-nowrap">&euro;11.999</span>
+            </div>
+            <span class="inline-block text-xs font-semibold px-2.5 py-0.5 rounded-full bg-red-100 text-red-700 mb-3">A2 rijbewijs</span>
+            <p class="text-sm text-gray-500 mb-4">18kW &mdash; 3x KTM PowerPack (3,9 kWh) &mdash; WP XPLOR vering &mdash; off-road focus</p>
+            <a href="/ktm-freeride-e-xc-nederland" class="block w-full bg-blue-600 text-white text-center py-2.5 rounded-lg text-sm font-semibold hover:bg-blue-700 transition-colors">
+              Bekijk gids &rarr;
+            </a>
+          </div>
+        </div>
+
+        <!-- Zero FX &mdash; L3e -->
+        <div class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-shadow border border-gray-100 border-t-4 border-t-red-500">
+          <div class="p-6">
+            <div class="flex items-start justify-between mb-3">
+              <h3 class="text-lg font-bold text-gray-900 leading-snug">Zero FX</h3>
+              <span class="text-xl font-extrabold text-gray-900 ml-3 whitespace-nowrap">&euro;12.995</span>
+            </div>
+            <span class="inline-block text-xs font-semibold px-2.5 py-0.5 rounded-full bg-red-100 text-red-700 mb-3">A rijbewijs</span>
+            <p class="text-sm text-gray-500 mb-4">34kW &mdash; 7,2 kWh &mdash; tot 146 km bereik &mdash; dual-purpose weg en off-road</p>
+            <a href="/zero-fx-nederland" class="block w-full bg-blue-600 text-white text-center py-2.5 rounded-lg text-sm font-semibold hover:bg-blue-700 transition-colors">
+              Bekijk gids &rarr;
+            </a>
+          </div>
+        </div>
+
+        <!-- CTA card -->
+        <div class="bg-blue-600 rounded-xl overflow-hidden hover:bg-blue-700 transition-colors">
+          <a href="/vergelijk" class="block p-6 h-full">
+            <h3 class="text-lg font-bold text-white mb-2">Meer modellen vergelijken</h3>
+            <p class="text-blue-100 text-sm mb-4">Bekijk alle 19 modellen met filter op rijbewijs, prijs en bereik.</p>
+            <span class="inline-flex items-center text-white font-semibold text-sm">
+              Open vergelijkstool &rarr;
+            </span>
+          </a>
+        </div>
+
       </div>
     </section>
 
     <!-- Legal Info -->
-    <section class="bg-orange-50 p-8 rounded-lg">
-      <h2 class="text-2xl font-bold mb-4 text-orange-800">Nederlandse wetgeving op hoofdlijnen</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-700">
+    <section class="bg-amber-50 border border-amber-200 rounded-xl p-8">
+      <h2 class="text-xl font-bold mb-4 text-amber-900">Nederlandse wetgeving op hoofdlijnen</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-gray-700">
         <div>
-          <h3 class="font-semibold mb-2">Reguliere e-bike:</h3>
+          <h3 class="font-semibold mb-2 text-sm uppercase tracking-wide text-gray-500">Reguliere e-bike / pedelec</h3>
           <ul class="space-y-1 text-sm">
-            <li>Maximaal 250W nominaal vermogen</li>
-            <li>Trapondersteuning tot 25 km/h</li>
-            <li>Geen kenteken, rijbewijs of verzekering</li>
-            <li>Helm niet verplicht</li>
+            <li>Max. 250W nominaal, trapondersteuning tot 25 km/h</li>
+            <li>Geen kenteken, rijbewijs of verzekering nodig</li>
+            <li>Helm niet verplicht &mdash; fietspad toegestaan</li>
           </ul>
         </div>
         <div>
-          <h3 class="font-semibold mb-2">Bromfiets (L1e-B):</h3>
+          <h3 class="font-semibold mb-2 text-sm uppercase tracking-wide text-gray-500">Bromfiets (L1e-B)</h3>
           <ul class="space-y-1 text-sm">
             <li>Maximaal 45 km/h</li>
             <li>Geel kenteken verplicht (RDW, &euro;21,50)</li>
-            <li>AM rijbewijs verplicht (vanaf 16 jaar)</li>
-            <li>Goedgekeurde helm verplicht</li>
+            <li>AM rijbewijs verplicht (vanaf 16 jaar), helm verplicht</li>
           </ul>
         </div>
       </div>
-      <p class="mt-4 text-sm text-gray-600">
-        Meer details: <a href="/wetgeving" class="text-blue-600 hover:underline">Wetgeving per categorie</a> &mdash; inclusief RDW-kentekenprocedure en CBR-rijbewijsinfo.
-        <br>Controleer altijd de actuele informatie bij <a href="https://www.rdw.nl" class="text-blue-600 hover:underline" rel="noopener">RDW.nl</a>.
-        Informatie bijgewerkt april 2026.
+      <p class="mt-5 text-sm text-gray-500">
+        Uitgebreid overzicht: <a href="/elektrische-crosser-rijbewijs" class="text-blue-600 hover:underline font-medium">Welk rijbewijs heb je nodig?</a>
+        &mdash; Controleer altijd actuele info bij <a href="https://www.rdw.nl" class="text-blue-600 hover:underline" rel="noopener">RDW.nl</a>.
+        Bijgewerkt april 2026.
       </p>
     </section>
+
   </div>
 </Layout>
