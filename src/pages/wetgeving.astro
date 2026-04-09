@@ -1,32 +1,225 @@
 ---
 import Layout from '../layouts/Layout.astro';
 ---
-<Layout title="Nederlandse Wetgeving E-Bikes | E-Bike Database NL" description="Wetgeving voor e-bikes, bromfietsen en e-crossers in Nederland.">
+<Layout
+  title="Wetgeving Elektrische Fietsen & E-Crossers Nederland 2025 | E-Bike DB NL"
+  description="Rijbewijs, kenteken, helm en fietspad — alle regels voor e-bikes, speed pedelecs, bromfietsen en elektrische crossers in Nederland. Inclusief RDW kentekenprocedure en veelgestelde vragen."
+>
   <section class="bg-gradient-to-r from-blue-600 to-blue-700 text-white py-12">
     <div class="max-w-4xl mx-auto px-4 text-center">
       <h1 class="text-4xl font-bold mb-4">Nederlandse Wetgeving</h1>
-      <p class="text-xl opacity-90">E-bikes en elektrische crossers op de Nederlandse weg</p>
+      <p class="text-xl opacity-90">E-bikes en elektrische crossers op de Nederlandse weg &mdash; regels, rijbewijs en kenteken</p>
     </div>
   </section>
+
   <div class="max-w-4xl mx-auto px-4 py-12">
-    <div class="overflow-x-auto mb-10">
-      <table class="w-full bg-white shadow-md rounded-lg overflow-hidden">
-        <thead class="bg-blue-600 text-white"><tr><th class="px-4 py-3 text-left">Categorie</th><th class="px-4 py-3">Max km/h</th><th class="px-4 py-3">Rijbewijs</th><th class="px-4 py-3">Kenteken</th><th class="px-4 py-3">Helm</th><th class="px-4 py-3">Fietspad</th></tr></thead>
-        <tbody class="divide-y divide-gray-200 text-sm">
-          <tr class="hover:bg-gray-50"><td class="px-4 py-3 font-medium">E-bike</td><td class="px-4 py-3 text-center">25</td><td class="px-4 py-3 text-center text-green-600">Nee</td><td class="px-4 py-3 text-center text-green-600">Nee</td><td class="px-4 py-3 text-center text-green-600">Nee</td><td class="px-4 py-3 text-center text-green-600">Ja</td></tr>
-          <tr class="hover:bg-gray-50"><td class="px-4 py-3 font-medium">Speed Pedelec</td><td class="px-4 py-3 text-center">45</td><td class="px-4 py-3 text-center text-green-600">Nee</td><td class="px-4 py-3 text-center text-red-600">Blauw</td><td class="px-4 py-3 text-center text-red-600">Ja</td><td class="px-4 py-3 text-center text-red-600">Nee*</td></tr>
-          <tr class="hover:bg-gray-50"><td class="px-4 py-3 font-medium">Snorfiets (L1e-A)</td><td class="px-4 py-3 text-center">25</td><td class="px-4 py-3 text-center text-red-600">AM</td><td class="px-4 py-3 text-center text-red-600">Blauw</td><td class="px-4 py-3 text-center text-orange-500">Deels**</td><td class="px-4 py-3 text-center text-orange-500">Deels</td></tr>
-          <tr class="bg-orange-50 hover:bg-orange-100"><td class="px-4 py-3 font-bold">Bromfiets (L1e-B)</td><td class="px-4 py-3 text-center font-bold">45</td><td class="px-4 py-3 text-center text-red-600">AM</td><td class="px-4 py-3 text-center text-red-600">Geel</td><td class="px-4 py-3 text-center text-red-600">Ja</td><td class="px-4 py-3 text-center text-red-600">Nee</td></tr>
-          <tr class="hover:bg-gray-50"><td class="px-4 py-3 font-medium">Motorfiets (L3e)</td><td class="px-4 py-3 text-center">&gt;45</td><td class="px-4 py-3 text-center text-red-600">A1/A2/A</td><td class="px-4 py-3 text-center text-red-600">Ja</td><td class="px-4 py-3 text-center text-red-600">Ja</td><td class="px-4 py-3 text-center text-red-600">Nee</td></tr>
-        </tbody>
-      </table>
-      <p class="text-xs text-gray-500 mt-2">* Snelfietspad (F-route) wel toegestaan &nbsp;|&nbsp; ** Helm verplicht in Amsterdam, Rotterdam, Den Haag, Utrecht op fietspad</p>
+
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">Overzicht per categorie</h2>
+      <div class="overflow-x-auto shadow-md rounded-lg">
+        <table class="w-full bg-white">
+          <thead class="bg-blue-600 text-white">
+            <tr>
+              <th class="px-4 py-3 text-left">Categorie</th>
+              <th class="px-4 py-3 text-center">Max km/h</th>
+              <th class="px-4 py-3 text-center">Rijbewijs</th>
+              <th class="px-4 py-3 text-center">Kenteken</th>
+              <th class="px-4 py-3 text-center">Helm</th>
+              <th class="px-4 py-3 text-center">Fietspad</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200 text-sm">
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-medium">E-bike (Pedelec)</td>
+              <td class="px-4 py-3 text-center">25</td>
+              <td class="px-4 py-3 text-center text-green-600 font-medium">Nee</td>
+              <td class="px-4 py-3 text-center text-green-600 font-medium">Nee</td>
+              <td class="px-4 py-3 text-center text-green-600 font-medium">Nee</td>
+              <td class="px-4 py-3 text-center text-green-600 font-medium">Ja</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-medium">Speed Pedelec</td>
+              <td class="px-4 py-3 text-center">45</td>
+              <td class="px-4 py-3 text-center text-green-600 font-medium">Nee*</td>
+              <td class="px-4 py-3 text-center text-orange-600 font-medium">Blauw</td>
+              <td class="px-4 py-3 text-center text-red-600 font-medium">Ja</td>
+              <td class="px-4 py-3 text-center text-red-600 font-medium">Nee**</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-medium">Snorfiets (L1e-A)</td>
+              <td class="px-4 py-3 text-center">25</td>
+              <td class="px-4 py-3 text-center text-red-600 font-medium">AM</td>
+              <td class="px-4 py-3 text-center text-orange-600 font-medium">Blauw</td>
+              <td class="px-4 py-3 text-center text-orange-600 font-medium">Deels***</td>
+              <td class="px-4 py-3 text-center text-orange-600 font-medium">Deels</td>
+            </tr>
+            <tr class="bg-orange-50">
+              <td class="px-4 py-3 font-bold">Bromfiets (L1e-B)</td>
+              <td class="px-4 py-3 text-center font-bold">45</td>
+              <td class="px-4 py-3 text-center text-red-600 font-bold">AM</td>
+              <td class="px-4 py-3 text-center text-red-600 font-bold">Geel</td>
+              <td class="px-4 py-3 text-center text-red-600 font-bold">Ja</td>
+              <td class="px-4 py-3 text-center text-red-600 font-bold">Nee</td>
+            </tr>
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-3 font-medium">Motorfiets (L3e)</td>
+              <td class="px-4 py-3 text-center">&gt;45</td>
+              <td class="px-4 py-3 text-center text-red-600 font-medium">A1/A2/A</td>
+              <td class="px-4 py-3 text-center text-red-600 font-medium">Ja</td>
+              <td class="px-4 py-3 text-center text-red-600 font-medium">Ja</td>
+              <td class="px-4 py-3 text-center text-red-600 font-medium">Nee</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-xs text-gray-500 mt-2">
+        * Rijbewijs niet vereist voor speed pedelec (wetswijziging 2017) &nbsp;|&nbsp;
+        ** Snelfietspad (F-route) wel toegestaan &nbsp;|&nbsp;
+        *** Helm verplicht in Amsterdam, Rotterdam, Den Haag en Utrecht op het fietspad
+      </p>
+    </section>
+
+    <div class="space-y-6 mb-12">
+
+      <section id="e-bike" class="bg-green-50 border-l-4 border-green-500 p-5 rounded-r-lg">
+        <h2 class="font-bold text-green-800 text-xl mb-2">E-bike (Pedelec) &mdash; max 25 km/h</h2>
+        <p class="text-sm text-gray-700 mb-2">Een gewone e-bike met trapondersteuning tot 25 km/h. Geen rijbewijs, geen kenteken, geen verzekering verplicht &mdash; gewoon op het fietspad. De meest toegankelijke categorie.</p>
+        <p class="text-sm text-gray-700"><strong>Modellen op deze site:</strong> Himiway Cobra, RadRunner 2, Eskimo FAT 26.</p>
+      </section>
+
+      <section id="speed-pedelec" class="bg-blue-50 border-l-4 border-blue-500 p-5 rounded-r-lg">
+        <h2 class="font-bold text-blue-800 text-xl mb-2">Speed Pedelec &mdash; max 45 km/h</h2>
+        <p class="text-sm text-gray-700 mb-2">Snellere e-bike met trapondersteuning tot 45 km/h. Geen rijbewijs vereist (wet gewijzigd per 1 januari 2017), maar blauw kenteken, WA-verzekering en fietshelm zijn verplicht. Niet toegestaan op het reguliere fietspad &mdash; wel op aangewezen snelfiets&shy;paden (F-routes).</p>
+        <p class="text-sm text-gray-700"><strong>Modellen op deze site:</strong> Specialized Turbo Vado SL, Trek Allant+ 9.9S, Bosch Cargo Line Speed.</p>
+      </section>
+
+      <section id="bromfiets" class="bg-orange-50 border-l-4 border-orange-500 p-5 rounded-r-lg">
+        <h2 class="font-bold text-orange-800 text-xl mb-2">Bromfiets (L1e-B) &mdash; de meeste e-crossers</h2>
+        <p class="text-sm text-gray-700 mb-2">Sur-Ron, Talaria, Segway X260, Super73 S2 en vergelijkbare modellen begrensd op 45 km/h vallen in categorie L1e-B bromfiets. AM rijbewijs verplicht, geel kenteken bij de RDW, WA-verzekering en een goedgekeurde snorfietsenhelm. Niet op het fietspad.</p>
+        <p class="text-sm text-gray-700 mb-2">Het voertuig moet een Europese L1e-B typegoedkeuring hebben (CoC-document). Zonder typegoedkeuring is kentekening bij de RDW niet mogelijk en mag het voertuig niet op de openbare weg.</p>
+        <p class="text-sm text-gray-700"><strong>Modellen op deze site:</strong> Sur-Ron Light Bee X, Talaria Sting MX5 Pro, Segway X260, Super73 S2, Onyx RCR, Stealth H-52, UBCO 2x2.</p>
+      </section>
+
+      <section id="motorfiets" class="bg-red-50 border-l-4 border-red-500 p-5 rounded-r-lg">
+        <h2 class="font-bold text-red-800 text-xl mb-2">Motorfiets (L3e) &mdash; KTM en Zero</h2>
+        <p class="text-sm text-gray-700 mb-2">Elektrische motorfietsen met meer dan 45 km/h topsnelheid of meer dan 4 kW motorvermogen vallen onder L3e. Welk rijbewijs vereist is, hangt af van het vermogen:</p>
+        <ul class="text-sm text-gray-700 space-y-1 mb-2 ml-4 list-disc">
+          <li><strong>A1:</strong> tot 11 kW en maximaal 0,1 kW/kg</li>
+          <li><strong>A2:</strong> tot 35 kW &mdash; bijv. KTM Freeride E-XC (18 kW)</li>
+          <li><strong>A:</strong> onbeperkt vermogen &mdash; bijv. Zero FX (34 kW)</li>
+        </ul>
+        <p class="text-sm text-gray-700">Motorfiets APK, goedgekeurde motorhelm en motorrijtuigenverzekering zijn verplicht.</p>
+        <p class="text-sm text-gray-700 mt-2"><strong>Modellen op deze site:</strong> KTM Freeride E-XC (A2), Zero Motorcycles FX (A).</p>
+      </section>
     </div>
-    <div class="space-y-4">
-      <div class="bg-orange-50 border-l-4 border-orange-500 p-5 rounded-r-lg"><h2 class="font-bold text-orange-800 mb-2">Bromfiets (L1e-B) â€” de meeste e-crossers</h2><p class="text-sm text-gray-700">Surron, Talaria, Segway X260 en vergelijkbare modellen begrensd op 45 km/h. AM rijbewijs + geel kenteken + WA-verzekering + helm verplicht. Niet op het fietspad. Voertuig moet Europese L1e-B typegoedkeuring hebben.</p></div>
-      <div class="bg-blue-50 border-l-4 border-blue-500 p-5 rounded-r-lg"><h2 class="font-bold text-blue-800 mb-2">Speed Pedelec</h2><p class="text-sm text-gray-700">45 km/h met trapondersteuning. Geen rijbewijs nodig (gewijzigd 2017), maar blauw kenteken, WA-verzekering en helm verplicht. Niet op regulier fietspad, wel op snelfietspad (F-route).</p></div>
-      <div class="bg-red-50 border-l-4 border-red-500 p-5 rounded-r-lg"><h2 class="font-bold text-red-800 mb-2">Motorfiets (L3e) â€” KTM Freeride, Zero FX</h2><p class="text-sm text-gray-700">A1 rijbewijs (tot 11kW), A2 (tot 35kW, bijv. KTM 18kW) of A (onbeperkt, bijv. Zero FX 34kW). Motorfiets APK, verzekering en goedgekeurde motorhelm verplicht.</p></div>
-    </div>
-    <div class="mt-8 p-5 bg-gray-50 rounded-lg"><h2 class="font-bold mb-2">Kenteken aanvragen (RDW)</h2><p class="text-sm text-gray-700 mb-3">Conformiteitsverklaring (CoC), aankoopbewijs en identiteitsbewijs nodig. Kosten ca. â‚¬20.</p><a href="https://www.rdw.nl/particulier/voertuigen/bromfiets-snorfiets/nieuw-voertuig-kentekenen" target="_blank" rel="noopener" class="inline-block bg-blue-600 text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-blue-700">RDW.nl â†’</a></div>
+
+    <section class="mb-12 bg-white shadow-md rounded-lg p-6">
+      <h2 class="text-xl font-bold mb-4">Kenteken aanvragen bij de RDW</h2>
+      <p class="text-sm text-gray-700 mb-4">Voor bromfietsen (L1e-B) en motorfietsen (L3e) is kentekening verplicht voordat het voertuig de weg op mag. Wat je nodig hebt:</p>
+      <ol class="text-sm text-gray-700 space-y-2 mb-4 list-decimal list-inside">
+        <li>Conformiteitsverklaring (CoC) van de fabrikant</li>
+        <li>Geldig identiteitsbewijs</li>
+        <li>Aankoopbewijs (factuur)</li>
+        <li>Voertuig bij een RDW-keuringsstation (bij twijfel over typegoedkeuring)</li>
+      </ol>
+      <p class="text-sm text-gray-700 mb-4">Kosten: <strong>&euro;21,50</strong> (RDW-tarief 2025). Daarna WA-verzekering afsluiten en kenteken ophalen.</p>
+      <div class="flex gap-3 flex-wrap">
+        <a href="https://www.rdw.nl/particulier/voertuigen/bromfiets-snorfiets/nieuw-voertuig-kentekenen"
+           target="_blank" rel="noopener"
+           class="inline-block bg-blue-600 text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-blue-700">
+          RDW &mdash; Bromfiets kentekenen &rarr;
+        </a>
+        <a href="https://www.rdw.nl/particulier/voertuigen/motorfiets/nieuw-voertuig-kentekenen"
+           target="_blank" rel="noopener"
+           class="inline-block bg-gray-700 text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-gray-800">
+          RDW &mdash; Motorfiets kentekenen &rarr;
+        </a>
+      </div>
+    </section>
+
+    <section class="mb-12 bg-white shadow-md rounded-lg p-6">
+      <h2 class="text-xl font-bold mb-4">AM rijbewijs halen</h2>
+      <p class="text-sm text-gray-700 mb-3">Het AM rijbewijs is vereist voor bromfietsen en snorfietsen. Via het CBR:</p>
+      <ul class="text-sm text-gray-700 space-y-2 mb-4 list-disc list-inside">
+        <li>Minimaal 16 jaar</li>
+        <li>Theorie-examen via CBR, kosten ca. &euro;40</li>
+        <li>Praktijkexamen via erkende rijschool, totaal ca. &euro;300&ndash;500</li>
+        <li>Al rijbewijs B (auto)? Dan heb je automatisch AM &mdash; geen apart examen nodig</li>
+      </ul>
+      <a href="https://www.cbr.nl/nl/rijbewijs-motor-bromfiets/bromfiets-am.htm"
+         target="_blank" rel="noopener"
+         class="inline-block bg-blue-600 text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-blue-700">
+        CBR &mdash; AM rijbewijs &rarr;
+      </a>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-xl font-bold mb-6">Veelgestelde vragen</h2>
+      <div class="space-y-3">
+
+        <details class="bg-white shadow-sm rounded-lg group">
+          <summary class="px-5 py-4 cursor-pointer font-semibold text-gray-800 flex justify-between items-center list-none">
+            Heb ik een rijbewijs nodig voor een Sur-Ron of Talaria?
+            <span class="text-gray-400 group-open:rotate-180 transition-transform">&#8964;</span>
+          </summary>
+          <div class="px-5 pb-4 text-sm text-gray-700">
+            Ja. De Sur-Ron Light Bee X en Talaria Sting MX5 Pro zijn in de Nederlandse homologatie-uitvoering L1e-B bromfiets. AM rijbewijs is verplicht. Heb je al rijbewijs B, dan heb je automatisch ook AM &mdash; geen apart examen nodig.
+          </div>
+        </details>
+
+        <details class="bg-white shadow-sm rounded-lg group">
+          <summary class="px-5 py-4 cursor-pointer font-semibold text-gray-800 flex justify-between items-center list-none">
+            Mag ik met een elektrische crosser op het fietspad?
+            <span class="text-gray-400 group-open:rotate-180 transition-transform">&#8964;</span>
+          </summary>
+          <div class="px-5 pb-4 text-sm text-gray-700">
+            Nee, niet als bromfiets (L1e-B). Bromfietsen rijden op de rijbaan. E-bikes (max 25 km/h, geen kenteken) mogen wel op het fietspad. Speed pedelecs mogen op aangewezen snelfiets&shy;paden (F-bord) maar niet op het reguliere fietspad.
+          </div>
+        </details>
+
+        <details class="bg-white shadow-sm rounded-lg group">
+          <summary class="px-5 py-4 cursor-pointer font-semibold text-gray-800 flex justify-between items-center list-none">
+            Wat is een CoC-document en waarom heb ik het nodig?
+            <span class="text-gray-400 group-open:rotate-180 transition-transform">&#8964;</span>
+          </summary>
+          <div class="px-5 pb-4 text-sm text-gray-700">
+            CoC staat voor Certificate of Conformity &mdash; de verklaring dat het voertuig voldoet aan EU typegoedkeuringseisen (Verordening 168/2013). Zonder CoC geeft de RDW geen kenteken. Bij een nieuw L1e-B voertuig hoort dit document bij de levering. Importeer je zelf, controleer dan altijd of de CoC aanwezig is.
+          </div>
+        </details>
+
+        <details class="bg-white shadow-sm rounded-lg group">
+          <summary class="px-5 py-4 cursor-pointer font-semibold text-gray-800 flex justify-between items-center list-none">
+            Welk rijbewijs heb ik nodig voor een KTM Freeride E-XC?
+            <span class="text-gray-400 group-open:rotate-180 transition-transform">&#8964;</span>
+          </summary>
+          <div class="px-5 pb-4 text-sm text-gray-700">
+            A2 rijbewijs. De KTM Freeride E-XC is L3e met 18 kW piek&shy;vermogen, wat binnen de A2-grens (maximaal 35 kW) valt. Minimale leeftijd is 18 jaar.
+          </div>
+        </details>
+
+        <details class="bg-white shadow-sm rounded-lg group">
+          <summary class="px-5 py-4 cursor-pointer font-semibold text-gray-800 flex justify-between items-center list-none">
+            Is een fatbike een bromfiets in Nederland?
+            <span class="text-gray-400 group-open:rotate-180 transition-transform">&#8964;</span>
+          </summary>
+          <div class="px-5 pb-4 text-sm text-gray-700">
+            Dat hangt van de specs af. Een fatbike met uitsluitend trapondersteuning tot max 25 km/h en maximaal 250 W nominaal vermogen is een gewone e-bike. Een fatbike met eigen elektromotor die technisch sneller dan 25 km/h kan of meer dan 250 W nominaal heeft, kan als bromfiets worden aangemerkt &mdash; ook als hij softwarematig begrensd is. Controleer altijd de typeplaat en het CoC-document.
+          </div>
+        </details>
+
+      </div>
+    </section>
+
+    <section class="bg-gray-50 rounded-lg p-5 text-sm text-gray-600">
+      <h2 class="font-bold text-gray-800 mb-3">Bronnen</h2>
+      <ul class="space-y-1">
+        <li><a href="https://www.rdw.nl/particulier/voertuigen/bromfiets-snorfiets" target="_blank" rel="noopener" class="text-blue-600 hover:underline">RDW.nl &mdash; Bromfiets en snorfiets</a></li>
+        <li><a href="https://www.rijksoverheid.nl/onderwerpen/verkeersregels/vraag-en-antwoord/welke-regels-gelden-er-voor-speed-pedelecs" target="_blank" rel="noopener" class="text-blue-600 hover:underline">Rijksoverheid.nl &mdash; Regels speed pedelec</a></li>
+        <li><a href="https://www.cbr.nl/nl/rijbewijs-motor-bromfiets/bromfiets-am.htm" target="_blank" rel="noopener" class="text-blue-600 hover:underline">CBR.nl &mdash; AM rijbewijs bromfiets</a></li>
+        <li><a href="https://wetten.overheid.nl/BWBR0006651" target="_blank" rel="noopener" class="text-blue-600 hover:underline">Overheid.nl &mdash; Reglement verkeersregels en verkeerstekens 1990</a></li>
+      </ul>
+      <p class="mt-3 text-xs text-gray-500">Wetgeving kan wijzigen. Controleer altijd de actuele regelgeving via de officiële bronnen hierboven.</p>
+    </section>
+
   </div>
 </Layout>
