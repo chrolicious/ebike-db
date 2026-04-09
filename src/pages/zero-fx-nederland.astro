@@ -1,658 +1,142 @@
 ---
-// Zero FX - Complete Dutch Landing Page Template
 import Layout from '../layouts/Layout.astro';
-import ComplianceAlert from '../components/ComplianceAlert.astro';
-import TechnicalSpecs from '../components/TechnicalSpecs.astro';
 
-// SEO & Meta Data
-const title = "Zero FX Kopen Nederland 2026 - Complete Gids & Prijzen";
-const description = "Zero FX volledig overzicht: Nederlandse wetgeving, verzekering, kenteken, dealers en beste prijzen. Premium elektrische motorfiets A1 rijbewijs.";
-const keywords = "zero fx nederland, elektrische motorfiets kopen, zero motorcycles dealers, fx prijs, a1 rijbewijs motor, elektrische motor nederland";
-
-// Product Data
-const productData = {
-	model: "FX",
-	brand: "Zero Motorcycles",
-	basePrice: 12995,
-	weight: 134,
-	range: "95-146",
-	topSpeed: 137,
-	batteryCapacity: "7.2kWh",
-	motor: "34kW (46hp) brushless",
-	legalStatus: "A1 Motor (125cc equivalent)",
-	homologation: "L3e-A1"
-};
-
-// Affiliate Links Data
-const affiliateLinks = {
-	zeroMotorcycles: "https://zeromotorcycles.com/model/zero-fx?utm_source=ebikedb&utm_campaign=nl-affiliate",
-	euroMotor: "https://euro-motor.nl/zero-fx?ref=ebikedb",
-	bikeExperience: "https://bike-experience.nl/zero-motorcycles?partner=ebikedb",
-	motorCenterUtrecht: "https://motorcenter-utrecht.nl/zero-fx?affiliate=ebike-db-001",
-	zeroDealers: "https://zeromotorcycles.com/dealer-locator/netherlands?utm_source=ebikedb"
-};
-
-// Legal Requirements Data
-const legalRequirements = {
-	license: "A1 rijbewijs verplicht (125cc motor)",
-	insurance: "WA + Casco verzekering aanbevolen",
-	registration: "RDW kenteken verplicht",
-	helmet: "ECE-22.05 motorhelm verplicht",
-	modifications: "Fabrieksinstelling EU compliant"
-};
+const title = "Zero FX Kopen Nederland 2026 - Specs, Dealers & Wetgeving";
+const description = "Zero FX in Nederland: L3e motorfiets, 34kW motor, 7,2 kWh batterij, tot 146 km bereik. A rijbewijs vereist. Officiële dealers en actuele prijs.";
 ---
 
 <Layout title={title} description={description}>
-	<!-- Structured Data -->
-	<script type="application/ld+json">
-	{
-		"@context": "https://schema.org",
-		"@type": "Product",
-		"name": "Zero FX",
-		"brand": {
-			"@type": "Brand",
-			"name": "Zero Motorcycles"
-		},
-		"description": "Premium elektrische motorfiets met 34kW motor, geschikt voor A1 rijbewijs, 146km bereik",
-		"category": "Electric Motorcycle",
-		"offers": {
-			"@type": "Offer",
-			"priceCurrency": "EUR",
-			"price": "12995.00",
-			"availability": "https://schema.org/InStock",
-			"seller": {
-				"@type": "Organization",
-				"name": "Zero Motorcycles Europe"
-			}
-		},
-		"aggregateRating": {
-			"@type": "AggregateRating",
-			"ratingValue": "4.8",
-			"reviewCount": "67"
-		}
-	}
-	</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Zero FX",
+    "brand": {"@type": "Brand", "name": "Zero Motorcycles"},
+    "description": "Elektrische motorfiets L3e, 34kW, 7,2 kWh, geschikt voor weggebruik in Nederland.",
+    "category": "Elektrische motorfiets",
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "EUR",
+      "price": "12995",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
 
-	<main class="zero-landing">
-		<!-- Hero Section -->
-		<section class="hero bg-gradient-to-r from-blue-900 to-black text-white py-20">
-			<div class="container mx-auto px-4">
-				<div class="grid md:grid-cols-2 gap-12 items-center">
-					<div>
-						<h1 class="text-4xl md:text-6xl font-bold mb-6">
-							Zero FX
-							<span class="block text-2xl md:text-3xl text-blue-200">
-								De Toekomst van Motorrijden
-							</span>
-						</h1>
-						<p class="text-xl mb-8 leading-relaxed">
-							46 pk elektrische kracht, 146km bereik, en stil als de wind.
-							Premium Amerikaanse technologie voor A1 rijbewijshouders.
-						</p>
-						<div class="flex flex-wrap gap-4">
-							<a href="#kopen" class="bg-yellow-500 hover:bg-yellow-600 text-black px-8 py-4 rounded-lg font-bold text-lg transition-colors">
-								🏍️ Direct Kopen vanaf €12.995
-							</a>
-							<a href="#wetgeving" class="border-2 border-white hover:bg-white hover:text-blue-900 px-8 py-4 rounded-lg font-bold text-lg transition-colors">
-								📋 A1 Rijbewijs Info
-							</a>
-						</div>
-					</div>
-					<div class="relative">
-						<img src="/images/zero-fx.png" alt="Product afbeelding" class="w-full max-h-72 object-contain rounded-lg drop-shadow-xl bg-white bg-opacity-10 p-2" loading="eager" />
-						<div class="absolute top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-lg font-bold">
-							⚡ 100% Elektrisch
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
-		<!-- Compliance Alert -->
-		<ComplianceAlert
-			type="info"
-			message="Zero FX is een echte motorfiets: A1 rijbewijs, motorverzekering en RDW kenteken verplicht."
-			actionText="Bekijk Vereisten"
-			actionLink="#wetgeving"
-		/>
+    <nav class="text-sm text-gray-500 mb-6">
+      <a href="/" class="hover:underline">Home</a> &rsaquo;
+      <a href="/vergelijk" class="hover:underline">Vergelijk</a> &rsaquo;
+      Zero FX Nederland
+    </nav>
 
-		<!-- Quick Specs Grid -->
-		<section class="py-16 bg-gray-50">
-			<div class="container mx-auto px-4">
-				<div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-					<div class="bg-white p-6 rounded-lg shadow-md">
-						<div class="text-3xl font-bold text-blue-600 mb-2">34kW</div>
-						<div class="text-gray-600">Motor Vermogen</div>
-					</div>
-					<div class="bg-white p-6 rounded-lg shadow-md">
-						<div class="text-3xl font-bold text-green-600 mb-2">146km</div>
-						<div class="text-gray-600">Max Bereik</div>
-					</div>
-					<div class="bg-white p-6 rounded-lg shadow-md">
-						<div class="text-3xl font-bold text-purple-600 mb-2">137</div>
-						<div class="text-gray-600">km/h Top</div>
-					</div>
-					<div class="bg-white p-6 rounded-lg shadow-md">
-						<div class="text-3xl font-bold text-yellow-600 mb-2">€12.995</div>
-						<div class="text-gray-600">Vanaf Prijs</div>
-					</div>
-				</div>
-			</div>
-		</section>
+    <h1 class="text-3xl font-bold text-gray-900 mb-2">Zero FX &mdash; Nederland</h1>
+    <p class="text-gray-500 text-sm mb-8">Bijgewerkt april 2026</p>
 
-		<!-- Why Zero FX Section -->
-		<section class="py-16">
-			<div class="container mx-auto px-4">
-				<h2 class="text-4xl font-bold text-center mb-12">Waarom Zero FX?</h2>
+    <!-- Legal category banner -->
+    <div class="bg-red-50 border border-red-200 rounded p-4 mb-8">
+      <p class="text-sm text-red-800"><strong>Wettelijke categorie: L3e motorfiets.</strong> A rijbewijs verplicht (volledige versie 34kW). Kenteken en WA-verzekering verplicht. Niet op het fietspad.</p>
+    </div>
 
-				<div class="grid lg:grid-cols-3 gap-8">
-					<div class="bg-blue-50 p-8 rounded-lg text-center">
-						<div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-6">
-							<span class="text-2xl">⚡</span>
-						</div>
-						<h3 class="text-xl font-bold mb-4">Instant Koppel</h3>
-						<p class="text-gray-600">
-							106 Nm vanaf 0 toeren. Verslaat elke 125cc benzinemotor 
-							in acceleratie en stille kracht.
-						</p>
-						<ul class="mt-4 space-y-2 text-sm text-blue-700">
-							<li>• 0-50 km/h in 2.6 seconden</li>
-							<li>• 106 Nm constant koppel</li>
-							<li>• Geen schakelen nodig</li>
-						</ul>
-					</div>
+    <!-- Specs -->
+    <h2 class="text-xl font-bold text-gray-900 mb-4">Technische specificaties</h2>
+    <div class="overflow-x-auto mb-8">
+      <table class="w-full text-sm border-collapse">
+        <tbody>
+          <tr class="border-b border-gray-100 hover:bg-gray-50">
+            <td class="py-2 pr-4 text-gray-500 w-40">Motor</td>
+            <td class="py-2 font-medium">34kW (46 pk) borstelloze permanentmagneet</td>
+          </tr>
+          <tr class="border-b border-gray-100 hover:bg-gray-50">
+            <td class="py-2 pr-4 text-gray-500">Batterij</td>
+            <td class="py-2 font-medium">7,2 kWh (ZF7.2)</td>
+          </tr>
+          <tr class="border-b border-gray-100 hover:bg-gray-50">
+            <td class="py-2 pr-4 text-gray-500">Bereik</td>
+            <td class="py-2 font-medium">tot 146 km (stadsrit) / 95 km (snelweg)</td>
+          </tr>
+          <tr class="border-b border-gray-100 hover:bg-gray-50">
+            <td class="py-2 pr-4 text-gray-500">Topsnelheid</td>
+            <td class="py-2 font-medium">137 km/h</td>
+          </tr>
+          <tr class="border-b border-gray-100 hover:bg-gray-50">
+            <td class="py-2 pr-4 text-gray-500">Gewicht</td>
+            <td class="py-2 font-medium">134 kg (inclusief batterij)</td>
+          </tr>
+          <tr class="border-b border-gray-100 hover:bg-gray-50">
+            <td class="py-2 pr-4 text-gray-500">Laadtijd</td>
+            <td class="py-2 font-medium">ca. 4 uur (standaard lader)</td>
+          </tr>
+          <tr class="border-b border-gray-100 hover:bg-gray-50">
+            <td class="py-2 pr-4 text-gray-500">Homologatie</td>
+            <td class="py-2 font-medium">L3e &mdash; motorfiets (A rijbewijs)</td>
+          </tr>
+          <tr class="border-b border-gray-100 hover:bg-gray-50">
+            <td class="py-2 pr-4 text-gray-500">Prijs (2026)</td>
+            <td class="py-2 font-medium">&euro;12.995 (adviesprijs importeur)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-					<div class="bg-green-50 p-8 rounded-lg text-center">
-						<div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
-							<span class="text-2xl">🔇</span>
-						</div>
-						<h3 class="text-xl font-bold mb-4">Whisper Quiet</h3>
-						<p class="text-gray-600">
-							Rijden zonder geluid = toegang tot meer locaties. 
-							Ideaal voor vroege ochtend ritten en natuurgebieden.
-						</p>
-						<ul class="mt-4 space-y-2 text-sm text-green-700">
-							<li>• <50dB geluidsniveau</li>
-							<li>• Geen trillingen of uitlaatgas</li>
-							<li>• Toegang tot stille zones</li>
-						</ul>
-					</div>
+    <!-- What you need -->
+    <h2 class="text-xl font-bold text-gray-900 mb-4">Wat heb je nodig in Nederland?</h2>
+    <ul class="text-sm text-gray-700 space-y-2 mb-8">
+      <li><strong>Rijbewijs:</strong> A rijbewijs (motorrijbewijs, categorie A &mdash; geen vermogensbeperking). A2 is onvoldoende voor de 34kW-versie.</li>
+      <li><strong>Kenteken:</strong> RDW-kenteken verplicht. Aanvragen met CoC-document en factuur. Kosten: &euro;21,50.</li>
+      <li><strong>Verzekering:</strong> WA-verzekering minimaal. Elektrische motoren zijn gangbaar bij Interpolis, Nationale-Nederlanden en ANWB Verzekeringen.</li>
+      <li><strong>Helm:</strong> Gecertificeerde motorhelm (ECE 22.06) verplicht.</li>
+    </ul>
 
-					<div class="bg-yellow-50 p-8 rounded-lg text-center">
-						<div class="w-16 h-16 bg-yellow-500 rounded-full flex items-center justify-center mx-auto mb-6">
-							<span class="text-2xl">💎</span>
-						</div>
-						<h3 class="text-xl font-bold mb-4">Premium Kwaliteit</h3>
-						<p class="text-gray-600">
-							Amerikaans premium merk met 15+ jaar ervaring. 
-							Beste elektrische motorfietsen ter wereld.
-						</p>
-						<ul class="mt-4 space-y-2 text-sm text-yellow-700">
-							<li>• 5 jaar garantie op motor/controller</li>
-							<li>• Aluminium frame + carbon onderdelen</li>
-							<li>• Over-the-air updates</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</section>
+    <!-- Where to buy -->
+    <h2 class="text-xl font-bold text-gray-900 mb-4">Kopen &amp; dealers</h2>
+    <p class="text-sm text-gray-700 mb-4">
+      Zero Motorcycles heeft een officieel dealernetwerk in Nederland. Je kunt de FX direct bekijken en proefrijden bij erkende dealers. Officieel: <a href="https://www.zeromotorcycles.com/dealer-locator" class="text-blue-600 hover:underline" rel="noopener">zeromotorcycles.com/dealer-locator &rarr;</a>
+    </p>
+    <p class="text-sm text-gray-700 mb-8">
+      Overzicht van Nederlandse dealers inclusief adressen en telefoonnummers: <a href="/dealers#zero" class="text-blue-600 hover:underline">Zero Motorcycles dealers Nederland &rarr;</a>
+    </p>
 
-		<!-- Zero FX vs Alternatives -->
-		<section class="py-16 bg-gray-50">
-			<div class="container mx-auto px-4">
-				<h2 class="text-4xl font-bold text-center mb-12">Zero FX vs 125cc Alternatieven</h2>
-				<div class="overflow-x-auto">
-					<table class="w-full bg-white rounded-lg shadow-lg">
-						<thead class="bg-gray-100">
-							<tr>
-								<th class="px-6 py-4 text-left font-bold">Model</th>
-								<th class="px-6 py-4 text-center font-bold">Prijs</th>
-								<th class="px-6 py-4 text-center font-bold">Vermogen</th>
-								<th class="px-6 py-4 text-center font-bold">0-50km/h</th>
-								<th class="px-6 py-4 text-center font-bold">Bereik/Tank</th>
-								<th class="px-6 py-4 text-center font-bold">Brandstof/Stroom</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr class="border-t bg-blue-50">
-								<td class="px-6 py-4 font-bold text-blue-600">Zero FX</td>
-								<td class="px-6 py-4 text-center">€12.995</td>
-								<td class="px-6 py-4 text-center font-bold text-green-600">34kW (46pk)</td>
-								<td class="px-6 py-4 text-center font-bold text-green-600">2.6s</td>
-								<td class="px-6 py-4 text-center">146km</td>
-								<td class="px-6 py-4 text-center font-bold text-green-600">€0.80/100km</td>
-							</tr>
-							<tr class="border-t">
-								<td class="px-6 py-4 font-semibold">Honda CB125R</td>
-								<td class="px-6 py-4 text-center text-green-600">€4.499</td>
-								<td class="px-6 py-4 text-center">11kW (15pk)</td>
-								<td class="px-6 py-4 text-center">6.8s</td>
-								<td class="px-6 py-4 text-center">300km</td>
-								<td class="px-6 py-4 text-center">€8.50/100km</td>
-							</tr>
-							<tr class="border-t bg-gray-50">
-								<td class="px-6 py-4 font-semibold">Yamaha MT-125</td>
-								<td class="px-6 py-4 text-center text-green-600">€4.799</td>
-								<td class="px-6 py-4 text-center">11kW (15pk)</td>
-								<td class="px-6 py-4 text-center">7.2s</td>
-								<td class="px-6 py-4 text-center">285km</td>
-								<td class="px-6 py-4 text-center">€9.20/100km</td>
-							</tr>
-							<tr class="border-t">
-								<td class="px-6 py-4 font-semibold">KTM Duke 125</td>
-								<td class="px-6 py-4 text-center">€5.299</td>
-								<td class="px-6 py-4 text-center">11kW (15pk)</td>
-								<td class="px-6 py-4 text-center">6.5s</td>
-								<td class="px-6 py-4 text-center">320km</td>
-								<td class="px-6 py-4 text-center">€8.80/100km</td>
-							</tr>
-							<tr class="border-t bg-gray-50">
-								<td class="px-6 py-4 font-semibold">Energica Eva EsseEsse9</td>
-								<td class="px-6 py-4 text-center">€24.500</td>
-								<td class="px-6 py-4 text-center">35kW (47pk)</td>
-								<td class="px-6 py-4 text-center">2.8s</td>
-								<td class="px-6 py-4 text-center">120km</td>
-								<td class="px-6 py-4 text-center">€1.20/100km</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
+    <!-- FAQ -->
+    <h2 class="text-xl font-bold text-gray-900 mb-4">Veelgestelde vragen</h2>
 
-				<div class="mt-8 bg-blue-50 p-6 rounded-lg">
-					<h3 class="font-bold text-blue-800 mb-3">💡 Waarom Zero FX kiezen:</h3>
-					<ul class="space-y-2 text-blue-700">
-						<li>• <strong>3x meer vermogen</strong> - 34kW vs 11kW bij benzine 125cc</li>
-						<li>• <strong>Extreem lage operationele kosten</strong> - €0.80 vs €8-9/100km</li>
-						<li>• <strong>Superieure acceleratie</strong> - 2.6s vs 6-7s naar 50 km/h</li>
-						<li>• <strong>Geen onderhoud</strong> - Geen olie, filters, bougies, ketting</li>
-					</ul>
-				</div>
-			</div>
-		</section>
+    <details class="border border-gray-200 rounded mb-3">
+      <summary class="p-4 font-medium cursor-pointer select-none hover:bg-gray-50">Heb ik echt een volledig A rijbewijs nodig, of is A2 genoeg?</summary>
+      <div class="p-4 pt-0 text-gray-700 text-sm">
+        De Zero FX levert 34kW (46 pk). De A2-categorie is beperkt tot 35kW &mdash; technisch zou de FX er net onder kunnen vallen, maar in de typegoedkeuring staat de motor als L3e zonder vermogensbeperking gecertificeerd. In de praktijk eisen dealers en verzekeraars in Nederland het volledige A rijbewijs. Controleer de papieren van de specifieke motor die je koopt.
+      </div>
+    </details>
 
-		<!-- Dutch Legal Status Section -->
-		<section id="wetgeving" class="py-16">
-			<div class="container mx-auto px-4">
-				<h2 class="text-4xl font-bold text-center mb-12">Nederlandse Wetgeving & A1 Rijbewijs</h2>
+    <details class="border border-gray-200 rounded mb-3">
+      <summary class="p-4 font-medium cursor-pointer select-none hover:bg-gray-50">Wat kost verzekering voor een Zero FX in Nederland?</summary>
+      <div class="p-4 pt-0 text-gray-700 text-sm">
+        WA-verzekering voor een elektrische motorfiets van &euro;13.000 kost gemiddeld &euro;150&ndash;300 per jaar, afhankelijk van je rijervaring, postcode en maatschappij. Aanvullende cascoverzekering (diefstal + schade) voegt ruwweg &euro;300&ndash;600/jaar toe.
+      </div>
+    </details>
 
-				<div class="grid lg:grid-cols-2 gap-12">
-					<!-- A1 License Requirements -->
-					<div class="bg-blue-50 p-8 rounded-lg">
-						<h3 class="text-2xl font-bold mb-6 flex items-center">
-							🏍️ A1 Rijbewijs Vereisten
-						</h3>
-						<div class="space-y-4">
-							<div class="flex items-start gap-4">
-								<span class="bg-blue-100 p-2 rounded">📅</span>
-								<div>
-									<strong>Minimumleeftijd 18 jaar</strong>
-									<p class="text-gray-600">Theorie + praktijkexamen bij CBR. Gemiddelde kosten: €800-1200.</p>
-								</div>
-							</div>
-							<div class="flex items-start gap-4">
-								<span class="bg-blue-100 p-2 rounded">⚖️</span>
-								<div>
-									<strong>125cc Equivalent</strong>
-									<p class="text-gray-600">Zero FX valt onder A1 categorie (max 11kW continue, 15kW peak).</p>
-								</div>
-							</div>
-							<div class="flex items-start gap-4">
-								<span class="bg-blue-100 p-2 rounded">🎯</span>
-								<div>
-									<strong>Praktijkexamen</strong>
-									<p class="text-gray-600">Rijscholen gebruiken steeds vaker elektrische motoren voor training.</p>
-								</div>
-							</div>
-							<div class="flex items-start gap-4">
-								<span class="bg-blue-100 p-2 rounded">📋</span>
-								<div>
-									<strong>Verplichte Cursus</strong>
-									<p class="text-gray-600">AVB (Alcohol, Verkeer, Bewustzijn) en AVD (theorie) verplicht.</p>
-								</div>
-							</div>
-						</div>
-					</div>
+    <details class="border border-gray-200 rounded mb-3">
+      <summary class="p-4 font-medium cursor-pointer select-none hover:bg-gray-50">Kan ik de Zero FX ook off-road rijden?</summary>
+      <div class="p-4 pt-0 text-gray-700 text-sm">
+        Ja. De FX heeft een dual-purpose karakter: weggebruik (L3e-kenteken) en off-road. Het is geen dedicated enduro zoals de KTM Freeride E-XC; de vering is minder gespecialiseerd voor technisch terrein. Voor puur off-road is de KTM doorgaans de betere keuze.
+      </div>
+    </details>
 
-					<!-- Insurance & Registration -->
-					<div class="bg-green-50 p-8 rounded-lg">
-						<h3 class="text-2xl font-bold mb-6 flex items-center">
-							💰 Verzekering & Kenteken
-						</h3>
-						<div class="space-y-4">
-							<div>
-								<strong>Motorverzekering Verplicht:</strong>
-								<div class="space-y-2 text-sm text-gray-600 ml-4">
-									<div>• WA verzekering: €250-400/jaar</div>
-									<div>• WA+Beperkt Casco: €350-550/jaar</div>
-									<div>• Allrisk: €500-800/jaar</div>
-									<div>• <span class="font-semibold">Tip:</span> ANWB en Allianz hebben goede elektrische motor tarieven</div>
-								</div>
-							</div>
-							
-							<div>
-								<strong>RDW Kenteken:</strong>
-								<div class="space-y-1 text-sm text-gray-600 ml-4">
-									<div>• Eerste afgifte: €67.20</div>
-									<div>• Maandelijks: €8.60</div>
-									<div>• COC-papieren bij Zero dealer inclusief</div>
-								</div>
-							</div>
+    <details class="border border-gray-200 rounded mb-3">
+      <summary class="p-4 font-medium cursor-pointer select-none hover:bg-gray-50">Hoelang gaat de batterij mee?</summary>
+      <div class="p-4 pt-0 text-gray-700 text-sm">
+        Zero garandeert de batterij voor 5 jaar of 160.000 km. In de praktijk rapporteren eigenaren na 4&ndash;5 jaar gebruik nog 80&ndash;90% capaciteit bij normaal gebruik. De ZF7.2-batterij is vervangbaar maar kost &euro;3.000&ndash;4.500 als losse unit.
+      </div>
+    </details>
 
-							<div>
-								<strong>APK Keuring:</strong>
-								<div class="space-y-1 text-sm text-gray-600 ml-4">
-									<div>• Eerste keuring na 4 jaar</div>
-									<div>• Daarna elke 2 jaar</div>
-									<div>• Kosten: €45-65 per keuring</div>
-								</div>
-							</div>
+    <div class="mt-8 pt-6 border-t border-gray-200">
+      <h3 class="font-semibold text-gray-800 mb-3">Gerelateerd</h3>
+      <ul class="space-y-2 text-sm text-blue-600">
+        <li><a href="/ktm-freeride-e-xc-nederland" class="hover:underline">KTM Freeride E-XC &mdash; alternatief voor off-road focus</a></li>
+        <li><a href="/elektrische-crosser-rijbewijs" class="hover:underline">Welk rijbewijs heb je nodig voor een elektrische crosser?</a></li>
+        <li><a href="/vergelijk" class="hover:underline">Alle modellen vergelijken op prijs en specs</a></li>
+      </ul>
+    </div>
 
-							<div class="bg-green-100 p-3 rounded">
-								<p class="text-green-800 text-sm font-semibold">
-									💡 Elektrische bonus: veel verzekeraars geven 5-15% korting op elektrische motoren
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Total Cost Calculator -->
-				<div class="mt-12 bg-gray-100 p-8 rounded-lg">
-					<h3 class="text-2xl font-bold mb-6 text-center">🧮 Totale Kosten Overzicht</h3>
-					<div class="grid md:grid-cols-2 gap-8">
-						<div>
-							<h4 class="font-bold mb-4">Eenmalige Kosten:</h4>
-							<div class="space-y-2 text-sm">
-								<div class="flex justify-between">
-									<span>Zero FX</span>
-									<span class="font-semibold">€12.995</span>
-								</div>
-								<div class="flex justify-between">
-									<span>A1 Rijbewijs (gemiddeld)</span>
-									<span class="font-semibold">€1.000</span>
-								</div>
-								<div class="flex justify-between">
-									<span>RDW Kenteken (eerste keer)</span>
-									<span class="font-semibold">€67</span>
-								</div>
-								<div class="flex justify-between">
-									<span>Premium Motorhelm + Kleding</span>
-									<span class="font-semibold">€650</span>
-								</div>
-								<div class="border-t pt-2 flex justify-between font-bold text-lg">
-									<span>Totaal Starterskosten:</span>
-									<span class="text-blue-600">€14.712</span>
-								</div>
-							</div>
-						</div>
-						<div>
-							<h4 class="font-bold mb-4">Jaarlijkse Kosten:</h4>
-							<div class="space-y-2 text-sm">
-								<div class="flex justify-between">
-									<span>Motorverzekering (WA+Casco)</span>
-									<span class="font-semibold">€475/jaar</span>
-								</div>
-								<div class="flex justify-between">
-									<span>RDW Kenteken (maandelijks)</span>
-									<span class="font-semibold">€103/jaar</span>
-								</div>
-								<div class="flex justify-between">
-									<span>Elektriciteitskosten (5000km/jaar)</span>
-									<span class="font-semibold">€40/jaar</span>
-								</div>
-								<div class="flex justify-between">
-									<span>Onderhoud (banden, remmen)</span>
-									<span class="font-semibold">€180/jaar</span>
-								</div>
-								<div class="flex justify-between">
-									<span>APK keuring (om de 2 jaar)</span>
-									<span class="font-semibold">€30/jaar</span>
-								</div>
-								<div class="border-t pt-2 flex justify-between font-bold text-lg">
-									<span>Totaal Per Jaar:</span>
-									<span class="text-green-600">€828</span>
-								</div>
-							</div>
-							<div class="mt-4 p-3 bg-green-100 rounded">
-								<p class="text-green-800 text-sm font-semibold">
-									vs €2.400/jaar voor vergelijkbare benzinemotor!
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- Where to Buy Section -->
-		<section id="kopen" class="py-16 bg-gray-50">
-			<div class="container mx-auto px-4">
-				<h2 class="text-4xl font-bold text-center mb-12">🛒 Waar te Kopen in Nederland</h2>
-
-				<!-- Official Dealer Network -->
-				<div class="grid lg:grid-cols-3 gap-8 mb-12">
-					<div class="bg-white p-6 rounded-lg shadow-md">
-						<div class="flex items-center mb-4">
-							<span class="font-bold text-gray-700 mr-4">[Zero Motorcycles]</span>
-							<div>
-								<h3 class="font-bold">Zero Motorcycles</h3>
-								<span class="text-sm text-blue-600">Officiële Website</span>
-							</div>
-						</div>
-						<p class="text-gray-600 mb-4">Vind geautoriseerde dealers. Premium service en volledige garantie.</p>
-						<div class="space-y-2 text-sm mb-4">
-							<div>✅ 5 jaar motor/controller garantie</div>
-							<div>✅ Geautoriseerde Nederlandse dealers</div>
-							<div>✅ Over-the-air updates</div>
-						</div>
-						<a href={affiliateLinks.zeroDealers}
-						   class="block bg-blue-600 hover:bg-blue-700 text-white text-center py-3 rounded-lg font-semibold transition-colors"
-						   target="_blank" rel="noopener">
-							Vind Zero Dealer
-						</a>
-					</div>
-
-					<div class="bg-white p-6 rounded-lg shadow-md">
-						<div class="flex items-center mb-4">
-							<span class="font-bold text-gray-700 mr-4">[Euro Motor]</span>
-							<div>
-								<h3 class="font-bold">Euro Motor Utrecht</h3>
-								<span class="text-sm text-green-600">Zero Specialist</span>
-							</div>
-						</div>
-						<p class="text-gray-600 mb-4">Grootste Zero dealer van Nederland. Proefrit en complete service.</p>
-						<div class="space-y-2 text-sm mb-4">
-							<div>✅ Proefritten mogelijk</div>
-							<div>✅ Complete service werkplaats</div>
-							<div>✅ Financieringsmogelijkheden</div>
-						</div>
-						<a href={affiliateLinks.euroMotor}
-						   class="block bg-green-600 hover:bg-green-700 text-white text-center py-3 rounded-lg font-semibold transition-colors"
-						   target="_blank" rel="noopener">
-							Bekijk Euro Motor
-						</a>
-					</div>
-
-					<div class="bg-white p-6 rounded-lg shadow-md">
-						<div class="flex items-center mb-4">
-							<span class="font-bold text-gray-700 mr-4">[Bike Experience]</span>
-							<div>
-								<h3 class="font-bold">Bike Experience</h3>
-								<span class="text-sm text-yellow-600">Premium Dealer</span>
-							</div>
-						</div>
-						<p class="text-gray-600 mb-4">Elektrische motor specialist met 10+ jaar ervaring.</p>
-						<div class="space-y-2 text-sm mb-4">
-							<div>✅ Elektrische motor expertise</div>
-							<div>✅ Premium klantenservice</div>
-							<div>✅ Accessoires en uitrusting</div>
-						</div>
-						<a href={affiliateLinks.bikeExperience}
-						   class="block bg-yellow-600 hover:bg-yellow-700 text-white text-center py-3 rounded-lg font-semibold transition-colors"
-						   target="_blank" rel="noopener">
-							Bekijk Bike Experience
-						</a>
-					</div>
-				</div>
-
-				<!-- Price & Financing Options -->
-				<div class="bg-white rounded-lg shadow-lg overflow-hidden mb-8">
-					<div class="bg-gray-100 px-6 py-4 border-b">
-						<h3 class="text-xl font-bold">💰 Prijzen & Financiering Zero FX Nederland</h3>
-					</div>
-					<div class="p-6">
-						<div class="grid md:grid-cols-2 gap-8">
-							<div>
-								<h4 class="font-bold mb-4">Configuratie Opties:</h4>
-								<div class="space-y-3">
-									<div class="flex justify-between items-center p-3 bg-gray-50 rounded">
-										<div>
-											<strong>Zero FX 7.2kWh</strong>
-											<p class="text-sm text-gray-600">Standaard batterij, 95km bereik</p>
-										</div>
-										<span class="font-bold text-blue-600">€12.995</span>
-									</div>
-									<div class="flex justify-between items-center p-3 bg-blue-50 rounded">
-										<div>
-											<strong>Zero FX 7.2kWh + Power Tank</strong>
-											<p class="text-sm text-gray-600">Extra batterij, 146km bereik</p>
-										</div>
-										<span class="font-bold text-green-600">€15.495</span>
-									</div>
-									<div class="flex justify-between items-center p-3 bg-gray-50 rounded">
-										<div>
-											<strong>Zero FX ZF14.4</strong>
-											<p class="text-sm text-gray-600">Dubbele batterij, 190km bereik</p>
-										</div>
-										<span class="font-bold text-purple-600">€17.995</span>
-									</div>
-								</div>
-							</div>
-							<div>
-								<h4 class="font-bold mb-4">Financiering Opties:</h4>
-								<div class="space-y-3">
-									<div class="p-3 bg-green-50 rounded">
-										<strong>0% Rente Actie</strong>
-										<p class="text-sm text-gray-600">€541/maand over 24 maanden</p>
-										<p class="text-xs text-green-600">Bij bestelling voor 31 december 2026</p>
-									</div>
-									<div class="p-3 bg-blue-50 rounded">
-										<strong>Standaard Financiering</strong>
-										<p class="text-sm text-gray-600">Vanaf €389/maand (36 maanden, 5.9% rente)</p>
-									</div>
-									<div class="p-3 bg-yellow-50 rounded">
-										<strong>Business Lease</strong>
-										<p class="text-sm text-gray-600">Vanaf €445/maand operational lease</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="bg-blue-50 p-6 rounded-lg">
-					<h3 class="font-bold text-blue-800 mb-3">💡 Koop tips Zero FX:</h3>
-					<ul class="space-y-2 text-blue-700">
-						<li>• <strong>Proefrit verplicht</strong> - Elektische motor voelt heel anders dan benzine</li>
-						<li>• <strong>Overweeg Power Tank</strong> - €2500 extra maar 50% meer bereik</li>
-						<li>• <strong>Premium uitrusting</strong> - Investeer in goede helm en kleding (€1000+)</li>
-						<li>• <strong>Laadpunt thuis</strong> - 3.3kW wallbox bespaart veel laadtijd</li>
-					</ul>
-				</div>
-			</div>
-		</section>
-
-		<!-- FAQ Section -->
-		<section class="py-16">
-			<div class="container mx-auto px-4">
-				<h2 class="text-4xl font-bold text-center mb-12">❓ Veelgestelde Vragen</h2>
-
-				<div class="grid lg:grid-cols-2 gap-8">
-					<div class="space-y-6">
-						<div class="bg-white p-6 rounded-lg shadow-md">
-							<h3 class="font-bold text-lg mb-3">Is Zero FX zijn geld waard vs 125cc benzine?</h3>
-							<p class="text-gray-600">Voor dagelijks gebruik: absoluut. 3x meer vermogen, 90% lagere operationele kosten, geen onderhoud. Terugverdiend in 3-4 jaar.</p>
-						</div>
-
-						<div class="bg-white p-6 rounded-lg shadow-md">
-							<h3 class="font-bold text-lg mb-3">Hoe lang gaat de batterij mee?</h3>
-							<p class="text-gray-600">5 jaar / 80.000km garantie op batterij. In praktijk 8-12 jaar levensduur bij normaal gebruik.</p>
-						</div>
-
-						<div class="bg-white p-6 rounded-lg shadow-md">
-							<h3 class="font-bold text-lg mb-3">Waar kan ik laden in Nederland?</h3>
-							<p class="text-gray-600">Thuis (gewoon stopcontact), op werk, en bij 4000+ publieke laadpunten. PlugShare app toont alle locaties.</p>
-						</div>
-
-						<div class="bg-white p-6 rounded-lg shadow-md">
-							<h3 class="font-bold text-lg mb-3">Kan ik de snelweg op met Zero FX?</h3>
-							<p class="text-gray-600">Nee, A1 rijbewijs = max 80km/h op autosnelwegen. Voor snelweg heb je A2/A rijbewijs + zwaardere motor nodig.</p>
-						</div>
-					</div>
-
-					<div class="space-y-6">
-						<div class="bg-white p-6 rounded-lg shadow-md">
-							<h3 class="font-bold text-lg mb-3">Hoe betrouwbaar is Zero als merk?</h3>
-							<p class="text-gray-600">Marktleider sinds 2006. Wereldwijd 50.000+ Zero's verkocht. In Nederland 200+ tevreden eigenaren.</p>
-						</div>
-
-						<div class="bg-white p-6 rounded-lg shadow-md">
-							<h3 class="font-bold text-lg mb-3">Wat kost batterij vervanging?</h3>
-							<p class="text-gray-600">€3.500-5.000 na garantieperiode. Door snelle technologie-ontwikkeling vaak betere/goedkopere opties beschikbaar.</p>
-						</div>
-
-						<div class="bg-white p-6 rounded-lg shadow-md">
-							<h3 class="font-bold text-lg mb-3">Nederlandse Zero community?</h3>
-							<p class="text-gray-600">Actieve Facebook groep "Zero Motorcycles Nederland" (150+ leden). Regelmatige meet-ups en ritten.</p>
-						</div>
-
-						<div class="bg-white p-6 rounded-lg shadow-md">
-							<h3 class="font-bold text-lg mb-3">Winterprestaties en opslag?</h3>
-							<p class="text-gray-600">15-20% minder bereik in winter. Batterij bij voorkeur binnen opslaan. Geen speciale wintervoorbereiding nodig.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		
-	</main>
+  </div>
 </Layout>
-
-<style>
-	.hero {
-		background-image: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.4)), url('/images/zero-fx-hero-bg.jpg');
-		background-size: cover;
-		background-position: center;
-	}
-
-	/* Mobile optimization */
-	@media (max-width: 768px) {
-		.hero h1 {
-			font-size: 2.5rem;
-		}
-
-		.grid {
-			gap: 1rem;
-		}
-
-		.container {
-			padding-left: 1rem;
-			padding-right: 1rem;
-		}
-	}
-
-	/* Accessibility improvements */
-	a:focus, button:focus {
-		outline: 2px solid #2563EB;
-		outline-offset: 2px;
-	}
-
-	/* Print styles */
-	@media print {
-		.hero, .bg-gradient-to-r {
-			background: white !important;
-			color: black !important;
-		}
-	}
-</style>
