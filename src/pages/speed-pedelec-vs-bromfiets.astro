@@ -1,0 +1,261 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = "Speed Pedelec vs Bromfiets — Rijbewijs & Wetgeving 2025";
+const description = "Verschil speed pedelec en bromfiets uitgelegd: rijbewijs, kenteken, fietspad en kosten. Met overzichtstabel van alle e-bike categorieën in Nederland.";
+---
+
+<Layout title={title} description={description}>
+  <main class="max-w-3xl mx-auto px-4 py-10 text-gray-900">
+
+    <!-- Hero -->
+    <header class="mb-10">
+      <h1 class="text-3xl font-bold leading-tight mb-3">
+        Speed Pedelec vs Bromfiets — Wat zijn de verschillen?
+      </h1>
+      <p class="text-lg text-gray-600">
+        Een speed pedelec en een bromfiets rijden allebei maximaal 45 km/u, maar vallen onder verschillende
+        wettelijke categorieën. Dit overzicht legt de regels uiteen: rijbewijs, kenteken, helm, fietspad
+        en kosten. De informatie is gebaseerd op de Nederlandse wet- en regelgeving zoals gepubliceerd
+        door <a href="https://www.rdw.nl" target="_blank" rel="noopener noreferrer" class="underline text-blue-700">RDW.nl</a>,
+        <a href="https://www.cbr.nl" target="_blank" rel="noopener noreferrer" class="underline text-blue-700">CBR.nl</a>
+        en <a href="https://www.rijksoverheid.nl" target="_blank" rel="noopener noreferrer" class="underline text-blue-700">Rijksoverheid.nl</a>.
+      </p>
+    </header>
+
+    <!-- Comparison table -->
+    <section class="mb-10" aria-labelledby="vergelijking-tabel">
+      <h2 id="vergelijking-tabel" class="text-2xl font-bold mb-4">Overzichtstabel: alle categorieën vergeleken</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm border-collapse border border-gray-300">
+          <thead>
+            <tr class="bg-gray-100 text-left">
+              <th class="border border-gray-300 px-3 py-2 font-semibold">Categorie</th>
+              <th class="border border-gray-300 px-3 py-2 font-semibold">Max km/u</th>
+              <th class="border border-gray-300 px-3 py-2 font-semibold">Rijbewijs</th>
+              <th class="border border-gray-300 px-3 py-2 font-semibold">Kenteken</th>
+              <th class="border border-gray-300 px-3 py-2 font-semibold">Helm</th>
+              <th class="border border-gray-300 px-3 py-2 font-semibold">Fietspad</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="even:bg-gray-50">
+              <td class="border border-gray-300 px-3 py-2 font-medium">E-bike (Pedelec)</td>
+              <td class="border border-gray-300 px-3 py-2">25 km/u</td>
+              <td class="border border-gray-300 px-3 py-2">Niet verplicht</td>
+              <td class="border border-gray-300 px-3 py-2">Geen kenteken</td>
+              <td class="border border-gray-300 px-3 py-2">Niet verplicht</td>
+              <td class="border border-gray-300 px-3 py-2">Ja, verplicht op fietspad</td>
+            </tr>
+            <tr class="even:bg-gray-50">
+              <td class="border border-gray-300 px-3 py-2 font-medium">Speed Pedelec (L1e-B)</td>
+              <td class="border border-gray-300 px-3 py-2">45 km/u</td>
+              <td class="border border-gray-300 px-3 py-2">Niet verplicht <span class="text-xs text-gray-500">(wet 2017)</span></td>
+              <td class="border border-gray-300 px-3 py-2">Blauw kenteken (RDW)</td>
+              <td class="border border-gray-300 px-3 py-2">Verplicht</td>
+              <td class="border border-gray-300 px-3 py-2">Nee — wel snelfietspad / F-route</td>
+            </tr>
+            <tr class="even:bg-gray-50">
+              <td class="border border-gray-300 px-3 py-2 font-medium">Snorfiets (L1e-A)</td>
+              <td class="border border-gray-300 px-3 py-2">25 km/u</td>
+              <td class="border border-gray-300 px-3 py-2">AM rijbewijs</td>
+              <td class="border border-gray-300 px-3 py-2">Blauw kenteken</td>
+              <td class="border border-gray-300 px-3 py-2">Verplicht</td>
+              <td class="border border-gray-300 px-3 py-2">Ja (behalve in 4 grote steden: rijbaan verplicht)</td>
+            </tr>
+            <tr class="even:bg-gray-50">
+              <td class="border border-gray-300 px-3 py-2 font-medium">Bromfiets (L1e-B motorvoertuig)</td>
+              <td class="border border-gray-300 px-3 py-2">45 km/u</td>
+              <td class="border border-gray-300 px-3 py-2">AM rijbewijs</td>
+              <td class="border border-gray-300 px-3 py-2">Geel kenteken</td>
+              <td class="border border-gray-300 px-3 py-2">Verplicht</td>
+              <td class="border border-gray-300 px-3 py-2">Nee — rijbaan verplicht</td>
+            </tr>
+            <tr class="even:bg-gray-50">
+              <td class="border border-gray-300 px-3 py-2 font-medium">Lichte motorfiets (L3e)</td>
+              <td class="border border-gray-300 px-3 py-2">&gt; 45 km/u</td>
+              <td class="border border-gray-300 px-3 py-2">A1 / A2 / A rijbewijs</td>
+              <td class="border border-gray-300 px-3 py-2">Geel/wit kenteken</td>
+              <td class="border border-gray-300 px-3 py-2">Verplicht</td>
+              <td class="border border-gray-300 px-3 py-2">Nee — rijbaan</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-xs text-gray-500 mt-2">
+        Bronnen: <a href="https://www.rdw.nl" target="_blank" rel="noopener noreferrer" class="underline">RDW.nl</a>,
+        <a href="https://www.rijksoverheid.nl" target="_blank" rel="noopener noreferrer" class="underline">Rijksoverheid.nl</a>
+      </p>
+    </section>
+
+    <!-- Speed Pedelec uitleg -->
+    <section class="mb-10" aria-labelledby="speed-pedelec-geschikt">
+      <h2 id="speed-pedelec-geschikt" class="text-2xl font-bold mb-3">Voor welke situatie is een speed pedelec geschikt?</h2>
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Een speed pedelec is bedoeld voor forensen en pendelaars die snel van A naar B willen zonder auto of openbaar vervoer.
+        Omdat geen rijbewijs vereist is sinds de wetswijziging van 2017 (Wegenverkeerswet), is de drempel laag voor mensen
+        die toch gebruik willen maken van de hogere ondersteunede snelheid van maximaal 45 km/u. De speed pedelec is wettelijk
+        een bromfiets, maar mag uitsluitend rijden op de rijbaan of — waar aanwezig — op een snelfietspad of F-route.
+        Reguliere fietspaden zijn verboden.
+      </p>
+      <p class="text-gray-700 leading-relaxed">
+        Let op: de fiets moet voorzien zijn van pedaalondersteuning. Een speed pedelec zonder werkende pedaalfunctie
+        voldoet niet meer aan de categorie-eisen en wordt bij controle mogelijk als bromfiets gekwalificeerd,
+        waarvoor een AM rijbewijs vereist is.
+      </p>
+    </section>
+
+    <!-- Bromfiets uitleg -->
+    <section class="mb-10" aria-labelledby="bromfiets-geschikt">
+      <h2 id="bromfiets-geschikt" class="text-2xl font-bold mb-3">Voor welke situatie is een bromfiets geschikt?</h2>
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Een traditionele bromfiets (L1e-B motorvoertuig) is geschikt voor wie al beschikt over een AM rijbewijs
+        en geen pedalen nodig heeft. Bromfietsen rijden uitsluitend op de rijbaan en zijn herkenbaar aan het gele kenteken.
+        Ze zijn populair als stadsvoertuig voor afstanden van enkele kilometers waarbij snelheid en compactheid
+        belangrijker zijn dan fysieke inspanning.
+      </p>
+      <p class="text-gray-700 leading-relaxed">
+        Voor jongeren vanaf 16 jaar is het AM rijbewijs de meest voor de hand liggende route, via de theorie- en
+        praktijkexamens bij het CBR. Wie overweegt een tweedehands voertuig te kopen, controleert via de RDW
+        of het kenteken actief is en of de verzekering en APK in orde zijn.
+      </p>
+    </section>
+
+    <!-- Kosten -->
+    <section class="mb-10" aria-labelledby="kosten">
+      <h2 id="kosten" class="text-2xl font-bold mb-3">Kosten: rijbewijs, kenteken en verzekering</h2>
+      <ul class="space-y-3 text-gray-700">
+        <li class="border-l-4 border-gray-300 pl-4">
+          <span class="font-semibold">AM rijbewijs (CBR)</span> — Theorie- en praktijkexamen kosten samen
+          gemiddeld circa €300 tot €500, afhankelijk van de rijschool en het aantal lessen dat nodig is.
+          Het theorie-examen bij het CBR kost momenteel ca. €40. Meer informatie op
+          <a href="https://www.cbr.nl" target="_blank" rel="noopener noreferrer" class="underline text-blue-700">cbr.nl</a>.
+        </li>
+        <li class="border-l-4 border-gray-300 pl-4">
+          <span class="font-semibold">WA-verzekering bromfiets</span> — Een wettelijk verplichte
+          WA-verzekering voor een bromfiets of speed pedelec kost gemiddeld €100 tot €300 per jaar,
+          afhankelijk van de verzekeraar, leeftijd en postcode van de houder.
+        </li>
+        <li class="border-l-4 border-gray-300 pl-4">
+          <span class="font-semibold">Kentekening bij RDW</span> — De tenaamstelling en kentekening via de RDW
+          kost eenmalig €21,50 (tarief 2025). Hiervoor is een CoC-document (typegoedkeuring) vereist.
+          Meer informatie op <a href="https://www.rdw.nl" target="_blank" rel="noopener noreferrer" class="underline text-blue-700">rdw.nl</a>.
+        </li>
+      </ul>
+    </section>
+
+    <!-- Typegoedkeuring / CoC -->
+    <section class="mb-10" aria-labelledby="typegoedkeuring">
+      <h2 id="typegoedkeuring" class="text-2xl font-bold mb-3">Typegoedkeuring en het CoC-document</h2>
+      <p class="text-gray-700 leading-relaxed mb-3">
+        Voor kentekening bij de RDW is een Europese typegoedkeuring verplicht. Dit wordt aangetoond met een
+        <strong>CoC-document</strong> (Certificate of Conformity), uitgegeven door de fabrikant. Het CoC bevestigt
+        dat het voertuig voldoet aan de Europese voertuignormen (EU-verordening 168/2013).
+      </p>
+      <p class="text-gray-700 leading-relaxed mb-3">
+        Zonder geldig CoC-document kan een speed pedelec of bromfiets niet worden ingeschreven in het
+        kentekenregister van de RDW en mag het voertuig niet legaal op de openbare weg worden gebruikt.
+        Dit geldt ook voor geimporteerde voertuigen uit buiten de EU, zoals veel Chinese elektrische fietsen
+        en lichte motoren die via webwinkels worden verkocht.
+      </p>
+      <p class="text-gray-700 leading-relaxed">
+        Het CoC-document wordt aangevraagd bij de fabrikant of importeur van het voertuig. De RDW beoordeelt
+        vervolgens of het voertuig in aanmerking komt voor kentekening. Controleer voordat u een voertuig koopt
+        of de fabrikant een geldig CoC kan verstrekken voor de Nederlandse markt.
+      </p>
+    </section>
+
+    <!-- FAQ -->
+    <section class="mb-10" aria-labelledby="faq">
+      <h2 id="faq" class="text-2xl font-bold mb-4">Veelgestelde vragen</h2>
+
+      <div class="space-y-3">
+
+        <details class="border border-gray-300 rounded-md">
+          <summary class="px-4 py-3 font-semibold cursor-pointer hover:bg-gray-50 select-none">
+            Heb ik een rijbewijs nodig voor een Sur-Ron Light Bee X?
+          </summary>
+          <div class="px-4 py-3 text-gray-700 border-t border-gray-200 leading-relaxed">
+            De Sur-Ron Light Bee X heeft geen pedaalondersteuning en een vermogen dat boven de grenswaarden voor
+            een gewone e-bike uitkomt. Het voertuig valt daardoor in Nederland doorgaans in de categorie bromfiets
+            of lichte motorfiets (L-categorie), afhankelijk van het vermogen en de topsnelheid. Voor rijden op
+            de openbare weg is minimaal een AM rijbewijs vereist, moet het voertuig een geldig kenteken hebben
+            en WA-verzekerd zijn. Omdat veel Sur-Ron modellen geen Europese typegoedkeuring hebben, is kentekening
+            via de RDW vaak niet mogelijk en is gebruik op de openbare weg wettelijk niet toegestaan.
+            Raadpleeg de RDW voor de actuele classificatie van een specifiek model.
+          </div>
+        </details>
+
+        <details class="border border-gray-300 rounded-md">
+          <summary class="px-4 py-3 font-semibold cursor-pointer hover:bg-gray-50 select-none">
+            Mag ik met een speed pedelec op de snelweg?
+          </summary>
+          <div class="px-4 py-3 text-gray-700 border-t border-gray-200 leading-relaxed">
+            Nee. De snelweg is uitsluitend toegankelijk voor motorvoertuigen met een constructiesnelheid
+            van meer dan 60 km/u. Een speed pedelec heeft een wettelijk maximum van 45 km/u en is
+            niet toegestaan op de snelweg. Speed pedelecs rijden op de rijbaan van gewone wegen buiten
+            de bebouwde kom, en waar aanwezig op aangewezen snelfietspaden (F-routes). Binnen de
+            bebouwde kom rijdt u op de rijbaan, tenzij een verkeersbord de toegang voor bromfietsen
+            uitsluit.
+          </div>
+        </details>
+
+        <details class="border border-gray-300 rounded-md">
+          <summary class="px-4 py-3 font-semibold cursor-pointer hover:bg-gray-50 select-none">
+            Wat is een CoC-document en waar vraag ik het aan?
+          </summary>
+          <div class="px-4 py-3 text-gray-700 border-t border-gray-200 leading-relaxed">
+            Een CoC-document (Certificate of Conformity) is een verklaring van de fabrikant dat een
+            voertuig voldoet aan de Europese typegoedkeuringseisen. Het document is nodig om een
+            voertuig bij de RDW te laten inschrijven en een kenteken aan te vragen. U vraagt het CoC
+            aan bij de fabrikant of de officiële importeur van het voertuig. Heeft u een voertuig
+            gekocht bij een particulier of via een buitenlandse webwinkel zonder CoC, dan is kentekening
+            in Nederland niet mogelijk zonder een individuele typegoedkeuring — een kostbaar en complex
+            traject. Controleer het CoC-document altijd voor aankoop.
+          </div>
+        </details>
+
+        <details class="border border-gray-300 rounded-md">
+          <summary class="px-4 py-3 font-semibold cursor-pointer hover:bg-gray-50 select-none">
+            Is een fatbike een bromfiets in Nederland?
+          </summary>
+          <div class="px-4 py-3 text-gray-700 border-t border-gray-200 leading-relaxed">
+            Dat hangt af van de technische specificaties. Een fatbike die voldoet aan de wettelijke
+            eisen voor een gewone e-bike — maximale ondersteuningssnelheid van 25 km/u, trapondersteuning
+            (pedelec), motorvermogen maximaal 250 watt — valt in de categorie fiets en mag gewoon
+            op het fietspad. Een fatbike met een gashendel, hogere topsnelheid of hoger motorvermogen
+            valt buiten de fietscategorie en wordt door de RDW geclassificeerd als bromfiets of
+            motorvoertuig. In dat geval zijn kenteken, rijbewijs en verzekering verplicht. De politie
+            treedt actief op tegen fatbikes die als bromfiets kwalificeren maar zonder kenteken
+            en rijbewijs op het fietspad rijden. Controleer de specificaties van uw voertuig via
+            de fabrikant of de RDW.
+          </div>
+        </details>
+
+      </div>
+    </section>
+
+    <!-- Bronnen -->
+    <section aria-labelledby="bronnen">
+      <h2 id="bronnen" class="text-2xl font-bold mb-3">Bronnen en verdere informatie</h2>
+      <ul class="space-y-1 text-gray-700">
+        <li>
+          <a href="https://www.rdw.nl" target="_blank" rel="noopener noreferrer" class="underline text-blue-700">
+            RDW.nl
+          </a> — kentekenregister, typegoedkeuring, voertuigcategorieën
+        </li>
+        <li>
+          <a href="https://www.cbr.nl" target="_blank" rel="noopener noreferrer" class="underline text-blue-700">
+            CBR.nl
+          </a> — rijbewijscategorieën, theorie- en praktijkexamen AM
+        </li>
+        <li>
+          <a href="https://www.rijksoverheid.nl" target="_blank" rel="noopener noreferrer" class="underline text-blue-700">
+            Rijksoverheid.nl
+          </a> — wet- en regelgeving speed pedelec, Wegenverkeerswet
+        </li>
+      </ul>
+    </section>
+
+  </main>
+</Layout>
