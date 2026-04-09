@@ -9,55 +9,75 @@ export interface Props {
 const { ecrosser } = Astro.props;
 const pageTitle = `${ecrosser.brand} ${ecrosser.name} - Specificaties, Prijs & Wetgeving Nederland`;
 const pageDescription = `Complete gids voor de ${ecrosser.brand} ${ecrosser.name}: ${ecrosser.priceRange}, ${ecrosser.range} bereik, Nederlandse wetgeving, verzekering en waar te koop.`;
+
+// Category color mapping
+const catColor = ecrosser.category === 'pedelec'
+	? { border: 'border-green-500', badge: 'bg-green-100 text-green-800', label: 'Geen rijbewijs' }
+	: ecrosser.category === 'L3e'
+	? { border: 'border-red-500', badge: 'bg-red-100 text-red-800', label: 'A/A2 rijbewijs' }
+	: { border: 'border-orange-400', badge: 'bg-orange-100 text-orange-800', label: 'AM rijbewijs' };
 ---
 
 <Layout title={pageTitle} description={pageDescription}>
 	<!-- Hero Section -->
-	<section class="bg-gradient-to-r from-blue-600 to-blue-700 text-white py-16">
+	<section class="bg-gradient-to-br from-gray-900 via-blue-950 to-blue-900 text-white py-14">
 		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 			{ecrosser.imageUrl ? (
 				<div class="grid md:grid-cols-2 gap-10 items-center">
 					<div>
-						<h1 class="text-4xl md:text-5xl font-bold mb-4">
+						<span class={`inline-block text-xs font-semibold px-2.5 py-1 rounded-full mb-4 ${catColor.badge}`}>
+							{catColor.label} &mdash; {ecrosser.category}
+						</span>
+						<h1 class="text-4xl md:text-5xl font-extrabold mb-3 leading-tight">
 							{ecrosser.brand} {ecrosser.name}
 						</h1>
-						<p class="text-lg mb-8 opacity-80">{ecrosser.category} &mdash; {ecrosser.legalStatus.rijbewijs}</p>
-						<div class="flex flex-wrap gap-4">
-							<div class="bg-white bg-opacity-20 px-6 py-3 rounded-lg">
+						<p class="text-blue-200 mb-6 text-sm">{ecrosser.legalStatus.rijbewijs}</p>
+						<div class="flex flex-wrap gap-3 mb-8">
+							<div class="bg-white/10 border border-white/15 px-5 py-2.5 rounded-lg">
 								<span class="text-2xl font-bold">{ecrosser.priceRange}</span>
 							</div>
-							<div class="bg-white bg-opacity-20 px-6 py-3 rounded-lg">
-								<span class="text-lg">Max {ecrosser.maxSpeed} km/h</span>
+							<div class="bg-white/10 border border-white/15 px-5 py-2.5 rounded-lg">
+								<span class="text-base">Max {ecrosser.maxSpeed} km/h</span>
 							</div>
-							<div class="bg-white bg-opacity-20 px-6 py-3 rounded-lg">
-								<span class="text-lg">Bereik {ecrosser.range}</span>
+							<div class="bg-white/10 border border-white/15 px-5 py-2.5 rounded-lg">
+								<span class="text-base">{ecrosser.range}</span>
 							</div>
 						</div>
+						{ecrosser.officialUrl && (
+							<a href={ecrosser.officialUrl} target="_blank" rel="noopener"
+							   class="inline-flex items-center gap-2 bg-blue-500 hover:bg-blue-400 text-white px-6 py-3 rounded-lg font-semibold transition-colors text-sm">
+								Officiële website
+								<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+							</a>
+						)}
 					</div>
 					<div class="flex justify-center">
 						<img
 							src={ecrosser.imageUrl}
 							alt={`${ecrosser.brand} ${ecrosser.name}`}
-							class="max-h-72 w-auto object-contain drop-shadow-2xl rounded-lg bg-white bg-opacity-10 p-4"
+							class="max-h-72 w-auto object-contain drop-shadow-2xl rounded-xl bg-white/5 p-4"
 							loading="eager"
 						/>
 					</div>
 				</div>
 			) : (
-				<div class="text-center">
-					<h1 class="text-4xl md:text-5xl font-bold mb-4">
+				<div class="text-center max-w-2xl mx-auto">
+					<span class={`inline-block text-xs font-semibold px-2.5 py-1 rounded-full mb-4 ${catColor.badge}`}>
+						{catColor.label} &mdash; {ecrosser.category}
+					</span>
+					<h1 class="text-4xl md:text-5xl font-extrabold mb-3">
 						{ecrosser.brand} {ecrosser.name}
 					</h1>
-					<p class="text-lg mb-8 opacity-80">{ecrosser.category} &mdash; {ecrosser.legalStatus.rijbewijs}</p>
-					<div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-						<div class="bg-white bg-opacity-20 px-6 py-3 rounded-lg">
+					<p class="text-blue-200 mb-6 text-sm">{ecrosser.legalStatus.rijbewijs}</p>
+					<div class="flex flex-wrap justify-center gap-3">
+						<div class="bg-white/10 border border-white/15 px-5 py-2.5 rounded-lg">
 							<span class="text-2xl font-bold">{ecrosser.priceRange}</span>
 						</div>
-						<div class="bg-white bg-opacity-20 px-6 py-3 rounded-lg">
-							<span class="text-lg">Max {ecrosser.maxSpeed} km/h</span>
+						<div class="bg-white/10 border border-white/15 px-5 py-2.5 rounded-lg">
+							<span class="text-base">Max {ecrosser.maxSpeed} km/h</span>
 						</div>
-						<div class="bg-white bg-opacity-20 px-6 py-3 rounded-lg">
-							<span class="text-lg">Bereik {ecrosser.range}</span>
+						<div class="bg-white/10 border border-white/15 px-5 py-2.5 rounded-lg">
+							<span class="text-base">{ecrosser.range}</span>
 						</div>
 					</div>
 				</div>
@@ -65,71 +85,10 @@ const pageDescription = `Complete gids voor de ${ecrosser.brand} ${ecrosser.name
 		</div>
 	</section>
 
-	<!-- Quick Buy Section -->
-	<section class="bg-yellow-50 border-b-4 border-yellow-200 py-8">
-		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-			<div class="text-center">
-				<h2 class="text-2xl font-bold mb-4 text-gray-900">Waar te koop - Beste prijzen</h2>
-				<div class="flex flex-col sm:flex-row justify-center gap-4 max-w-4xl mx-auto">
-					{ecrosser.mediamarktUrl && (
-						<a href={ecrosser.mediamarktUrl}
-						   target="_blank"
-						   rel="noopener nofollow"
-						   class="bg-red-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-red-700 transition-colors flex items-center justify-center">
-							<svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-								<path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
-							</svg>
-							Bekijk bij MediaMarkt
-						</a>
-					)}
-					{ecrosser.amazonUrl && (
-						<a href={ecrosser.amazonUrl}
-						   target="_blank"
-						   rel="noopener nofollow"
-						   class="bg-orange-500 text-white px-8 py-4 rounded-lg font-semibold hover:bg-orange-600 transition-colors flex items-center justify-center">
-							<svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-								<path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
-							</svg>
-							Bekijk bij Amazon
-						</a>
-					)}
-					<a href={ecrosser.officialUrl}
-					   target="_blank"
-					   rel="noopener"
-					   class="bg-gray-700 text-white px-8 py-4 rounded-lg font-semibold hover:bg-gray-800 transition-colors flex items-center justify-center">
-						<svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-						</svg>
-						Officiële Website
-					</a>
-				</div>
-				{ecrosser.specialistDealers && ecrosser.specialistDealers.length > 0 && (
-					<div class="mt-6">
-						<p class="text-sm font-semibold text-gray-700 mb-3">Gespecialiseerde dealers:</p>
-						<div class="flex flex-wrap justify-center gap-3">
-							{ecrosser.specialistDealers.map((dealer) => (
-								<a href={dealer.url}
-								   target="_blank"
-								   rel="noopener nofollow"
-								   class="bg-blue-600 text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-blue-700 transition-colors">
-									{dealer.name}
-								</a>
-							))}
-						</div>
-					</div>
-				)}
-				<p class="text-sm text-gray-600 mt-4">
-					Prijzen kunnen verschillen. Controleer altijd de actuele prijs en beschikbaarheid.
-				</p>
-			</div>
-		</div>
-	</section>
-
-
 	{ecrosser.videoId && (
-		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
-			<section class="bg-white rounded-lg shadow-md p-6 mb-0">
-				<h2 class="text-2xl font-bold mb-4">Video Review</h2>
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
+			<section class="bg-white rounded-xl border border-gray-200 p-6 mb-0">
+				<h2 class="text-xl font-bold mb-4">Video Review</h2>
 				<div class="relative w-full" style="padding-bottom: 56.25%;">
 					<iframe
 						src={`https://www.youtube-nocookie.com/embed/${ecrosser.videoId}?rel=0&modestbranding=1`}
@@ -140,137 +99,122 @@ const pageDescription = `Complete gids voor de ${ecrosser.brand} ${ecrosser.name
 						loading="lazy"
 					></iframe>
 				</div>
-				<p class="text-xs text-gray-500 mt-2">Video via YouTube. Klik om te spelen. Credits aan de originele maker.</p>
+				<p class="text-xs text-gray-400 mt-2">Video via YouTube. Credits aan de originele maker.</p>
 			</section>
 		</div>
 	)}
-	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-		<!-- Dutch Legal Requirements - Critical Section -->
-		<section class="bg-red-50 border-l-4 border-red-400 p-6 mb-12">
-			<h2 class="text-2xl font-bold text-red-800 mb-6">Nederlandse Wetgeving &mdash; {ecrosser.category}</h2>
-			<div class="grid md:grid-cols-2 gap-6">
-				<div>
-					<h3 class="text-lg font-semibold mb-4 text-red-700">Verplicht voor weggebruik:</h3>
-					<ul class="space-y-2">
-						<li class="flex items-center">
-							<span class={`w-4 h-4 rounded mr-3 ${ecrosser.legalStatus.rijbewijs !== 'Geen rijbewijs vereist' ? 'bg-red-500' : 'bg-green-500'}`}></span>
-							<strong>Rijbewijs:</strong> {ecrosser.legalStatus.rijbewijs}
-						</li>
-						<li class="flex items-center">
-							<span class={`w-4 h-4 rounded mr-3 ${ecrosser.legalStatus.verzekering ? 'bg-red-500' : 'bg-green-500'}`}></span>
-							<strong>Verzekering:</strong> {ecrosser.legalStatus.verzekering ? 'Verplicht WA-verzekering' : 'Niet verplicht'}
-						</li>
-						<li class="flex items-center">
-							<span class={`w-4 h-4 rounded mr-3 ${ecrosser.legalStatus.kenteken ? 'bg-red-500' : 'bg-green-500'}`}></span>
-							<strong>Kenteken:</strong> {ecrosser.legalStatus.kenteken ? 'Verplicht bij RDW' : 'Niet verplicht'}
-						</li>
-						<li class="flex items-center">
-							<span class={`w-4 h-4 rounded mr-3 ${ecrosser.legalStatus.helm ? 'bg-red-500' : 'bg-green-500'}`}></span>
-							<strong>Helm:</strong> {ecrosser.legalStatus.helm ? 'Verplicht (snorfietsenhelm)' : 'Niet verplicht'}
-						</li>
-					</ul>
-				</div>
-				<div>
-					<h3 class="text-lg font-semibold mb-4 text-red-700">Waar mag je rijden:</h3>
-					<ul class="space-y-2">
-						<li class="flex items-center">
-							<span class={`w-4 h-4 rounded mr-3 ${ecrosser.legalStatus.fietspad ? 'bg-green-500' : 'bg-red-500'}`}></span>
-							<strong>Fietspad:</strong> {ecrosser.legalStatus.fietspad ? 'Toegestaan' : 'Niet toegestaan'}
-						</li>
-						<li class="flex items-center">
-							<span class={`w-4 h-4 rounded mr-3 ${ecrosser.legalStatus.weg ? 'bg-green-500' : 'bg-red-500'}`}></span>
-							<strong>Openbare weg:</strong> {ecrosser.legalStatus.weg ? 'Toegestaan' : 'Niet toegestaan'}
-						</li>
-					</ul>
-					{ecrosser.homologation && (
-						<div class="mt-4 p-4 bg-green-100 rounded-lg">
-							<p class="text-sm text-green-800">
-								<strong class="text-green-700">Gehomologeerd:</strong> Deze e-crosser heeft officiële goedkeuring voor Nederlands weggebruik.
-							</p>
-						</div>
-					)}
-					{!ecrosser.homologation && (
-						<div class="mt-4 p-4 bg-yellow-100 rounded-lg">
-							<p class="text-sm text-yellow-800">
-								<strong class="text-yellow-700">Homologatie onzeker:</strong> Controleer voor aankoop of dit model toegelaten is op Nederlandse wegen.
-							</p>
-						</div>
-					)}
-				</div>
-			</div>
-		</section>
 
-		<!-- Specifications Grid -->
+	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
 		<div class="grid lg:grid-cols-3 gap-8">
-			<!-- Main Specs -->
-			<div class="lg:col-span-2">
-				<section class="bg-white rounded-lg shadow-md p-6 mb-8">
-					<h2 class="text-2xl font-bold mb-6">Technische Specificaties</h2>
+			<!-- Main content -->
+			<div class="lg:col-span-2 space-y-8">
+
+				<!-- Dutch Legal Requirements -->
+				<section class="bg-white rounded-xl border border-gray-200 p-6">
+					<h2 class="text-xl font-bold text-gray-900 mb-5">Nederlandse wetgeving &mdash; {ecrosser.category}</h2>
 					<div class="grid md:grid-cols-2 gap-6">
 						<div>
-							<h3 class="text-lg font-semibold mb-4 text-gray-700">Motor & Prestaties</h3>
-							<ul class="space-y-3">
-								<li><strong>Motor:</strong> {ecrosser.motor}</li>
-								<li><strong>Max snelheid:</strong> {ecrosser.maxSpeed} km/h</li>
-								<li><strong>Bereik:</strong> {ecrosser.range}</li>
-								<li><strong>Batterij:</strong> {ecrosser.battery}</li>
+							<h3 class="text-sm font-semibold uppercase tracking-wide text-gray-500 mb-3">Verplicht voor weggebruik</h3>
+							<ul class="space-y-2.5">
+								<li class="flex items-start gap-2.5">
+									<span class={`mt-0.5 w-4 h-4 rounded-full flex-shrink-0 ${ecrosser.legalStatus.rijbewijs !== 'Geen rijbewijs vereist' ? 'bg-red-100 border-2 border-red-400' : 'bg-green-100 border-2 border-green-500'}`}></span>
+									<span class="text-sm"><strong>Rijbewijs:</strong> {ecrosser.legalStatus.rijbewijs}</span>
+								</li>
+								<li class="flex items-start gap-2.5">
+									<span class={`mt-0.5 w-4 h-4 rounded-full flex-shrink-0 ${ecrosser.legalStatus.verzekering ? 'bg-red-100 border-2 border-red-400' : 'bg-green-100 border-2 border-green-500'}`}></span>
+									<span class="text-sm"><strong>Verzekering:</strong> {ecrosser.legalStatus.verzekering ? 'Verplicht WA-verzekering' : 'Niet verplicht'}</span>
+								</li>
+								<li class="flex items-start gap-2.5">
+									<span class={`mt-0.5 w-4 h-4 rounded-full flex-shrink-0 ${ecrosser.legalStatus.kenteken ? 'bg-red-100 border-2 border-red-400' : 'bg-green-100 border-2 border-green-500'}`}></span>
+									<span class="text-sm"><strong>Kenteken:</strong> {ecrosser.legalStatus.kenteken ? 'Verplicht bij RDW (&euro;21,50)' : 'Niet verplicht'}</span>
+								</li>
+								<li class="flex items-start gap-2.5">
+									<span class={`mt-0.5 w-4 h-4 rounded-full flex-shrink-0 ${ecrosser.legalStatus.helm ? 'bg-red-100 border-2 border-red-400' : 'bg-green-100 border-2 border-green-500'}`}></span>
+									<span class="text-sm"><strong>Helm:</strong> {ecrosser.legalStatus.helm ? 'Verplicht' : 'Niet verplicht'}</span>
+								</li>
 							</ul>
 						</div>
 						<div>
-							<h3 class="text-lg font-semibold mb-4 text-gray-700">Fysieke specificaties</h3>
-							<ul class="space-y-3">
-								<li><strong>Gewicht:</strong> {ecrosser.weight}</li>
-								<li><strong>Categorie:</strong> {ecrosser.category}</li>
-								<li><strong>Beschikbaarheid:</strong> {ecrosser.availability}</li>
-								<li><strong>Garantie:</strong> {ecrosser.warranty}</li>
+							<h3 class="text-sm font-semibold uppercase tracking-wide text-gray-500 mb-3">Waar mag je rijden</h3>
+							<ul class="space-y-2.5">
+								<li class="flex items-start gap-2.5">
+									<span class={`mt-0.5 w-4 h-4 rounded-full flex-shrink-0 ${ecrosser.legalStatus.fietspad ? 'bg-green-100 border-2 border-green-500' : 'bg-red-100 border-2 border-red-400'}`}></span>
+									<span class="text-sm"><strong>Fietspad:</strong> {ecrosser.legalStatus.fietspad ? 'Toegestaan' : 'Niet toegestaan'}</span>
+								</li>
+								<li class="flex items-start gap-2.5">
+									<span class={`mt-0.5 w-4 h-4 rounded-full flex-shrink-0 ${ecrosser.legalStatus.weg ? 'bg-green-100 border-2 border-green-500' : 'bg-red-100 border-2 border-red-400'}`}></span>
+									<span class="text-sm"><strong>Openbare weg:</strong> {ecrosser.legalStatus.weg ? 'Toegestaan' : 'Niet toegestaan'}</span>
+								</li>
+							</ul>
+							{ecrosser.homologation ? (
+								<div class="mt-4 p-3 bg-green-50 border border-green-200 rounded-lg">
+									<p class="text-xs text-green-800"><strong>Gehomologeerd</strong> voor Nederlands weggebruik.</p>
+								</div>
+							) : (
+								<div class="mt-4 p-3 bg-amber-50 border border-amber-200 rounded-lg">
+									<p class="text-xs text-amber-800"><strong>Homologatie:</strong> Controleer voor aankoop of dit model toegelaten is op NL wegen.</p>
+								</div>
+							)}
+						</div>
+					</div>
+				</section>
+
+				<!-- Specifications -->
+				<section class="bg-white rounded-xl border border-gray-200 p-6">
+					<h2 class="text-xl font-bold text-gray-900 mb-5">Technische specificaties</h2>
+					<div class="grid md:grid-cols-2 gap-6">
+						<div>
+							<h3 class="text-xs font-semibold uppercase tracking-wide text-gray-500 mb-3">Motor &amp; prestaties</h3>
+							<ul class="space-y-2.5 text-sm">
+								<li class="flex justify-between py-1 border-b border-gray-50"><span class="text-gray-500">Motor</span><span class="font-medium text-right ml-4">{ecrosser.motor}</span></li>
+								<li class="flex justify-between py-1 border-b border-gray-50"><span class="text-gray-500">Max snelheid</span><span class="font-medium">{ecrosser.maxSpeed} km/h</span></li>
+								<li class="flex justify-between py-1 border-b border-gray-50"><span class="text-gray-500">Bereik</span><span class="font-medium">{ecrosser.range}</span></li>
+								<li class="flex justify-between py-1"><span class="text-gray-500">Batterij</span><span class="font-medium text-right ml-4">{ecrosser.battery}</span></li>
+							</ul>
+						</div>
+						<div>
+							<h3 class="text-xs font-semibold uppercase tracking-wide text-gray-500 mb-3">Fysiek</h3>
+							<ul class="space-y-2.5 text-sm">
+								<li class="flex justify-between py-1 border-b border-gray-50"><span class="text-gray-500">Gewicht</span><span class="font-medium">{ecrosser.weight}</span></li>
+								<li class="flex justify-between py-1 border-b border-gray-50"><span class="text-gray-500">Categorie</span><span class="font-medium">{ecrosser.category}</span></li>
+								<li class="flex justify-between py-1 border-b border-gray-50"><span class="text-gray-500">Beschikbaarheid</span><span class="font-medium">{ecrosser.availability}</span></li>
+								<li class="flex justify-between py-1"><span class="text-gray-500">Garantie</span><span class="font-medium">{ecrosser.warranty}</span></li>
 							</ul>
 						</div>
 					</div>
 				</section>
 
 				<!-- Features -->
-				<section class="bg-white rounded-lg shadow-md p-6 mb-8">
-					<h2 class="text-2xl font-bold mb-6">Kenmerken</h2>
-					<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+				<section class="bg-white rounded-xl border border-gray-200 p-6">
+					<h2 class="text-xl font-bold text-gray-900 mb-4">Kenmerken</h2>
+					<div class="flex flex-wrap gap-2">
 						{ecrosser.features.map((feature) => (
-							<div class="bg-blue-50 p-3 rounded-lg text-center">
-								<span class="text-blue-800 font-medium">{feature}</span>
-							</div>
+							<span class="bg-blue-50 text-blue-800 px-3 py-1.5 rounded-lg text-sm font-medium">{feature}</span>
 						))}
 					</div>
 				</section>
 
 				<!-- Pros and Cons -->
-				<section class="bg-white rounded-lg shadow-md p-6">
-					<h2 class="text-2xl font-bold mb-6">Voor- en Nadelen</h2>
+				<section class="bg-white rounded-xl border border-gray-200 p-6">
+					<h2 class="text-xl font-bold text-gray-900 mb-5">Voor- en nadelen</h2>
 					<div class="grid md:grid-cols-2 gap-6">
 						<div>
-							<h3 class="text-lg font-semibold mb-4 text-green-700 flex items-center">
-								<svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-									<path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-								</svg>
-								Voordelen
-							</h3>
+							<h3 class="text-sm font-semibold text-green-700 mb-3">Voordelen</h3>
 							<ul class="space-y-2">
 								{ecrosser.pros.map((pro) => (
-									<li class="flex items-start">
-										<span class="text-green-600 font-bold mr-2 select-none">+</span>
+									<li class="flex items-start gap-2 text-sm">
+										<span class="text-green-500 font-bold mt-0.5 flex-shrink-0">+</span>
 										<span>{pro}</span>
 									</li>
 								))}
 							</ul>
 						</div>
 						<div>
-							<h3 class="text-lg font-semibold mb-4 text-red-700 flex items-center">
-								<svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-									<path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
-								</svg>
-								Nadelen
-							</h3>
+							<h3 class="text-sm font-semibold text-red-600 mb-3">Nadelen</h3>
 							<ul class="space-y-2">
 								{ecrosser.cons.map((con) => (
-									<li class="flex items-start">
-										<span class="text-red-400 font-bold mr-2 select-none">&minus;</span>
+									<li class="flex items-start gap-2 text-sm">
+										<span class="text-red-400 font-bold mt-0.5 flex-shrink-0">&minus;</span>
 										<span>{con}</span>
 									</li>
 								))}
@@ -278,83 +222,76 @@ const pageDescription = `Complete gids voor de ${ecrosser.brand} ${ecrosser.name
 						</div>
 					</div>
 				</section>
+
 			</div>
 
 			<!-- Sidebar -->
-			<div class="space-y-6">
+			<div class="space-y-5">
 				<!-- Purchase Card -->
-				<div class="bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-lg p-6 sticky top-4">
-					<h3 class="text-xl font-bold mb-4">Prijs & Aankoop</h3>
-					<div class="space-y-4">
-						<div>
-							<span class="text-3xl font-bold">{ecrosser.priceRange}</span>
-						</div>
-						<div class="space-y-2">
-							{ecrosser.mediamarktUrl && (
-								<a href={ecrosser.mediamarktUrl}
-								   target="_blank"
-								   rel="noopener nofollow"
-								   class="block w-full bg-white text-blue-600 py-3 px-4 rounded-lg font-semibold text-center hover:bg-gray-50 transition-colors">
-									MediaMarkt NL
-								</a>
-							)}
-							{ecrosser.amazonUrl && (
-								<a href={ecrosser.amazonUrl}
-								   target="_blank"
-								   rel="noopener nofollow"
-								   class="block w-full bg-orange-500 text-white py-3 px-4 rounded-lg font-semibold text-center hover:bg-orange-600 transition-colors">
-									Amazon NL
-								</a>
-							)}
-							{ecrosser.specialistDealers && ecrosser.specialistDealers.length > 0 && (
-								<div class="space-y-2">
-									{ecrosser.specialistDealers.map((dealer) => (
-										<a href={dealer.url}
-										   target="_blank"
-										   rel="noopener nofollow"
-										   class="block w-full bg-blue-600 text-white py-2 px-4 rounded-lg text-sm font-semibold text-center hover:bg-blue-700 transition-colors">
-											{dealer.name}
-										</a>
-									))}
-								</div>
-							)}
-						</div>
-						<p class="text-sm opacity-90">
-							Status: {ecrosser.availability}
-						</p>
+				<div class={`bg-white rounded-xl border-2 ${catColor.border} p-5 sticky top-4`}>
+					<div class="flex items-center justify-between mb-1">
+						<span class="text-xs text-gray-500 font-medium uppercase tracking-wide">Adviesprijs</span>
+						<span class={`text-xs font-semibold px-2 py-0.5 rounded-full ${catColor.badge}`}>{catColor.label}</span>
 					</div>
+					<div class="text-3xl font-extrabold text-gray-900 mb-4">{ecrosser.priceRange}</div>
+					<div class="space-y-2 mb-4">
+						{ecrosser.mediamarktUrl && (
+							<a href={ecrosser.mediamarktUrl} target="_blank" rel="noopener nofollow"
+							   class="flex items-center justify-between w-full bg-red-600 hover:bg-red-700 text-white py-3 px-4 rounded-lg font-semibold text-sm transition-colors">
+								<span>MediaMarkt NL</span>
+								<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+							</a>
+						)}
+						{ecrosser.amazonUrl && (
+							<a href={ecrosser.amazonUrl} target="_blank" rel="noopener nofollow"
+							   class="flex items-center justify-between w-full bg-orange-500 hover:bg-orange-600 text-white py-3 px-4 rounded-lg font-semibold text-sm transition-colors">
+								<span>Amazon NL</span>
+								<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+							</a>
+						)}
+						{ecrosser.officialUrl && (
+							<a href={ecrosser.officialUrl} target="_blank" rel="noopener"
+							   class="flex items-center justify-between w-full bg-gray-800 hover:bg-gray-900 text-white py-3 px-4 rounded-lg font-semibold text-sm transition-colors">
+								<span>Officiële website</span>
+								<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+							</a>
+						)}
+						{ecrosser.specialistDealers && ecrosser.specialistDealers.length > 0 && ecrosser.specialistDealers.slice(0, 3).map((dealer) => (
+							<a href={dealer.url} target="_blank" rel="noopener nofollow"
+							   class="flex items-center justify-between w-full bg-blue-600 hover:bg-blue-700 text-white py-2.5 px-4 rounded-lg text-sm font-medium transition-colors">
+								<span>{dealer.name}</span>
+								<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+							</a>
+						))}
+					</div>
+					<p class="text-xs text-gray-400">Prijzen en beschikbaarheid kunnen afwijken. Controleer bij de dealer.</p>
 				</div>
 
 				<!-- Service & Support -->
-				<div class="bg-white rounded-lg shadow-md p-6">
-					<h3 class="text-lg font-bold mb-4">Service & Support</h3>
-					<ul class="space-y-3">
-						<li>
-							<strong>Garantie:</strong> {ecrosser.warranty}
-						</li>
-						<li>
-							<strong>Service netwerk:</strong> {ecrosser.serviceNetwork}
-						</li>
-						<li>
-							<strong>Dealers:</strong>
-							<ul class="mt-2 space-y-1">
-								{ecrosser.dealerNetwork.map((dealer) => (
-									<li class="text-sm text-gray-600">• {dealer}</li>
-								))}
-							</ul>
-						</li>
+				<div class="bg-white rounded-xl border border-gray-200 p-5">
+					<h3 class="text-sm font-bold text-gray-900 mb-3">Service &amp; support</h3>
+					<ul class="space-y-2 text-sm text-gray-600">
+						<li><span class="text-gray-400 text-xs">Garantie</span><br/><strong>{ecrosser.warranty}</strong></li>
+						<li><span class="text-gray-400 text-xs">Service netwerk</span><br/><strong>{ecrosser.serviceNetwork}</strong></li>
+						{ecrosser.dealerNetwork.length > 0 && (
+							<li>
+								<span class="text-gray-400 text-xs">Dealers NL</span>
+								<ul class="mt-1 space-y-0.5">
+									{ecrosser.dealerNetwork.map((dealer) => (
+										<li class="text-xs text-gray-500">&#x2022; {dealer}</li>
+									))}
+								</ul>
+							</li>
+						)}
 					</ul>
 				</div>
 
-				<!-- Certifications -->
 				{ecrosser.certifications.length > 0 && (
-					<div class="bg-white rounded-lg shadow-md p-6">
-						<h3 class="text-lg font-bold mb-4">Certificeringen</h3>
+					<div class="bg-white rounded-xl border border-gray-200 p-5">
+						<h3 class="text-sm font-bold text-gray-900 mb-3">Certificeringen</h3>
 						<div class="flex flex-wrap gap-2">
 							{ecrosser.certifications.map((cert) => (
-								<span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
-									{cert}
-								</span>
+								<span class="bg-green-50 text-green-800 border border-green-200 px-3 py-1 rounded-full text-xs font-medium">{cert}</span>
 							))}
 						</div>
 					</div>
@@ -363,15 +300,25 @@ const pageDescription = `Complete gids voor de ${ecrosser.brand} ${ecrosser.name
 		</div>
 	</div>
 
-	<!-- Structured Data for Google -->
+	<!-- Mobile sticky CTA -->
+	<div class="fixed bottom-0 left-0 right-0 md:hidden bg-white border-t border-gray-200 px-4 py-3 z-40 shadow-lg">
+		<div class="flex items-center gap-3 max-w-lg mx-auto">
+			<span class="text-lg font-extrabold text-gray-900 flex-shrink-0">{ecrosser.priceRange}</span>
+			{ecrosser.officialUrl && (
+				<a href={ecrosser.officialUrl} target="_blank" rel="noopener"
+				   class="flex-1 bg-blue-600 text-white text-center py-2.5 rounded-lg font-semibold text-sm hover:bg-blue-700 transition-colors">
+					Bekijk bij dealer &rarr;
+				</a>
+			)}
+		</div>
+	</div>
+
+	<!-- Structured Data -->
 	<script type="application/ld+json" is:inline set:html={JSON.stringify({
 		"@context": "https://schema.org",
 		"@type": "Product",
 		"name": `${ecrosser.brand} ${ecrosser.name}`,
-		"brand": {
-			"@type": "Brand",
-			"name": ecrosser.brand
-		},
+		"brand": { "@type": "Brand", "name": ecrosser.brand },
 		"description": pageDescription,
 		"category": ecrosser.category,
 		"offers": {
@@ -380,33 +327,13 @@ const pageDescription = `Complete gids voor de ${ecrosser.brand} ${ecrosser.name
 			"priceCurrency": "EUR",
 			"availability": ecrosser.availability === 'In voorraad'
 				? "https://schema.org/InStock"
-				: "https://schema.org/PreOrder",
-			"seller": {
-				"@type": "Organization",
-				"name": "E-Bike Database Nederland"
-			}
+				: "https://schema.org/PreOrder"
 		},
 		"additionalProperty": [
-			{
-				"@type": "PropertyValue",
-				"name": "Max Speed",
-				"value": `${ecrosser.maxSpeed} km/h`
-			},
-			{
-				"@type": "PropertyValue",
-				"name": "Range",
-				"value": ecrosser.range
-			},
-			{
-				"@type": "PropertyValue",
-				"name": "Motor",
-				"value": ecrosser.motor
-			},
-			{
-				"@type": "PropertyValue",
-				"name": "Battery",
-				"value": ecrosser.battery
-			}
+			{ "@type": "PropertyValue", "name": "Max Speed", "value": `${ecrosser.maxSpeed} km/h` },
+			{ "@type": "PropertyValue", "name": "Range", "value": ecrosser.range },
+			{ "@type": "PropertyValue", "name": "Motor", "value": ecrosser.motor },
+			{ "@type": "PropertyValue", "name": "Battery", "value": ecrosser.battery }
 		]
 	})} />
 </Layout>
