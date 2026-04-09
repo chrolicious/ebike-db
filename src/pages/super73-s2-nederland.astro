@@ -1,641 +1,147 @@
 ---
-// Super73 S2 - Complete Dutch Landing Page Template  
 import Layout from '../layouts/Layout.astro';
-import ComplianceAlert from '../components/ComplianceAlert.astro';
-import TechnicalSpecs from '../components/TechnicalSpecs.astro';
 
-// SEO & Meta Data
-const title = "Super73 S2 Kopen Nederland 2026 - Complete Gids & Prijzen";
-const description = "Super73 S2 volledig overzicht: Nederlandse wetgeving, verzekering, kenteken, dealers en beste prijzen. Lifestyle e-bike met unieke stijl.";
-const keywords = "super73 s2 nederland, lifestyle e-bike kopen, elektrische motor nederland, super73 dealers, s2 prijs, cruiser e-bike";
-
-// Product Data
-const productData = {
-	model: "S2",
-	brand: "Super73", 
-	basePrice: 2199,
-	weight: 32,
-	range: "40-65",
-	topSpeed: 32,
-	batteryCapacity: "48V 14.5Ah", 
-	motor: "750W Mid-Drive",
-	legalStatus: "Snorfiets (25km/h begrenzer vereist)",
-	homologation: "L1e-B"
-};
-
-// Affiliate Links Data
-const affiliateLinks = {
-	super73Official: "https://eu.super73.com/products/s2?utm_source=ebikedb&utm_campaign=nl-affiliate",
-	mediamarkt: "https://mediamarkt.nl/super73-s2?affiliate=ebike-db-001", 
-	amazon: "https://amazon.nl/dp/B09SUP123?tag=ebikedb-21",
-	coolblue: "https://coolblue.nl/super73-s2?affiliate=ebike-db-001",
-	bikester: "https://bikester.nl/super73?partner=ebikedb"
-};
-
-// Legal Requirements Data
-const legalRequirements = {
-	license: "Snorfiets: geen rijbewijs nodig vanaf 16 jaar",
-	insurance: "WA verzekering verplicht", 
-	registration: "RDW kenteken vereist",
-	helmet: "ECE-22.05 helm verplicht",
-	modifications: "25km/h begrenzer voor openbare weg"
-};
+const title = "Super73 S2 Kopen Nederland 2026 - Specs, Dealers & Wetgeving";
+const description = "Super73 S2 in Nederland: L1e-B bromfiets, 750W motor, 48V 14Ah (672Wh). AM rijbewijs en geel kenteken vereist. Officiële dealers en actuele prijs.";
 ---
 
 <Layout title={title} description={description}>
-	<!-- Structured Data -->
-	<script type="application/ld+json">
-	{
-		"@context": "https://schema.org",
-		"@type": "Product", 
-		"name": "Super73 S2",
-		"brand": {
-			"@type": "Brand",
-			"name": "Super73"
-		},
-		"description": "Lifestyle elektrische fiets met unieke retro-futuristische stijl en krachtige prestaties",
-		"category": "Electric Lifestyle Bike",
-		"offers": {
-			"@type": "Offer",
-			"priceCurrency": "EUR",
-			"price": "2199.00", 
-			"availability": "https://schema.org/InStock",
-			"seller": {
-				"@type": "Organization", 
-				"name": "Super73 Europe"
-			}
-		},
-		"aggregateRating": {
-			"@type": "AggregateRating",
-			"ratingValue": "4.3",
-			"reviewCount": "256"
-		}
-	}
-	</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Super73 S2",
+    "brand": {"@type": "Brand", "name": "Super73"},
+    "description": "Elektrische bromfiets L1e-B, 750W motor, 48V 14Ah (672Wh), retro motorfiets-looks.",
+    "category": "Elektrische bromfiets",
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "EUR",
+      "price": "3299",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
 
-	<main class="super73-landing">
-		<!-- Hero Section -->
-		<section class="hero bg-gradient-to-r from-orange-600 to-red-600 text-white py-20">
-			<div class="container mx-auto px-4">
-				<div class="grid md:grid-cols-2 gap-12 items-center">
-					<div>
-						<h1 class="text-4xl md:text-6xl font-bold mb-6">
-							Super73 S2
-							<span class="block text-2xl md:text-3xl text-orange-200">
-								Lifestyle Meets Performance
-							</span>
-						</h1>
-						<p class="text-xl mb-8 leading-relaxed">
-							De iconische Californiër nu in Nederland. 750W mid-drive motor,
-							unieke stijl en straatlegaal te maken met begrenzer.
-						</p>
-						<div class="flex flex-wrap gap-4">
-							<a href="#kopen" class="bg-white text-orange-600 hover:bg-gray-100 px-8 py-4 rounded-lg font-bold text-lg transition-colors">
-								🛒 Direct Kopen vanaf €2.199
-							</a>
-							<a href="#wetgeving" class="border-2 border-white hover:bg-white hover:text-orange-600 px-8 py-4 rounded-lg font-bold text-lg transition-colors">
-								📋 Nederlandse Wetgeving
-							</a>
-						</div>
-					</div>
-					<div class="relative">
-						<img src="/images/super73-s2.jpg" alt="Product afbeelding" class="w-full max-h-72 object-contain rounded-lg drop-shadow-xl bg-white bg-opacity-10 p-2" loading="eager" />
-						<div class="absolute top-4 right-4 bg-purple-500 text-white px-4 py-2 rounded-lg font-bold">
-							🎨 Lifestyle Icon
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
-		<!-- Compliance Alert -->
-		<ComplianceAlert
-			type="warning"
-			message="Super73 S2 heeft 32km/h topsnelheid - 25km/h begrenzer verplicht voor openbare weg in Nederland."
-			actionText="Bekijk Wetgeving" 
-			actionLink="#wetgeving"
-		/>
+    <nav class="text-sm text-gray-500 mb-6">
+      <a href="/" class="hover:underline">Home</a> &rsaquo;
+      <a href="/vergelijk" class="hover:underline">Vergelijk</a> &rsaquo;
+      Super73 S2 Nederland
+    </nav>
 
-		
-		<!-- Video Review -->
-		<section class="py-12 bg-white">
-			<div class="container mx-auto px-4">
-				<h2 class="text-3xl font-bold text-center mb-8">Video Review</h2>
-				<div class="max-w-3xl mx-auto">
-					<div class="relative w-full rounded-lg overflow-hidden shadow-lg" style="padding-bottom: 56.25%;">
-						<iframe
-							src="https://www.youtube-nocookie.com/embed/aFn5UNoDY3s?rel=0&modestbranding=1"
-							title="Video review"
-							class="absolute inset-0 w-full h-full"
-							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-							allowfullscreen
-							loading="lazy"
-						></iframe>
-					</div>
-					<p class="text-xs text-center text-gray-500 mt-2">Video via YouTube. Credits aan de originele maker.</p>
-				</div>
-			</div>
-		</section>
+    <h1 class="text-3xl font-bold text-gray-900 mb-2">Super73 S2 &mdash; Nederland</h1>
+    <p class="text-gray-500 text-sm mb-8">Bijgewerkt april 2026</p>
 
-		<!-- Quick Specs Grid -->
-		<section class="py-16 bg-gray-50">
-			<div class="container mx-auto px-4">
-				<div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-					<div class="bg-white p-6 rounded-lg shadow-md">
-						<div class="text-3xl font-bold text-orange-600 mb-2">750W</div>
-						<div class="text-gray-600">Mid-Drive Motor</div>
-					</div>
-					<div class="bg-white p-6 rounded-lg shadow-md">
-						<div class="text-3xl font-bold text-red-600 mb-2">65km</div>
-						<div class="text-gray-600">Max Bereik</div>
-					</div>
-					<div class="bg-white p-6 rounded-lg shadow-md">
-						<div class="text-3xl font-bold text-purple-600 mb-2">32kg</div>
-						<div class="text-gray-600">Gewicht</div>
-					</div>
-					<div class="bg-white p-6 rounded-lg shadow-md">
-						<div class="text-3xl font-bold text-green-600 mb-2">€2.199</div>
-						<div class="text-gray-600">Vanaf Prijs</div>
-					</div>
-				</div>
-			</div>
-		</section>
+    <!-- Legal category banner -->
+    <div class="bg-orange-50 border border-orange-200 rounded p-4 mb-8">
+      <p class="text-sm text-orange-800"><strong>Wettelijke categorie: L1e-B bromfiets.</strong> AM rijbewijs verplicht (vanaf 16 jaar). Geel kenteken en WA-verzekering verplicht. Helm verplicht. Niet op het fietspad.</p>
+    </div>
 
-		<!-- Why Super73 Section -->
-		<section class="py-16">
-			<div class="container mx-auto px-4">
-				<h2 class="text-4xl font-bold text-center mb-12">Waarom Super73 S2?</h2>
+    <!-- Specs -->
+    <h2 class="text-xl font-bold text-gray-900 mb-4">Technische specificaties</h2>
+    <div class="overflow-x-auto mb-8">
+      <table class="w-full text-sm border-collapse">
+        <tbody>
+          <tr class="border-b border-gray-100 hover:bg-gray-50">
+            <td class="py-2 pr-4 text-gray-500 w-40">Motor</td>
+            <td class="py-2 font-medium">750W mid-drive, borstelloze permanentmagneet</td>
+          </tr>
+          <tr class="border-b border-gray-100 hover:bg-gray-50">
+            <td class="py-2 pr-4 text-gray-500">Batterij</td>
+            <td class="py-2 font-medium">48V 14Ah (672Wh) lithium-ion</td>
+          </tr>
+          <tr class="border-b border-gray-100 hover:bg-gray-50">
+            <td class="py-2 pr-4 text-gray-500">Bereik</td>
+            <td class="py-2 font-medium">tot 64 km (ECO-modus, vlak terrein)</td>
+          </tr>
+          <tr class="border-b border-gray-100 hover:bg-gray-50">
+            <td class="py-2 pr-4 text-gray-500">Topsnelheid</td>
+            <td class="py-2 font-medium">45 km/h (EU-begrensd)</td>
+          </tr>
+          <tr class="border-b border-gray-100 hover:bg-gray-50">
+            <td class="py-2 pr-4 text-gray-500">Gewicht</td>
+            <td class="py-2 font-medium">41 kg</td>
+          </tr>
+          <tr class="border-b border-gray-100 hover:bg-gray-50">
+            <td class="py-2 pr-4 text-gray-500">Banden</td>
+            <td class="py-2 font-medium">Kenda 20x4.0 fat bike banden</td>
+          </tr>
+          <tr class="border-b border-gray-100 hover:bg-gray-50">
+            <td class="py-2 pr-4 text-gray-500">Laadtijd</td>
+            <td class="py-2 font-medium">ca. 6 uur (standaard lader)</td>
+          </tr>
+          <tr class="border-b border-gray-100 hover:bg-gray-50">
+            <td class="py-2 pr-4 text-gray-500">Homologatie</td>
+            <td class="py-2 font-medium">L1e-B &mdash; bromfiets (AM rijbewijs)</td>
+          </tr>
+          <tr class="border-b border-gray-100 hover:bg-gray-50">
+            <td class="py-2 pr-4 text-gray-500">Prijs (2026)</td>
+            <td class="py-2 font-medium">&euro;3.299 (adviesprijs Super73 EU)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-				<div class="grid lg:grid-cols-3 gap-8">
-					<div class="bg-orange-50 p-8 rounded-lg text-center">
-						<div class="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-6">
-							<span class="text-2xl">🎨</span>
-						</div>
-						<h3 class="text-xl font-bold mb-4">Unieke Stijl</h3>
-						<p class="text-gray-600">
-							Retro-futuristische design dat overal bekeken wordt. 
-							Meer dan vervoer - het is een statement.
-						</p>
-						<ul class="mt-4 space-y-2 text-sm text-orange-700">
-							<li>• Iconisch banana-zadel design</li>
-							<li>• Keuze uit 5 kleuren</li>
-							<li>• Instagram-waardig uiterlijk</li>
-						</ul>
-					</div>
+    <!-- What you need -->
+    <h2 class="text-xl font-bold text-gray-900 mb-4">Wat heb je nodig in Nederland?</h2>
+    <ul class="text-sm text-gray-700 space-y-2 mb-8">
+      <li><strong>Rijbewijs:</strong> AM rijbewijs (bromfietsrijbewijs). Minimale leeftijd 16 jaar. Kosten inclusief lessen: gemiddeld &euro;300&ndash;500.</li>
+      <li><strong>Kenteken:</strong> Geel RDW-kenteken verplicht. Aanvragen met CoC van Super73 en aankoopbewijs. Kosten: &euro;21,50.</li>
+      <li><strong>Verzekering:</strong> WA-verzekering verplicht. Gangbaar bij o.a. Interpolis, Nationale-Nederlanden en diverse bromfietsverzekeraars. Kosten: ca. &euro;80&ndash;180/jaar.</li>
+      <li><strong>Helm:</strong> Goedgekeurde bromfietshelm verplicht (ECE 22.06).</li>
+    </ul>
 
-					<div class="bg-red-50 p-8 rounded-lg text-center">
-						<div class="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center mx-auto mb-6">
-							<span class="text-2xl">⚡</span>
-						</div>
-						<h3 class="text-xl font-bold mb-4">Krachtige Prestaties</h3>
-						<p class="text-gray-600">
-							750W mid-drive motor voor superieure kracht en efficiëntie. 
-							Voelt aan als een lichte motorfiets.
-						</p>
-						<ul class="mt-4 space-y-2 text-sm text-red-700">
-							<li>• 750W Bafang mid-drive motor</li>
-							<li>• 80Nm koppel voor heuvels</li>
-							<li>• 32 km/h topsnelheid (onbegrensd)</li>
-						</ul>
-					</div>
+    <!-- Where to buy -->
+    <h2 class="text-xl font-bold text-gray-900 mb-4">Kopen &amp; dealers</h2>
+    <p class="text-sm text-gray-700 mb-4">
+      Super73 verkoopt rechtstreeks via hun Europese webshop en heeft een uitgebreid dealernetwerk in Nederland (39+ dealers, van Groningen tot Zeeland). Officieel: <a href="https://super73.eu" class="text-blue-600 hover:underline" rel="noopener">super73.eu &rarr;</a>
+    </p>
+    <p class="text-sm text-gray-700 mb-8">
+      Overzicht van Nederlandse Super73-dealers: <a href="/dealers#super73" class="text-blue-600 hover:underline">Super73 dealers Nederland &rarr;</a>
+    </p>
 
-					<div class="bg-purple-50 p-8 rounded-lg text-center">
-						<div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-6">
-							<span class="text-2xl">🌎</span>
-						</div>
-						<h3 class="text-xl font-bold mb-4">Community & Cultuur</h3>
-						<p class="text-gray-600">
-							Word onderdeel van de wereldwijde Super73 community. 
-							Nederlandse riders organiseren regelmatig meet-ups.
-						</p>
-						<ul class="mt-4 space-y-2 text-sm text-purple-700">
-							<li>• Actieve Nederlandse Facebook groep</li>
-							<li>• Maandelijkse group rides</li>
-							<li>• Exclusive Super73 accessoires</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</section>
+    <!-- FAQ -->
+    <h2 class="text-xl font-bold text-gray-900 mb-4">Veelgestelde vragen</h2>
 
-		<!-- Super73 vs Alternatives -->
-		<section class="py-16 bg-gray-50">
-			<div class="container mx-auto px-4">
-				<h2 class="text-4xl font-bold text-center mb-12">Super73 S2 vs Alternatieven</h2>
-				<div class="overflow-x-auto">
-					<table class="w-full bg-white rounded-lg shadow-lg">
-						<thead class="bg-gray-100">
-							<tr>
-								<th class="px-6 py-4 text-left font-bold">Model</th>
-								<th class="px-6 py-4 text-center font-bold">Prijs</th>
-								<th class="px-6 py-4 text-center font-bold">Motor</th>
-								<th class="px-6 py-4 text-center font-bold">Topsnelheid</th>
-								<th class="px-6 py-4 text-center font-bold">Stijl Factor</th>
-								<th class="px-6 py-4 text-center font-bold">Community</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr class="border-t bg-orange-50">
-								<td class="px-6 py-4 font-bold text-orange-600">Super73 S2</td>
-								<td class="px-6 py-4 text-center">€2.199</td>
-								<td class="px-6 py-4 text-center font-bold text-green-600">750W Mid-Drive</td>
-								<td class="px-6 py-4 text-center font-bold text-green-600">32 km/h</td>
-								<td class="px-6 py-4 text-center font-bold text-green-600">⭐⭐⭐⭐⭐</td>
-								<td class="px-6 py-4 text-center font-bold text-green-600">Wereldwijd</td>
-							</tr>
-							<tr class="border-t">
-								<td class="px-6 py-4 font-semibold">RadRunner Plus</td>
-								<td class="px-6 py-4 text-center text-green-600">€1.699</td>
-								<td class="px-6 py-4 text-center">750W Hub</td>
-								<td class="px-6 py-4 text-center">25 km/h</td>
-								<td class="px-6 py-4 text-center">⭐⭐⭐</td>
-								<td class="px-6 py-4 text-center">Beperkt</td>
-							</tr>
-							<tr class="border-t bg-gray-50">
-								<td class="px-6 py-4 font-semibold">Cowboy 4</td>
-								<td class="px-6 py-4 text-center">€2.490</td>
-								<td class="px-6 py-4 text-center">250W</td>
-								<td class="px-6 py-4 text-center">25 km/h</td>
-								<td class="px-6 py-4 text-center">⭐⭐⭐⭐</td>
-								<td class="px-6 py-4 text-center">Europa</td>
-							</tr>
-							<tr class="border-t">
-								<td class="px-6 py-4 font-semibold">VanMoof S3</td>
-								<td class="px-6 py-4 text-center">€1.998</td>
-								<td class="px-6 py-4 text-center">250W</td>
-								<td class="px-6 py-4 text-center">25 km/h</td>
-								<td class="px-6 py-4 text-center">⭐⭐⭐⭐</td>
-								<td class="px-6 py-4 text-center">Nederland</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
+    <details class="border border-gray-200 rounded mb-3">
+      <summary class="p-4 font-medium cursor-pointer select-none hover:bg-gray-50">Waarom is de Super73 S2 een bromfiets en geen gewone e-bike?</summary>
+      <div class="p-4 pt-0 text-gray-700 text-sm">
+        De S2 heeft een 750W motor die zonder trapondersteuning rijdt (throttle-only), en een topsnelheid van 45 km/h. Dat valt buiten de definitie van een reguliere e-bike (max 250W nominaal, alleen trapondersteuning). Daardoor is de S2 gehomologeerd als L1e-B bromfiets, met alle bijbehorende verplichtingen.
+      </div>
+    </details>
 
-				<div class="mt-8 bg-orange-50 p-6 rounded-lg">
-					<h3 class="font-bold text-orange-800 mb-3">💡 Waarom Super73 S2 kiezen:</h3>
-					<ul class="space-y-2 text-orange-700">
-						<li>• <strong>Krachtigste motor</strong> - 750W mid-drive vs 250W bij meeste concurrenten</li>
-						<li>• <strong>Unieke lifestyle appeal</strong> - Geen andere fiets ziet er zo uit</li>
-						<li>• <strong>Hogere topsnelheid</strong> - 32 km/h vs 25 km/h (onbegrensd gebruik)</li>
-						<li>• <strong>Sterke community</strong> - Wereldwijde fanbase en events</li>
-					</ul>
-				</div>
-			</div>
-		</section>
+    <details class="border border-gray-200 rounded mb-3">
+      <summary class="p-4 font-medium cursor-pointer select-none hover:bg-gray-50">Kan ik de Super73 S2 op het fietspad rijden?</summary>
+      <div class="p-4 pt-0 text-gray-700 text-sm">
+        Nee. Als L1e-B bromfiets is de Super73 S2 verboden op het fietspad. Je rijdt op de rijbaan, als ware het een bromfiets. Op wegen met een maximumsnelheid van 50 km/h of lager mag je ook op de rijbaan.
+      </div>
+    </details>
 
-		<!-- Dutch Legal Status Section -->
-		<section id="wetgeving" class="py-16">
-			<div class="container mx-auto px-4">
-				<h2 class="text-4xl font-bold text-center mb-12">Nederlandse Wetgeving & Kenteken</h2>
+    <details class="border border-gray-200 rounded mb-3">
+      <summary class="p-4 font-medium cursor-pointer select-none hover:bg-gray-50">Hoe lang gaat de batterij mee?</summary>
+      <div class="p-4 pt-0 text-gray-700 text-sm">
+        Super73 garandeert de batterij voor 2 jaar. In de praktijk gaan lithium-ion accu's van dit type 500&ndash;800 laadcycli mee voor ze onder 80% capaciteit zakken, wat bij dagelijks gebruik neerkomt op 3&ndash;5 jaar.
+      </div>
+    </details>
 
-				<div class="grid lg:grid-cols-2 gap-12">
-					<!-- Speed Limiter Required -->
-					<div class="bg-red-50 p-8 rounded-lg">
-						<h3 class="text-2xl font-bold mb-6 flex items-center">
-							⚠️ Begrenzer Verplicht
-						</h3>
-						<div class="space-y-4">
-							<div class="bg-red-100 p-4 rounded-lg">
-								<p class="font-semibold text-red-800 mb-2">Super73 S2 rijdt 32 km/h standaard:</p>
-								<ul class="text-sm space-y-1 text-red-700">
-									<li>• Voor openbare weg: 25km/h begrenzer vereist</li>
-									<li>• Zonder begrenzer alleen privéterrein</li>
-									<li>• Begrenzer omkeerbaar voor off-road</li>
-								</ul>
-							</div>
+    <details class="border border-gray-200 rounded mb-3">
+      <summary class="p-4 font-medium cursor-pointer select-none hover:bg-gray-50">Wat zijn alternatieven voor de Super73 S2 in hetzelfde prijssegment?</summary>
+      <div class="p-4 pt-0 text-gray-700 text-sm">
+        In het L1e-B segment rond &euro;3.000&ndash;5.000 zijn de voornaamste alternatieven de Sur-Ron Light Bee X (&euro;5.199, meer off-road gericht) en de Talaria Sting MX5 Pro (&euro;4.599, cross-stijl). Voor een meer traditioneel bromfiets-look is er de Segway Dirt eBike X260 (&euro;3.499). De Super73 onderscheidt zich met het retro chopper-design en de brede fat bike banden.
+      </div>
+    </details>
 
-							<div class="space-y-3">
-								<div>
-									<strong>Officiële Installateurs:</strong>
-									<p class="text-gray-600">Super73 Nederland (Amsterdam), E-Motion Store (Rotterdam), Bike Totaal dealers</p>
-								</div>
-								<div>
-									<strong>Kosten Begrenzer:</strong>
-									<p class="text-gray-600">€199-349 installatie + certificaat</p>
-								</div>
-								<div class="bg-yellow-100 p-3 rounded border-l-4 border-yellow-500">
-									<p class="text-yellow-800 text-sm">
-										💡 <strong>Tip:</strong> Veel dealers bieden begrenzer-pakket aan bij aankoop.
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
+    <div class="mt-8 pt-6 border-t border-gray-200">
+      <h3 class="font-semibold text-gray-800 mb-3">Gerelateerd</h3>
+      <ul class="space-y-2 text-sm text-blue-600">
+        <li><a href="/sur-ron-vs-talaria" class="hover:underline">Sur-Ron Light Bee X vs Talaria Sting &mdash; off-road alternatieven</a></li>
+        <li><a href="/elektrische-crosser-rijbewijs" class="hover:underline">Welk rijbewijs heb je nodig?</a></li>
+        <li><a href="/speed-pedelec-vs-bromfiets" class="hover:underline">Categorievergelijking: speed pedelec vs bromfiets</a></li>
+        <li><a href="/vergelijk" class="hover:underline">Alle modellen vergelijken op prijs en specs</a></li>
+      </ul>
+    </div>
 
-					<!-- Legal Requirements -->
-					<div class="bg-blue-50 p-8 rounded-lg">
-						<h3 class="text-2xl font-bold mb-6 flex items-center">
-							⚖️ Snorfiets Vereisten
-						</h3>
-						<div class="space-y-4">
-							<div class="flex items-start gap-4">
-								<span class="bg-blue-100 p-2 rounded">🎂</span>
-								<div>
-									<strong>Minimumleeftijd 16 jaar</strong>
-									<p class="text-gray-600">Geen rijbewijs nodig, wel geldig identiteitsbewijs meevoeren.</p>
-								</div>
-							</div>
-							<div class="flex items-start gap-4">
-								<span class="bg-blue-100 p-2 rounded">🛡️</span>
-								<div>
-									<strong>WA Verzekering Verplicht</strong>
-									<p class="text-gray-600">€95-180/jaar. ANWB, Allianz en FBTO hebben goede tarieven.</p>
-								</div>
-							</div>
-							<div class="flex items-start gap-4">
-								<span class="bg-blue-100 p-2 rounded">🏷️</span>
-								<div>
-									<strong>RDW Kenteken</strong>
-									<p class="text-gray-600">€67,20 eerste keer + €8,60/maand. COC-papieren bij Super73 dealers.</p>
-								</div>
-							</div>
-							<div class="flex items-start gap-4">
-								<span class="bg-blue-100 p-2 rounded">⛑️</span>
-								<div>
-									<strong>ECE-22.05 Helm</strong>
-									<p class="text-gray-600">Bromfietshelm verplicht. Super73 verkoopt matching helmen.</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Total Cost Calculator -->
-				<div class="mt-12 bg-gray-100 p-8 rounded-lg">
-					<h3 class="text-2xl font-bold mb-6 text-center">🧮 Totale Kosten Overzicht</h3>
-					<div class="grid md:grid-cols-2 gap-8">
-						<div>
-							<h4 class="font-bold mb-4">Eenmalige Kosten:</h4>
-							<div class="space-y-2 text-sm">
-								<div class="flex justify-between">
-									<span>Super73 S2</span>
-									<span class="font-semibold">€2.199</span>
-								</div>
-								<div class="flex justify-between">
-									<span>25km/h Begrenzer + Certificaat</span>
-									<span class="font-semibold">€274</span>
-								</div>
-								<div class="flex justify-between">
-									<span>RDW Kenteken (eerste keer)</span>
-									<span class="font-semibold">€67</span>
-								</div>
-								<div class="flex justify-between">
-									<span>Super73 Helm + Accessoires</span>
-									<span class="font-semibold">€149</span>
-								</div>
-								<div class="border-t pt-2 flex justify-between font-bold text-lg">
-									<span>Totaal Starterskosten:</span>
-									<span class="text-orange-600">€2.689</span>
-								</div>
-							</div>
-						</div>
-						<div>
-							<h4 class="font-bold mb-4">Jaarlijkse Kosten:</h4>
-							<div class="space-y-2 text-sm">
-								<div class="flex justify-between">
-									<span>WA Verzekering (ANWB basis)</span>
-									<span class="font-semibold">€147/jaar</span>
-								</div>
-								<div class="flex justify-between">
-									<span>RDW Kenteken (maandelijks)</span>
-									<span class="font-semibold">€103/jaar</span>
-								</div>
-								<div class="flex justify-between">
-									<span>Elektriciteitskosten (2500km/jaar)</span>
-									<span class="font-semibold">€31/jaar</span>
-								</div>
-								<div class="flex justify-between">
-									<span>Onderhoud (ketting, banden, service)</span>
-									<span class="font-semibold">€190/jaar</span>
-								</div>
-								<div class="border-t pt-2 flex justify-between font-bold text-lg">
-									<span>Totaal Per Jaar:</span>
-									<span class="text-orange-600">€471</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- Where to Buy Section -->
-		<section id="kopen" class="py-16 bg-gray-50">
-			<div class="container mx-auto px-4">
-				<h2 class="text-4xl font-bold text-center mb-12">🛒 Waar te Kopen in Nederland</h2>
-
-				<!-- Official Dealer Network -->
-				<div class="grid lg:grid-cols-3 gap-8 mb-12">
-					<div class="bg-white p-6 rounded-lg shadow-md">
-						<div class="flex items-center mb-4">
-							<span class="font-bold text-gray-700 mr-4">[Super73]</span>
-							<div>
-								<h3 class="font-bold">Super73 Europe</h3>
-								<span class="text-sm text-orange-600">Officiële Website</span>
-							</div>
-						</div>
-						<p class="text-gray-600 mb-4">Direct van de fabrikant. Nederlandse klantenservice en full warranty.</p>
-						<div class="space-y-2 text-sm mb-4">
-							<div>✅ 2 jaar internationale garantie</div>
-							<div>✅ Gratis levering in Nederland</div>
-							<div>✅ Officiële accessoires</div>
-						</div>
-						<a href={affiliateLinks.super73Official}
-						   class="block bg-orange-600 hover:bg-orange-700 text-white text-center py-3 rounded-lg font-semibold transition-colors"
-						   target="_blank" rel="noopener">
-							Bestellen bij Super73
-						</a>
-					</div>
-
-					<div class="bg-white p-6 rounded-lg shadow-md">
-						<div class="flex items-center mb-4">
-							<span class="font-bold text-gray-700 mr-4">[Bikester]</span>
-							<div>
-								<h3 class="font-bold">Bikester Nederland</h3>
-								<span class="text-sm text-green-600">Geautoriseerde Dealer</span>
-							</div>
-						</div>
-						<p class="text-gray-600 mb-4">Grootste online fietswinkel van Europa. Super73 specialist met service.</p>
-						<div class="space-y-2 text-sm mb-4">
-							<div>✅ Proefrit mogelijk (Amsterdam)</div>
-							<div>✅ 30 dagen retourrecht</div>
-							<div>✅ Begrenzer service beschikbaar</div>
-						</div>
-						<a href={affiliateLinks.bikester}
-						   class="block bg-green-600 hover:bg-green-700 text-white text-center py-3 rounded-lg font-semibold transition-colors"
-						   target="_blank" rel="noopener">
-							Bekijk bij Bikester
-						</a>
-					</div>
-
-					<div class="bg-white p-6 rounded-lg shadow-md">
-						<div class="flex items-center mb-4">
-							<span class="font-bold text-gray-700 mr-4">[Coolblue]</span>
-							<div>
-								<h3 class="font-bold">Coolblue</h3>
-								<span class="text-sm text-blue-600">Nederlandse Service</span>
-							</div>
-						</div>
-						<p class="text-gray-600 mb-4">Bekende Nederlandse webwinkel. Snelle levering en installatie service.</p>
-						<div class="space-y-2 text-sm mb-4">
-							<div>✅ Gratis installatie service</div>
-							<div>✅ Nederlandse klantenservice</div>
-							<div>✅ Voor 23:59 besteld = morgen in huis</div>
-						</div>
-						<a href={affiliateLinks.coolblue}
-						   class="block bg-blue-600 hover:bg-blue-700 text-white text-center py-3 rounded-lg font-semibold transition-colors"
-						   target="_blank" rel="noopener">
-							Bekijk bij Coolblue
-						</a>
-					</div>
-				</div>
-
-				<!-- Price Comparison Table -->
-				<div class="bg-white rounded-lg shadow-lg overflow-hidden mb-8">
-					<div class="bg-gray-100 px-6 py-4 border-b">
-						<h3 class="text-xl font-bold">💰 Prijsvergelijking Super73 S2 Nederland</h3>
-					</div>
-					<div class="overflow-x-auto">
-						<table class="w-full">
-							<thead class="bg-gray-50">
-								<tr>
-									<th class="px-6 py-3 text-left font-semibold">Dealer</th>
-									<th class="px-6 py-3 text-center font-semibold">Basisprijs</th>
-									<th class="px-6 py-3 text-center font-semibold">Incl. Setup</th>
-									<th class="px-6 py-3 text-center font-semibold">Levertijd</th>
-									<th class="px-6 py-3 text-center font-semibold">Voordelen</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr class="border-t">
-									<td class="px-6 py-4 font-semibold">Super73 Europe</td>
-									<td class="px-6 py-4 text-center text-green-600 font-bold">€2.199</td>
-									<td class="px-6 py-4 text-center">€2.473</td>
-									<td class="px-6 py-4 text-center text-green-600">1-2 weken</td>
-									<td class="px-6 py-4 text-sm text-gray-600">Officieel, beste garantie, accessoires</td>
-								</tr>
-								<tr class="border-t bg-gray-50">
-									<td class="px-6 py-4 font-semibold">Bikester</td>
-									<td class="px-6 py-4 text-center">€2.249</td>
-									<td class="px-6 py-4 text-center font-bold">€2.498</td>
-									<td class="px-6 py-4 text-center">1-2 weken</td>
-									<td class="px-6 py-4 text-sm text-gray-600">Proefrit, service, retourrecht</td>
-								</tr>
-								<tr class="border-t">
-									<td class="px-6 py-4 font-semibold">Coolblue</td>
-									<td class="px-6 py-4 text-center">€2.299</td>
-									<td class="px-6 py-4 text-center">€2.598</td>
-									<td class="px-6 py-4 text-center text-green-600">1 dag</td>
-									<td class="px-6 py-4 text-sm text-gray-600">Snelle levering, installatie</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
-
-				<div class="bg-orange-50 p-6 rounded-lg">
-					<h3 class="font-bold text-orange-800 mb-3">💡 Aankoop tips Super73 S2:</h3>
-					<ul class="space-y-2 text-orange-700">
-						<li>• <strong>Wacht op acties</strong> - Super73 heeft regelmatig €200-400 kortingen</li>
-						<li>• <strong>Kies kleur zorgvuldig</strong> - Populaire kleuren houden waarde beter</li>
-						<li>• <strong>Accessoires meenemen</strong> - Pakketdeals zijn vaak voordeliger</li>
-						<li>• <strong>Begrenzer vooraf regelen</strong> - Sommige dealers leveren standaard straatlegaal</li>
-					</ul>
-				</div>
-			</div>
-		</section>
-
-		<!-- FAQ Section -->
-		<section class="py-16">
-			<div class="container mx-auto px-4">
-				<h2 class="text-4xl font-bold text-center mb-12">❓ Veelgestelde Vragen</h2>
-
-				<div class="grid lg:grid-cols-2 gap-8">
-					<div class="space-y-6">
-						<div class="bg-white p-6 rounded-lg shadow-md">
-							<h3 class="font-bold text-lg mb-3">Waarom is Super73 duurder dan andere e-bikes?</h3>
-							<p class="text-gray-600">Unieke design, premium materialen, krachtige 750W mid-drive motor en sterke internationale garantie rechtvaardigen de prijs.</p>
-						</div>
-
-						<div class="bg-white p-6 rounded-lg shadow-md">
-							<h3 class="font-bold text-lg mb-3">Kan ik passagiers meenemen op de S2?</h3>
-							<p class="text-gray-600">Nee, de S2 heeft geen passagiersvoorziening. Voor passagiers moet je de S2 Galaxy kiezen (€400 extra).</p>
-						</div>
-
-						<div class="bg-white p-6 rounded-lg shadow-md">
-							<h3 class="font-bold text-lg mb-3">Hoe actief is de Nederlandse Super73 community?</h3>
-							<p class="text-gray-600">Zeer actief! Facebook groep "Super73 Nederland" heeft 500+ leden met maandelijkse group rides.</p>
-						</div>
-
-						<div class="bg-white p-6 rounded-lg shadow-md">
-							<h3 class="font-bold text-lg mb-3">Is onderhoud duur bij Super73?</h3>
-							<p class="text-gray-600">Gemiddeld €190/jaar - iets meer dan gewone e-bikes door prestatie-onderdelen maar nog steeds betaalbaar.</p>
-						</div>
-					</div>
-
-					<div class="space-y-6">
-						<div class="bg-white p-6 rounded-lg shadow-md">
-							<h3 class="font-bold text-lg mb-3">Welke kleur Super73 S2 is het populairst?</h3>
-							<p class="text-gray-600">Matte Black en Galaxy Blue zijn populairst in Nederland. Limited editions houden waarde het best.</p>
-						</div>
-
-						<div class="bg-white p-6 rounded-lg shadow-md">
-							<h3 class="font-bold text-lg mb-3">Kan ik zelf de begrenzer er af halen?</h3>
-							<p class="text-gray-600">Technisch wel mogelijk, maar illegaal op openbare weg. Boete €390 + risico voor verzekering.</p>
-						</div>
-
-						<div class="bg-white p-6 rounded-lg shadow-md">
-							<h3 class="font-bold text-lg mb-3">Hoe lang gaat de batterij mee?</h3>
-							<p class="text-gray-600">40-65km afhankelijk van rijstijl. Bij normaal gebruik 800+ oplaadcycli = 3-5 jaar batterijlevensduur.</p>
-						</div>
-
-						<div class="bg-white p-6 rounded-lg shadow-md">
-							<h3 class="font-bold text-lg mb-3">Zijn Super73 accessoires beschikbaar in Nederland?</h3>
-							<p class="text-gray-600">Ja, via Super73 Europe en geautoriseerde dealers. Helmen, tassen en performance upgrades beschikbaar.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		
-	</main>
+  </div>
 </Layout>
-
-<style>
-	.hero {
-		background-image: linear-gradient(135deg, rgba(0,0,0,0.6), rgba(0,0,0,0.3)), url('/images/super73-hero-bg.jpg');
-		background-size: cover;
-		background-position: center;
-	}
-
-	/* Mobile optimization */
-	@media (max-width: 768px) {
-		.hero h1 {
-			font-size: 2.5rem;
-		}
-
-		.grid {
-			gap: 1rem;
-		}
-
-		.container {
-			padding-left: 1rem;
-			padding-right: 1rem;
-		}
-	}
-
-	/* Accessibility improvements */
-	a:focus, button:focus {
-		outline: 2px solid #EA580C;
-		outline-offset: 2px;
-	}
-
-	/* Print styles */
-	@media print {
-		.hero, .bg-gradient-to-r {
-			background: white !important;
-			color: black !important;
-		}
-	}
-</style>
