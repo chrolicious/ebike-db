@@ -161,7 +161,7 @@ export const eCrossers: ECrosser[] = [
 		maxSpeed: 65,
 		range: '50-70 km',
 		motor: '18kW KTM Motor',
-		battery: '50V 50Ah',
+		battery: '50.4V / 3.9 kWh (3x KTM PowerPack)',
 		weight: '111 kg',
 		legalStatus: {
 			rijbewijs: 'A2 motorrijbewijs (18kW, >11kW grens)',
@@ -187,7 +187,7 @@ export const eCrossers: ECrosser[] = [
 		warranty: '2 jaar',
 		serviceNetwork: 'Uitgebreid',
 		homologation: true,
-		certifications: ['L1e-B', 'CE', 'ECE']
+		certifications: ['L3e', 'CE', 'ECE R75']
 	},
 	{
 		id: 'stealth-h52',
@@ -297,7 +297,7 @@ export const eCrossers: ECrosser[] = [
 		warranty: '2 jaar',
 		serviceNetwork: 'Uitgebreid',
 		homologation: true,
-		certifications: ['L1e-B', 'CE', 'ECE']
+		certifications: ['L3e', 'CE', 'ECE R75']
 	},
 	{
 		id: 'ubco-2x2-work-bike',
@@ -381,8 +381,8 @@ export const eCrossers: ECrosser[] = [
 		maxSpeed: 45,
 		range: '50-75 km',
 		motor: '2000W Super73 Motor',
-		battery: '48V 21Ah',
-		weight: '33 kg',
+		battery: '48V 14Ah (672Wh)',
+		weight: '41 kg',
 		legalStatus: {
 			rijbewijs: 'AM bromfietsrijbewijs (geel kenteken, geen fietspad)',
 			verzekering: true,
@@ -556,9 +556,9 @@ export const eCrossers: ECrosser[] = [
 		category: 'Speed Pedelec',
 		maxSpeed: 45,
 		range: '80-120 km',
-		motor: '2500W Bosch Cargo Line',
-		battery: '48V 25Ah Bosch',
-		weight: '35 kg',
+		motor: '250W Bosch Cargo Line (85 Nm)',
+		battery: '36V 17.4Ah Bosch (625Wh PowerTube)',
+		weight: '30 kg',
 		legalStatus: {
 			rijbewijs: 'Geen rijbewijs vereist',
 			verzekering: true,
@@ -588,8 +588,8 @@ export const eCrossers: ECrosser[] = [
 		category: 'Speed Pedelec',
 		maxSpeed: 45,
 		range: '70-100 km',
-		motor: '2500W Yamaha PW-X3',
-		battery: '48V 22.5Ah',
+		motor: '250W Yamaha PW-X3 (85 Nm)',
+		battery: '36V 14Ah (504Wh)',
 		weight: '32 kg',
 		legalStatus: {
 			rijbewijs: 'Geen rijbewijs vereist',
@@ -620,9 +620,9 @@ export const eCrossers: ECrosser[] = [
 		category: 'Speed Pedelec',
 		maxSpeed: 45,
 		range: '60-90 km',
-		motor: '2300W Shimano EP8',
-		battery: '48V 20Ah',
-		weight: '30 kg',
+		motor: '250W Shimano EP8 RS (85 Nm)',
+		battery: '36V 13.8Ah (504Wh)',
+		weight: '21 kg',
 		legalStatus: {
 			rijbewijs: 'Geen rijbewijs vereist',
 			verzekering: true,
@@ -652,9 +652,9 @@ export const eCrossers: ECrosser[] = [
 		category: 'Speed Pedelec',
 		maxSpeed: 45,
 		range: '80-130 km',
-		motor: '1950W Specialized SL 1.1',
-		battery: '48V 19.2Ah',
-		weight: '17 kg',
+		motor: '240W Specialized SL 1.1 (EU assist)',
+		battery: '48V 6.7Ah (320Wh)',
+		weight: '14.9 kg',
 		legalStatus: {
 			rijbewijs: 'Geen rijbewijs vereist',
 			verzekering: true,
@@ -684,9 +684,9 @@ export const eCrossers: ECrosser[] = [
 		category: 'Speed Pedelec',
 		maxSpeed: 45,
 		range: '75-110 km',
-		motor: '2500W Bosch Performance Speed',
-		battery: '48V 25Ah Bosch',
-		weight: '27 kg',
+		motor: '250W Bosch Performance Speed (85 Nm)',
+		battery: '36V 17.4Ah Bosch (625Wh PowerTube)',
+		weight: '25 kg',
 		legalStatus: {
 			rijbewijs: 'Geen rijbewijs vereist',
 			verzekering: true,
