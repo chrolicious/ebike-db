@@ -240,7 +240,7 @@ const serialized = JSON.stringify(eCrossers);
   // --- Filter key from rijbewijs ---
   function filterKey(model) {
     const r = (model.legalStatus?.rijbewijs || '').toLowerCase();
-    if (!r || r === 'geen' || r === 'niet vereist') return 'geen';
+    if (!r || r.startsWith('geen') || r.startsWith('niet vereist')) return 'geen';
     if (r.startsWith('am')) return 'am';
     return 'a2a';
   }
