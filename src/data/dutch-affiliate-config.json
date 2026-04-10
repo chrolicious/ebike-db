@@ -9,7 +9,7 @@
       "conversionRate": "2.1%",
       "trackingCode": "affiliate=ebike-db-001",
       "deepLinks": {
-        "surronLightBee": "https://mediamarkt.nl/surron-light-bee-x?affiliate=ebike-db-001&utm_source=ebikedb&utm_medium=affiliate&utm_campaign=surron-nl-2026",
+        "surronLightBee": "https://mediamarkt.nl/surron-light-bee-x?affiliate=ebike-db-001&utm_source=crossergids&utm_medium=affiliate&utm_campaign=surron-nl-2026",
         "accessories": "https://mediamarkt.nl/e-bike-accessoires?affiliate=ebike-db-001&category=ebike"
       },
       "pros": [
@@ -31,11 +31,11 @@
       "averageOrderValue": "€5299",
       "expectedCommission": "€212-424",
       "conversionRate": "3.7%",
-      "trackingCode": "tag=ebikedb-21",
+      "trackingCode": "tag=crossergids-21",
       "deepLinks": {
-        "surronLightBee": "https://amazon.nl/dp/B08XYZ123?tag=ebikedb-21&linkCode=as2&campaign=surron-nl",
-        "helmets": "https://amazon.nl/s?k=ECE+helm+bromfiets&tag=ebikedb-21",
-        "accessories": "https://amazon.nl/s?k=surron+accessoires&tag=ebikedb-21"
+        "surronLightBee": "https://amazon.nl/dp/B08XYZ123?tag=crossergids-21&linkCode=as2&campaign=surron-nl",
+        "helmets": "https://amazon.nl/s?k=ECE+helm+bromfiets&tag=crossergids-21",
+        "accessories": "https://amazon.nl/s?k=surron+accessoires&tag=crossergids-21"
       },
       "pros": [
         "Hoge conversieratio door vertrouwen",
@@ -56,10 +56,10 @@
       "averageOrderValue": "€5399",
       "expectedCommission": "€324-432",
       "conversionRate": "1.8%",
-      "trackingCode": "ref=ebikedb",
+      "trackingCode": "ref=crossergids",
       "deepLinks": {
-        "surronLightBee": "https://dcc-ebikes.nl/surron-light-bee-x?ref=ebikedb&source=affiliate&campaign=nl-surron-2026",
-        "servicePackage": "https://dcc-ebikes.nl/25kmh-begrenzer-service?ref=ebikedb"
+        "surronLightBee": "https://dcc-ebikes.nl/surron-light-bee-x?ref=crossergids&source=affiliate&campaign=nl-surron-2026",
+        "servicePackage": "https://dcc-ebikes.nl/25kmh-begrenzer-service?ref=crossergids"
       },
       "pros": [
         "Hoogste commissie percentage",
@@ -86,10 +86,10 @@
       "averageOrderValue": "€5299",
       "expectedCommission": "€265-371",
       "conversionRate": "2.4%",
-      "trackingCode": "partner=ebikedb",
+      "trackingCode": "partner=crossergids",
       "deepLinks": {
-        "surronLightBee": "https://elektrisch-motorrijden.nl/surron-light-bee?partner=ebikedb&utm_source=affiliate&utm_campaign=surron-landing-nl",
-        "financing": "https://elektrisch-motorrijden.nl/financiering?partner=ebikedb&product=surron"
+        "surronLightBee": "https://elektrisch-motorrijden.nl/surron-light-bee?partner=crossergids&utm_source=affiliate&utm_campaign=surron-landing-nl",
+        "financing": "https://elektrisch-motorrijden.nl/financiering?partner=crossergids&product=surron"
       },
       "pros": [
         "Landelijke dekking Nederland", 
@@ -223,13 +223,13 @@
       "title": "Gratis Nederlandse Wetgeving Gids (PDF)",
       "description": "Complete checklist: van aankoop tot eerste rit",
       "leadMagnet": true,
-      "emailCapture": "ebike-legal-nl@ebikedb.com"
+      "emailCapture": "ebike-legal-nl@crossergids.com"
     },
     "buyersGuide": {
       "title": "Surron vs Talaria Vergelijking (2026)",
       "description": "Objectieve analyse van alle e-crossers onder €6000",
       "leadMagnet": true, 
-      "emailCapture": "ebike-buyers-guide@ebikedb.com"
+      "emailCapture": "ebike-buyers-guide@crossergids.com"
     },
     "maintenanceGuide": {
       "title": "Onderhoudsschema E-crosser Nederland",
