@@ -12,10 +12,10 @@ import Layout from '../layouts/Layout.astro';
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
         <!-- Text -->
         <div>
-          <p class="text-blue-300 text-sm font-semibold uppercase tracking-widest mb-3">Nederland, bijgewerkt april 2026</p>
+          <p class="text-blue-300 text-sm font-semibold uppercase tracking-widest mb-3">Laatst bijgewerkt in april 2026</p>
           <h1 class="text-4xl md:text-5xl font-extrabold mb-5 leading-tight">
             Elektrische crossers<br>
-            <span class="text-blue-400">vergeleken voor NL</span>
+            <span class="text-blue-400">vergeleken</span>
           </h1>
           <p class="text-lg text-blue-100 mb-8 max-w-xl">
             Specs, prijzen en wetgeving per model, met rijbewijs- en kentekenvereisten erbij.
@@ -34,7 +34,7 @@ import Layout from '../layouts/Layout.astro';
           <div class="absolute inset-0 bg-blue-500/10 rounded-full blur-3xl scale-75"></div>
           <img
             src="/images/hero-crosser.png"
-            alt="Zero FX elektrische crosser"
+            alt="Elektrische crosser"
             class="relative max-h-80 w-auto object-contain"
             loading="eager"
           />
@@ -56,57 +56,60 @@ import Layout from '../layouts/Layout.astro';
         <div class="text-xs text-gray-500 mt-1">Modellen</div>
       </div>
       <div>
-        <div class="text-3xl font-extrabold text-blue-600">NL</div>
-        <div class="text-xs text-gray-500 mt-1">Wetgeving</div>
+        <div class="text-3xl font-extrabold text-blue-600">3</div>
+        <div class="text-xs text-gray-500 mt-1">Rijbewijscategorieën</div>
       </div>
     </div>
 
     <!-- Category explainer -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-14">
-      <!-- Green: no license -->
-      <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
-        <div class="h-1.5 bg-green-500"></div>
-        <div class="p-5">
-          <div class="flex items-center gap-3 mb-2">
-            <span class="w-7 h-7 rounded-full bg-green-100 flex items-center justify-center text-green-700 text-sm font-bold flex-shrink-0">&#10003;</span>
-            <h3 class="font-bold text-gray-900">Pedelec / e-bike</h3>
+    <div class="bg-gray-50 rounded-2xl p-6 mb-14">
+      <p class="text-xs font-semibold uppercase tracking-wide text-gray-400 mb-5">Welke categorie past bij jou?</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <!-- Green: no license -->
+        <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+          <div class="h-1.5 bg-green-500"></div>
+          <div class="p-5">
+            <div class="flex items-center gap-3 mb-2">
+              <span class="w-7 h-7 rounded-full bg-green-100 flex items-center justify-center text-green-700 text-sm font-bold flex-shrink-0">&#10003;</span>
+              <h3 class="font-bold text-gray-900">Pedelec / e-bike</h3>
+            </div>
+            <p class="text-sm text-gray-600 mb-1"><strong>Geen rijbewijs nodig.</strong> Max. 25 km/h, 250W, trapondersteuning. Fietspad toegestaan.</p>
+            <a href="/vergelijk" class="text-green-700 text-xs font-semibold hover:underline">Bekijk modellen &rarr;</a>
           </div>
-          <p class="text-sm text-gray-600 mb-1"><strong>Geen rijbewijs nodig.</strong> Max. 25 km/h, 250W, trapondersteuning. Fietspad toegestaan.</p>
-          <a href="/vergelijk" class="text-green-700 text-xs font-semibold hover:underline">Bekijk modellen &rarr;</a>
         </div>
-      </div>
 
-      <!-- Orange: AM license -->
-      <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
-        <div class="h-1.5 bg-orange-400"></div>
-        <div class="p-5">
-          <div class="flex items-center gap-3 mb-2">
-            <span class="w-7 h-7 rounded-full bg-orange-100 flex items-center justify-center text-orange-700 text-sm font-bold flex-shrink-0">AM</span>
-            <h3 class="font-bold text-gray-900">Bromfiets (L1e-B)</h3>
+        <!-- Orange: AM license -->
+        <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+          <div class="h-1.5 bg-orange-400"></div>
+          <div class="p-5">
+            <div class="flex items-center gap-3 mb-2">
+              <span class="w-7 h-7 rounded-full bg-orange-100 flex items-center justify-center text-orange-700 text-sm font-bold flex-shrink-0">AM</span>
+              <h3 class="font-bold text-gray-900">Bromfiets (L1e-B)</h3>
+            </div>
+            <p class="text-sm text-gray-600 mb-1"><strong>AM rijbewijs</strong> (vanaf 16 jaar). Geel kenteken &euro;21,50. Max. 45 km/h. Helm verplicht.</p>
+            <a href="/vergelijk" class="text-orange-700 text-xs font-semibold hover:underline">Bekijk modellen &rarr;</a>
           </div>
-          <p class="text-sm text-gray-600 mb-1"><strong>AM rijbewijs</strong> (vanaf 16 jaar). Geel kenteken &euro;21,50. Max. 45 km/h. Helm verplicht.</p>
-          <a href="/vergelijk" class="text-orange-700 text-xs font-semibold hover:underline">Bekijk modellen &rarr;</a>
         </div>
-      </div>
 
-      <!-- Red: A/A2 license -->
-      <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
-        <div class="h-1.5 bg-red-500"></div>
-        <div class="p-5">
-          <div class="flex items-center gap-3 mb-2">
-            <span class="w-7 h-7 rounded-full bg-red-100 flex items-center justify-center text-red-700 text-sm font-bold flex-shrink-0">A</span>
-            <h3 class="font-bold text-gray-900">Motorfiets (L3e)</h3>
+        <!-- Red: A/A2 license -->
+        <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+          <div class="h-1.5 bg-red-500"></div>
+          <div class="p-5">
+            <div class="flex items-center gap-3 mb-2">
+              <span class="w-7 h-7 rounded-full bg-red-100 flex items-center justify-center text-red-700 text-sm font-bold flex-shrink-0">A</span>
+              <h3 class="font-bold text-gray-900">Motorfiets (L3e)</h3>
+            </div>
+            <p class="text-sm text-gray-600 mb-1"><strong>A of A2 rijbewijs</strong> verplicht. Kenteken, WA-verzekering en motorhelm verplicht.</p>
+            <a href="/vergelijk" class="text-red-700 text-xs font-semibold hover:underline">Bekijk modellen &rarr;</a>
           </div>
-          <p class="text-sm text-gray-600 mb-1"><strong>A of A2 rijbewijs</strong> verplicht. Kenteken, WA-verzekering en motorhelm verplicht.</p>
-          <a href="/vergelijk" class="text-red-700 text-xs font-semibold hover:underline">Bekijk modellen &rarr;</a>
         </div>
       </div>
     </div>
 
-    <!-- Nederlandse Modellen Section -->
+    <!-- Koopgidsen Section -->
     <section id="modellen" class="mb-16">
       <div class="flex items-center justify-between mb-8">
-        <h2 class="text-2xl font-bold text-gray-900">Nederlandse koopgidsen</h2>
+        <h2 class="text-2xl font-bold text-gray-900">Koopgidsen</h2>
         <a href="/vergelijk" class="text-sm text-blue-600 font-semibold hover:underline hidden sm:inline">Alle modellen vergelijken &rarr;</a>
       </div>
 
@@ -114,8 +117,11 @@ import Layout from '../layouts/Layout.astro';
 
         <!-- Segway X260 - L1e-B -->
         <div class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-shadow border border-gray-100 border-t-4 border-t-orange-400">
-          <div class="p-6">
-            <div class="flex items-start justify-between mb-3">
+          <div class="bg-gray-50 h-44 flex items-center justify-center px-4">
+            <img src="/images/segway-x260.png" alt="Segway Dirt eBike X260" class="max-h-36 w-auto object-contain" loading="lazy" />
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between mb-2">
               <h3 class="text-lg font-bold text-gray-900 leading-snug">Segway Dirt eBike X260</h3>
               <span class="text-xl font-extrabold text-gray-900 ml-3 whitespace-nowrap">&euro;3.499</span>
             </div>
@@ -129,8 +135,11 @@ import Layout from '../layouts/Layout.astro';
 
         <!-- Super73 S2 - Pedelec -->
         <div class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-shadow border border-gray-100 border-t-4 border-t-green-500">
-          <div class="p-6">
-            <div class="flex items-start justify-between mb-3">
+          <div class="bg-gray-50 h-44 flex items-center justify-center px-4">
+            <img src="/images/super73-s2.jpg" alt="Super73 S2" class="max-h-36 w-auto object-contain" loading="lazy" />
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between mb-2">
               <h3 class="text-lg font-bold text-gray-900 leading-snug">Super73 S2</h3>
               <span class="text-xl font-extrabold text-gray-900 ml-3 whitespace-nowrap">&euro;3.299</span>
             </div>
@@ -144,8 +153,11 @@ import Layout from '../layouts/Layout.astro';
 
         <!-- Talaria Sting - L1e-B -->
         <div class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-shadow border border-gray-100 border-t-4 border-t-orange-400">
-          <div class="p-6">
-            <div class="flex items-start justify-between mb-3">
+          <div class="bg-gray-50 h-44 flex items-center justify-center px-4">
+            <img src="/images/talaria-sting-mx5-pro.png" alt="Talaria Sting MX5 Pro" class="max-h-36 w-auto object-contain" loading="lazy" />
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between mb-2">
               <h3 class="text-lg font-bold text-gray-900 leading-snug">Talaria Sting MX5 Pro</h3>
               <span class="text-xl font-extrabold text-gray-900 ml-3 whitespace-nowrap">&euro;4.599</span>
             </div>
@@ -159,8 +171,11 @@ import Layout from '../layouts/Layout.astro';
 
         <!-- KTM Freeride E-XC - L3e -->
         <div class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-shadow border border-gray-100 border-t-4 border-t-red-500">
-          <div class="p-6">
-            <div class="flex items-start justify-between mb-3">
+          <div class="bg-gray-50 h-44 flex items-center justify-center px-4">
+            <img src="/images/ktm-freeride-e-xc.jpg" alt="KTM Freeride E-XC" class="max-h-36 w-auto object-contain" loading="lazy" />
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between mb-2">
               <h3 class="text-lg font-bold text-gray-900 leading-snug">KTM Freeride E-XC</h3>
               <span class="text-xl font-extrabold text-gray-900 ml-3 whitespace-nowrap">&euro;11.999</span>
             </div>
@@ -174,8 +189,11 @@ import Layout from '../layouts/Layout.astro';
 
         <!-- Zero FX - L3e -->
         <div class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-shadow border border-gray-100 border-t-4 border-t-red-500">
-          <div class="p-6">
-            <div class="flex items-start justify-between mb-3">
+          <div class="bg-gray-50 h-44 flex items-center justify-center px-4">
+            <img src="/images/zero-fx.png" alt="Zero FX" class="max-h-36 w-auto object-contain" loading="lazy" />
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between mb-2">
               <h3 class="text-lg font-bold text-gray-900 leading-snug">Zero FX</h3>
               <span class="text-xl font-extrabold text-gray-900 ml-3 whitespace-nowrap">&euro;12.995</span>
             </div>
@@ -203,7 +221,7 @@ import Layout from '../layouts/Layout.astro';
 
     <!-- Legal Info -->
     <section class="bg-amber-50 border border-amber-200 rounded-xl p-8">
-      <h2 class="text-xl font-bold mb-4 text-amber-900">Nederlandse wetgeving op hoofdlijnen</h2>
+      <h2 class="text-xl font-bold mb-4 text-amber-900">Wetgeving op hoofdlijnen</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-gray-700">
         <div>
           <h3 class="font-semibold mb-2 text-sm uppercase tracking-wide text-gray-500">Reguliere e-bike / pedelec</h3>
