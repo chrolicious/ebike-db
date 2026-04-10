@@ -3,6 +3,6 @@ import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
   integrations: [tailwind()],
-  site: 'https://ebike-database.com',
+  site: 'https://crossergids.nl',
   output: 'static'
 });
