@@ -7,24 +7,37 @@ import Layout from '../layouts/Layout.astro';
   description="Vergelijk elektrische crossers en e-bikes voor Nederland. Specs, wetgeving, rijbewijs en dealers voor Sur-Ron, Talaria, Segway, KTM en meer."
 >
   <!-- Hero -->
-  <div class="bg-gradient-to-br from-gray-900 via-blue-950 to-blue-900 text-white py-20">
+  <div class="bg-gradient-to-br from-gray-900 via-blue-950 to-blue-900 text-white py-20 overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-3xl">
-        <p class="text-blue-300 text-sm font-semibold uppercase tracking-widest mb-3">Nederland, bijgewerkt april 2026</p>
-        <h1 class="text-4xl md:text-5xl font-extrabold mb-5 leading-tight">
-          Elektrische crossers<br>
-          <span class="text-blue-400">vergeleken voor NL</span>
-        </h1>
-        <p class="text-lg text-blue-100 mb-8 max-w-xl">
-          Specs, prijzen en wetgeving per model, met rijbewijs- en kentekenvereisten erbij.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-3">
-          <a href="#modellen" class="inline-flex items-center justify-center bg-blue-500 hover:bg-blue-400 text-white px-7 py-3 rounded-lg font-semibold transition-colors">
-            Bekijk modellen
-          </a>
-          <a href="/vergelijk" class="inline-flex items-center justify-center bg-white/10 hover:bg-white/20 text-white border border-white/20 px-7 py-3 rounded-lg font-semibold transition-colors">
-            Vergelijk alles
-          </a>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <!-- Text -->
+        <div>
+          <p class="text-blue-300 text-sm font-semibold uppercase tracking-widest mb-3">Nederland, bijgewerkt april 2026</p>
+          <h1 class="text-4xl md:text-5xl font-extrabold mb-5 leading-tight">
+            Elektrische crossers<br>
+            <span class="text-blue-400">vergeleken voor NL</span>
+          </h1>
+          <p class="text-lg text-blue-100 mb-8 max-w-xl">
+            Specs, prijzen en wetgeving per model, met rijbewijs- en kentekenvereisten erbij.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a href="#modellen" class="inline-flex items-center justify-center bg-blue-500 hover:bg-blue-400 text-white px-7 py-3 rounded-lg font-semibold transition-colors">
+              Bekijk modellen
+            </a>
+            <a href="/vergelijk" class="inline-flex items-center justify-center bg-white/10 hover:bg-white/20 text-white border border-white/20 px-7 py-3 rounded-lg font-semibold transition-colors">
+              Vergelijk alles
+            </a>
+          </div>
+        </div>
+        <!-- Hero image -->
+        <div class="hidden lg:flex items-center justify-center relative">
+          <div class="absolute inset-0 bg-blue-500/10 rounded-full blur-3xl scale-75"></div>
+          <img
+            src="https://bikecentreholland.nl/wp-content/uploads/2025/11/Talaria-Sting-MX5-PRO-1.png"
+            alt="Elektrische crosser"
+            class="relative max-h-80 w-auto object-contain mix-blend-screen"
+            loading="eager"
+          />
         </div>
       </div>
     </div>
