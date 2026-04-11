@@ -52,13 +52,26 @@ const catColor = ecrosser.category === 'pedelec'
 						)}
 					</div>
 					<div class="flex justify-center">
+						<button onclick="document.getElementById('img-lightbox').showModal()" class="cursor-zoom-in group relative">
+							<img
+								src={ecrosser.imageUrl}
+								alt={`${ecrosser.brand} ${ecrosser.name}`}
+								class="max-h-72 w-auto object-contain drop-shadow-2xl rounded-xl bg-white/5 p-4 group-hover:opacity-90 transition-opacity"
+								loading="eager"
+							/>
+							<span class="absolute bottom-3 right-3 bg-black/50 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">&#x26F6; Vergroten</span>
+						</button>
+					</div>
+
+					<!-- Lightbox -->
+					<dialog id="img-lightbox" class="p-2 max-w-4xl w-full bg-gray-900 rounded-xl shadow-2xl backdrop:bg-black/80" onclick="this.close()">
 						<img
 							src={ecrosser.imageUrl}
 							alt={`${ecrosser.brand} ${ecrosser.name}`}
-							class="max-h-72 w-auto object-contain drop-shadow-2xl rounded-xl bg-white/5 p-4"
-							loading="eager"
+							class="w-full h-auto max-h-[85vh] object-contain"
 						/>
-					</div>
+						<p class="text-center text-gray-400 text-xs mt-2">Klik ergens om te sluiten</p>
+					</dialog>
 				</div>
 			) : (
 				<div class="text-center max-w-2xl mx-auto">
