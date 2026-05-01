@@ -140,29 +140,69 @@ function diffClass(a: boolean, b: boolean): string {
     <!-- Hero cards -->
     <div class="grid md:grid-cols-2 gap-6 mb-8">
       <!-- Model A card -->
-      <div class={`relative rounded-xl border-2 p-6 ${comparison.winnerOverall === comparison.modelA ? 'border-blue-500 bg-blue-50' : 'border-gray-200 bg-white'}`}>
+      <div class={`relative rounded-xl border-2 overflow-hidden ${comparison.winnerOverall === comparison.modelA ? 'border-blue-500' : 'border-gray-200'}`}>
         {comparison.winnerOverall === comparison.modelA && (
-          <span class="absolute top-4 right-4 bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full">Aanbevolen</span>
+          <span class="absolute top-3 right-3 z-10 bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full">Aanbevolen</span>
         )}
-        <p class="text-xs text-gray-400 uppercase font-semibold tracking-wide mb-1">{ecrosserA.brand}</p>
-        <h3 class="text-xl font-bold text-gray-900 mb-1">{comparison.nameA}</h3>
-        <p class="text-2xl font-bold text-blue-700 mb-3">€{ecrosserA.price.toLocaleString('nl-NL')}</p>
-        <span class={`inline-block text-xs font-semibold px-2 py-0.5 rounded ${categoryColor(ecrosserA.category)}`}>
-          {categoryLabel(ecrosserA.category)}
-        </span>
+        <!-- Image -->
+        <div class={`flex items-center justify-center h-44 ${comparison.winnerOverall === comparison.modelA ? 'bg-blue-50' : 'bg-gray-50'}`}>
+          {ecrosserA.imageUrl ? (
+            <img
+              src={ecrosserA.imageUrl}
+              alt={comparison.nameA}
+              class="max-h-36 max-w-full object-contain drop-shadow-md"
+              loading="lazy"
+            />
+          ) : (
+            <div class="flex items-center justify-center w-full h-full">
+              <svg class="w-16 h-16 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+            </div>
+          )}
+        </div>
+        <!-- Info -->
+        <div class={`p-5 ${comparison.winnerOverall === comparison.modelA ? 'bg-blue-50' : 'bg-white'}`}>
+          <p class="text-xs text-gray-400 uppercase font-semibold tracking-wide mb-0.5">{ecrosserA.brand}</p>
+          <h3 class="text-lg font-bold text-gray-900 mb-1">{comparison.nameA}</h3>
+          <p class="text-2xl font-bold text-blue-700 mb-2">€{ecrosserA.price.toLocaleString('nl-NL')}</p>
+          <span class={`inline-block text-xs font-semibold px-2 py-0.5 rounded ${categoryColor(ecrosserA.category)}`}>
+            {categoryLabel(ecrosserA.category)}
+          </span>
+        </div>
       </div>
 
       <!-- Model B card -->
-      <div class={`relative rounded-xl border-2 p-6 ${comparison.winnerOverall === comparison.modelB ? 'border-blue-500 bg-blue-50' : 'border-gray-200 bg-white'}`}>
+      <div class={`relative rounded-xl border-2 overflow-hidden ${comparison.winnerOverall === comparison.modelB ? 'border-blue-500' : 'border-gray-200'}`}>
         {comparison.winnerOverall === comparison.modelB && (
-          <span class="absolute top-4 right-4 bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full">Aanbevolen</span>
+          <span class="absolute top-3 right-3 z-10 bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full">Aanbevolen</span>
         )}
-        <p class="text-xs text-gray-400 uppercase font-semibold tracking-wide mb-1">{ecrosserB.brand}</p>
-        <h3 class="text-xl font-bold text-gray-900 mb-1">{comparison.nameB}</h3>
-        <p class="text-2xl font-bold text-blue-700 mb-3">€{ecrosserB.price.toLocaleString('nl-NL')}</p>
-        <span class={`inline-block text-xs font-semibold px-2 py-0.5 rounded ${categoryColor(ecrosserB.category)}`}>
-          {categoryLabel(ecrosserB.category)}
-        </span>
+        <!-- Image -->
+        <div class={`flex items-center justify-center h-44 ${comparison.winnerOverall === comparison.modelB ? 'bg-blue-50' : 'bg-gray-50'}`}>
+          {ecrosserB.imageUrl ? (
+            <img
+              src={ecrosserB.imageUrl}
+              alt={comparison.nameB}
+              class="max-h-36 max-w-full object-contain drop-shadow-md"
+              loading="lazy"
+            />
+          ) : (
+            <div class="flex items-center justify-center w-full h-full">
+              <svg class="w-16 h-16 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+            </div>
+          )}
+        </div>
+        <!-- Info -->
+        <div class={`p-5 ${comparison.winnerOverall === comparison.modelB ? 'bg-blue-50' : 'bg-white'}`}>
+          <p class="text-xs text-gray-400 uppercase font-semibold tracking-wide mb-0.5">{ecrosserB.brand}</p>
+          <h3 class="text-lg font-bold text-gray-900 mb-1">{comparison.nameB}</h3>
+          <p class="text-2xl font-bold text-blue-700 mb-2">€{ecrosserB.price.toLocaleString('nl-NL')}</p>
+          <span class={`inline-block text-xs font-semibold px-2 py-0.5 rounded ${categoryColor(ecrosserB.category)}`}>
+            {categoryLabel(ecrosserB.category)}
+          </span>
+        </div>
       </div>
     </div>
 
