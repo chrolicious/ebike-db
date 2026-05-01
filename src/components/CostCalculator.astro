@@ -1,0 +1,324 @@
+---
+// CostCalculator.astro — 3-year Total Cost of Ownership calculator
+// All logic is client-side JavaScript; data is embedded inline as JSON
+---
+
+<div class="bg-white border border-gray-200 rounded-xl shadow-sm p-6 max-w-xl mx-auto">
+  <h2 class="text-xl font-bold text-gray-900 mb-1">Bereken totale 3-jaar kosten</h2>
+  <p class="text-sm text-gray-500 mb-5">Inclusief rijbewijs, kentekening en verzekering.</p>
+
+  <!-- Model selector -->
+  <div class="mb-5">
+    <label for="cc-model" class="block text-sm font-medium text-gray-700 mb-1">Model</label>
+    <select
+      id="cc-model"
+      class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+    >
+      <!-- Options injected by script -->
+    </select>
+  </div>
+
+  <!-- Checkboxes -->
+  <div class="mb-6 space-y-3">
+    <label class="flex items-start gap-3 cursor-pointer group">
+      <input
+        id="cc-has-license"
+        type="checkbox"
+        class="mt-0.5 h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500 cursor-pointer"
+      />
+      <span class="text-sm text-gray-700">
+        Ik heb al een <strong>AM rijbewijs</strong>
+        <span class="block text-xs text-gray-400 font-normal">Vink aan om de rijbewijs kosten weg te laten</span>
+      </span>
+    </label>
+    <label class="flex items-start gap-3 cursor-pointer group">
+      <input
+        id="cc-has-insurance"
+        type="checkbox"
+        class="mt-0.5 h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500 cursor-pointer"
+      />
+      <span class="text-sm text-gray-700">
+        Ik heb al een <strong>motorverzekering</strong>
+        <span class="block text-xs text-gray-400 font-normal">Informatief — schakel naar uw huidige situatie</span>
+      </span>
+    </label>
+  </div>
+
+  <!-- Cost breakdown table -->
+  <div class="rounded-lg border border-gray-200 overflow-hidden mb-4">
+    <table class="w-full text-sm">
+      <thead>
+        <tr class="bg-gray-50 border-b border-gray-200">
+          <th class="px-4 py-2 text-left text-xs font-semibold text-gray-500 uppercase tracking-wide">Kostenpost</th>
+          <th class="px-4 py-2 text-right text-xs font-semibold text-gray-500 uppercase tracking-wide">Bedrag</th>
+        </tr>
+      </thead>
+      <tbody id="cc-tbody" class="divide-y divide-gray-100">
+        <!-- Rows injected by script -->
+      </tbody>
+      <tfoot>
+        <tr class="bg-gray-50 border-t-2 border-gray-300">
+          <td class="px-4 py-3 font-bold text-gray-900 text-base">Totaal 3 jaar</td>
+          <td class="px-4 py-3 text-right font-bold text-gray-900 text-base" id="cc-total">€ —</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+
+  <!-- Color badge -->
+  <div class="flex justify-center mb-4">
+    <span id="cc-badge" class="inline-flex items-center px-4 py-1.5 rounded-full text-sm font-semibold"></span>
+  </div>
+
+  <!-- Disclaimer -->
+  <p class="text-xs text-gray-400 text-center leading-relaxed">
+    Kosten zijn schattingen. Rijbewijs en verzekeringsprijzen variëren.
+  </p>
+</div>
+
+<script>
+  // ---- Embedded dataset (only fields needed for this calculator) ----
+  const MODELS = [
+    {
+      id: "surron-light-bee-x",
+      brand: "Surron", name: "Light Bee X",
+      price: 5199, category: "L1e-B",
+      legalStatus: { rijbewijs: "AM bromfietsrijbewijs", kenteken: true }
+    },
+    {
+      id: "talaria-sting-mx5-pro",
+      brand: "Talaria", name: "Sting MX5 Pro",
+      price: 4599, category: "L1e-B",
+      legalStatus: { rijbewijs: "AM bromfietsrijbewijs", kenteken: true }
+    },
+    {
+      id: "segway-dirt-ebike-x260",
+      brand: "Segway", name: "Dirt eBike X260",
+      price: 3999, category: "L1e-B",
+      legalStatus: { rijbewijs: "AM bromfietsrijbewijs", kenteken: true }
+    },
+    {
+      id: "ktm-freeride-e-xc",
+      brand: "KTM", name: "Freeride E-XC",
+      price: 10999, category: "L3e",
+      legalStatus: { rijbewijs: "A2 motorrijbewijs (18kW, >11kW grens)", kenteken: true }
+    },
+    {
+      id: "stealth-h52",
+      brand: "Stealth Electric Bikes", name: "H-52",
+      price: 7299, category: "L1e-B",
+      legalStatus: { rijbewijs: "AM bromfietsrijbewijs", kenteken: true }
+    },
+    {
+      id: "cake-kalk-or",
+      brand: "CAKE", name: "Kalk OR",
+      price: 6499, category: "L1e-B",
+      legalStatus: { rijbewijs: "AM bromfietsrijbewijs", kenteken: true }
+    },
+    {
+      id: "zero-fx",
+      brand: "Zero Motorcycles", name: "FX",
+      price: 12995, category: "L3e",
+      legalStatus: { rijbewijs: "A motorrijbewijs (34kW, volledig vermogen)", kenteken: true }
+    },
+    {
+      id: "ubco-2x2-work-bike",
+      brand: "UBCO", name: "2x2 Work Bike",
+      price: 4799, category: "L1e-B",
+      legalStatus: { rijbewijs: "AM bromfietsrijbewijs", kenteken: true }
+    },
+    {
+      id: "onyx-rcr",
+      brand: "Onyx Motorbikes", name: "RCR",
+      price: 3299, category: "L1e-B",
+      legalStatus: { rijbewijs: "AM bromfietsrijbewijs (geel kenteken, geen fietspad)", kenteken: true }
+    },
+    {
+      id: "super73-s2",
+      brand: "Super73", name: "S2",
+      price: 3299, category: "pedelec",
+      legalStatus: { rijbewijs: "Geen rijbewijs nodig (EU pedelec ≤25 km/h)", kenteken: false }
+    },
+    {
+      id: "rad-power-radrunner-2",
+      brand: "Rad Power Bikes", name: "RadRunner 2",
+      price: 1899, category: "E-Fatbike",
+      legalStatus: { rijbewijs: "Geen rijbewijs vereist", kenteken: false }
+    },
+    {
+      id: "himiway-cobra",
+      brand: "Himiway", name: "Cobra",
+      price: 2199, category: "E-Fatbike",
+      legalStatus: { rijbewijs: "Geen rijbewijs vereist", kenteken: false }
+    },
+    {
+      id: "eskimo-fat-26",
+      brand: "Eskimo", name: "FAT 26",
+      price: 1699, category: "E-Fatbike",
+      legalStatus: { rijbewijs: "Geen rijbewijs vereist", kenteken: false }
+    },
+    {
+      id: "bafang-ultra-m620",
+      brand: "Bafang (Custom Build)", name: "Ultra M620 Custom",
+      price: 3499, category: "E-Fatbike",
+      legalStatus: { rijbewijs: "Afhankelijk van configuratie", kenteken: false }
+    },
+    {
+      id: "bosch-cargo-line",
+      brand: "Bosch (OEM)", name: "Cargo Line Speed",
+      price: 4999, category: "Speed Pedelec",
+      legalStatus: { rijbewijs: "Geen rijbewijs vereist", kenteken: true }
+    },
+    {
+      id: "yamaha-pw-x3",
+      brand: "Yamaha (OEM)", name: "PW-X3 Speed",
+      price: 4299, category: "Speed Pedelec",
+      legalStatus: { rijbewijs: "Geen rijbewijs vereist", kenteken: true }
+    },
+    {
+      id: "shimano-ep8-rs",
+      brand: "Shimano (OEM)", name: "EP8 RS Speed",
+      price: 3899, category: "Speed Pedelec",
+      legalStatus: { rijbewijs: "Geen rijbewijs vereist", kenteken: true }
+    },
+    {
+      id: "specialized-turbo-vado-sl",
+      brand: "Specialized", name: "Turbo Vado SL 5.0",
+      price: 4199, category: "Speed Pedelec",
+      legalStatus: { rijbewijs: "Geen rijbewijs vereist", kenteken: true }
+    },
+    {
+      id: "trek-allant-plus-9",
+      brand: "Trek", name: "Allant+ 9.9S",
+      price: 5999, category: "Speed Pedelec",
+      legalStatus: { rijbewijs: "Geen rijbewijs vereist", kenteken: true }
+    },
+  ] as const;
+
+  type Model = typeof MODELS[number];
+
+  const CATEGORY_ORDER = ["L1e-B", "L3e", "Speed Pedelec", "E-Fatbike", "pedelec"] as const;
+
+  const INSURANCE_3Y  = 540;   // WA+ over 3 jaar (kenteken-plichtig)
+  const KENTEKEN_RDW  = 20;    // eenmalig RDW kentekening
+  const AM_LICENSE    = 950;   // AM rijbewijs (gemiddeld)
+
+  function needsAmLicense(rijbewijs: string): boolean {
+    return rijbewijs.toLowerCase().includes("am");
+  }
+
+  function fmt(amount: number): string {
+    return `€ ${amount.toLocaleString("nl-NL")}`;
+  }
+
+  function calculate() {
+    const select     = document.getElementById("cc-model") as HTMLSelectElement;
+    const hasLicense = (document.getElementById("cc-has-license") as HTMLInputElement).checked;
+    const tbody      = document.getElementById("cc-tbody") as HTMLTableSectionElement;
+    const totalCell  = document.getElementById("cc-total") as HTMLElement;
+    const badge      = document.getElementById("cc-badge") as HTMLElement;
+
+    const model = MODELS.find(m => m.id === select.value) as Model | undefined;
+    if (!model) return;
+
+    const needsKenteken   = model.legalStatus.kenteken;
+    const needsAm         = needsAmLicense(model.legalStatus.rijbewijs);
+    const amCost          = needsAm && !hasLicense ? AM_LICENSE : 0;
+    const insuranceCost   = needsKenteken ? INSURANCE_3Y : 0;
+    const kentekenCost    = needsKenteken ? KENTEKEN_RDW : 0;
+    const total           = model.price + insuranceCost + kentekenCost + amCost;
+
+    const rows: { label: string; value: number; note?: string }[] = [
+      {
+        label: "Aanschafprijs",
+        value: model.price,
+      },
+      {
+        label: "WA+ verzekering (3 jaar)",
+        value: insuranceCost,
+        note: needsKenteken ? undefined : "Niet vereist (geen kenteken)",
+      },
+      {
+        label: "Kentekening RDW",
+        value: kentekenCost,
+        note: needsKenteken ? undefined : "Niet vereist",
+      },
+      {
+        label: "AM rijbewijs",
+        value: amCost,
+        note: !needsAm
+          ? "Niet vereist"
+          : hasLicense
+          ? "Al in bezit"
+          : undefined,
+      },
+    ];
+
+    // Render rows
+    tbody.innerHTML = rows
+      .map(row => {
+        const dimmed = row.value === 0;
+        return `
+          <tr>
+            <td class="px-4 py-2.5 text-gray-${dimmed ? "400" : "700"}">
+              ${row.label}
+              ${row.note ? `<span class="ml-1 text-xs text-gray-400">(${row.note})</span>` : ""}
+            </td>
+            <td class="px-4 py-2.5 text-right ${dimmed ? "text-gray-400 line-through" : "text-gray-900"}">${fmt(row.value)}</td>
+          </tr>
+        `;
+      })
+      .join("");
+
+    totalCell.textContent = fmt(total);
+
+    // Badge
+    let badgeClass = "";
+    let badgeText  = "";
+    if (total < 3000) {
+      badgeClass = "bg-green-100 text-green-800";
+      badgeText  = "Budgetvriendelijk (< € 3.000)";
+    } else if (total <= 8000) {
+      badgeClass = "bg-orange-100 text-orange-800";
+      badgeText  = "Middensegment (€ 3.000 – € 8.000)";
+    } else {
+      badgeClass = "bg-red-100 text-red-800";
+      badgeText  = "Premiumprijsklasse (> € 8.000)";
+    }
+    badge.className = `inline-flex items-center px-4 py-1.5 rounded-full text-sm font-semibold ${badgeClass}`;
+    badge.textContent = badgeText;
+  }
+
+  function buildDropdown() {
+    const select = document.getElementById("cc-model") as HTMLSelectElement;
+    const groups: Partial<Record<string, Model[]>> = {};
+
+    for (const m of MODELS) {
+      if (!groups[m.category]) groups[m.category] = [];
+      groups[m.category]!.push(m);
+    }
+
+    for (const cat of CATEGORY_ORDER) {
+      const items = groups[cat];
+      if (!items || items.length === 0) continue;
+      const og = document.createElement("optgroup");
+      og.label = cat;
+      for (const m of items) {
+        const opt = document.createElement("option");
+        opt.value = m.id;
+        opt.textContent = `${m.brand} ${m.name}`;
+        og.appendChild(opt);
+      }
+      select.appendChild(og);
+    }
+  }
+
+  // Boot
+  buildDropdown();
+  calculate();
+
+  // Events
+  document.getElementById("cc-model")!.addEventListener("change", calculate);
+  document.getElementById("cc-has-license")!.addEventListener("change", calculate);
+  document.getElementById("cc-has-insurance")!.addEventListener("change", calculate);
+</script>

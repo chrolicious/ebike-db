@@ -77,6 +77,42 @@ export const eCrossers: ECrosser[] = [
 		certifications: ['L1e-B', 'CE', 'ECE R85']
 	},
 	{
+		id: 'surron-storm-bee',
+		name: 'Storm Bee',
+		brand: 'Surron',
+		price: 8999,
+		priceRange: '€8.999 - €9.499',
+		category: 'L1e-B',
+		maxSpeed: 45,
+		range: '60-80 km',
+		motor: '12500W QS Motor',
+		battery: '72V 55Ah',
+		weight: '110 kg',
+		legalStatus: {
+			rijbewijs: 'AM bromfietsrijbewijs',
+			verzekering: true,
+			kenteken: true,
+			helm: true,
+			fietspad: false,
+			weg: true
+		},
+		features: ['Volledige hydraulische ophanging', 'Brembo remmen', 'Digitaal instrumentenpaneel', 'USB lader', 'Motorfiets formaat chassis'],
+		pros: ['Extreme vermogen', 'Motorfiets comfort', 'Premium bouwkwaliteit', 'Beste in klasse remmen'],
+		cons: ['Zwaarste in categorie', 'Hoge aanschafprijs', 'Beperkte laadinfrastructuur', 'Groot formaat moeilijk te stallen'],
+		targetAudience: 'Gevorderde rijders die maximale prestaties en motorfietscomfort zoeken',
+		officialUrl: 'https://sur-ron.com/products/storm-bee',
+		specialistDealers: [
+			{name: 'Resa Racing', url: 'https://www.resa-racing.nl'},
+			{name: 'Elektrisch Motorrijden', url: 'https://elektrisch-motorrijden.nl'}
+		],
+		dealerNetwork: ['Resa Racing', 'Elektrisch Motorrijden'],
+		availability: 'Op bestelling',
+		warranty: '2 jaar',
+		serviceNetwork: 'Beperkt',
+		homologation: true,
+		certifications: ['L1e-B', 'CE', 'ECE R85']
+	},
+	{
 		id: 'talaria-sting-mx5-pro',
 		name: 'Sting MX5 Pro',
 		brand: 'Talaria',

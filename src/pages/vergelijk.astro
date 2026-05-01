@@ -194,6 +194,36 @@ const serialized = JSON.stringify(eCrossers);
       </div>
     </section>
 
+    <!-- Model vs Model vergelijkingen -->
+    <section class="mb-14">
+      <h2 class="text-2xl font-bold text-gray-900 mb-2">Model vs model vergelijkingen</h2>
+      <p class="text-gray-500 text-sm mb-6">Diepgaande vergelijkingen op specs, prijs, wetgeving en TCO.</p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {[
+          { a: 'surron-light-bee-x',        nameA: 'Sur-Ron Light Bee X',    b: 'talaria-sting-mx5-pro',       nameB: 'Talaria Sting MX5 Pro' },
+          { a: 'surron-light-bee-x',        nameA: 'Sur-Ron Light Bee X',    b: 'segway-dirt-ebike-x260',      nameB: 'Segway X260' },
+          { a: 'talaria-sting-mx5-pro',     nameA: 'Talaria Sting MX5 Pro', b: 'segway-dirt-ebike-x260',      nameB: 'Segway X260' },
+          { a: 'surron-light-bee-x',        nameA: 'Sur-Ron Light Bee X',    b: 'onyx-rcr',                    nameB: 'Onyx RCR' },
+          { a: 'ktm-freeride-e-xc',         nameA: 'KTM Freeride E-XC',      b: 'zero-fx',                     nameB: 'Zero FX' },
+          { a: 'cake-kalk-or',              nameA: 'CAKE Kalk OR',           b: 'surron-light-bee-x',          nameB: 'Sur-Ron Light Bee X' },
+          { a: 'super73-s2',                nameA: 'Super73 S2',             b: 'himiway-cobra',               nameB: 'Himiway Cobra' },
+          { a: 'talaria-sting-mx5-pro',     nameA: 'Talaria Sting MX5 Pro', b: 'onyx-rcr',                    nameB: 'Onyx RCR' },
+        ].map(({ a, nameA, b, nameB }) => (
+          <a
+            href={`/vergelijk/${a}-vs-${b}`}
+            class="group flex flex-col gap-2 bg-white border border-gray-200 rounded-xl p-4 hover:border-blue-400 hover:shadow-md transition-all"
+          >
+            <div class="flex items-center gap-2 text-sm font-semibold text-gray-800">
+              <span class="group-hover:text-blue-700 transition-colors">{nameA}</span>
+              <span class="text-gray-400 text-xs font-normal shrink-0">vs</span>
+              <span class="group-hover:text-blue-700 transition-colors">{nameB}</span>
+            </div>
+            <span class="text-xs text-blue-600 group-hover:underline">Bekijk vergelijking &rarr;</span>
+          </a>
+        ))}
+      </div>
+    </section>
+
     <!-- CTA -->
     <div class="text-center">
       <p class="text-gray-600 mb-4">Meer weten over wet- en regelgeving in Nederland?</p>

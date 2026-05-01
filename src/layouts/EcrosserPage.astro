@@ -1,14 +1,42 @@
 ---
 import Layout from './Layout.astro';
 import type { ECrosser } from '../data/ecrossers';
+import affiliateLinksData from '../data/affiliate_links.json';
 
 export interface Props {
 	ecrosser: ECrosser;
 }
 
 const { ecrosser } = Astro.props;
+
+const urlToSlug: Record<string, string> = {};
+for (const [slug, url] of Object.entries(affiliateLinksData)) {
+	urlToSlug[url] = slug;
+}
+function outHref(url: string): string {
+	const slug = urlToSlug[url];
+	return slug ? `/out/${slug}` : url;
+}
 const pageTitle = `${ecrosser.brand} ${ecrosser.name} - Specificaties, Prijs & Wetgeving Nederland`;
 const pageDescription = `Complete gids voor de ${ecrosser.brand} ${ecrosser.name}: ${ecrosser.priceRange}, ${ecrosser.range} bereik, Nederlandse wetgeving, verzekering en waar te koop.`;
+
+// Comparison pairs — used to generate sidebar "Vergelijk met" links
+const COMPARISON_PAIRS = [
+	{ a: 'surron-light-bee-x',    nameA: 'Sur-Ron Light Bee X',    b: 'talaria-sting-mx5-pro',  nameB: 'Talaria Sting MX5 Pro' },
+	{ a: 'surron-light-bee-x',    nameA: 'Sur-Ron Light Bee X',    b: 'segway-dirt-ebike-x260', nameB: 'Segway X260' },
+	{ a: 'talaria-sting-mx5-pro', nameA: 'Talaria Sting MX5 Pro', b: 'segway-dirt-ebike-x260', nameB: 'Segway X260' },
+	{ a: 'surron-light-bee-x',    nameA: 'Sur-Ron Light Bee X',    b: 'onyx-rcr',              nameB: 'Onyx RCR' },
+	{ a: 'ktm-freeride-e-xc',     nameA: 'KTM Freeride E-XC',      b: 'zero-fx',               nameB: 'Zero FX' },
+	{ a: 'cake-kalk-or',          nameA: 'CAKE Kalk OR',           b: 'surron-light-bee-x',    nameB: 'Sur-Ron Light Bee X' },
+	{ a: 'super73-s2',            nameA: 'Super73 S2',             b: 'himiway-cobra',         nameB: 'Himiway Cobra' },
+	{ a: 'talaria-sting-mx5-pro', nameA: 'Talaria Sting MX5 Pro', b: 'onyx-rcr',              nameB: 'Onyx RCR' },
+];
+const comparisonLinks = COMPARISON_PAIRS
+	.filter(p => p.a === ecrosser.id || p.b === ecrosser.id)
+	.map(p => ({
+		opponentName: p.a === ecrosser.id ? p.nameB : p.nameA,
+		slug: `${p.a}-vs-${p.b}`,
+	}));
 
 // Category color mapping
 const catColor = ecrosser.category === 'pedelec'
@@ -44,7 +72,7 @@ const catColor = ecrosser.category === 'pedelec'
 							</div>
 						</div>
 						{ecrosser.officialUrl && (
-							<a href={ecrosser.officialUrl} target="_blank" rel="noopener"
+							<a href={outHref(ecrosser.officialUrl)} target="_blank" rel="noopener nofollow"
 							   class="inline-flex items-center gap-2 bg-blue-500 hover:bg-blue-400 text-white px-6 py-3 rounded-lg font-semibold transition-colors text-sm">
 								Officiële website
 								<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
@@ -249,28 +277,28 @@ const catColor = ecrosser.category === 'pedelec'
 					<div class="text-3xl font-extrabold text-gray-900 mb-4">{ecrosser.priceRange}</div>
 					<div class="space-y-2 mb-4">
 						{ecrosser.mediamarktUrl && (
-							<a href={ecrosser.mediamarktUrl} target="_blank" rel="noopener nofollow"
+							<a href={outHref(ecrosser.mediamarktUrl)} target="_blank" rel="noopener nofollow"
 							   class="flex items-center justify-between w-full bg-red-600 hover:bg-red-700 text-white py-3 px-4 rounded-lg font-semibold text-sm transition-colors">
 								<span>MediaMarkt NL</span>
 								<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
 							</a>
 						)}
 						{ecrosser.amazonUrl && (
-							<a href={ecrosser.amazonUrl} target="_blank" rel="noopener nofollow"
+							<a href={outHref(ecrosser.amazonUrl)} target="_blank" rel="noopener nofollow"
 							   class="flex items-center justify-between w-full bg-orange-500 hover:bg-orange-600 text-white py-3 px-4 rounded-lg font-semibold text-sm transition-colors">
 								<span>Amazon NL</span>
 								<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
 							</a>
 						)}
 						{ecrosser.officialUrl && (
-							<a href={ecrosser.officialUrl} target="_blank" rel="noopener"
+							<a href={outHref(ecrosser.officialUrl)} target="_blank" rel="noopener nofollow"
 							   class="flex items-center justify-between w-full bg-gray-800 hover:bg-gray-900 text-white py-3 px-4 rounded-lg font-semibold text-sm transition-colors">
 								<span>Officiële website</span>
 								<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
 							</a>
 						)}
 						{ecrosser.specialistDealers && ecrosser.specialistDealers.length > 0 && ecrosser.specialistDealers.slice(0, 3).map((dealer) => (
-							<a href={dealer.url} target="_blank" rel="noopener nofollow"
+							<a href={outHref(dealer.url)} target="_blank" rel="noopener nofollow"
 							   class="flex items-center justify-between w-full bg-blue-600 hover:bg-blue-700 text-white py-2.5 px-4 rounded-lg text-sm font-medium transition-colors">
 								<span>{dealer.name}</span>
 								<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
@@ -309,6 +337,23 @@ const catColor = ecrosser.category === 'pedelec'
 						</div>
 					</div>
 				)}
+
+				{comparisonLinks.length > 0 && (
+					<div class="bg-white rounded-xl border border-gray-200 p-5">
+						<h3 class="text-sm font-bold text-gray-900 mb-3">Vergelijk met</h3>
+						<div class="space-y-2">
+							{comparisonLinks.map(({ opponentName, slug }) => (
+								<a
+									href={`/vergelijk/${slug}`}
+									class="flex items-center justify-between p-2.5 bg-gray-50 hover:bg-blue-50 border border-gray-200 hover:border-blue-300 rounded-lg transition-colors group"
+								>
+									<span class="text-sm font-medium text-gray-700 group-hover:text-blue-700">{opponentName}</span>
+									<span class="text-xs text-blue-500 group-hover:text-blue-700 shrink-0 ml-2">vs &rarr;</span>
+								</a>
+							))}
+						</div>
+					</div>
+				)}
 			</div>
 		</div>
 	</div>
@@ -318,7 +363,7 @@ const catColor = ecrosser.category === 'pedelec'
 		<div class="flex items-center gap-3 max-w-lg mx-auto">
 			<span class="text-lg font-extrabold text-gray-900 flex-shrink-0">{ecrosser.priceRange}</span>
 			{ecrosser.officialUrl && (
-				<a href={ecrosser.officialUrl} target="_blank" rel="noopener"
+				<a href={outHref(ecrosser.officialUrl)} target="_blank" rel="noopener nofollow"
 				   class="flex-1 bg-blue-600 text-white text-center py-2.5 rounded-lg font-semibold text-sm hover:bg-blue-700 transition-colors">
 					Bekijk bij dealer &rarr;
 				</a>

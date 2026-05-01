@@ -1,0 +1,30 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ComparisonPage from '../../components/ComparisonPage.astro';
+import { getECrosserById } from '../../data/ecrossers';
+
+export async function getStaticPaths() {
+  const modules = import.meta.glob('../../data/comparisons/*.json', { eager: true });
+  return Object.values(modules).map((mod: any) => {
+    const data = mod.default ?? mod;
+    const slug = `${data.modelA}-vs-${data.modelB}`;
+    return {
+      params: { slug },
+      props: { comparison: data },
+    };
+  });
+}
+
+const { comparison } = Astro.props;
+const ecrosserA = getECrosserById(comparison.modelA);
+const ecrosserB = getECrosserById(comparison.modelB);
+
+if (!ecrosserA || !ecrosserB) throw new Error('Model not found');
+
+const title = `${comparison.nameA} vs ${comparison.nameB} | CrosserGids Vergelijking 2026`;
+const description = `Vergelijk de ${comparison.nameA} en ${comparison.nameB} op specs, prijs, rijbewijs en dealer netwerk in Nederland.`;
+---
+
+<Layout title={title} description={description}>
+  <ComparisonPage comparison={comparison} ecrosserA={ecrosserA} ecrosserB={ecrosserB} />
+</Layout>

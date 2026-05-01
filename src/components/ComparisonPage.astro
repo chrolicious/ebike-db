@@ -1,0 +1,553 @@
+---
+import type { ECrosser } from '../data/ecrossers';
+import SpecBar from './SpecBar.astro';
+import ComparisonNav from './ComparisonNav.astro';
+import affiliateLinksData from '../data/affiliate_links.json';
+
+const urlToSlug: Record<string, string> = {};
+for (const [slug, url] of Object.entries(affiliateLinksData)) {
+  urlToSlug[url] = slug;
+}
+function outHref(url: string): string {
+  const slug = urlToSlug[url];
+  return slug ? `/out/${slug}` : url;
+}
+
+export interface ComparisonData {
+  modelA: string;
+  modelB: string;
+  nameA: string;
+  nameB: string;
+  verdict: string;
+  motorAnalyse: string;
+  conclusie: string;
+  winnerOverall: string;
+  winnerPrijs: string;
+  winnerBereik: string;
+  winnerWetgeving: string;
+}
+
+export interface Props {
+  comparison: ComparisonData;
+  ecrosserA: ECrosser;
+  ecrosserB: ECrosser;
+}
+
+const { comparison, ecrosserA, ecrosserB } = Astro.props;
+
+// --- Helper: parse kW from motor string ---
+function parseMotorKw(motorStr: string): number {
+  // Match patterns like "6000W", "6 kW", "5.4 kW", "18kW", "34kW"
+  const wMatch = motorStr.match(/(\d+(?:[.,]\d+)?)\s*[Ww](?!h)/);
+  if (wMatch) return parseFloat(wMatch[1].replace(',', '.')) / 1000;
+  const kwMatch = motorStr.match(/(\d+(?:[.,]\d+)?)\s*kW/i);
+  if (kwMatch) return parseFloat(kwMatch[1].replace(',', '.'));
+  return 0;
+}
+
+// --- Helper: parse first number from range string ---
+function parseRangeKm(rangeStr: string): number {
+  const m = rangeStr.match(/(\d+)/);
+  return m ? parseInt(m[1], 10) : 0;
+}
+
+// --- Helper: parse weight in kg ---
+function parseWeightKg(weightStr: string): number {
+  const m = weightStr.match(/(\d+(?:[.,]\d+)?)/);
+  return m ? parseFloat(m[1].replace(',', '.')) : 0;
+}
+
+// --- Category label ---
+function categoryLabel(cat: ECrosser['category']): string {
+  const map: Record<string, string> = {
+    'L1e-B': 'L1e-B Bromfiets',
+    'L3e': 'L3e Motorfiets',
+    'Speed Pedelec': 'Speed Pedelec',
+    'E-Fatbike': 'E-Fatbike',
+  };
+  return map[cat] ?? cat;
+}
+
+function categoryColor(cat: ECrosser['category']): string {
+  const map: Record<string, string> = {
+    'L1e-B': 'bg-orange-100 text-orange-800',
+    'L3e': 'bg-red-100 text-red-800',
+    'Speed Pedelec': 'bg-green-100 text-green-800',
+    'E-Fatbike': 'bg-green-100 text-green-800',
+  };
+  return map[cat] ?? 'bg-gray-100 text-gray-700';
+}
+
+// --- TCO calculation ---
+function calcTco(ecrosser: ECrosser): { aanschaf: number; verzekering: number; kenteken: number; rijbewijs: number; total: number; rijbewijsNote: string } {
+  const aanschaf = ecrosser.price;
+  const verzekering = ecrosser.legalStatus.verzekering ? 540 : 0;
+  const kenteken = ecrosser.legalStatus.kenteken ? 20 : 0;
+  const needsAm = ecrosser.legalStatus.rijbewijs.toUpperCase().includes('AM');
+  const rijbewijs = needsAm ? 950 : 0;
+  const rijbewijsNote = needsAm ? 'AM rijbewijs (schatting, eenmalig)' : '';
+  return {
+    aanschaf,
+    verzekering,
+    kenteken,
+    rijbewijs,
+    total: aanschaf + verzekering + kenteken + rijbewijs,
+    rijbewijsNote,
+  };
+}
+
+const tcoA = calcTco(ecrosserA);
+const tcoB = calcTco(ecrosserB);
+
+const motorKwA = parseMotorKw(ecrosserA.motor);
+const motorKwB = parseMotorKw(ecrosserB.motor);
+const rangeA = parseRangeKm(ecrosserA.range);
+const rangeB = parseRangeKm(ecrosserB.range);
+const weightA = parseWeightKg(ecrosserA.weight);
+const weightB = parseWeightKg(ecrosserB.weight);
+
+const navSections = [
+  { id: 'overzicht', label: 'Overzicht' },
+  { id: 'motor', label: 'Motor' },
+  { id: 'batterij', label: 'Batterij' },
+  { id: 'wetgeving', label: 'Wetgeving' },
+  { id: 'prijs', label: 'Prijs' },
+  { id: 'design', label: 'Design' },
+  { id: 'kopen', label: 'Kopen' },
+  { id: 'conclusie', label: 'Conclusie' },
+];
+
+// Boolean display helper
+function boolIcon(val: boolean): string {
+  return val ? '✓' : '✗';
+}
+function boolClass(val: boolean): string {
+  return val ? 'text-green-600 font-bold' : 'text-red-500 font-bold';
+}
+function diffClass(a: boolean, b: boolean): string {
+  return a !== b ? 'bg-yellow-50' : '';
+}
+---
+
+<ComparisonNav sections={navSections} />
+
+<div class="max-w-5xl mx-auto px-4 py-10 space-y-16">
+
+  <!-- 1. OVERZICHT -->
+  <section id="overzicht" class="scroll-mt-28">
+    <h2 class="text-2xl font-bold text-gray-900 mb-6">Overzicht</h2>
+
+    <!-- Hero cards -->
+    <div class="grid md:grid-cols-2 gap-6 mb-8">
+      <!-- Model A card -->
+      <div class={`relative rounded-xl border-2 p-6 ${comparison.winnerOverall === comparison.modelA ? 'border-blue-500 bg-blue-50' : 'border-gray-200 bg-white'}`}>
+        {comparison.winnerOverall === comparison.modelA && (
+          <span class="absolute top-4 right-4 bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full">Aanbevolen</span>
+        )}
+        <p class="text-xs text-gray-400 uppercase font-semibold tracking-wide mb-1">{ecrosserA.brand}</p>
+        <h3 class="text-xl font-bold text-gray-900 mb-1">{comparison.nameA}</h3>
+        <p class="text-2xl font-bold text-blue-700 mb-3">€{ecrosserA.price.toLocaleString('nl-NL')}</p>
+        <span class={`inline-block text-xs font-semibold px-2 py-0.5 rounded ${categoryColor(ecrosserA.category)}`}>
+          {categoryLabel(ecrosserA.category)}
+        </span>
+      </div>
+
+      <!-- Model B card -->
+      <div class={`relative rounded-xl border-2 p-6 ${comparison.winnerOverall === comparison.modelB ? 'border-blue-500 bg-blue-50' : 'border-gray-200 bg-white'}`}>
+        {comparison.winnerOverall === comparison.modelB && (
+          <span class="absolute top-4 right-4 bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full">Aanbevolen</span>
+        )}
+        <p class="text-xs text-gray-400 uppercase font-semibold tracking-wide mb-1">{ecrosserB.brand}</p>
+        <h3 class="text-xl font-bold text-gray-900 mb-1">{comparison.nameB}</h3>
+        <p class="text-2xl font-bold text-blue-700 mb-3">€{ecrosserB.price.toLocaleString('nl-NL')}</p>
+        <span class={`inline-block text-xs font-semibold px-2 py-0.5 rounded ${categoryColor(ecrosserB.category)}`}>
+          {categoryLabel(ecrosserB.category)}
+        </span>
+      </div>
+    </div>
+
+    <!-- Verdict text -->
+    <div class="bg-gray-50 border border-gray-200 rounded-lg p-6">
+      <p class="text-gray-700 leading-relaxed">{comparison.verdict}</p>
+    </div>
+  </section>
+
+  <!-- 2. MOTOR & VERMOGEN -->
+  <section id="motor" class="scroll-mt-28">
+    <h2 class="text-2xl font-bold text-gray-900 mb-6">Motor &amp; Vermogen</h2>
+
+    <div class="bg-white border border-gray-200 rounded-xl p-6 mb-6">
+      <!-- Legend -->
+      <div class="flex gap-6 mb-6 text-sm text-gray-500">
+        <span><span class="font-semibold text-gray-900">A</span> = {comparison.nameA}</span>
+        <span><span class="font-semibold text-gray-900">B</span> = {comparison.nameB}</span>
+      </div>
+
+      {motorKwA > 0 && motorKwB > 0 && (
+        <SpecBar
+          label="Motorvermogen (piek)"
+          valueA={motorKwA}
+          valueB={motorKwB}
+          unitA={`${motorKwA} kW`}
+          unitB={`${motorKwB} kW`}
+          higherIsBetter={true}
+        />
+      )}
+      <SpecBar
+        label="Topsnelheid"
+        valueA={ecrosserA.maxSpeed}
+        valueB={ecrosserB.maxSpeed}
+        unitA={`${ecrosserA.maxSpeed} km/h`}
+        unitB={`${ecrosserB.maxSpeed} km/h`}
+        higherIsBetter={true}
+      />
+    </div>
+
+    <!-- Motor analyse text -->
+    {comparison.motorAnalyse && (
+      <div class="bg-blue-50 border border-blue-100 rounded-lg p-5 mb-6">
+        <p class="text-gray-700 leading-relaxed text-sm">{comparison.motorAnalyse}</p>
+      </div>
+    )}
+
+    <!-- Raw specs table -->
+    <div class="overflow-x-auto rounded-lg border border-gray-200">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="bg-gray-50 border-b border-gray-200">
+            <th class="text-left px-4 py-3 font-semibold text-gray-500 w-1/3">Spec</th>
+            <th class="text-left px-4 py-3 font-semibold text-gray-900">{comparison.nameA}</th>
+            <th class="text-left px-4 py-3 font-semibold text-gray-900">{comparison.nameB}</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-100">
+          <tr class="hover:bg-gray-50">
+            <td class="px-4 py-3 text-gray-500 font-medium">Motor</td>
+            <td class="px-4 py-3 text-gray-800">{ecrosserA.motor}</td>
+            <td class="px-4 py-3 text-gray-800">{ecrosserB.motor}</td>
+          </tr>
+          <tr class="hover:bg-gray-50">
+            <td class="px-4 py-3 text-gray-500 font-medium">Topsnelheid</td>
+            <td class="px-4 py-3 text-gray-800">{ecrosserA.maxSpeed} km/h</td>
+            <td class="px-4 py-3 text-gray-800">{ecrosserB.maxSpeed} km/h</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 3. BATTERIJ & BEREIK -->
+  <section id="batterij" class="scroll-mt-28">
+    <h2 class="text-2xl font-bold text-gray-900 mb-6">Batterij &amp; Bereik</h2>
+
+    <div class="bg-white border border-gray-200 rounded-xl p-6 mb-6">
+      <div class="flex gap-6 mb-6 text-sm text-gray-500">
+        <span><span class="font-semibold text-gray-900">A</span> = {comparison.nameA}</span>
+        <span><span class="font-semibold text-gray-900">B</span> = {comparison.nameB}</span>
+      </div>
+
+      <SpecBar
+        label="Bereik (min. opgegeven)"
+        valueA={rangeA}
+        valueB={rangeB}
+        unitA={ecrosserA.range}
+        unitB={ecrosserB.range}
+        higherIsBetter={true}
+      />
+    </div>
+
+    <div class="overflow-x-auto rounded-lg border border-gray-200">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="bg-gray-50 border-b border-gray-200">
+            <th class="text-left px-4 py-3 font-semibold text-gray-500 w-1/3">Spec</th>
+            <th class="text-left px-4 py-3 font-semibold text-gray-900">{comparison.nameA}</th>
+            <th class="text-left px-4 py-3 font-semibold text-gray-900">{comparison.nameB}</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-100">
+          <tr class="hover:bg-gray-50">
+            <td class="px-4 py-3 text-gray-500 font-medium">Batterij</td>
+            <td class="px-4 py-3 text-gray-800">{ecrosserA.battery}</td>
+            <td class="px-4 py-3 text-gray-800">{ecrosserB.battery}</td>
+          </tr>
+          <tr class="hover:bg-gray-50">
+            <td class="px-4 py-3 text-gray-500 font-medium">Bereik</td>
+            <td class="px-4 py-3 text-gray-800">{ecrosserA.range}</td>
+            <td class="px-4 py-3 text-gray-800">{ecrosserB.range}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 4. RIJBEWIJS & WETGEVING -->
+  <section id="wetgeving" class="scroll-mt-28">
+    <h2 class="text-2xl font-bold text-gray-900 mb-6">Rijbewijs &amp; Wetgeving</h2>
+
+    <div class="overflow-x-auto rounded-lg border border-gray-200">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="bg-gray-50 border-b border-gray-200">
+            <th class="text-left px-4 py-3 font-semibold text-gray-500 w-1/3">Vereiste</th>
+            <th class="text-left px-4 py-3 font-semibold text-gray-900">{comparison.nameA}</th>
+            <th class="text-left px-4 py-3 font-semibold text-gray-900">{comparison.nameB}</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-100">
+          <tr class={`hover:bg-gray-50 ${ecrosserA.legalStatus.rijbewijs !== ecrosserB.legalStatus.rijbewijs ? 'bg-yellow-50' : ''}`}>
+            <td class="px-4 py-3 text-gray-500 font-medium">Rijbewijs</td>
+            <td class="px-4 py-3 text-gray-800">{ecrosserA.legalStatus.rijbewijs}</td>
+            <td class="px-4 py-3 text-gray-800">{ecrosserB.legalStatus.rijbewijs}</td>
+          </tr>
+          <tr class={`hover:bg-gray-50 ${diffClass(ecrosserA.legalStatus.verzekering, ecrosserB.legalStatus.verzekering)}`}>
+            <td class="px-4 py-3 text-gray-500 font-medium">Verzekering vereist</td>
+            <td class={`px-4 py-3 ${boolClass(ecrosserA.legalStatus.verzekering)}`}>{boolIcon(ecrosserA.legalStatus.verzekering)}</td>
+            <td class={`px-4 py-3 ${boolClass(ecrosserB.legalStatus.verzekering)}`}>{boolIcon(ecrosserB.legalStatus.verzekering)}</td>
+          </tr>
+          <tr class={`hover:bg-gray-50 ${diffClass(ecrosserA.legalStatus.kenteken, ecrosserB.legalStatus.kenteken)}`}>
+            <td class="px-4 py-3 text-gray-500 font-medium">Kenteken vereist</td>
+            <td class={`px-4 py-3 ${boolClass(ecrosserA.legalStatus.kenteken)}`}>{boolIcon(ecrosserA.legalStatus.kenteken)}</td>
+            <td class={`px-4 py-3 ${boolClass(ecrosserB.legalStatus.kenteken)}`}>{boolIcon(ecrosserB.legalStatus.kenteken)}</td>
+          </tr>
+          <tr class={`hover:bg-gray-50 ${diffClass(ecrosserA.legalStatus.helm, ecrosserB.legalStatus.helm)}`}>
+            <td class="px-4 py-3 text-gray-500 font-medium">Helm verplicht</td>
+            <td class={`px-4 py-3 ${boolClass(ecrosserA.legalStatus.helm)}`}>{boolIcon(ecrosserA.legalStatus.helm)}</td>
+            <td class={`px-4 py-3 ${boolClass(ecrosserB.legalStatus.helm)}`}>{boolIcon(ecrosserB.legalStatus.helm)}</td>
+          </tr>
+          <tr class={`hover:bg-gray-50 ${diffClass(ecrosserA.legalStatus.fietspad, ecrosserB.legalStatus.fietspad)}`}>
+            <td class="px-4 py-3 text-gray-500 font-medium">Fietspad toegestaan</td>
+            <td class={`px-4 py-3 ${boolClass(ecrosserA.legalStatus.fietspad)}`}>{boolIcon(ecrosserA.legalStatus.fietspad)}</td>
+            <td class={`px-4 py-3 ${boolClass(ecrosserB.legalStatus.fietspad)}`}>{boolIcon(ecrosserB.legalStatus.fietspad)}</td>
+          </tr>
+          <tr class={`hover:bg-gray-50 ${diffClass(ecrosserA.legalStatus.weg, ecrosserB.legalStatus.weg)}`}>
+            <td class="px-4 py-3 text-gray-500 font-medium">Weg toegestaan</td>
+            <td class={`px-4 py-3 ${boolClass(ecrosserA.legalStatus.weg)}`}>{boolIcon(ecrosserA.legalStatus.weg)}</td>
+            <td class={`px-4 py-3 ${boolClass(ecrosserB.legalStatus.weg)}`}>{boolIcon(ecrosserB.legalStatus.weg)}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="text-xs text-gray-400 mt-2">Geel gemarkeerde rijen zijn verschillend tussen de modellen.</p>
+  </section>
+
+  <!-- 5. PRIJS & TOTALE KOSTEN -->
+  <section id="prijs" class="scroll-mt-28">
+    <h2 class="text-2xl font-bold text-gray-900 mb-6">Prijs &amp; Totale Kosten</h2>
+
+    <div class="overflow-x-auto rounded-lg border border-gray-200">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="bg-gray-50 border-b border-gray-200">
+            <th class="text-left px-4 py-3 font-semibold text-gray-500 w-1/3">Kostenpost</th>
+            <th class="text-left px-4 py-3 font-semibold text-gray-900">
+              {comparison.nameA}
+              {comparison.winnerPrijs === comparison.modelA && (
+                <span class="ml-2 bg-blue-100 text-blue-700 text-xs font-semibold px-2 py-0.5 rounded-full">Voordeligst</span>
+              )}
+            </th>
+            <th class="text-left px-4 py-3 font-semibold text-gray-900">
+              {comparison.nameB}
+              {comparison.winnerPrijs === comparison.modelB && (
+                <span class="ml-2 bg-blue-100 text-blue-700 text-xs font-semibold px-2 py-0.5 rounded-full">Voordeligst</span>
+              )}
+            </th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-100">
+          <tr class="hover:bg-gray-50">
+            <td class="px-4 py-3 text-gray-500 font-medium">Aanschafprijs</td>
+            <td class="px-4 py-3 text-gray-800">€{tcoA.aanschaf.toLocaleString('nl-NL')}</td>
+            <td class="px-4 py-3 text-gray-800">€{tcoB.aanschaf.toLocaleString('nl-NL')}</td>
+          </tr>
+          <tr class="hover:bg-gray-50">
+            <td class="px-4 py-3 text-gray-500 font-medium">WA+ verzekering (3 jaar, est.)</td>
+            <td class="px-4 py-3 text-gray-800">{tcoA.verzekering > 0 ? `€${tcoA.verzekering}` : '—'}</td>
+            <td class="px-4 py-3 text-gray-800">{tcoB.verzekering > 0 ? `€${tcoB.verzekering}` : '—'}</td>
+          </tr>
+          <tr class="hover:bg-gray-50">
+            <td class="px-4 py-3 text-gray-500 font-medium">Kenteken (RDW)</td>
+            <td class="px-4 py-3 text-gray-800">{tcoA.kenteken > 0 ? `€${tcoA.kenteken}` : '—'}</td>
+            <td class="px-4 py-3 text-gray-800">{tcoB.kenteken > 0 ? `€${tcoB.kenteken}` : '—'}</td>
+          </tr>
+          <tr class="hover:bg-gray-50">
+            <td class="px-4 py-3 text-gray-500 font-medium">
+              AM rijbewijs (est.)
+              {(tcoA.rijbewijs > 0 || tcoB.rijbewijs > 0) && (
+                <span class="block text-xs text-gray-400 font-normal">Eenmalige kosten, schatting</span>
+              )}
+            </td>
+            <td class="px-4 py-3 text-gray-800">{tcoA.rijbewijs > 0 ? `€${tcoA.rijbewijs}` : '—'}</td>
+            <td class="px-4 py-3 text-gray-800">{tcoB.rijbewijs > 0 ? `€${tcoB.rijbewijs}` : '—'}</td>
+          </tr>
+          <tr class="bg-gray-50 font-semibold border-t-2 border-gray-300">
+            <td class="px-4 py-3 text-gray-700">Totale kosten (3 jaar)</td>
+            <td class={`px-4 py-3 ${tcoA.total <= tcoB.total ? 'text-blue-700' : 'text-gray-800'}`}>
+              €{tcoA.total.toLocaleString('nl-NL')}
+            </td>
+            <td class={`px-4 py-3 ${tcoB.total <= tcoA.total ? 'text-blue-700' : 'text-gray-800'}`}>
+              €{tcoB.total.toLocaleString('nl-NL')}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="text-xs text-gray-400 mt-2">Schattingen op basis van gemiddelde markttarieven. Rijbewijs kosten zijn eenmalig en gelden alleen als u nog geen geldig rijbewijs heeft.</p>
+  </section>
+
+  <!-- 6. DESIGN & GEWICHT -->
+  <section id="design" class="scroll-mt-28">
+    <h2 class="text-2xl font-bold text-gray-900 mb-6">Design &amp; Gewicht</h2>
+
+    <div class="bg-white border border-gray-200 rounded-xl p-6 mb-6">
+      <div class="flex gap-6 mb-6 text-sm text-gray-500">
+        <span><span class="font-semibold text-gray-900">A</span> = {comparison.nameA}</span>
+        <span><span class="font-semibold text-gray-900">B</span> = {comparison.nameB}</span>
+      </div>
+      <SpecBar
+        label="Gewicht (lager is beter)"
+        valueA={weightA}
+        valueB={weightB}
+        unitA={ecrosserA.weight}
+        unitB={ecrosserB.weight}
+        higherIsBetter={false}
+      />
+    </div>
+
+    <div class="overflow-x-auto rounded-lg border border-gray-200">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="bg-gray-50 border-b border-gray-200">
+            <th class="text-left px-4 py-3 font-semibold text-gray-500 w-1/3">Spec</th>
+            <th class="text-left px-4 py-3 font-semibold text-gray-900">{comparison.nameA}</th>
+            <th class="text-left px-4 py-3 font-semibold text-gray-900">{comparison.nameB}</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-100">
+          <tr class="hover:bg-gray-50">
+            <td class="px-4 py-3 text-gray-500 font-medium">Gewicht</td>
+            <td class="px-4 py-3 text-gray-800">{ecrosserA.weight}</td>
+            <td class="px-4 py-3 text-gray-800">{ecrosserB.weight}</td>
+          </tr>
+          <tr class="hover:bg-gray-50">
+            <td class="px-4 py-3 text-gray-500 font-medium">Beschikbaarheid</td>
+            <td class="px-4 py-3 text-gray-800">{ecrosserA.availability}</td>
+            <td class="px-4 py-3 text-gray-800">{ecrosserB.availability}</td>
+          </tr>
+          <tr class="hover:bg-gray-50">
+            <td class="px-4 py-3 text-gray-500 font-medium">Garantie</td>
+            <td class="px-4 py-3 text-gray-800">{ecrosserA.warranty}</td>
+            <td class="px-4 py-3 text-gray-800">{ecrosserB.warranty}</td>
+          </tr>
+          <tr class="hover:bg-gray-50">
+            <td class="px-4 py-3 text-gray-500 font-medium">Servicenetwerk</td>
+            <td class="px-4 py-3 text-gray-800">{ecrosserA.serviceNetwork}</td>
+            <td class="px-4 py-3 text-gray-800">{ecrosserB.serviceNetwork}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 7. KOPEN IN NEDERLAND -->
+  <section id="kopen" class="scroll-mt-28">
+    <h2 class="text-2xl font-bold text-gray-900 mb-6">Kopen in Nederland</h2>
+
+    <div class="grid md:grid-cols-2 gap-8">
+
+      <!-- Model A dealers -->
+      <div>
+        <h3 class="text-lg font-semibold text-gray-800 mb-4">{comparison.nameA}</h3>
+        {ecrosserA.specialistDealers && ecrosserA.specialistDealers.length > 0 ? (
+          <div class="space-y-2 mb-4">
+            {ecrosserA.specialistDealers.map((dealer) => (
+              <a
+                href={outHref(dealer.url)}
+                target="_blank"
+                rel="noopener nofollow"
+                class="flex items-center justify-between p-3 bg-white border border-gray-200 rounded-lg hover:border-blue-400 hover:bg-blue-50 transition-colors group"
+              >
+                <span class="font-medium text-gray-800 group-hover:text-blue-700 text-sm">{dealer.name}</span>
+                <svg class="w-4 h-4 text-gray-400 group-hover:text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            ))}
+          </div>
+        ) : (
+          <p class="text-gray-500 text-sm mb-4">Geen specifieke dealers bekend.</p>
+        )}
+        <a
+          href={outHref(ecrosserA.officialUrl)}
+          target="_blank"
+          rel="noopener nofollow"
+          class="inline-flex items-center gap-1 text-sm text-blue-600 hover:text-blue-800 hover:underline"
+        >
+          Officiële website
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg>
+        </a>
+      </div>
+
+      <!-- Model B dealers -->
+      <div>
+        <h3 class="text-lg font-semibold text-gray-800 mb-4">{comparison.nameB}</h3>
+        {ecrosserB.specialistDealers && ecrosserB.specialistDealers.length > 0 ? (
+          <div class="space-y-2 mb-4">
+            {ecrosserB.specialistDealers.map((dealer) => (
+              <a
+                href={outHref(dealer.url)}
+                target="_blank"
+                rel="noopener nofollow"
+                class="flex items-center justify-between p-3 bg-white border border-gray-200 rounded-lg hover:border-blue-400 hover:bg-blue-50 transition-colors group"
+              >
+                <span class="font-medium text-gray-800 group-hover:text-blue-700 text-sm">{dealer.name}</span>
+                <svg class="w-4 h-4 text-gray-400 group-hover:text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            ))}
+          </div>
+        ) : (
+          <p class="text-gray-500 text-sm mb-4">Geen specifieke dealers bekend.</p>
+        )}
+        <a
+          href={outHref(ecrosserB.officialUrl)}
+          target="_blank"
+          rel="noopener nofollow"
+          class="inline-flex items-center gap-1 text-sm text-blue-600 hover:text-blue-800 hover:underline"
+        >
+          Officiële website
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 8. CONCLUSIE -->
+  <section id="conclusie" class="scroll-mt-28">
+    <div class="rounded-xl bg-gradient-to-br from-blue-700 to-blue-500 p-8 text-white">
+      <h2 class="text-2xl font-bold mb-4">Conclusie</h2>
+      <p class="leading-relaxed text-blue-50 mb-8">{comparison.conclusie}</p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a
+          href={`/${comparison.modelA}`}
+          class="inline-flex items-center justify-center px-6 py-3 bg-white text-blue-700 font-semibold rounded-lg hover:bg-blue-50 transition-colors text-sm"
+        >
+          Bekijk {comparison.nameA}
+        </a>
+        <a
+          href={`/${comparison.modelB}`}
+          class="inline-flex items-center justify-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg border border-blue-400 hover:bg-blue-700 transition-colors text-sm"
+        >
+          Bekijk {comparison.nameB}
+        </a>
+      </div>
+    </div>
+  </section>
+
+</div>

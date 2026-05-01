@@ -1,0 +1,39 @@
+---
+import affiliateLinks from '../../data/affiliate_links.json';
+
+export function getStaticPaths() {
+  return Object.entries(affiliateLinks).map(([slug, destination]) => ({
+    params: { slug },
+    props: { destination, slug },
+  }));
+}
+
+const { destination, slug } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Doorsturen...</title>
+    <meta http-equiv="refresh" content={`1; url=${destination}`} />
+    <meta name="robots" content="noindex, nofollow" />
+  </head>
+  <body>
+    <p style="font-family:sans-serif;color:#555;padding:2rem">
+      Je wordt doorgestuurd naar <a href={destination}>{destination}</a>...
+    </p>
+    <script define:vars={{ destination, slug }}>
+      // Queue the event before Plausible loads, then redirect via callback
+      window.plausible = window.plausible || function() {
+        (window.plausible.q = window.plausible.q || []).push(arguments);
+      };
+      plausible('Affiliate Click', {
+        props: { slug: slug },
+        callback: function () { window.location.href = destination; }
+      });
+      // Fallback: redirect after 800ms if Plausible callback never fires
+      setTimeout(function () { window.location.href = destination; }, 800);
+    </script>
+    <script async src="https://plausible.io/js/script.js" data-domain="crossergids.nl"></script>
+  </body>
+</html>

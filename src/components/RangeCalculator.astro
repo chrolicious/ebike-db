@@ -1,0 +1,188 @@
+---
+// RangeCalculator.astro — client-side range estimator
+// No server-side props needed; all data is embedded inline as JSON
+---
+
+<div class="bg-white border border-gray-200 rounded-xl shadow-sm p-6 max-w-xl mx-auto">
+  <h2 class="text-xl font-bold text-gray-900 mb-1">Bereken je reëel bereik</h2>
+  <p class="text-sm text-gray-500 mb-5">Selecteer een model en rijomstandigheden voor een realistische schatting.</p>
+
+  <!-- Model selector -->
+  <div class="mb-5">
+    <label for="rc-model" class="block text-sm font-medium text-gray-700 mb-1">Model</label>
+    <select
+      id="rc-model"
+      class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+    >
+      <!-- Options injected by script -->
+    </select>
+  </div>
+
+  <!-- Riding style -->
+  <div class="mb-5">
+    <span class="block text-sm font-medium text-gray-700 mb-2">Rijstijl</span>
+    <div class="flex gap-3">
+      <label class="flex-1">
+        <input type="radio" name="rc-style" value="stad" class="sr-only peer" checked />
+        <div class="peer-checked:bg-blue-50 peer-checked:border-blue-500 peer-checked:text-blue-700 border border-gray-300 rounded-lg px-3 py-2 text-center text-sm cursor-pointer transition-colors hover:bg-gray-50 select-none">
+          🏙️ Stad
+        </div>
+      </label>
+      <label class="flex-1">
+        <input type="radio" name="rc-style" value="gemengd" class="sr-only peer" />
+        <div class="peer-checked:bg-blue-50 peer-checked:border-blue-500 peer-checked:text-blue-700 border border-gray-300 rounded-lg px-3 py-2 text-center text-sm cursor-pointer transition-colors hover:bg-gray-50 select-none">
+          🔄 Gemengd
+        </div>
+      </label>
+      <label class="flex-1">
+        <input type="radio" name="rc-style" value="offroad" class="sr-only peer" />
+        <div class="peer-checked:bg-blue-50 peer-checked:border-blue-500 peer-checked:text-blue-700 border border-gray-300 rounded-lg px-3 py-2 text-center text-sm cursor-pointer transition-colors hover:bg-gray-50 select-none">
+          🌲 Offroad
+        </div>
+      </label>
+    </div>
+  </div>
+
+  <!-- Weight slider -->
+  <div class="mb-6">
+    <label for="rc-weight" class="block text-sm font-medium text-gray-700 mb-1">
+      Rijdersgewicht: <span id="rc-weight-display" class="font-semibold text-blue-600">80 kg</span>
+    </label>
+    <input
+      id="rc-weight"
+      type="range"
+      min="60"
+      max="120"
+      value="80"
+      step="1"
+      class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600"
+    />
+    <div class="flex justify-between text-xs text-gray-400 mt-1">
+      <span>60 kg</span>
+      <span>120 kg</span>
+    </div>
+  </div>
+
+  <!-- Result -->
+  <div class="bg-blue-50 border border-blue-100 rounded-xl p-5 text-center">
+    <div class="text-4xl font-bold text-blue-600 mb-1" id="rc-result">— km</div>
+    <div class="text-sm text-blue-700 font-medium" id="rc-label">Geschat bereik</div>
+    <p class="text-xs text-gray-500 mt-3 leading-relaxed">
+      Schatting op basis van fabrieksopgave. Werkelijk bereik varieert door temperatuur, bandenspanning, hoogteverschil en rijgedrag.
+    </p>
+  </div>
+</div>
+
+<script>
+  // ---- Embedded dataset (only fields needed for this calculator) ----
+  const MODELS = [
+    { id: "surron-light-bee-x",      name: "Surron Light Bee X",         brand: "Surron",              category: "L1e-B",        range: "60-100 km" },
+    { id: "talaria-sting-mx5-pro",   name: "Talaria Sting MX5 Pro",      brand: "Talaria",             category: "L1e-B",        range: "50-80 km"  },
+    { id: "segway-dirt-ebike-x260",  name: "Segway Dirt eBike X260",     brand: "Segway",              category: "L1e-B",        range: "65-90 km"  },
+    { id: "ktm-freeride-e-xc",       name: "KTM Freeride E-XC",          brand: "KTM",                 category: "L3e",          range: "50-70 km"  },
+    { id: "stealth-h52",             name: "Stealth H-52",               brand: "Stealth Electric Bikes", category: "L1e-B",    range: "60-85 km"  },
+    { id: "cake-kalk-or",            name: "CAKE Kalk OR",               brand: "CAKE",                category: "L1e-B",        range: "53-80 km"  },
+    { id: "zero-fx",                 name: "Zero Motorcycles FX",        brand: "Zero Motorcycles",    category: "L3e",          range: "70-170 km" },
+    { id: "ubco-2x2-work-bike",      name: "UBCO 2x2 Work Bike",         brand: "UBCO",                category: "L1e-B",        range: "75-100 km" },
+    { id: "onyx-rcr",                name: "Onyx RCR",                   brand: "Onyx Motorbikes",     category: "L1e-B",        range: "60-90 km"  },
+    { id: "super73-s2",              name: "Super73 S2",                 brand: "Super73",             category: "pedelec",      range: "50-64 km"  },
+    { id: "rad-power-radrunner-2",   name: "Rad Power RadRunner 2",      brand: "Rad Power Bikes",     category: "E-Fatbike",    range: "65-90 km"  },
+    { id: "himiway-cobra",           name: "Himiway Cobra",              brand: "Himiway",             category: "E-Fatbike",    range: "80-120 km" },
+    { id: "eskimo-fat-26",           name: "Eskimo FAT 26",              brand: "Eskimo",              category: "E-Fatbike",    range: "60-85 km"  },
+    { id: "bafang-ultra-m620",       name: "Bafang Ultra M620 Custom",   brand: "Bafang (Custom Build)", category: "E-Fatbike", range: "70-100 km" },
+    { id: "bosch-cargo-line",        name: "Bosch Cargo Line Speed",     brand: "Bosch (OEM)",         category: "Speed Pedelec", range: "80-120 km" },
+    { id: "yamaha-pw-x3",            name: "Yamaha PW-X3 Speed",         brand: "Yamaha (OEM)",        category: "Speed Pedelec", range: "70-100 km" },
+    { id: "shimano-ep8-rs",          name: "Shimano EP8 RS Speed",       brand: "Shimano (OEM)",       category: "Speed Pedelec", range: "60-90 km"  },
+    { id: "specialized-turbo-vado-sl", name: "Specialized Turbo Vado SL 5.0", brand: "Specialized",  category: "Speed Pedelec", range: "80-130 km" },
+    { id: "trek-allant-plus-9",      name: "Trek Allant+ 9.9S",          brand: "Trek",                category: "Speed Pedelec", range: "75-110 km" },
+  ];
+
+  const STYLE_MULTIPLIERS: Record<string, number> = {
+    stad: 0.95,
+    gemengd: 1.0,
+    offroad: 0.75,
+  };
+
+  const CATEGORY_ORDER = ["L1e-B", "L3e", "Speed Pedelec", "E-Fatbike", "pedelec"];
+
+  function parseRange(rangeStr: string): [number, number] | null {
+    // Matches patterns like "60-100 km", "53-80 km", "70-170 km"
+    const m = rangeStr.match(/(\d+)\s*[-–]\s*(\d+)/);
+    if (!m) return null;
+    return [parseInt(m[1], 10), parseInt(m[2], 10)];
+  }
+
+  function roundTo5(n: number): number {
+    return Math.round(n / 5) * 5;
+  }
+
+  function calcWeightFactor(weight: number): number {
+    const raw = 80 / weight;
+    return Math.min(1.1, Math.max(0.85, raw));
+  }
+
+  function calculate() {
+    const modelId = (document.getElementById("rc-model") as HTMLSelectElement).value;
+    const styleRadio = document.querySelector('input[name="rc-style"]:checked') as HTMLInputElement | null;
+    const weightInput = document.getElementById("rc-weight") as HTMLInputElement;
+
+    const model = MODELS.find(m => m.id === modelId);
+    if (!model || !styleRadio) return;
+
+    const parsed = parseRange(model.range);
+    if (!parsed) {
+      (document.getElementById("rc-result") as HTMLElement).textContent = "Onbekend";
+      return;
+    }
+
+    const [rawMin, rawMax] = parsed;
+    const styleMult = STYLE_MULTIPLIERS[styleRadio.value] ?? 1.0;
+    const weightFactor = calcWeightFactor(parseInt(weightInput.value, 10));
+    const combined = styleMult * weightFactor;
+
+    const estMin = roundTo5(rawMin * combined);
+    const estMax = roundTo5(rawMax * combined);
+
+    (document.getElementById("rc-result") as HTMLElement).textContent = `~${estMin} – ${estMax} km`;
+    (document.getElementById("rc-label") as HTMLElement).textContent = "Geschat bereik";
+  }
+
+  function buildDropdown() {
+    const select = document.getElementById("rc-model") as HTMLSelectElement;
+    const groups: Record<string, typeof MODELS> = {};
+
+    for (const m of MODELS) {
+      if (!groups[m.category]) groups[m.category] = [];
+      groups[m.category].push(m);
+    }
+
+    for (const cat of CATEGORY_ORDER) {
+      const items = groups[cat];
+      if (!items || items.length === 0) continue;
+      const og = document.createElement("optgroup");
+      og.label = cat;
+      for (const m of items) {
+        const opt = document.createElement("option");
+        opt.value = m.id;
+        opt.textContent = `${m.brand} ${m.name}`;
+        og.appendChild(opt);
+      }
+      select.appendChild(og);
+    }
+  }
+
+  // Boot
+  buildDropdown();
+  calculate();
+
+  // Events
+  document.getElementById("rc-model")!.addEventListener("change", calculate);
+  document.querySelectorAll('input[name="rc-style"]').forEach(el => el.addEventListener("change", calculate));
+
+  const weightInput = document.getElementById("rc-weight") as HTMLInputElement;
+  const weightDisplay = document.getElementById("rc-weight-display") as HTMLElement;
+  weightInput.addEventListener("input", () => {
+    weightDisplay.textContent = `${weightInput.value} kg`;
+    calculate();
+  });
+</script>
