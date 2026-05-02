@@ -1,0 +1,137 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = "Contact - CrosserGids Nederland";
+const description = "Neem contact op met CrosserGids. Vragen over elektrische crossers, samenwerkingen of andere onderwerpen.";
+---
+
+<Layout title={title} description={description}>
+  <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <nav class="text-sm text-gray-500 mb-6">
+      <a href="/" class="hover:underline">Home</a> &rsaquo;
+      Contact
+    </nav>
+
+    <h1 class="text-3xl font-bold text-gray-900 mb-2">Contact</h1>
+    <p class="text-gray-500 text-sm mb-8">Vragen, samenwerkingen of suggesties? Stuur een bericht via het formulier hieronder.</p>
+
+    <div id="form-success" class="hidden bg-green-50 border border-green-200 rounded-lg p-6 text-center mb-8">
+      <p class="text-green-800 font-semibold text-lg mb-1">Bericht ontvangen!</p>
+      <p class="text-green-700 text-sm">We nemen zo snel mogelijk contact met je op.</p>
+    </div>
+
+    <form
+      id="contact-form"
+      action="https://api.web3forms.com/submit"
+      method="POST"
+      class="space-y-5"
+    >
+      <!-- Replace YOUR_ACCESS_KEY with the key from web3forms.com -->
+      <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY" />
+      <input type="hidden" name="subject" value="Nieuw contactbericht - CrosserGids" />
+      <input type="hidden" name="from_name" value="CrosserGids Contact" />
+      <input type="checkbox" name="botcheck" class="hidden" style="display:none" />
+
+      <div>
+        <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Naam</label>
+        <input
+          id="name"
+          type="text"
+          name="name"
+          required
+          autocomplete="name"
+          class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          placeholder="Je naam"
+        />
+      </div>
+
+      <div>
+        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">E-mailadres</label>
+        <input
+          id="email"
+          type="email"
+          name="email"
+          required
+          autocomplete="email"
+          class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          placeholder="jouw@email.nl"
+        />
+      </div>
+
+      <div>
+        <label for="onderwerp" class="block text-sm font-medium text-gray-700 mb-1">Onderwerp</label>
+        <select
+          id="onderwerp"
+          name="onderwerp"
+          required
+          class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+        >
+          <option value="" disabled selected>Kies een onderwerp</option>
+          <option value="Vraag over een model">Vraag over een model</option>
+          <option value="Samenwerking / affiliate">Samenwerking / affiliate</option>
+          <option value="Fout of onjuiste informatie">Fout of onjuiste informatie</option>
+          <option value="Overig">Overig</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="bericht" class="block text-sm font-medium text-gray-700 mb-1">Bericht</label>
+        <textarea
+          id="bericht"
+          name="bericht"
+          required
+          rows="5"
+          class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 resize-vertical"
+          placeholder="Jouw bericht..."
+        ></textarea>
+      </div>
+
+      <button
+        type="submit"
+        id="submit-btn"
+        class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg text-sm transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+      >
+        Verstuur bericht
+      </button>
+
+      <p id="form-error" class="hidden text-red-600 text-sm text-center">
+        Er ging iets mis. Probeer het opnieuw of mail direct naar <a href="mailto:info@crossergids.nl" class="underline">info</a>.
+      </p>
+    </form>
+
+  </div>
+</Layout>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const successBox = document.getElementById('form-success') as HTMLElement;
+  const errorMsg = document.getElementById('form-error') as HTMLElement;
+  const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Verzenden...';
+    errorMsg.classList.add('hidden');
+
+    const data = new FormData(form);
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: data,
+      });
+      const json = await res.json();
+      if (json.success) {
+        form.classList.add('hidden');
+        successBox.classList.remove('hidden');
+      } else {
+        throw new Error('not ok');
+      }
+    } catch {
+      errorMsg.classList.remove('hidden');
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Verstuur bericht';
+    }
+  });
+</script>

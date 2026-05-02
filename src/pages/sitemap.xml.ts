@@ -7,6 +7,7 @@ const pages = [
   ['/elektrische-crosser-rijbewijs/', '2026-05-01', 'monthly', '0.7'],
   ['/vergelijk/', '2026-05-01', 'weekly', '0.9'],
   ['/dealers/', '2026-05-01', 'monthly', '0.6'],
+  ['/contact/', '2026-05-01', 'yearly', '0.4'],
   ['/speed-pedelec-vs-bromfiets/', '2026-05-01', 'monthly', '0.7'],
   ['/sur-ron-vs-talaria/', '2026-05-01', 'monthly', '0.7'],
 
