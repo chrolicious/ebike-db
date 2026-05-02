@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import CostCalculator from '../components/CostCalculator.astro';
 ---
 <Layout
   title="Wetgeving Elektrische Fietsen & E-Crossers Nederland 2025 | CrosserGids"
@@ -208,6 +209,12 @@ import Layout from '../layouts/Layout.astro';
         </details>
 
       </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-xl font-bold mb-4">Bereken je totale kosten</h2>
+      <p class="text-sm text-gray-600 mb-5">Gebruik de calculator om de 3-jaarskosten inclusief rijbewijs, kentekening en verzekering te berekenen voor elk model.</p>
+      <CostCalculator />
     </section>
 
     <section class="bg-gray-50 rounded-lg p-5 text-sm text-gray-600">

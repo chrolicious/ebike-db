@@ -38,6 +38,24 @@ const comparisonLinks = COMPARISON_PAIRS
 		slug: `${p.a}-vs-${p.b}`,
 	}));
 
+// Nederland page lookup (ecrosser ID → slug)
+const NEDERLAND_PAGES: Record<string, string> = {
+	'surron-light-bee-x':       'surron-light-bee-x-nederland',
+	'talaria-sting-mx5-pro':    'talaria-sting-nederland',
+	'segway-dirt-ebike-x260':   'segway-dirt-ebike-x260-nederland',
+	'super73-s2':               'super73-s2-nederland',
+	'ktm-freeride-e-xc':        'ktm-freeride-e-xc-nederland',
+	'zero-fx':                  'zero-fx-nederland',
+	'onyx-rcr':                 'onyx-rcr-nederland',
+	'cake-kalk-or':             'cake-kalk-or-nederland',
+	'ubco-2x2-work-bike':       'ubco-2x2-nederland',
+	'himiway-cobra':            'himiway-cobra-nederland',
+	'rad-power-radrunner-2':    'rad-power-radrunner-2-nederland',
+	'eskimo-fat-26':            'eskimo-fat-26-nederland',
+	'surron-storm-bee':         'surron-storm-bee-nederland',
+};
+const nederlandSlug = NEDERLAND_PAGES[ecrosser.id] ?? null;
+
 // Category color mapping
 const catColor = ecrosser.category === 'pedelec'
 	? { border: 'border-green-500', badge: 'bg-green-100 text-green-800', label: 'Geen rijbewijs' }
@@ -326,6 +344,17 @@ const catColor = ecrosser.category === 'pedelec'
 						)}
 					</ul>
 				</div>
+
+				{nederlandSlug && (
+					<a href={`/${nederlandSlug}/`}
+					   class="block bg-blue-50 border border-blue-200 rounded-xl p-5 hover:bg-blue-100 transition-colors group">
+						<p class="text-xs font-semibold uppercase tracking-wide text-blue-500 mb-1">Meer informatie</p>
+						<h3 class="text-sm font-bold text-gray-900 group-hover:text-blue-700">
+							{ecrosser.brand} {ecrosser.name} in Nederland &rarr;
+						</h3>
+						<p class="text-xs text-gray-500 mt-1">Rijbewijs, kenteken, dealers en koopgids</p>
+					</a>
+				)}
 
 				{ecrosser.certifications.length > 0 && (
 					<div class="bg-white rounded-xl border border-gray-200 p-5">
