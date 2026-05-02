@@ -38,8 +38,14 @@ const pageDescription = description || "Complete e-bike en crosser database met 
 		}
 		</script>
 
-		<!-- Plausible Analytics (GDPR-friendly, no cookies) -->
-		<script defer data-domain="crossergids.nl" src="https://plausible.io/js/script.js" is:inline></script>
+		<!-- Google Analytics GA4 -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-5HSQLSRJML"></script>
+		<script is:inline>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-5HSQLSRJML');
+		</script>
 	</head>
 	<body class="bg-gray-50 min-h-screen">
 
